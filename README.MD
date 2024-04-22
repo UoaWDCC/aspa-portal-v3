@@ -1,90 +1,42 @@
-# React Template
+# ASPA
 
-## Tech Stack
+## Introduction
+This repository houses the ASPA website, a platform designed to streamline ticketing and event management for ASPA. 
 
-This
+### Background
+The Auckland Student Pool Association (ASPA) is centered at the University of Auckland, dedicated to fostering a vibrant community united by a love for pool. Their mission is to cultivate an inclusive atmosphere that encourages camaraderie and skill development among billiards enthusiasts. Through a variety of casual gatherings, coaching sessions, and spirited tournaments, they aim to connect members eager to engage in both competitive and social play.
 
-## Setup Runbook
+## Pre-requisites
 
-1.  Create a new repository with UoAWDCC as owner
-2.  Select repository template as `UoAWDCC/react-template`
+Please see the wiki for the pre-requisites and follow the instructions to install the necessary packages.
 
-    ![Create Repo](images/create-repo.png)
+## Installation
 
-3.  Clone the app to your local machine
+1. Clone the repository
+```bash
+git clone https://github.com/UoaWDCC/aspa-portal-v3
+```
 
-4.  In `/api/fly.production.toml` change the app name to `wdcc-app-name-api` . For example, passport will be `wdcc-passport-api`
-    Then create the app on fly with this command:
+2. Install the necessary frontend packages
+```bash
+cd frontend
+```
 
-    ```jsx
-    PS C:\Users\alexw\OneDrive\Documents\GitHub\UoAWDCC\passport> fly apps create --name wdcc-passport-api --org wdcc-projects
-    New app created: wdcc-passport-api
-    ```
+```bash
+yarn install
+```
 
-5.  In the`/api` directory run
+3. Install the necessary backend packages
+```bash
+cd backend
+```
 
-    ```jsx
-    PS C:\Users\alexw\OneDrive\Documents\GitHub\UoAWDCC\passport\api> fly tokens create deploy --config fly.production.toml
-    FlyV1 ...IFIc=
-    ```
+```bash
+yarn install
+```
+## Usage
 
-    - Copy the output to your clipboard
-    - Go to repository settings on Github
-    - In secrets and variables select actions
-
-    ![Untitled](images/secrets.png)
-
-    - Create a new repository secret
-    - Name it `FLY_API_PRODUCTION_API_TOKEN` and paste in the secret
-
-6.  In `/api/fly.staging.toml` change the app name to `wdcc-app-name-api-staging`
-    Then create the app on fly with this command
-
-        PS C:\Users\alexw\OneDrive\Documents\GitHub\UoAWDCC\passport> fly apps create --name wdcc-passport-api-staging --org wdcc-projects
-        New app created: wdcc-passport-api-staging
-
-7.  In the `/api` directory run
-
-    ```jsx
-    PS C:\Users\alexw\OneDrive\Documents\GitHub\UoAWDCC\passport\api> fly tokens create deploy --config fly.staging.toml
-    FlyV1 ...IFIc=
-    ```
-
-    - Copy the output to your clipboard
-    - Go to repository settings on Github
-    - In secrets and variables select actions
-    - Create a new repository secret
-    - Name it `FLY_API_STAGING_API_TOKEN` and paste in the secret
-
-8.  In `/web/Dockerfile.production` change
-
-    ```jsx
-    ENV VITE_API_URL="https://react-template-api.fly.dev"
-    ```
-
-    to
-
-    ```jsx
-    ENV VITE_API_URL="https://wdcc-app-name-api.fly.dev"
-    ```
-
-    (change it to to the name of your production api app that you just created before
-
-9.  In `/web/Dockerfile.staging`change
-
-    ```jsx
-    ENV VITE_API_URL="https://react-template-api-staging.fly.dev"
-    ```
-
-    to
-
-    ```jsx
-    ENV VITE_API_URL="https://wdcc-app-name-api-staging.fly.dev"
-    ```
-
-    (change it to to the name of your staging api app that you just created before
-
-10. In `/web/fly.production.toml` change the name of the app to `wdcc-app-name` and run `fly apps create --name wdcc-app-name --org wdcc-projects`
-11. Now run `fly tokens create deploy --config fly.production.toml` and save that as a Github repository secret with the name `FLY_WEB_PRODUCTION_API_TOKEN`
-12. In `/web/fly.staging.toml` change the name of the app to `wdcc-app-name-staging` and run `fly apps create --name wdcc-app-name-staging --org wdcc-projects`
-13. Now run `fly tokens create deploy --config fly.staging.toml` and save that as a Github repository secret with the name `FLY_WEB_STAGING_API_TOKEN`
+1. Start the frontend
+```bash
+yarn start:frontend
+```
