@@ -8,9 +8,13 @@ The Auckland Student Pool Association (ASPA) is centered at the University of Au
 
 ## Pre-requisites
 
-Please see the wiki for the pre-requisites and follow the instructions to install the necessary packages.
+Please see the wiki page [Getting Started](https://github.com/UoaWDCC/aspa-portal-v3/wiki/GettingStarted) for the pre-requisites and follow the instructions to install the necessary pre-requisites tools.
+
+
 
 ## Installation
+
+After installing the necessary pre-requisites tools, follow the steps below to install the project dependencies. The project is split into two main directories: frontend and backend. The frontend directory contains the Next application, while the backend directory contains the Node.js server and database. The frontend and backend directories have their own package.json files, so you will need to install the dependencies for both directories separately
 
 1. Clone the repository
 ```bash
