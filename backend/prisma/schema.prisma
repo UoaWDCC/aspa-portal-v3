@@ -13,9 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// TODO: how to specify domains in prisma bro
-// is studentId and upi unique for uoa students?
-// Assuming members must be part of a university
+// TODO: make sure the @attributes are correct and comprehensive for all models (maybe needs more default values)
 model User {
   id          Int      @id @default(autoincrement())
   email       String   @unique
@@ -31,6 +29,7 @@ model User {
   Ticket      Ticket[]
 }
 
+// TODO: see if imageUrl needs to be added to this too?
 model Event {
   id            Int      @id @default(autoincrement())
   name          String
@@ -55,7 +54,7 @@ model Ticket {
   paymentAmount Float
 }
 
-// TODO: the specify how the imageUrl should be???
+// TODO: specify how imageUrl should be?
 model Exec {
   id          Int    @id @default(autoincrement())
   name        String
