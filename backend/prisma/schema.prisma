@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// TODO: how to specify domains in prisma bro
+// is studentId and upi unique for uoa students?
+// Assuming members must be part of a university
+model User {
+  id          Int      @id @default(autoincrement())
+  email       String   @unique
+  firstName   String
+  lastName    String
+  university  String?
+  studentId   Int?     @unique
+  upi         String?  @unique
+  role        String
+  skillLevel  String
+  phoneNumber String
+  // isMember  Boolean 
+  Ticket      Ticket[]
+}
+
+model Event {
+  id            Int      @id @default(autoincrement())
+  name          String
+  dateTime      DateTime
+  venue         String
+  description   String
+  price         Float
+  createdBy     String
+  attendingExec String
+  Ticket        Ticket[]
+}
+
+model Ticket {
+  id            Int      @id @default(autoincrement())
+  user          User     @relation(fields: [userId], references: [id])
+  event         Event    @relation(fields: [eventId], references: [id])
+  userId        Int
+  eventId       Int
+  isPaid        Boolean
+  paymentDate   DateTime
+  paymentMethod String
+  paymentAmount Float
+}
+
+// TODO: the specify how the imageUrl should be???
+model Exec {
+  id          Int    @id @default(autoincrement())
+  name        String
+  title       String
+  description String
+  imageUrl    String
+}
