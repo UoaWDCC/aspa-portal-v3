@@ -1,7 +1,7 @@
 ---
 name: Issue Template
 about: For new issues
-title: "Feature: <Title>"
+title: "[Feature] <Title>"
 ---
 
 ## User story
