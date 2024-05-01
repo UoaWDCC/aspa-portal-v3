@@ -8,7 +8,7 @@ const dummyExecs = require('../dummy-data/dummyExecs');
  * NOT A TEST FILE/CASE
  * This script is used to populate the database with dummy data.
  * Use when the database state is empty:
- * run `node ./backend/tests/populateDatabase.js`
+ * run `node ./backend/tests/helper-scripts/populateDatabase.js`
  */
 
 const connection = mysql.createConnection({
@@ -46,7 +46,7 @@ connection.query(userSql,
   )],
   (err) => {
     if (err) {
-      console.error('Error inserting dummy users:', err);
+      console.error('Error inserting users:', err);
       return;
     }
     console.log('Dummy users inserted successfully');
@@ -68,7 +68,7 @@ connection.query(eventSql, [dummyEvents.map(event => {
 )],
   (err, result) => {
     if (err) {
-      console.error('Error inserting dummy events:', err);
+      console.error('Error inserting events:', err);
       return;
     }
     console.log('Dummy events inserted successfully');
@@ -88,10 +88,10 @@ connection.query(ticketSql, [dummyTickets.map(ticket => {
 }
 )], (err, result) => {
   if (err) {
-    console.error('Error inserting data:', err);
+    console.error('Error inserting tickets:', err);
     return;
   }
-  console.log('Dummy data inserted successfully');
+  console.log('Dummy tickets inserted successfully');
 });
 
 // insert exec dummy data into the database (dummyExecs.json)
@@ -105,10 +105,10 @@ connection.query(execSql, [dummyExecs.map(exec => {
 }
 )], (err, result) => {
   if (err) {
-    console.error('Error inserting data:', err);
+    console.error('Error inserting execs:', err);
     return;
   }
-  console.log('Dummy data inserted successfully');
+  console.log('Dummy execs inserted successfully');
 });
 
 connection.end();

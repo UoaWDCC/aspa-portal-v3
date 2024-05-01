@@ -4,7 +4,7 @@ const mysql = require('mysql');
  * NOT A TEST FILE/CASE
  * This script is used to clear the database of any dummy data, while still keeping the schema/tables around.
  * Use when you want to clear the database state:
- * run `node ./backend/tests/clearDatabase.js`
+ * run `node ./backend/tests/helper-scripts/clearDatabase.js`
  */
 
 const connection = mysql.createConnection({
