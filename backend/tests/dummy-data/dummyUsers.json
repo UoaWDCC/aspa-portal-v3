@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "email": "johnsmith@aspa.co.nz",
+    "firstName": "John",
+    "lastName": "Smith",
+    "university": "University of Auckland",
+    "studentId": "123456789",
+    "upi": "jsmi123",
+    "role": "user",
+    "skillLevel": "beginner",
+    "phoneNumber": "0210000000"
+  },
+  {
+    "id": 2,
+    "email": "janedoe@aspa.co.nz",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "role": "user",
+    "skillLevel": "intermediate",
+    "phoneNumber": "0210000001"
+  },
+  {
+    "id": 3,
+    "email": "admin@aspa.co.nz",
+    "firstName": "Admin",
+    "lastName": "Admin",
+    "role": "admin",
+    "skillLevel": "advanced",
+    "phoneNumber": "0210000002"
+  }
+]
