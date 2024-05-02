@@ -3,7 +3,7 @@
 This markdown file outlines and explains all event-related endpoints, 
 as well as indicating the "weakest" role that is able to access the endpoint, 
 i.e., 
-guests can only access endpoints with (user/guest), 
+guests (no role/session) can only access endpoints with (user/guest), 
 users can access (user) and (user/guest) endpoints, 
 and admins can access all endpoints.
 
@@ -31,7 +31,7 @@ and admins can access all endpoints.
 > Note: Many of these endpoints returns data in the http response 
 > (specifically, events, users, and tickets) as a (or array of) json object(s).
 > PLEASE check the schema.prisma file for the specific accessible fields
-> of these json objects - it should be the source of truth for telling
+> of these json objects (including optional ones) - it should be the source of truth for telling
 > you what fields you can access from each of these objects (apart from using console.log()).
 
 ## Endpoints
