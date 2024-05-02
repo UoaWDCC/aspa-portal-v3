@@ -1,4 +1,4 @@
-# Users Routes:
+# User Routes:
 
 This markdown file outlines and explains all user-related endpoints, 
 as well as indicating the "weakest" role that is able to access the endpoint, 
