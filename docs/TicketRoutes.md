@@ -7,6 +7,13 @@ guests (no role/session) can only access endpoints with (user/guest),
 users can access (user) and (user/guest) endpoints, 
 and admins can access all endpoints.
 
+This markdown file outlines and explains all ticket-related endpoints, 
+as well as indicating the "weakest" role that is able to access the endpoint, 
+i.e., 
+guests (no role/session) can only access endpoints with (user/guest), 
+users can access (user) and (user/guest) endpoints, 
+and admins can access all endpoints.
+
 ## Summary
 
 * Get all tickets (admin)
