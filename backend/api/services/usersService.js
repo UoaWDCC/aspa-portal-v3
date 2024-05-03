@@ -4,8 +4,7 @@ const prisma = new PrismaClient();
 
 const usersService = {
   async getAllUsers() {
-    users = await prisma.user.findMany();
-    console.log(users);
+    const users = await prisma.user.findMany();
     return users;
   },
 };

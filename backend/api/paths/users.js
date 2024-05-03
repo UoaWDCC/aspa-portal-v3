@@ -3,8 +3,8 @@ export default function (usersService) {
     GET
   };
 
-  function GET(req, res, next) {
-    res.status(200).json(usersService.getAllUsers());
+  async function GET(req, res, next) {
+    res.status(200).json(await usersService.getAllUsers());
   }
 
   // NOTE: We could also use a YAML string here.
