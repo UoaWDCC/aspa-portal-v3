@@ -4,7 +4,7 @@
     "userId": 3,
     "eventId": 2,
     "isPaid": true,
-    "paymentDateTime": "2023-10-10T10:00:00",
+    "paymentDateTime": "2023-10-10T10:00:00Z",
     "paymentMethod": "stripe",
     "paymentAmount": 10.00
   },
@@ -13,7 +13,7 @@
     "userId": 1,
     "eventId": 3,
     "isPaid": true,
-    "paymentDateTime": "2024-10-10T10:00:00",
+    "paymentDateTime": "2024-10-10T10:00:00Z",
     "paymentMethod": "cash",
     "paymentAmount": 10.00
   },
@@ -22,7 +22,7 @@
     "userId": 2,
     "eventId": 1,
     "isPaid": true,
-    "paymentDateTime": "2022-10-10T10:00:00",
+    "paymentDateTime": "2022-10-10T10:00:00Z",
     "paymentMethod": "stripe",
     "paymentAmount": 10.00
   }

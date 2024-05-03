@@ -2,30 +2,30 @@
   {
     "id": 1,
     "name": "ASPA Event 1",
-    "dateTime": "2023-10-10T10:00:00",
+    "dateTime": "2023-10-10T10:00:00Z",
     "venue": "Pool Place",
     "description": "This is a test event",
-    "price": "12.50",
+    "price": 12.50,
     "createdBy": "Kevin Cheung",
     "attendingExec": "Kevin Cheung"
   },
   {
     "id": 2,
     "name": "ASPA Event 2",
-    "dateTime": "2024-10-10T10:00:00",
+    "dateTime": "2024-10-10T10:00:00Z",
     "venue": "Pool Place",
     "description": "This is a test event",
-    "price": "12.50",
+    "price": 12.50,
     "createdBy": "Kevin Cheung",
     "attendingExec": "Kevin Cheung"
   },
   {
     "id": 3,
     "name": "ASPA Event 3",
-    "dateTime": "2025-10-10T10:00:00",
+    "dateTime": "2025-10-10T10:00:00Z",
     "venue": "Pool Place",
     "description": "This is a test event",
-    "price": "12.50",
+    "price": 12.50,
     "createdBy": "Kevin Cheung",
     "attendingExec": "Kevin Cheung"
   }

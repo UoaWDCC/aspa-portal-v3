@@ -5,7 +5,7 @@
     "firstName": "John",
     "lastName": "Smith",
     "university": "University of Auckland",
-    "studentId": "123456789",
+    "studentId": 123456789,
     "upi": "jsmi123",
     "role": "user",
     "skillLevel": "beginner",
