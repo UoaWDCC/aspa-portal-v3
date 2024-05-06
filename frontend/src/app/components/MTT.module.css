@@ -1,12 +1,20 @@
-.team-border {
+.teamborder {
     border-radius: 45px;
     background-color: #87562A;
     width: 1178px;
     height: 1071px;
+    justify-content: center;
   }
 
-.flex_container {
+.teamborder h1 {
+  align-content: center;
+}
+
+.container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-around;
+  padding-left: 70px;
+  padding-right: 70px;
 }

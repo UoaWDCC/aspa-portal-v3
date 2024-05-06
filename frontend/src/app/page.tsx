@@ -1,6 +1,5 @@
 import Image from "next/image";
-import MeetTheTeam from "./components/MeetTheTeam"
-
+import MeetTheTeam from "./components/MTT"
 
 export default function Home() {
   return (
