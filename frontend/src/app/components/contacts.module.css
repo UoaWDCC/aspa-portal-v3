@@ -1,0 +1,12 @@
+.team-border {
+    border-radius: 45px;
+    background-color: #87562A;
+    width: 1178px;
+    height: 1071px;
+  }
+
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
