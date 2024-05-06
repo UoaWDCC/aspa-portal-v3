@@ -1,5 +1,6 @@
 import styles from "./ExecCard.module.css";
 
+// Define Exec type
 interface Exec {
   imgUrl: string;
   name: string;
