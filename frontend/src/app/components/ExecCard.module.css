@@ -9,9 +9,9 @@
   align-items: center;
   font-weight: 600;
   background-color: #DD995B;
-  width: 295px;
+  width: 330px;
   height: auto;
-  border-radius: 45px;
+  border-radius: 75px;
   box-sizing: border-box;
   margin: 15px 0px 15px 0px;
   padding: 25px 0px 10px 0px;
@@ -20,19 +20,19 @@
 .card img {
   width: 235px;
   height: 235px;
-  border-radius: 45px;
+  border-radius: 75px;
 }
 
 .card h1 {
   font-family: 'Zilla Slab';
   font-weight: bold;
-  font-size: 24px; 
+  font-size: 30px; 
 }
 
 .card p {
   font-family: 'Pontano Sans', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   overflow: auto;
-  width: 234px;
+  width: 270px;
 }
