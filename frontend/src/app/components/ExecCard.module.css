@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@300..700');
 
 .card {
   display: flex;
@@ -30,9 +29,10 @@
 }
 
 .card p {
-  font-family: 'Pontano Sans',;
   font-weight: 200;
   font-size: 20px;
   overflow: auto;
-  width: 270px;
+  /*width: 270px;*/
+  inline-size: 300px;
+  overflow-wrap: break-word;
 }
