@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.card {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  border-style: solid;
+  border-width: 20px; 
+  border-color: #DD995B;
+}
+
+.card h1 {
+  font-family: 'Zilla Slab';
+  font-weight: bold;
+  font-size: 30px; 
+}
+
+.card p {
+  font-family: 'Zilla Slab';
+  font-weight: 200;
+  font-size: 20px;
+  overflow: auto;
+  inline-size: 300px;
+  overflow-wrap: break-word;
+}
