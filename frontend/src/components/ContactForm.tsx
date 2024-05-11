@@ -12,8 +12,7 @@ function ContactForm(){
     }
 
     const handleSubmit = (event: React.ChangeEvent<any>) => {
-        event.preventDefault();
-        alert(`You have submitted a query under the E-mail: ${formData.email}`)
+        alert(`Thank you for submitting your query, we will get back to you as soon as possible.}`)
     }
 
   return (
