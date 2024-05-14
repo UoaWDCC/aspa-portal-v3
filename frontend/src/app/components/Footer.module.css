@@ -1,0 +1,12 @@
+.footer {
+    padding: 25px;
+    background-color: #4F4B47;
+    text-align: left;
+}
+
+.footeritem {
+    display: inline-block;
+    margin-inline: 10px;
+    position: relative;
+    color: #FFFFFF;
+}
