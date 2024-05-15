@@ -8,15 +8,18 @@ export default function PastEvents() {
     {eventName: "Event 3", eventDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", imgUrl: "https://spothopper-static.s3.us-east-1.amazonaws.com/web/daviebilliardclub--com/custom/fb_image.jpg"}
 ]
   return (
-    <div className={styles.container}>
-      <h1>
+    <div>
+      <h1 className={styles.title}>
         Past Events
       </h1>
-      <div>
+      <div className={styles.container}>
         {pastEvents.map((event) => (
           <EventCard key={event.eventName} event={event} />     
         ))}
       </div>
+      <button className={styles.button}>
+        View All Events
+      </button>
     </div>
 
   );

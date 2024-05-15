@@ -1,4 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+}
+
+.title {
+  font-family: 'Zilla Slab';
+  font-weight: bold;
+  text-decoration: underline 5px;
+  text-align: center;
+  width: 1178px;
+  font-size: 90px;
+  color: #F4E5D7;
+  text-shadow: 8px 8px #5E4127;
+  text-underline-offset: 9px;
+}
+
+.button {
+  display: block;
+  margin: auto;
+  font-family: 'Zilla Slab';
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  color: #FBF5F0;
+  background-color: #DD995B;
+  border-radius: 45px;
+  padding: 0px 20px 0px 20px;
+  align-content: center;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #87562A;
 }

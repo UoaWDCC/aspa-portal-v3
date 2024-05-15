@@ -14,19 +14,22 @@
   border-style: solid;
   border-width: 20px; 
   border-color: #DD995B;
+  border-radius: 75px;
 }
 
 .card h1 {
   font-family: 'Zilla Slab';
-  font-weight: bold;
-  font-size: 30px; 
+  font-weight: medium;
+  font-size: 30px;
+  padding-left: 30px;
 }
 
 .card p {
   font-family: 'Zilla Slab';
-  font-weight: 200;
+  font-weight: 400px;
   font-size: 20px;
   overflow: auto;
   inline-size: 300px;
   overflow-wrap: break-word;
+  padding-left: 30px;
 }
