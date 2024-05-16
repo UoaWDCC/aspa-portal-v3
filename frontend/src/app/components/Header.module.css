@@ -1,0 +1,16 @@
+.header {
+  height: 130px;
+  min-width: 100%;
+  background-color: #DD995B;
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
