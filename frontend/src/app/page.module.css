@@ -9,7 +9,10 @@
   justify-content: space-between;
 }
 
-/*padding should be 190px*/
-.body{
+.inner{
   background-color: #222629;
+  margin: 80px 0px 0px 0px;
+  padding: 0px 100px 50px 100px;
+  min-width: 95vh;
+  border-radius: 12px;
 }
