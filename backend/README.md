@@ -37,7 +37,7 @@ C:\Projects\aspa-portal-v3\backend>npx prisma studio
 
 This should open the browser and show a page with options to see each table in the database.
 
-### Data population scripts (subject to change)
+### Data population scripts (// TODO: subject to change)
 
 If you've been following this in order, your database might be empty. That's why there are some scripts you can run to populate and delete all the data in your database:
 
@@ -53,10 +53,13 @@ You can verify the results of these scripts using Prisma Studio.
 
 ### OpenAPI
 
-The backend is built in express, but we're not creating just a normal express app. We're using [*express-openapi*](https://www.npmjs.com/package/express-openapi) to build our express app. Long story short, you're gonna have to create all your endpoints in the `backend/api/paths` folder and actually write documentation to accompany it (read the Architecture GitHub wiki page for more info). An example endpoint is shown below, from `backend/api/users.js` :
+The backend is built in express, but we're not creating just a normal express app. We're using [*express-openapi*](https://www.npmjs.com/package/express-openapi) to build our express app. Long story short, you're gonna have to create all your endpoints in the `backend/api/paths` folder and actually write documentation to accompany it (read the Architecture GitHub wiki page for more info). An example endpoint is shown below, from `backend/api/paths/users.js` :
 
 ```
-// note that the route is defined by the file path and name, i.e., this endpoint is for the /users route.
+/* 
+ * paths/users.js
+ * note that the route is defined by the file path and name, i.e., this endpoint is for the /users route.
+ */
 
 // to use services (for things like communicating with the database), pass it as a parameter into this function
 export default function (usersService) {
@@ -117,6 +120,31 @@ initialize({
   paths: './api/paths',
   docsPath: '/api-docs-json',
 });
+```
+
+### Prisma Client (// TODO: subject to change)
+
+As mentioned before, running Prisma Migrate also generates the Prisma Client, which is customised to our specific database. The Prisma Client is a tool we import into files that allows us to interact with and perform operations on our database. It will likely be most commonly used to implement function in the services files, e.g. `backend/api/services/usersService.js`
+
+```
+/* 
+ * services/usersServices.js
+ */
+
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
+const usersService = {
+  async getAllUsers() {
+
+    // use prisma client to find all users in the database
+    const users = await prisma.user.findMany();
+    return users;
+  },
+};
+
+export default usersService;
 ```
 
 ### Swagger UI
