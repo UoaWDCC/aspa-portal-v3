@@ -5,7 +5,6 @@ services:
     container_name: aspa-db
     image: mysql
     restart: always
-    command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: aspadb
