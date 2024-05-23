@@ -13,8 +13,7 @@
             ]
         }
     },
-    "mounts": [
-        "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached"
-
-    ]
+    "workspaceMount": "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached",
+    "workspaceFolder": "/repo",
+    "postCreateCommand": "yarn install"
 }

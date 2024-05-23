@@ -9,3 +9,4 @@ USER root
 # Install git
 RUN apk add --no-cache git
 
+VOLUME ["/repo"]

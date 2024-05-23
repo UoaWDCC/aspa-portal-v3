@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:frontend": "cd frontend && npm run dev"
+    "start:frontend": "cd frontend && npm run dev",
+    "install:frontend": "cd frontend && yarn install",
+    "install:backend": "cd backend && yarn install",
+    "install": "yarn install:frontend && yarn install:backend"
   },
   "keywords": [],
   "author": "",
