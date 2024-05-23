@@ -7,12 +7,14 @@
                 "terminal.integrated.shell.linux": "/bin/bash"
             },
             "extensions": [
-                "ms-dotnettools.copilot"
+                "GitHub.copilot-chat",
+                "GitHub.copilot",
+                "ms-vscode.vscode-typescript-next"
             ]
         }
     },
     "mounts": [
-        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+        "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached"
 
     ]
 }
