@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Footer from "./Footer";
 import "./globals.css";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+
+        <header style={{outline: '2px red solid', padding: '0px', margin:'0px'}}>
+          <img src={"https://cdn.vectorstock.com/i/500p/98/35/8-ball-billiards-pool-cue-black-snooker-vector-43849835.jpg"} alt="ASPA Logo" />
+        </header>
+        
+       <main style={{outline: '2px blue solid'}}>
+        {children}
+       </main>
+
+       <Footer/>
+      </body>
+      
     </html>
   );
 }

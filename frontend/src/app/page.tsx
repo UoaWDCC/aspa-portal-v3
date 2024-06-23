@@ -4,14 +4,8 @@ import NavLinks from "./NavLinks";
 
 export default function Home() {
   return (
-    <div className={styles.shape}>
+    <div>
       Hi
-    <Image src='/next.svg' alt="bruh"               
-    className="dark:invert"
-              width={10}
-              height={0}
-              priority/>
-    <NavLinks/>
     </div>
   );
 }
