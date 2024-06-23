@@ -1,17 +1,15 @@
 import Image from "next/image";
-import styles from '../ui/home.module.css'
-import NavLinks from "./NavLinks";
+import styles from '../../ui/home.module.css'
 
-export default function Home() {
+export default function Contact() {
   return (
     <div className={styles.shape}>
-      Hi
+      bruh
     <Image src='/next.svg' alt="bruh"               
     className="dark:invert"
               width={10}
               height={0}
               priority/>
-    <NavLinks/>
     </div>
   );
 }
