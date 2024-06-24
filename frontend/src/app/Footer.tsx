@@ -1,5 +1,6 @@
 import styles from "../ui/Footer.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function Footer() {
@@ -11,8 +12,8 @@ export default function Footer() {
         </div>
         <div className={styles.rightcontainer}>
           <div>
-            <h1 className={styles.h1}>Talk To Us</h1>
-            <h1 className={styles.h1}>Events</h1>
+            <Link href='/contact'><h1 className={styles.h1}>Talk To Us</h1></Link>
+            <Link href='/events'><h1 className={styles.h1}>Events</h1></Link>
           </div>
           <div className={styles.socialmedia}>
             <Image src='/discord.svg' width={60} height={60} alt="discord logo"/>
