@@ -1,0 +1,28 @@
+.socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.socialsBorders{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45px;
+    background-color: #87562A;
+    margin: 7px;
+    width: 394px;
+    height:473px;
+}
+
+.previews{
+    display: flex;
+    flex-direction: column;
+    border-radius: 45px;
+    justify-content: center;
+    width: 350px;
+    height: 422px;
+}
