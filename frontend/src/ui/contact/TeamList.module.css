@@ -10,7 +10,8 @@
     align-items: center;
     padding-bottom: 30px;
     margin: 8em auto;
-    width: 80%;
+    max-width: 80%;
+    width: 1500px;
   }
 
 
