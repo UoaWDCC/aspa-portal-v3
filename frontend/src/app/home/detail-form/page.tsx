@@ -1,10 +1,9 @@
-import Image from "next/image";
-import styles from '../../../ui/home.module.css'
+import RegisterAccountForm from "../../../ui/home/RegisterAccountForm"
 
 export default function Home() {
   return (
     <div>
-      detailform
+      <RegisterAccountForm/>
     </div>
   );
 }

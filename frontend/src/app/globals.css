@@ -41,7 +41,7 @@ header img {
 main {
     flex: 1;
     background-color: #222629;
-    margin: 3em 1.5em 0 1.5em;
+    margin: 3em 2em 0 2em;
     min-width: 80vw;
     border-radius: 12px;
     min-height: 50vh;
