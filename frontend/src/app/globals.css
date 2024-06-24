@@ -15,7 +15,6 @@
 body {
     display: flex;
     flex-direction: column;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #4F4B47;
     min-height: 100vh;
     min-width: 100vh;
@@ -24,7 +23,7 @@ body {
 
 header {
     height: 130px;
-    min-width: 100%;
+    min-width: 100vw;
     background-color: #DD995B;
     display: flex;
     flex-direction: row;
@@ -43,7 +42,7 @@ main {
     flex: 1;
     background-color: #222629;
     margin: 3em 1.5em 0 1.5em;
-    max-width: 100vw;
+    min-width: 80vw;
     border-radius: 12px;
     min-height: 50vh;
 }

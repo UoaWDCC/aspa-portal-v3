@@ -1,7 +1,4 @@
 /* Footer.module.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap');
-
 .footer {
     display:flex;
     flex-direction: row;
@@ -13,12 +10,11 @@
 
 .leftcontainer {
   min-width:50%;
-
+  height: 100%;
 }
 
 .rightcontainer {
     min-width:50%;
-
   }
 
 .rightcontainer h1 {
@@ -38,16 +34,14 @@
 
 
 .h1 {
-  font-family: 'Zilla Slab';
   font-size: 30px;
   font-weight: bold;
 }
 
 .p {
-  font-family: 'Zilla Slab';
-  font-weight: 400;
   font-size: 20px;
-  width: 640px;
-  line-height: 100%;
-  overflow: hidden;
+  width: 80%;
+  line-height: 1.1;
+  height: auto;
+  overflow-y: hidden;
 }
