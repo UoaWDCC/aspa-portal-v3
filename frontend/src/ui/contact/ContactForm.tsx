@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import {useState} from 'react';
+import { useState } from 'react';
 import styles from './contacts.module.css';
 
 function ContactForm(){
