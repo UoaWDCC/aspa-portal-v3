@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "@/ui/Footer";
+import Header from "@/ui/Header";
 import { zillaSlab } from "@/ui/fonts";
 import "./globals.css";
 
