@@ -20,17 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-
-      <Header/>
-
-       <main style={{outline: '2px blue solid'}}>
-        {children}
-       </main>
-
-       <Footer/>
-       
+        <Header/>
+        <main>
+          {children}
+        </main>
+        <Footer/>
       </body>
-      
     </html>
   );
 }

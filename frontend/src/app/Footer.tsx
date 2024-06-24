@@ -22,5 +22,6 @@ export default function Footer() {
           </div>
         </div>
     </footer>
+    // <footer className={styles.footer}>test</footer>
   );
 }
