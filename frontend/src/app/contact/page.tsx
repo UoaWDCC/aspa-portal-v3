@@ -1,7 +1,11 @@
+
+import TeamList from '../../ui/contact/TeamList'
 export default function Contact() {
   return (
     <div>
-      Contact Page
+      <section id="meet-the-team">
+        <TeamList/>
+      </section>
     </div>
   );
 }
