@@ -11,10 +11,7 @@
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #F4E5D7;
+    color: #FFFFFF;
     margin-bottom: 1em;
     max-width: 964px;
 }
@@ -23,8 +20,7 @@
 .header h1 {
     font-size: 90px;
     font-weight: bold;
-    text-align: center;
-    border-bottom: 8px solid #F4E5D7;
+    border-bottom: 8px solid #FFFFFF;
     line-height: 0.95;
     overflow-y: hidden;
     margin-bottom: 8px;
@@ -33,7 +29,6 @@
 .content {
     max-width: 90%;
     width: 964px;
-
 }
 
 .input {
@@ -53,7 +48,7 @@
     width: 100%;
     padding: 0 10px;
     border-radius: 45px;
-    background-color: #F4E5D7;
+    background-color: #FFFFFF;
 }
 
 .skillsection {
@@ -61,7 +56,7 @@
 }
 
 .skillsection h2 {
-    color: #F4E5D7;
+    color: #FFFFFF;
     font-weight: bold;
     font-size: 30px;
 }
@@ -125,7 +120,7 @@
     text-align: center;
     background: #DD995B;
     padding: 14px 0;
-    color: #F4E5D7;
+    color: #FFFFFF;
     font-weight: bold;
     font-size: 30px;
     cursor: pointer;
