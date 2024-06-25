@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  width: 360px;
+  margin: 0px 15px;
+}
+
+.card img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  border-style: solid;
+  border-width: 20px; 
+  border-color: #DD995B;
+  border-radius: 75px;
+}
+
+.card h1 {
+  font-weight: medium;
+  font-size: 30px;
+  color: #FFFFFF;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-weight: 400px;
+  font-size: 20px;
+  color: #FFFFFF;
+  line-height: 1.1;
+  overflow: hidden
+}
+
+.card .description {
+  padding: 0px 20px;
+}
