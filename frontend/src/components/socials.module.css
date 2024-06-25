@@ -7,7 +7,7 @@
     margin-bottom: 50px;
 }
 
-.socialsBorders{
+.socialsBorders1{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,14 +15,34 @@
     background-color: #87562A;
     margin: 7px;
     width: 394px;
-    height:473px;
+    height: 473px;
+}
+
+.socialsBorders2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45px;
+    background-color: #DD995B;
+    margin: 7px;
+    width: 394px;
+    height: 473px;
+}
+
+.socialsBorders3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45px;
+    background-color: #AA6F29;
+    margin: 7px;
+    width: 394px;
+    height: 473px;
 }
 
 .previews{
-    display: flex;
-    flex-direction: column;
-    border-radius: 45px;
     justify-content: center;
+    align-items: center;
     width: 350px;
     height: 422px;
 }
