@@ -1,0 +1,18 @@
+.nav {
+    background-color: #DD995B;
+    padding: 30px;
+    text-align: right;
+}
+
+.navitem {
+    display: inline-block;
+    margin-inline: 10px;
+    position: relative;
+}
+
+.navlink {
+    text-align: right;
+    text-decoration: none;
+    color: white;
+}
+

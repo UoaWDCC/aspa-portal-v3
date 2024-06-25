@@ -12,5 +12,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@next/font": "^14.2.4"
+  }
 }
