@@ -17,9 +17,9 @@ export default function Footer() {
           </div>
           <div className={styles.socialmedia}>
             <Image src='/discord.svg' width={60} height={60} alt="discord logo"/>
-            <Image src='/discord.svg' width={60} height={60} alt="discord logo"/>
-            <Image src='/discord.svg' width={60} height={60} alt="discord logo"/>
-            <Image src='/discord.svg' width={60} height={60} alt="discord logo"/>
+            <Image src='/linkedin.svg' width={60} height={60} alt="linkedin logo"/>
+            <Image src='/facebook.svg' width={60} height={60} alt="facebook logo"/>
+            <Image src='/instagram.svg' width={60} height={60} alt="instagram logo"/>
           </div>
         </div>
     </footer>
