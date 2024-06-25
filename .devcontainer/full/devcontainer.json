@@ -15,7 +15,7 @@
     },
     "workspaceMount": "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached",
     "workspaceFolder": "/repo",
-    "postCreateCommand": "yarn install && cd backend && docker compose up --build -d && npx prisma migrate deploy",
+    "postCreateCommand": "yarn install && cd backend && docker compose up --build -d && npx prisma migrate dev",
     "postStartCommand": "cd backend && docker compose up -d && npx prisma migrate dev",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
