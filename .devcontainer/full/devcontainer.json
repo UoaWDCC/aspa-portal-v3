@@ -1,6 +1,6 @@
 {
-    "name": "ASPA Dev Container",
-    "dockerFile": "dockerfile/Dockerfile",
+    "name": "ASPA Dev Container (Full)",
+    "dockerFile": "../dockerfile/Dockerfile",
     "customizations": {
         "vscode": {
             "settings": {
