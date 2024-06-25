@@ -15,5 +15,9 @@
     },
     "workspaceMount": "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached",
     "workspaceFolder": "/repo",
-    "postCreateCommand": "yarn install"
+    "postCreateCommand": "yarn install",
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ]
+    
 }
