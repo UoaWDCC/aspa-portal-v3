@@ -3,10 +3,10 @@ import { usePathname } from 'next/navigation';
 
 // Explicitly define the different pages seeing as there isn't too many of them
 const links = [
-  { name: 'Home', href: '/app' },
-  { name: 'Contacts', href: '/app/contacts' },
-  { name: 'Events', href: '/app/events' },
-  { name: 'Login', href: '/app/login' },
+  { name: 'Home', href: '' },
+  { name: 'Contacts', href: '/contacts' },
+  { name: 'Events', href: '/events' },
+  { name: 'Login', href: '/login' },
 ];
 
 export default function NavLinks() {
