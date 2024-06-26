@@ -10,37 +10,31 @@ The Auckland Student Pool Association (ASPA) is centered at the University of Au
 
 Please see the wiki page [Getting Started](https://github.com/UoaWDCC/aspa-portal-v3/wiki/GettingStarted) for the pre-requisites and follow the instructions to install the necessary pre-requisites tools.
 
+## Development
 
-
-## Installation
-
-After installing the necessary pre-requisites tools, follow the steps below to install the project dependencies. The project is split into two main directories: frontend and backend. The frontend directory contains the Next application, while the backend directory contains the Node.js server and database. The frontend and backend directories have their own package.json files, so you will need to install the dependencies for both directories separately
+After installing the necessary pre-requisites tools, follow the steps below to set up the dev container:
 
 1. Clone the repository
-```bash
-git clone https://github.com/UoaWDCC/aspa-portal-v3
-```
+2. Open the repository in Visual Studio Code
+3. Press `F1` and select `Dev Container: Open Folder in Container`
+4. Select the root folder of the repository
+5. Select the dev container `ASPA Dev Container (Full)`
+6. Wait for the dev container to build (this may take a while)
 
-2. Install the necessary frontend packages
-```bash
-cd frontend
-```
+Now you have a development environment set up with all the necessary tools and dependencies installed :)
 
-```bash
-yarn install
-```
+## Frontend
 
-3. Install the necessary backend packages
-```bash
-cd backend
-```
+To start the frontend, run the following commands in the terminal:
 
 ```bash
-yarn install
+yarn dev:frontend
 ```
-## Usage
 
-1. Start the frontend
+## Backend
+
+To start the backend, run the following commands in the terminal:
+
 ```bash
-yarn start:frontend
+yarn dev:backend
 ```
