@@ -1,8 +1,14 @@
-import styles from './EventPage.module.css'
+"use client";
+
+import { useState } from 'react';
+import styles from './EventPage.module.css';
+import data from "./mock-data.json";
 
 
 
 export default function EventPage() {
+
+    const [events, setEvents] = useState(data);
     return (
         <>
             <div className={styles.appcontainer}>
@@ -19,12 +25,14 @@ export default function EventPage() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> Event Title </td>
-                            <td> 8/15/17 </td>
-                            <td> Esther Howard </td>
-                            <td> Upcoming</td>
-                        </tr>
+                        {events.map((event) =>
+                            <tr>
+                                <td>{event.eventTitle}</td>
+                                <td>{event.date}</td>
+                                <td>{event.createdBy}</td>
+                                <td>{event.status}</td>
+                            </tr>
+                        )}
                     </tbody>
                 </table>
             </div>
