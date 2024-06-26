@@ -57,10 +57,9 @@ export function Component() {
             <Input placeholder="University" />
             <Input placeholder="UPI (If you are in UoA)" />
             <Input placeholder="Contact Number" />
-            <div className="flex items-center space-x-2">
-              <Checkbox id="payment-method" />
-              <label className="text-sm" htmlFor="payment-method">
-                I will be paying cash at the entry.
+            <div className="flex items-center space-x-3">
+              <Checkbox id="skill-level" />
+              <label className="text-sm" htmlFor="skill-lelvel">
               </label>
             </div>
             <Button className="w-full py-4 bg-[#DD995B]">REGISTER & PAY</Button>

@@ -44,12 +44,19 @@ export function Component() {
             </div>
           </div>
         </div>
-        <div className="bg-[#87562A] p-8 rounded-lg">
-          <h2 className="text-3xl font-bold mb-4">Please Enter Your Details</h2>
-          <p className="text-sm mb-8">
-            Note: Members receive a 10% discount at Orange Club for their own session, if you register through this page
-            you are registering as a guest instead of a member, press the Register/Login at the top right of this page
-            to become a member.
+        <div className="bg-[#87562A] p-8 rounded-lg items-center">
+          <h2 className="text-3xl font-bold mb-4 text-center">Please Enter Your Details</h2>
+          <p className="text-sm mb-1">
+            Note:
+          </p>
+          <p className="text-sm mb-1">
+            Members receive a 10% discount at Orange Club for their own session.
+          </p>
+          <p className="text-sm mb-1">
+          We host Casual Nights at <strong>Orange Pool Club</strong> (9 City Road) every <strong>Tuesday&Thursday</strong> 6:30pm-8pm.
+          </p>
+          <p className="text-sm mb-3">
+          Cost: <strong>$6 per session</strong>
           </p>
           <form className="space-y-6">
             <Input placeholder="First Name" />
@@ -57,13 +64,36 @@ export function Component() {
             <Input placeholder="University" />
             <Input placeholder="UPI (If you are in UoA)" />
             <Input placeholder="Contact Number" />
-            <div className="flex items-center space-x-2">
-              <Checkbox id="payment-method" />
-              <label className="text-sm" htmlFor="payment-method">
-                I will be paying cash at the entry.
+          <p><strong>Skill Level</strong>:</p>
+            <div className="flex items-center space-x-5">
+              <Checkbox id="skill-level" />
+              <label className="text-sm" htmlFor="skill-level">
+              <p class="text-l">Beginner</p>
+              <p class="text-xs">Never played or played a few times</p>
+              </label>
+              <Checkbox id="skill-level" />
+              <label className="text-sm" htmlFor="skill-level">
+              <p>Intermediate</p>
+              <p class="text-xs">Plays occasionally, social players</p>
+              </label>
+              <Checkbox id="skill-level" />
+              <label className="text-sm" htmlFor="skill-level">
+              <p>Advanced</p>
+              <p class="text-xs">Experienced players, participated in tournaments</p>
               </label>
             </div>
-            <Button className="w-full py-4 bg-[#DD995B]">REGISTER & PAY</Button>
+            <div className="flex items-center space-x-3">
+              <Checkbox id="sign-up" />
+              <label className="text-sm" htmlFor="sign-up">
+                <p>I confirm that by sign up,I am registering as a member of ASPA.</p>
+              </label>
+              </div>
+            
+              <div className="bg-[#A65656] p-1 rounded-lg items-center border border-[#FBF5F0]">
+    this is for yefgdklsp;
+</div>
+
+            <Button className="w-full py-4 bg-[#DD995B]">SAVE</Button>
           </form>
         </div>
       </div>

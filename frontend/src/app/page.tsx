@@ -1,15 +1,9 @@
-import Eventform from "./components/Eventform";
-import styles from './index.module.css';
-import Navbar from "./components/Navbar";
-
+import { Component } from "@/components/component"
 
 
 export default function Home() {
   return (
-    <>
-    <Navbar></Navbar>
-    <Eventform></Eventform>
-    </>
+     <Component/>
   );
 }
 
