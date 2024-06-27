@@ -9,6 +9,10 @@ import eventsService from './api/services/eventsService.js';
 
 // initialise openapi with express, serving api docs at '/api-docs-json' as json :(
 const app = express();
+
+// middleware
+app.use(express.json());
+
 const apiDoc = yamljs.load('./api/api-doc.yml');
 initialize({
   app,
