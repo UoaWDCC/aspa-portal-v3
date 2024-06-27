@@ -1,0 +1,23 @@
+{
+    "name": "ASPA Dev Container (Full)",
+    "dockerFile": "../dockerfile/Dockerfile",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "GitHub.copilot-chat",
+                "GitHub.copilot",
+                "ms-vscode.vscode-typescript-next"
+            ]
+        }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached",
+    "workspaceFolder": "/repo",
+    "postCreateCommand": "yarn install && cd backend && docker compose up --build -d && npx prisma migrate dev",
+    "postStartCommand": "cd backend && docker compose up -d && npx prisma migrate dev",
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ]
+}
