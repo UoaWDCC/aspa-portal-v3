@@ -1,6 +1,6 @@
 import React from "react"
 
-const EditRows = () => {
+const EditRows = ({ editFormData, handleEditFormChange, handleCancelClick }) => {
     return (
         <>
             <tr>
@@ -10,6 +10,8 @@ const EditRows = () => {
                         required={true}
                         placeholder="Enter Event Name"
                         name='eventTitle'
+                        value={editFormData.eventTitle}
+                        onChange={handleEditFormChange}
                     >
                     </input>
                 </td>
@@ -19,6 +21,8 @@ const EditRows = () => {
                         required={true}
                         placeholder="Enter the Date"
                         name='date'
+                        value={editFormData.date}
+                        onChange={handleEditFormChange}
                     >
                     </input>
                 </td>
@@ -28,6 +32,8 @@ const EditRows = () => {
                         required={true}
                         placeholder="Who is it created by"
                         name='createdBy'
+                        value={editFormData.createdBy}
+                        onChange={handleEditFormChange}
                     >
                     </input>
                 </td>
@@ -37,8 +43,14 @@ const EditRows = () => {
                         required={true}
                         placeholder="What the Status?"
                         name='status'
+                        value={editFormData.status}
+                        onChange={handleEditFormChange}
                     >
                     </input>
+                </td>
+                <td>
+                    <button type="submit">Save</button>
+                    <button type="button" onClick={handleCancelClick}>Cancel</button>
                 </td>
             </tr>
         </>
