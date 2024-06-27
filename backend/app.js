@@ -4,7 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 import yamljs from 'yamljs';
 
 import usersService from './api/services/usersService.js';
-import eventsService from './api/services/eventService.js';
+import eventsService from './api/services/eventsService.js';
 
 
 // initialise openapi with express, serving api docs at '/api-docs-json' as json :(
@@ -14,7 +14,7 @@ initialize({
   app,
   apiDoc: apiDoc,
   dependencies: {
-    usersService: usersService, 
+    usersService: usersService,
     eventsService: eventsService
   },
   paths: './api/paths',

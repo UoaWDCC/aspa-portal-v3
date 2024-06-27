@@ -7,7 +7,7 @@ const eventsService = {
     const events = prisma.event.findMany();
     return events;
   },
-  
+
 };
 
 export default eventsService;
