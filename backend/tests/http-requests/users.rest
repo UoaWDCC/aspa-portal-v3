@@ -1,0 +1,39 @@
+# Install the REST Client extension - "Send Request" should appear above each request
+# Only to help for development, you don't have to use this if you don't want to
+
+GET http://localhost:3000/users/allNames
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email": "testemail1@aspa.co.nz",
+  "firstName": "One",
+  "lastName": "Test",
+  "skillLevel": "beginner",
+  "phoneNumber": "0211111111"
+}
+
+###
+
+PUT http://localhost:3000/users/5
+Content-Type: application/json
+
+{
+  "email": "newtestemail1@aspa.co.nz",
+  "firstName": "NewFirstNameOne",
+  "lastName": "NewLastNameTest",
+  "university": "University of Auckland",
+  "studentId": 111111111,
+  "upi": "tone111",
+  "role": "user",
+  "skillLevel": "beginner",
+  "phoneNumber": "0211111111"
+}
+
+###
+
+DELETE http://localhost:3000/users/4
+
