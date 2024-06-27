@@ -1,7 +1,7 @@
 swagger: '2.0'
 basePath: '/'
 info:
-  title: 'A getting started API.'
+  title: 'ASPA Portal V3 API'
   version: '1.0.0'
 definitions:
   User:
@@ -9,7 +9,7 @@ definitions:
     properties:
       id:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       email:
         type: 'string'
       firstName:
@@ -41,7 +41,7 @@ definitions:
     properties:
       id:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       name:
         type: 'string'
       dateTime:
@@ -72,13 +72,13 @@ definitions:
     properties:
       id:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       userId:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       eventId:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       isPaid:
         type: 'boolean'
       paymentDateTime:
@@ -102,7 +102,7 @@ definitions:
     properties:
       id:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       name:
         type: 'string'
       title:
