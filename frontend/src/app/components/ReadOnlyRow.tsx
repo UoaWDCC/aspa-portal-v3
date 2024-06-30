@@ -1,4 +1,5 @@
 import React from "react"
+import styles from "./ReadOnlyRow.module.css"
 
 interface Event {
     id: number;
@@ -15,13 +16,13 @@ interface ReadOnlyRowProps {
 const ReadOnlyRow: React.FC<ReadOnlyRowProps> = ({ eventdata, handleEditClick, handleDeleteClick }) => {
     return (
         <tr>
-            <td>{eventdata.eventTitle}</td>
-            <td>{eventdata.date}</td>
-            <td>{eventdata.createdBy}</td>
-            <td>{eventdata.status}</td>
+            <td className={styles['table-text']}>{eventdata.eventTitle}</td>
+            <td className={styles['table-text']}>{eventdata.date}</td>
+            <td className={styles['table-text']}>{eventdata.createdBy}</td>
+            <td className={styles['table-text']}>{eventdata.status}</td>
             <td>
-                <button type="button" onClick={(event) => handleEditClick(event, eventdata)}> Edit </button>
-                <button type="button" onClick={() => handleDeleteClick(eventdata.id)}> Delete </button>
+                <button className={styles['edit-button']} type="button" onClick={(event) => handleEditClick(event, eventdata)}> Edit </button>
+                <button className={styles['delete-button']} type="button" onClick={() => handleDeleteClick(eventdata.id)}> Delete </button>
             </td>
         </tr>
     );

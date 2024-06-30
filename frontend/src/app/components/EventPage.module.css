@@ -1,0 +1,21 @@
+.event-table {
+    width: 60%;
+}
+
+.event-title {
+    padding: 8px;
+    text-align: left;
+    font-size: 25px;
+}
+
+.table-header {
+    color: #FBF5F0;
+    text-shadow: 12px 9px #5E4127;
+    font-size: 90px;
+    text-decoration: underline;
+}
+
+.solid-line {
+    border-top: 5px solid #FBF5F0;
+    width: 60%;
+}

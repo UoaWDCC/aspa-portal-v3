@@ -83,19 +83,22 @@ const EventPage = () => {
     return (
         <>
             <div className={styles.appcontainer}>
+                <h1 className={styles['table-header']}>All Events</h1>
+
+                <hr className={styles['solid-line']}></hr>
 
                 <form onSubmit={handleEditFormSubmit}>
 
-                    <table>
+                    <table className={styles['event-table']}>
 
                         <thead>
 
                             <tr>
-                                <th>Event Name </th>
-                                <th> Date </th>
-                                <th> Created By </th>
-                                <th> Status </th>
-                                <th> Action </th>
+                                <th className={styles['event-title']}>Event Name </th>
+                                <th className={styles['event-title']}> Date </th>
+                                <th className={styles['event-title']}> Created By </th>
+                                <th className={styles['event-title']}> Status </th>
+                                <th className={styles['event-title']}> Action </th>
                             </tr>
                         </thead>
                         <tbody>

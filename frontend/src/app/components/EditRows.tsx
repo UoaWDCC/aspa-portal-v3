@@ -1,4 +1,5 @@
 import React from "react"
+import styles from './EditRows.module.css'
 
 const EditRows = ({ editFormData, handleEditFormChange, handleCancelClick }) => {
     return (
@@ -49,8 +50,8 @@ const EditRows = ({ editFormData, handleEditFormChange, handleCancelClick }) => 
                     </input>
                 </td>
                 <td>
-                    <button type="submit">Save</button>
-                    <button type="button" onClick={handleCancelClick}>Cancel</button>
+                    <button className={styles['save-button']} type="submit">Save</button>
+                    <button className={styles['cancel-button']} type="button" onClick={handleCancelClick}>Cancel</button>
                 </td>
             </tr>
         </>
