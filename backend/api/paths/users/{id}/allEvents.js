@@ -3,23 +3,27 @@ export default function (usersService) {
     GET
   };
 
+  // TODO: wait for implementation of functions in eventsService.js
   async function GET(req, res, next) {
-    // res.json(await usersService.getAllUserNames());
     res.status(404).json({ message: 'Not implemented' });
   }
 
-  // TODO: parameter for apidoc
   GET.apiDoc = `
       summary: 'Returns all events a user has registered for, past and future.'
       operationId: 'getAllEventsForUser'
-      parameters: []
+      parameters:
+        - name: id
+          in: path
+          description: 'The ID of the user'
+          required: true
+          type: integer
       responses:
         200:
-          description: 'The first and last names of all users in the database in an array.'
+          description: 'A list of event objects that the user has registered for, past and future.'
           schema:
             type: 'array'
             items:
-              type: 'string'
+              $ref: '#/definitions/Event'
       `;
 
   return operations;

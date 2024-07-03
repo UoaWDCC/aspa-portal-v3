@@ -7,14 +7,8 @@ export default function (usersService) {
     res.json(await usersService.getAllUsers());
   }
 
-  // TODO: Error handling for malformed data
   async function POST(req, res, next) {
-    try {
-      res.json(await usersService.createUser(req.body));
-    } catch (error) {
-      console.error(error);
-      res.status(400).json({ message: error.message });
-    }
+    res.json(await usersService.createUser(req.body));
   }
 
   GET.apiDoc = `
@@ -38,7 +32,7 @@ export default function (usersService) {
       parameters:
         - in: 'body'
           name: 'body'
-          description: 'User object to be created'
+          description: 'User object to be created (university, studentId, and upi optional)'
           required: true
           schema:
             type: 'object'
@@ -52,7 +46,7 @@ export default function (usersService) {
               university:
                 type: 'string'
               studentId:
-                type: 'string'
+                type: 'integer'
               upi:
                 type: 'string'
               role:
@@ -68,12 +62,7 @@ export default function (usersService) {
           schema:
             $ref: '#/definitions/User'
         400:
-          description: 'Malformed data'
-          schema:
-            type: 'object'
-            properties:
-              message:
-                type: 'string'
+          description: 'Error: Bad Request (likely missing required fields)'
     `
 
   return operations;
