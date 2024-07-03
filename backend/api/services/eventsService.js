@@ -3,8 +3,8 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const eventsService = {
-  getAllEvents() {
-    const events = prisma.event.findMany();
+  async getAllEvents() {
+    const events = await prisma.event.findMany();
     return events;
   },
 

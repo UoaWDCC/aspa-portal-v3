@@ -51,6 +51,7 @@ const usersService = {
   },
 
   // DELETE /users/{id}
+  // TODO: You cannot delete a user if they have tickets associated with them
   async deleteUserById(id) {
     await prisma.user.delete({
       where: {
