@@ -43,35 +43,32 @@ export default function (eventsService) {
       parameters:
         - in: 'body'
           name: 'body'
-          description: 'User object to be created (university, studentId, and upi optional)'
+          description: 'Event to be created'
           required: true
           schema:
             type: 'object'
             properties:
-              email:
+              name:
                 type: 'string'
-              firstName:
+              dateTime:
                 type: 'string'
-              lastName:
+                format: 'date-time'
+              venue:
                 type: 'string'
-              university:
+              description:
                 type: 'string'
-              studentId:
+              price:
                 type: 'integer'
-              upi:
+              createdBy:
                 type: 'string'
-              role:
+              attendingExec:
                 type: 'string'
-              skillLevel:
-                type: 'string'
-              phoneNumber:
-                type: 'string'
-            required: ['email', 'firstName', 'lastName', 'role', 'skillLevel', 'phoneNumber']
+            required: ['name', 'dateTime', 'venue', 'description', 'price', 'createdBy', 'attendingExec']
       responses:
         200:
-          description: 'Returns the user object created in the database.'
+          description: 'Returns the event object created in the database.'
           schema:
-            $ref: '#/definitions/User'
+            $ref: '#/definitions/Event'
         400:
           description: 'Error: Bad Request (likely missing required fields)'
     `
