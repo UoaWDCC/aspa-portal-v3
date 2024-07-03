@@ -15,31 +15,31 @@ export default function (eventsService) {
   
     // NOTE: We could also use a YAML string here.
     GET.apiDoc = {
-      summary: 'Retuns all events.',
-      operationId: 'getAllEvents',
-      parameters: [],
-      responses: {
-        200: {
-          description: 'A list of events that match the requested name.',
-          schema: {
-            type: 'array',
-            items: {
-              $ref: '#/definitions/Event'
-            }
-          }
-        },
-        default: {
-          description: 'An error occurred',
-          schema: {
-            additionalProperties: true
+    "summary": "Returns all events.",
+    "operationId": "getAllEvents",
+    "parameters": [],
+    "responses": {
+      "200": {
+        "description": "A list of events that match the requested name.",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Event"
           }
         }
+      },
+      "default": {
+        "description": "An error occurred",
+        "schema": {
+          "additionalProperties": true
+        }
       }
-    };
+    }
+  }
 
     POST.apiDoc = `
-      summary: 'Creates a new user object in the database.'
-      operationId: 'createUser'
+      summary: 'Creates a new event.'
+      operationId: 'createEvent'
       parameters:
         - in: 'body'
           name: 'body'
