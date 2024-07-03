@@ -50,6 +50,18 @@ const usersService = {
     return user;
   },
 
+  async updateUserRole(id, role) {
+    const user = await prisma.user.update({
+      where: {
+        id: parseInt(id),
+      },
+      data: {
+        role,
+      },
+    });
+    return user;
+  },
+
   // DELETE /users/{id}
   // TODO: You cannot delete a user if they have tickets associated with them
   async deleteUserById(id) {
