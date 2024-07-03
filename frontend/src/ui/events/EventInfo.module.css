@@ -34,6 +34,7 @@
 
 .infoBorder{
     display: flex;
+    justify-content: space-evenly;
     flex-direction:row;
     border-radius:75px;
     background-color: #AA6F29;
@@ -42,13 +43,16 @@
     width: 100%;
     min-height: 480px;
     height: 100%;
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right:50px;
     margin: 0 auto;
 }
 
 .info{
     display: flex;
     flex-direction:column;
+    align-items: space-evenly;
 }
 
 .info h1{
@@ -56,6 +60,7 @@
     text-decoration: underline 5px;
     text-align: center;
     line-height:85px;
+    letter-spacing: -1px;
     width: 570px;
     font-size: 90px;
     color: #F4E5D7;
@@ -66,4 +71,5 @@
 .info p{
     font-size: 30px;
     color: #FBF5F0;
+    margin: 15px 50px;
 }
