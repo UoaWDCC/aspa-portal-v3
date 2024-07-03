@@ -14,7 +14,7 @@ export default function (usersService) {
 
   async function PUT(req, res, next) {
     if (req.body.role) {
-      res.status(401).json({ message: "Cannot update user role." });
+      res.status(401).json({ message: "Cannot update user role using this endpoint." });
     }
     try {
       const user = await usersService.updateUser(req.params.id, req.body);
@@ -119,13 +119,13 @@ export default function (usersService) {
                 type: string
                 default: 'Bad Request.'
         401:
-          description: 'Error: Cannot update user role.'
+          description: 'Unauthorized: Cannot update user role using this endpoint.'
           schema:
             type: 'object'
             properties:
               message:
                 type: string
-                default: 'Cannot update user role.'
+                default: 'Cannot update user role using this endpoint.'
         404:
           description: 'Error: User not found in the database.'
           schema:
