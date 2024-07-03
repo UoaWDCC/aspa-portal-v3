@@ -1,6 +1,6 @@
 export default function (usersService) {
   let operations = {
-    GET, PUT, DELETE, PATCH
+    GET, PUT, PATCH
   };
 
   async function GET(req, res, next) {
@@ -28,13 +28,7 @@ export default function (usersService) {
     }
   }
 
-  // TODO: BROKEN, wait for implementation of deleting tickets in ticketsService.js for implementing
-  async function DELETE(req, res, next) {
-    await usersService.deleteUserById(req.params.id);
-    res.status(204).json({ message: "Successfully deleted!" });
-  }
-
-  // TODO: PROTECT THIS ROUTE
+  // TODO: PROTECT THIS ROUTE or just remove it if Gurjot doesn't want it lmao
   async function PATCH(req, res, next) {
     if (!req.body.role) {
       res.status(400).end();
@@ -171,20 +165,6 @@ export default function (usersService) {
                 type: string
                 default: 'User not found.'
   `;
-
-  DELETE.apiDoc = `
-      summary: 'Deletes a specific user, given their userID.'
-      operationId: 'deleteUserById'
-      parameters:
-        - name: id
-          in: path
-          description: 'The ID of the user'
-          required: true
-          type: integer
-      responses:
-        204:
-          description: 'User successfully deleted.'
-      `;
 
   return operations;
 }
