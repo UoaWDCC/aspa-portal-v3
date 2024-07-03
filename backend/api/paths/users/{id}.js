@@ -1,6 +1,6 @@
 export default function (usersService) {
   let operations = {
-    GET, PUT, PATCH
+    GET, PUT
   };
 
   async function GET(req, res, next) {
@@ -25,19 +25,6 @@ export default function (usersService) {
       }
     } catch (error) {
       res.status(400).json({ message: "Bad Request." });
-    }
-  }
-
-  // TODO: PROTECT THIS ROUTE or just remove it if Gurjot doesn't want it lmao
-  async function PATCH(req, res, next) {
-    if (!req.body.role) {
-      res.status(400).end();
-    }
-    const user = await usersService.updateUserRole(req.params.id, req.body.role);
-    if (user) {
-      res.json(user);
-    } else {
-      res.status(404).json({ message: "User not found." });
     }
   }
 
@@ -129,42 +116,6 @@ export default function (usersService) {
                 type: string
                 default: 'User not found.'
       `
-
-  PATCH.apiDoc = `
-      summary: 'Updates a specific user role, given their userID.'
-      operationId: 'updateUserRoleById'
-      parameters:
-        - name: id
-          in: path
-          description: 'The ID of the user'
-          required: true
-          type: integer
-        - in: 'body'
-          name: 'role'
-          description: 'Object representing the new role of the user. "role" should either be "user" or "admin".'
-          required: true
-          schema:
-            type: 'object'
-            properties:
-              role:
-                type: 'string'
-                enum: ['user', 'admin']
-      responses:
-        200:
-          description: 'User role successfully updated.'
-          schema:
-            $ref: '#/definitions/User'
-        400:
-          description: 'Error: Bad Request (likely entered a non-valid role or nothing at all)'
-        404:
-          description: 'Error: User not found in the database.'
-          schema:
-            type: 'object'
-            properties:
-              message:
-                type: string
-                default: 'User not found.'
-  `;
 
   return operations;
 }

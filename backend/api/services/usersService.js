@@ -48,19 +48,6 @@ const usersService = {
       data,
     });
     return user;
-  },
-
-  // PATCH /users/{id}
-  async updateUserRole(id, role) {
-    const user = await prisma.user.update({
-      where: {
-        id: parseInt(id),
-      },
-      data: {
-        role,
-      },
-    });
-    return user;
   }
 };
 

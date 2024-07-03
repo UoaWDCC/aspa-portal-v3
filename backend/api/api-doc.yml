@@ -19,7 +19,8 @@ definitions:
       university:
         type: 'string'
       studentId:
-        type: 'string'
+        type: 'integer'
+        format: 'int32'
       upi:
         type: 'string'
       role:
