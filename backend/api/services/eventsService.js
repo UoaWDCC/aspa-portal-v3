@@ -46,7 +46,7 @@ const eventsService = {
   
 
   // GET /users/totalNumber
-  async getAllEventUsers(id) {
+  async getAllEventMembers(id) {
     const event = await this.getEventById(id);
     const users = event.users
     return users;
