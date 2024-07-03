@@ -1,9 +1,15 @@
 import EventInfo from '@/ui/events/EventInfo';
+import UpcomingEvents from '@/ui/events/UpcomingEvents';
 
 export default function EventDetails() {
     return (
-      <section id="Event-Details">
+      <div>
+         <section id="Event-Details">
         <EventInfo/>
-      </section>
+        </section>
+        <section id="UpcomingEvents">
+        <UpcomingEvents/>
+        </section>
+      </div>
     );
   }
