@@ -5,7 +5,6 @@ services:
     container_name: aspa-db
     image: mysql
     restart: always
-    command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: aspadb
@@ -16,6 +15,8 @@ services:
       - 3307:3307
     expose:
       - 3307
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   adminer:
     container_name: aspa-adminer
@@ -23,3 +24,5 @@ services:
     restart: always
     ports:
       - 8080:8080
+
+  

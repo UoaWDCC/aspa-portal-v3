@@ -1,0 +1,48 @@
+/* Footer.module.css */
+.footer {
+    display:flex;
+    flex-direction: row;
+    color: white;
+    padding: 1.5em 0em 3.5em 1.5em;
+    min-width: 100vw;
+  }
+  
+
+.leftcontainer {
+  min-width:50%;
+  height: 100%;
+  padding-left: 2em;
+}
+
+.rightcontainer {
+    min-width:50%;
+  }
+
+.rightcontainer h1 {
+    display: inline-block;
+    margin-right: 3em;
+}
+
+.socialmedia {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 25%;
+  min-width: 350px;
+  padding-top: 1em;
+}
+
+
+.h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.p {
+  font-size: 20px;
+  width: 80%;
+  line-height: 1.1;
+  height: auto;
+  overflow-y: hidden;
+}

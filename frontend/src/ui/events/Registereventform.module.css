@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    padding: 28px;
+    margin-bottom: 6em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 45px;
+    background: #87562A;
+}
+
+.header {
+    color: #FFFFFF;
+    margin-bottom: 1em;
+    width: 964px;
+    max-width: 90%;
+}
+
+.header h1 {
+    max-width: 178px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 4px solid #FFFFFF;
+    line-height: 1.3;
+    overflow-y: hidden;
+    margin-bottom: 8px;
+}
+
+.content {
+    width: 964px;
+    max-width: 100%;
+}
+
+.input {
+    margin-bottom: 0.5em;
+}
+
+.input label {
+    display: block;
+    color: #FFFFFF;
+    margin-bottom: 2px;
+}
+
+.input input {
+    height: 40px;
+    width: 100%;
+    padding: 0 10px;
+    border-radius: 45px;
+    background-color: #FFFFFF;
+}
+
+
+
+
+
+.radioinput {
+    color: #FFFFFF;
+}
+
+.radioinput input {
+    position: relative;
+    left: 1em;
+    top:1px
+}
+
+.radioinput label {
+    font-weight: bold;
+}
+
+.radioinput span {
+    position: relative;
+    left: 1.2em;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 25px;
+    text-align: center;
+    background: #DD995B;
+    padding: 14px 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 964px;
+    max-width: 90%;
+}
