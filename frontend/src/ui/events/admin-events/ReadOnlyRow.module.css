@@ -1,21 +1,28 @@
-.save-button {
+.edit-button {
     background-color: #AA6F29;
     outline: 5px solid #FBF5F0;
     color: #FBF5F0;
     border-radius: 20px;
     padding: 10px 15px;
-    margin: 0 5px 10px;
+    margin: 10px 10px 20px;
     width: 100px;
 
 }
 
-.cancel-button {
+.delete-button {
     background-color: #A65656;
     color: #FBF5F0;
     border-radius: 20px;
     outline: 5px solid #FBF5F0;
     padding: 10px 15px;
-    margin: 0 5px 10px;
+    margin: 10px 10px 20px;
     width: 100px;
+}
 
+
+.table-text {
+    padding: 8px;
+    text-align: left;
+    font-size: 20px;
+    color: #FBF5F0;
 }

@@ -80,10 +80,33 @@ const EventPage = () => {
     }
 
     const [editContactId, setEditContactId] = useState(null);
+
+    const [searchParam, setSearchParam] = useState('');
+
+    const handleSearchChange = (event) => {
+        setSearchParam(event.target.value);
+    }
+
+    const filteredEventDatas = eventdatas.filter((eventdata) =>
+        eventdata.eventTitle.toLowerCase().includes(searchParam.toLowerCase())
+    );
+
+
+
     return (
         <>
             <div className={styles.appcontainer}>
                 <h1 className={styles['table-header']}>All Events</h1>
+
+                <div className={styles['search-bar']}>
+                    <input
+                        className={styles['search-input']}
+                        type='text'
+                        placeholder='Search Event'
+                        value={searchParam}
+                        onChange={handleSearchChange}
+                    />
+                </div>
 
                 <hr className={styles['solid-line']}></hr>
 
@@ -102,9 +125,21 @@ const EventPage = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {eventdatas.map((eventdata) => (
-                                <Fragment>
-                                    {editContactId === eventdata.id ? <EditRows editFormData={editFormData} handleEditFormChange={handleEditFormChange} handleCancelClick={handleCancelClick} /> : <ReadOnlyRow eventdata={eventdata} handleEditClick={handleEditClick} handleDeleteClick={handleDeleteClick} />}
+                            {filteredEventDatas.map((eventdata) => (
+                                <Fragment key={eventdata.id}>
+                                    {editContactId === eventdata.id ? (
+                                        <EditRows
+                                            editFormData={editFormData}
+                                            handleEditFormChange={handleEditFormChange}
+                                            handleCancelClick={handleCancelClick}
+                                        />
+                                    ) : (
+                                        <ReadOnlyRow
+                                            eventdata={eventdata}
+                                            handleEditClick={handleEditClick}
+                                            handleDeleteClick={handleDeleteClick}
+                                        />
+                                    )}
                                 </Fragment>
                             ))}
                         </tbody>
