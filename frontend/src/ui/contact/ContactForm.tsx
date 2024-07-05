@@ -13,7 +13,7 @@ function ContactForm(){
     }
 
     const handleSubmit = (event: React.ChangeEvent<any>) => {
-        alert(`Thank you for submitting your query, we will get back to you as soon as possible.}`)
+        alert(`Thank you for submitting your query, we will get back to you as soon as possible.`)
     }
 
   return (
