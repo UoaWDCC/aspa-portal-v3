@@ -8,6 +8,9 @@ export default function (usersService) {
   }
 
   async function POST(req, res, next) {
+    if (req.body.role === 'admin') {
+      res.status(401).json({ message: "Cannot create admin users." });
+    }
     res.json(await usersService.createUser(req.body));
   }
 
@@ -27,7 +30,7 @@ export default function (usersService) {
       `;
 
   POST.apiDoc = `
-      summary: 'Creates a new user object in the database.'
+      summary: 'Creates a new user object in the database (admin creation not allowed).'
       operationId: 'createUser'
       parameters:
         - in: 'body'
@@ -35,34 +38,22 @@ export default function (usersService) {
           description: 'User object to be created (university, studentId, and upi optional)'
           required: true
           schema:
-            type: 'object'
-            properties:
-              email:
-                type: 'string'
-              firstName:
-                type: 'string'
-              lastName:
-                type: 'string'
-              university:
-                type: 'string'
-              studentId:
-                type: 'integer'
-              upi:
-                type: 'string'
-              role:
-                type: 'string'
-              skillLevel:
-                type: 'string'
-              phoneNumber:
-                type: 'string'
-            required: ['email', 'firstName', 'lastName', 'role', 'skillLevel', 'phoneNumber']
+            $ref: '#/definitions/User'
       responses:
         200:
           description: 'Returns the user object created in the database.'
           schema:
             $ref: '#/definitions/User'
         400:
-          description: 'Error: Bad Request (likely missing required fields)'
+          description: 'Error: Bad Request (likely wrongly formatted fields or missing required fields)'
+        401:
+          description: 'Error: Cannot create admin users.'
+          schema:
+            type: 'object'
+            properties:
+              message:
+                type: string
+                default: 'Cannot create admin users.'
     `
 
   return operations;

@@ -80,8 +80,6 @@ export default function (usersService) {
                 type: 'integer'
               upi:
                 type: 'string'
-              role:
-                type: 'string'
               skillLevel:
                 type: 'string'
               phoneNumber:
@@ -92,7 +90,7 @@ export default function (usersService) {
           schema:
             $ref: '#/definitions/User'
         400:
-          description: 'Error: Bad Request (likely missing required fields)'
+          description: 'Error: Bad Request (likely wrongly formatted fields or missing required fields)'
           schema:
             type: 'object'
             properties:

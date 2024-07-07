@@ -10,25 +10,37 @@ definitions:
       id:
         type: 'integer'
         format: 'int32'
+        description: Unique identifier for the User.
       email:
         type: 'string'
+        format: email
+        description: Email address of the User.
       firstName:
         type: 'string'
+        description: First name of the User.
       lastName:
         type: 'string'
+        description: Last name of the User.
       university:
         type: 'string'
+        description: University the User attends, if applicable.
       studentId:
         type: 'integer'
         format: 'int32'
+        description: Unique student identifier, if applicable.
       upi:
         type: 'string'
+        description: Unique personal identifier, if applicable.
       role:
         type: 'string'
+        default: user
+        description: Role of the User in the system.
       skillLevel:
         type: 'string'
+        description: Skill level of the User.
       phoneNumber:
         type: 'string'
+        description: Contact phone number of the User.
     required:
       - 'id'
       - 'email'
