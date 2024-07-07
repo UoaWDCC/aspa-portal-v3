@@ -5,7 +5,12 @@ export default function (eventsService) {
   };
 
   async function GET(req, res, next) {
-    res.status(200).json(await eventsService.getAllEvents());
+    const allEvents = await eventsService.getAllEvents();
+    if (allEvents.length === 0) {
+      res.status(204).json({ message: "No events found" });
+    } else {
+      res.json(allEvents);
+    }
   }
 
   async function POST(req, res, next) {
@@ -23,10 +28,9 @@ export default function (eventsService) {
           type: "array"
           items: 
             $ref: "#/definitions/Event"
-      default: 
-        description: "An error occurred"
-        schema: 
-          additionalProperties: true
+      204:
+        description: "No events found"
+
   `;
 
   POST.apiDoc = `

@@ -4,7 +4,14 @@ export default function (eventsService) {
   };
 
   async function GET(req, res, next) {
-    res.json(await eventsService.getNumberOfEventTickets(req.params.eventId));
+    const numberOfTickets = await eventsService.getNumberOfEventTickets(
+      req.params.eventId
+    );
+    if (!numberOfTickets) {
+      res.status(204).json({ message: "No tickets in event" });
+    } else {
+      res.json(numberOfTickets);
+    }
   }
 
   GET.apiDoc = `

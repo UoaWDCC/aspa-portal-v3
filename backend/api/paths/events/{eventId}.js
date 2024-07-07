@@ -6,7 +6,16 @@ export default function (eventsService) {
   };
 
   async function GET(req, res, next) {
-    res.json(await eventsService.getEventById(req.params.eventId));
+    try {
+      const event = await eventsService.getEventById(req.params.eventId);
+      if (!event) {
+        res.status(404).json({ message: "Event not found" });
+      } else {
+        res.json(event);
+      }
+    } catch (error) {
+      next(error);
+    }
   }
 
   async function DELETE(req, res, next) {
@@ -60,12 +69,14 @@ export default function (eventsService) {
           required: true
           type: integer
         responses:
-          200:
-            description: ''
+          204:
+            description: 'Successfully deleted'
             schema:
               type: 'array'
               items:
                 type: 'string'
+          404:
+            description: 'Event not found awdawd'
         `;
 
   PUT.apiDoc = `

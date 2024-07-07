@@ -4,7 +4,12 @@ export default function (eventsService) {
   };
 
   async function GET(req, res, next) {
-    res.json(await eventsService.getAllEventMembers());
+    const members = await eventsService.getAllEventMembers(req.params.eventId);
+    if (!members) {
+      res.status(204).json({ message: "No members in event" });
+    } else {
+      res.json(members);
+    }
   }
 
   GET.apiDoc = `

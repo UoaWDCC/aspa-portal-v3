@@ -3,12 +3,13 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const eventsService = {
-  // GET /users
+  // GET /events
   async getAllEvents() {
     const events = await prisma.event.findMany();
     return events;
   },
 
+  // GET /events/past
   async getAllPastEvents() {
     const now = new Date();
     const events = await prisma.event.findMany({
@@ -21,6 +22,7 @@ const eventsService = {
     return events;
   },
 
+  // GET /events/upcoming
   async getAllUpcomingEvents() {
     const now = new Date();
     const events = await prisma.event.findMany({
@@ -33,7 +35,7 @@ const eventsService = {
     return events;
   },
 
-  // GET /users/{id}
+  // GET /events/{eventId}
   async getEventById(id) {
     const event = await prisma.event.findUnique({
       where: {
@@ -43,60 +45,52 @@ const eventsService = {
     return event;
   },
 
-  // GET /users/totalNumber
+  // GET /events/{eventId}/members
   async getAllEventMembers(id) {
     const event = await this.getEventById(id);
-    if (!event.users) {
-      return 0;
-    } else {
-      const users = event.users;
-      return users;
-    }
+    const users = event.users;
+    return users;
   },
 
-  // POST /users
+  // GET /events/{eventId}/allTickets
   async getAllEventTickets(id) {
     const event = await this.getEventById(id);
-    if (!event.tickets) {
-      return 0;
-    } else {
-      const tickets = event.tickets;
-      return tickets;
-    }
+    const tickets = event.tickets;
+    return tickets;
   },
 
+  // GET /events/{eventId}/unpaidTickets
   async getAllUnpaidEventTickets(id) {
     const event = await this.getEventById(id);
-    if (!event.tickets) {
-      return 0;
-    } else {
-      const tickets = event.tickets;
+    const tickets = event.tickets;
+    if (tickets) {
       const unpaidTickets = tickets.filter((ticket) => !ticket.isPaid);
       return unpaidTickets;
+    } else {
+      return null;
     }
   },
 
+  // GET /events/{eventId}/paidTickets
   async getAllPaidEventTickets(id) {
     const event = await this.getEventById(id);
-    if (!event.tickets) {
-      return 0;
-    } else {
-      const tickets = event.tickets;
+    const tickets = event.tickets;
+    if (tickets) {
       const paidTickets = tickets.filter((ticket) => ticket.isPaid);
       return paidTickets;
+    } else {
+      return null;
     }
   },
 
+  // GET /events/{eventId}/totalTicketNumber
   async getNumberOfEventTickets(id) {
     const event = await this.getEventById(id);
-    if (!event.tickets) {
-      return 0;
-    } else {
-      const tickets = event.tickets;
-      return tickets.length;
-    }
+    const tickets = event.tickets;
+    return tickets.length;
   },
 
+  // POST /events
   async createEvent(data) {
     const event = await prisma.event.create({
       data,
@@ -104,6 +98,7 @@ const eventsService = {
     return event;
   },
 
+  //PUT /events/{eventId}
   async updateEvent(id, data) {
     const event = await prisma.event.update({
       where: {
@@ -114,8 +109,7 @@ const eventsService = {
     return event;
   },
 
-  // DELETE /users/{id}
-  // TODO: You cannot delete a user if they have tickets associated with them
+  //DELETE /events/{eventId}
   async deleteEventById(id) {
     await prisma.event.delete({
       where: {
