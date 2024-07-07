@@ -1,7 +1,6 @@
-
-import { signIn } from "../../../authentication/auth"
+import { signIn } from "../../../authentication/auth";
  
-export function SignIn() {
+export default function SignIn() {
   return (
     <form
       action={async () => {
@@ -9,7 +8,7 @@ export function SignIn() {
         await signIn("google")
       }}
     >
-      <button type="submit">Signin with Google</button>
+      <button type="submit">Sign in with Google</button>
     </form>
   )
 } 
