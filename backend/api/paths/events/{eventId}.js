@@ -1,89 +1,111 @@
 export default function (eventsService) {
-    let operations = {
-      DELETE, PUT, GET
-    };
+  let operations = {
+    DELETE,
+    PUT,
+    GET,
+  };
 
-    
-    async function GET(req, res, next) {
-      res.json(await usersService.getEventById());
+  async function GET(req, res, next) {
+    res.json(await eventsService.getEventById(req.params.eventId));
+  }
+
+  async function DELETE(req, res, next) {
+    const event = await eventsService.getEventById(req.params.eventId);
+    if (!event) {
+      res.status(404).json({ message: "Event not found!" });
+    } else {
+      await eventsService.deleteEventById(req.params.eventId);
+      res.status(204).json({ message: "Successfully deleted!" });
     }
-  
-    GET.apiDoc = `
-        summary: 'Returns the event given id.'
-        operationId: 'getEventById'
-        parameters: []
-        responses:
-          200:
-            description: 'The first and last names of all users in the database in an array.'
-            schema:
-              type: 'array'
-              items:
-                type: 'string'
-        `;
+  }
 
+  async function PUT(req, res, next) {
+    try {
+      const updatedEvent = await eventsService.updateEvent(
+        req.params.eventId,
+        req.body
+      );
+      res.json(updatedEvent);
+    } catch (error) {
+      res
+        .status(500)
+        .json({ error: "An error occurred while updating the event" });
+    }
+  }
 
-    async function DELETE(req, res, next) {
-        await eventsService.deleteEventById(req.params.id);
-        res.status(204).json({ message: "Successfully deleted!" });
-      }
+  GET.apiDoc = `
+  summary: 'Returns the event given id.'
+  operationId: 'getEventById'
+  parameters:
+  - in: path
+    name: eventId
+    description: 'The ID of the event'
+    required: true
+    type: integer
+  responses:
+    200:
+      description: 'Returns event object.'
+      schema:
+        $ref: '#/definitions/Event'
 
-      async function PUT(req, res, next) {
-        try {
-          const updatedEvent = await eventsService.updateEvent(req.params.id, req.body);
-          res.json(updatedEvent);
-        } catch (error) {
-          res.status(500).json({ error: 'An error occurred while updating the event' });
-        }
-      }
-  
-    DELETE.apiDoc = `
+  `;
+
+  DELETE.apiDoc = `
         summary: 'Deletes the event from the database.'
-        operationId: 'getEventById'
-        parameters: []
-        responses:
-          200:
-            description: 'The first and last names of all users in the database in an array.'
-            schema:
-              type: 'array'
-              items:
-                type: 'string'
-        `;
-
-        PUT.apiDoc = `
-      summary: 'Updates the event in the database.'
-      operationId: 'updateUserRoleById'
-      parameters:
-        - name: id
-          in: path
-          description: 'The ID of the user'
+        operationId: 'deleteEventById'
+        parameters:
+        - in: path
+          name: eventId
+          description: 'The ID of the event'
           required: true
           type: integer
-        - in: 'body'
-          name: 'role'
-          description: 'Object representing the new role of the user. "role" should either be "user" or "admin".'
-          required: true
-          schema:
-            type: 'object'
-            properties:
-              role:
+        responses:
+          200:
+            description: ''
+            schema:
+              type: 'array'
+              items:
                 type: 'string'
-                enum: ['user', 'admin']
+        `;
+
+  PUT.apiDoc = `
+      summary: 'Updates the event in the database.'
+      operationId: 'updateEvent'
+      parameters:
+      - in: path
+        name: eventId
+        description: 'The ID of the event'
+        required: true
+        type: integer
+      - in: 'body'
+        name: 'body'
+        description: 'Event details to be editted'
+        required: true
+        schema:
+          type: 'object'
+          properties:
+            name:
+              type: 'string'
+            dateTime:
+              type: 'string'
+              format: 'date-time'
+            venue:
+              type: 'string'
+            description:
+              type: 'string'
+            price:
+              type: 'integer'
+            createdBy:
+              type: 'string'
+            attendingExec:
+              type: 'string'
+          required: ['name', 'dateTime', 'venue', 'description', 'price', 'createdBy', 'attendingExec']
       responses:
         200:
-          description: 'User role successfully updated.'
+          description: 'event successfully updated.'
           schema:
-            $ref: '#/definitions/User'
-        400:
-          description: 'Error: Bad Request (likely entered a non-valid role or nothing at all)'
-        404:
-          description: 'Error: User not found in the database.'
-          schema:
-            type: 'object'
-            properties:
-              message:
-                type: string
-                default: 'User not found.'
+            $ref: '#/definitions/Event'
   `;
-  
-    return operations;
-  }
+
+  return operations;
+}

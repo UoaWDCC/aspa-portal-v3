@@ -3,7 +3,6 @@ import { initialize } from 'express-openapi';
 import swaggerUi from 'swagger-ui-express';
 import yamljs from 'yamljs';
 
-import usersService from './api/services/usersService.js';
 import eventsService from './api/services/eventsService.js';
 
 
@@ -18,7 +17,6 @@ initialize({
   app,
   apiDoc: apiDoc,
   dependencies: {
-    usersService: usersService,
     eventsService: eventsService
   },
   paths: './api/paths',
