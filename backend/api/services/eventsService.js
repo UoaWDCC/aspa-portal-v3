@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -13,8 +13,8 @@ const eventsService = {
     const now = new Date();
     const events = await prisma.event.findMany({
       where: {
-        date: {
-          lt: now, 
+        dateTime: {
+          lt: now,
         },
       },
     });
@@ -25,8 +25,8 @@ const eventsService = {
     const now = new Date();
     const events = await prisma.event.findMany({
       where: {
-        date: {
-          gt: now, 
+        dateTime: {
+          gt: now,
         },
       },
     });
@@ -43,42 +43,59 @@ const eventsService = {
     return event;
   },
 
-  
-
   // GET /users/totalNumber
   async getAllEventMembers(id) {
     const event = await this.getEventById(id);
-    const users = event.users
-    return users;
+    if (!event.users) {
+      return 0;
+    } else {
+      const users = event.users;
+      return users;
+    }
   },
 
   // POST /users
   async getAllEventTickets(id) {
     const event = await this.getEventById(id);
-    const tickets = event.tickets;
-    return tickets;
+    if (!event.tickets) {
+      return 0;
+    } else {
+      const tickets = event.tickets;
+      return tickets;
+    }
   },
 
   async getAllUnpaidEventTickets(id) {
     const event = await this.getEventById(id);
-    const tickets = event.tickets;
-    const unpaidTickets = tickets.filter(ticket => !ticket.isPaid);
-    return unpaidTickets;
+    if (!event.tickets) {
+      return 0;
+    } else {
+      const tickets = event.tickets;
+      const unpaidTickets = tickets.filter((ticket) => !ticket.isPaid);
+      return unpaidTickets;
+    }
   },
-  
+
   async getAllPaidEventTickets(id) {
     const event = await this.getEventById(id);
-    const tickets = event.tickets;
-    const paidTickets = tickets.filter(ticket => ticket.isPaid);
-    return paidTickets;
+    if (!event.tickets) {
+      return 0;
+    } else {
+      const tickets = event.tickets;
+      const paidTickets = tickets.filter((ticket) => ticket.isPaid);
+      return paidTickets;
+    }
   },
 
   async getNumberOfEventTickets(id) {
     const event = await this.getEventById(id);
-    const tickets = event.tickets;
-    return tickets.length;
+    if (!event.tickets) {
+      return 0;
+    } else {
+      const tickets = event.tickets;
+      return tickets.length;
+    }
   },
-
 
   async createEvent(data) {
     const event = await prisma.event.create({
@@ -105,7 +122,7 @@ const eventsService = {
         id: parseInt(id),
       },
     });
-  }
+  },
 };
 
 export default eventsService;

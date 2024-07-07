@@ -1,24 +1,24 @@
 export default function (eventsService) {
-    let operations = {
-      GET
-    };
-  
-    async function GET(req, res, next) {
-      res.json(await usersService.getAllUpcomingEvents());
-    }
-  
-    GET.apiDoc = `
+  let operations = {
+    GET,
+  };
+
+  async function GET(req, res, next) {
+    res.json(await eventsService.getAllUpcomingEvents());
+  }
+
+  GET.apiDoc = `
         summary: 'Returns all upcoming events.'
         operationId: 'getAllUpcomingEvents'
         parameters: []
         responses:
           200:
-            description: 'The first and last names of all users in the database in an array.'
+            description: 'All upcoming events from the current dateTime'
             schema:
               type: 'array'
               items:
-                type: 'string'
+                $ref: '#/definitions/Event'
         `;
-  
-    return operations;
-  }
+
+  return operations;
+}

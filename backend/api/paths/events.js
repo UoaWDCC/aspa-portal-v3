@@ -1,43 +1,35 @@
 export default function (eventsService) {
-    let operations = {
-      GET, POST
-    };
-  
-    async function GET(req, res, next) {
-      res.status(200).json(await eventsService.getAllEvents());
-    }
+  let operations = {
+    GET,
+    POST,
+  };
 
-    async function POST(req, res, next) {
-      res.json(await eventsService.createEvent(req.body));
-    }
-
-    
-  
-    // NOTE: We could also use a YAML string here.
-    GET.apiDoc = {
-    "summary": "Returns all events.",
-    "operationId": "getAllEvents",
-    "parameters": [],
-    "responses": {
-      "200": {
-        "description": "A list of events that match the requested name.",
-        "schema": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Event"
-          }
-        }
-      },
-      "default": {
-        "description": "An error occurred",
-        "schema": {
-          "additionalProperties": true
-        }
-      }
-    }
+  async function GET(req, res, next) {
+    res.status(200).json(await eventsService.getAllEvents());
   }
 
-    POST.apiDoc = `
+  async function POST(req, res, next) {
+    res.json(await eventsService.createEvent(req.body));
+  }
+
+  GET.apiDoc = `
+    summary: "Returns all events."
+    operationId: "getAllEvents"
+    parameters: []
+    responses: 
+      200: 
+        description: "A list of all events."
+        schema: 
+          type: "array"
+          items: 
+            $ref: "#/definitions/Event"
+      default: 
+        description: "An error occurred"
+        schema: 
+          additionalProperties: true
+  `;
+
+  POST.apiDoc = `
       summary: 'Creates a new event.'
       operationId: 'createEvent'
       parameters:
@@ -71,7 +63,7 @@ export default function (eventsService) {
             $ref: '#/definitions/Event'
         400:
           description: 'Error: Bad Request (likely missing required fields)'
-    `
-  
-    return operations;
-  }
+    `;
+
+  return operations;
+}
