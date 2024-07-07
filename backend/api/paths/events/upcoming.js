@@ -4,7 +4,12 @@ export default function (eventsService) {
   };
 
   async function GET(req, res, next) {
-    res.json(await eventsService.getAllUpcomingEvents());
+    const upcomingEvents = await eventsService.getAllUpcomingEvents();
+    if (upcomingEvents.length === 0) {
+      res.status(204).json({ message: "No upcoming events" });
+    } else {
+      res.json(upcomingEvents);
+    }
   }
 
   GET.apiDoc = `

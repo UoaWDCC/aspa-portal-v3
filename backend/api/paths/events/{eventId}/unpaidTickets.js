@@ -4,12 +4,19 @@ export default function (eventsService) {
   };
 
   async function GET(req, res, next) {
-    res.json(await eventsService.getAllUnpaidEventTickets());
+    const unpaidTickets = await eventsService.getAllUnpaidEventTickets(
+      req.params.eventId
+    );
+    if (!unpaidTickets) {
+      res.status(204).json({ message: "No unpaid tickets in event" });
+    } else {
+      res.json(unpaidTickets);
+    }
   }
 
   GET.apiDoc = `
       summary: 'Returns all unpaid event tickets.'
-      operationId: 'getAllPaidEventTickets'
+      operationId: 'getAllUnpaidEventTickets'
       parameters:
       - in: path
         name: eventId
@@ -24,7 +31,7 @@ export default function (eventsService) {
             items:
               $ref: '#/definitions/Ticket'
         204:    
-          description: 'No tickets found in event.'       
+          description: 'No unpaid tickets found in event.'       
       `;
 
   return operations;

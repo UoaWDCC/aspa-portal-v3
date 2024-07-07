@@ -4,7 +4,14 @@ export default function (eventsService) {
   };
 
   async function GET(req, res, next) {
-    res.json(await usersService.getAllEventTickets());
+    const allTickets = await eventsService.getAllEventTickets(
+      req.params.eventId
+    );
+    if (!allTickets) {
+      res.status(204).json({ message: "No tickets in event" });
+    } else {
+      res.json(allTickets);
+    }
   }
 
   GET.apiDoc = `
@@ -18,7 +25,7 @@ export default function (eventsService) {
         type: integer
       responses:
         200:
-          description: 'All tickets registered to the event.'
+          description: 'All tickets registered to a specific event.'
           schema:
             type: 'array' 
             items:

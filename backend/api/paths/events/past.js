@@ -4,7 +4,12 @@ export default function (eventsService) {
   };
 
   async function GET(req, res, next) {
-    res.json(await eventsService.getAllPastEvents());
+    const pastEvents = await eventsService.getAllPastEvents();
+    if (pastEvents.length === 0) {
+      res.status(204).json({ message: "No past events" });
+    } else {
+      res.json(pastEvents);
+    }
   }
 
   GET.apiDoc = `

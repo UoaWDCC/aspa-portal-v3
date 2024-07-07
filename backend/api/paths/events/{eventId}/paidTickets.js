@@ -4,7 +4,14 @@ export default function (eventsService) {
   };
 
   async function GET(req, res, next) {
-    res.json(await eventsService.getAllPaidEventTickets());
+    const paidTickets = await eventsService.getAllPaidEventTickets(
+      req.params.eventId
+    );
+    if (!paidTickets) {
+      res.status(204).json({ message: "No paid tickets in event" });
+    } else {
+      res.json(paidTickets);
+    }
   }
 
   GET.apiDoc = `
