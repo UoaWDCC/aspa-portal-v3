@@ -48,7 +48,87 @@ const usersService = {
       data,
     });
     return user;
-  }
+  },
+
+  // GET /users/{id}/allEvents
+  async getAllEventsByUserId(id) {
+    const userTickets = await this.getAllTicketsByUserId(id);
+    const eventIds = userTickets.map(ticket => ticket.eventId);
+    const events = await prisma.event.findMany({
+      where: {
+        id: {
+          in: eventIds,
+        },
+      },
+    });
+    return events;
+  },
+
+  // GET /users/{id}/upcomingEvents
+  async getUpcomingEventsByUserId(id) {
+    const userTickets = await this.getAllTicketsByUserId(id);
+    const eventIds = userTickets.map(ticket => ticket.eventId);
+    const events = await prisma.event.findMany({
+      where: {
+        id: {
+          in: eventIds,
+        },
+        dateTime: {
+          gte: new Date(),
+        },
+      },
+    });
+    return events;
+  },
+
+  // GET /users/{id}/pastEvents
+  async getPastEventsByUserId(id) {
+    const userTickets = await this.getAllTicketsByUserId(id);
+    const eventIds = userTickets.map(ticket => ticket.eventId);
+    const events = await prisma.event.findMany({
+      where: {
+        id: {
+          in: eventIds,
+        },
+        dateTime: {
+          lt: new Date(),
+        },
+      },
+    });
+    return events;
+  },
+
+  // GET /users/{id}/allTickets
+  async getAllTicketsByUserId(id) {
+    const tickets = await prisma.ticket.findMany({
+      where: {
+        userId: parseInt(id),
+      },
+    });
+    return tickets;
+  },
+
+  // GET /users/{id}/unpaidTickets
+  async getUnpaidTicketsByUserId(id) {
+    const tickets = await prisma.ticket.findMany({
+      where: {
+        userId: parseInt(id),
+        isPaid: false,
+      },
+    });
+    return tickets;
+  },
+
+  // GET /users/{id}/paidTickets
+  async getPaidTicketsByUserId(id) {
+    const tickets = await prisma.ticket.findMany({
+      where: {
+        userId: parseInt(id),
+        isPaid: true,
+      },
+    });
+    return tickets;
+  },
 };
 
 export default usersService;

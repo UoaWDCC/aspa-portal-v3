@@ -4,12 +4,12 @@ export default function (usersService) {
   };
 
   async function GET(req, res, next) {
-    res.json(await usersService.getAllEventsByUserId(req.params.id));
+    res.json(await usersService.getPaidTicketsByUserId(req.params.id));
   }
 
   GET.apiDoc = `
-      summary: 'Returns all events a user has registered for, past and future.'
-      operationId: 'getAllEventsForUser'
+      summary: 'Returns paid tickets a user has from registering for events.'
+      operationId: 'getPaidTicketsForUser'
       parameters:
         - name: id
           in: path
@@ -18,11 +18,11 @@ export default function (usersService) {
           type: integer
       responses:
         200:
-          description: 'A list of event objects that the user has a corresponding ticket for, past and future.'
+          description: 'A list of ticket objects that have been paid for that the user has from registering for events.'
           schema:
             type: 'array'
             items:
-              $ref: '#/definitions/Event'
+              $ref: '#/definitions/Ticket'
       `;
 
   return operations;
