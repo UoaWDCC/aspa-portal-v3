@@ -5,6 +5,7 @@ import styles from './EventPage.module.css';
 import data from "./mock-data.json";
 import ReadOnlyRow from './ReadOnlyRow'
 import EditRows from './EditRows';
+import Pagination from './Pagination';
 
 
 
@@ -91,6 +92,14 @@ const EventPage = () => {
         eventdata.eventTitle.toLowerCase().includes(searchParam.toLowerCase())
     );
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentEventDatas = filteredEventDatas.slice(indexOfFirstItem, indexOfLastItem);
+
+
 
 
     return (
@@ -125,7 +134,7 @@ const EventPage = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {filteredEventDatas.map((eventdata) => (
+                            {currentEventDatas.map((eventdata) => (
                                 <Fragment key={eventdata.id}>
                                     {editContactId === eventdata.id ? (
                                         <EditRows
@@ -145,6 +154,11 @@ const EventPage = () => {
                         </tbody>
                     </table>
                 </form>
+                <Pagination 
+                totalItems={filteredEventDatas.length} 
+                itemsPerPage={itemsPerPage} 
+                currentPage={currentEventDatas} 
+                setCurrentPage={setCurrentPage}/>
             </div>
 
 
