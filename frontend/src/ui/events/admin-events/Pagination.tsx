@@ -1,33 +1,58 @@
 import React from 'react';
-import styles from './Pagination.module.css';
+import { usePagination, DOTS } from './usePagination';
+import styles from "./Pagination.module.css"
 
-const Pagination = ({ totalItems, itemsPerPage, currentPage, setCurrentPage }) => {
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-    const pageNumbers = [];
+const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, pageSize, className }) => {
+    const paginationRange = usePagination({
+        currentPage,
+        totalCount,
+        siblingCount,
+        pageSize
+    });
 
-    for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
+    if (currentPage === 0 || paginationRange.length < 2) {
+        return null;
     }
 
-    const handleClick = (pageNumber) => {
-        setCurrentPage(pageNumber);
+    const onNext = () => {
+        onPageChange(currentPage + 1);
     };
 
+    const onPrevious = () => {
+        onPageChange(currentPage - 1);
+    };
+
+    let lastPage = paginationRange[paginationRange.length - 1];
+
     return (
-        <div className={styles.pagination}>
-            <span>{itemsPerPage * (currentPage - 1) + 1} - {Math.min(itemsPerPage * currentPage, totalItems)} of {totalItems} results</span>
-            <div className={styles.pageNumbers}>
-                {pageNumbers.map(number => (
-                    <button
-                        key={number}
-                        onClick={() => handleClick(number)}
-                        className={`${styles.pageButton} ${currentPage === number ? styles.active : ''}`}
+        <ul className={`${styles['pagination-container']} ${className}`}>
+            <li
+                className={`${styles['pagination-item']} ${currentPage === 1 ? styles['disabled'] : ''}`}
+                onClick={onPrevious}
+            >
+                <div className={styles['arrow-left']} />
+            </li>
+            {paginationRange.map((pageNumber, index) => {
+                if (pageNumber === DOTS) {
+                    return <li key={index} className={`${styles['pagination-item']} ${styles['dots']}`}>&#8230;</li>;
+                }
+                return (
+                    <li
+                        key={index}
+                        className={`${styles['pagination-item']} ${pageNumber === currentPage ? styles['selected'] : ''}`}
+                        onClick={() => onPageChange(pageNumber)}
                     >
-                        {number}
-                    </button>
-                ))}
-            </div>
-        </div>
+                        {pageNumber}
+                    </li>
+                );
+            })}
+            <li
+                className={`${styles['pagination-item']} ${currentPage === lastPage ? styles['disabled'] : ''}`}
+                onClick={onNext}
+            >
+                <div className={styles['arrow-right']} />
+            </li>
+        </ul>
     );
 };
 

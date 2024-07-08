@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, Fragment, SetStateAction } from 'react';
+import { useState, Fragment, SetStateAction, useMemo } from 'react';
 import styles from './EventPage.module.css';
 import data from "./mock-data.json";
 import ReadOnlyRow from './ReadOnlyRow'
@@ -92,12 +92,15 @@ const EventPage = () => {
         eventdata.eventTitle.toLowerCase().includes(searchParam.toLowerCase())
     );
 
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 10;
+    let PageSize = 10;
 
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentEventDatas = filteredEventDatas.slice(indexOfFirstItem, indexOfLastItem);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const currentEventDatas = useMemo(() => {
+        const firstPageIndex = (currentPage - 1) * PageSize;
+        const lastPageIndex = firstPageIndex + PageSize;
+        return filteredEventDatas.slice(firstPageIndex, lastPageIndex);
+    }, [currentPage, filteredEventDatas]);
 
 
 
@@ -154,11 +157,12 @@ const EventPage = () => {
                         </tbody>
                     </table>
                 </form>
-                <Pagination 
-                totalItems={filteredEventDatas.length} 
-                itemsPerPage={itemsPerPage} 
-                currentPage={currentEventDatas} 
-                setCurrentPage={setCurrentPage}/>
+                <Pagination
+                    totalCount={filteredEventDatas.length}
+                    pageSize={PageSize}
+                    currentPage={currentPage}
+                    onPageChange={page => setCurrentPage(page)}
+                />
             </div>
 
 

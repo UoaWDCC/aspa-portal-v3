@@ -348,5 +348,355 @@
         "date": "6/11/2029",
         "createdBy": "Grace",
         "status": "Upcoming"
+    },
+    {
+        "id": 51,
+        "eventTitle": "Art Workshop",
+        "date": "8/28/2029",
+        "createdBy": "Noah",
+        "status": "Upcoming"
+    },
+    {
+        "id": 52,
+        "eventTitle": "Summer Camp",
+        "date": "10/3/2029",
+        "createdBy": "Avery",
+        "status": "Past"
+    },
+    {
+        "id": 53,
+        "eventTitle": "Golf Tournament",
+        "date": "12/22/2029",
+        "createdBy": "Liam",
+        "status": "Upcoming"
+    },
+    {
+        "id": 54,
+        "eventTitle": "Fashion Workshop",
+        "date": "1/30/2029",
+        "createdBy": "Chloe",
+        "status": "Upcoming"
+    },
+    {
+        "id": 55,
+        "eventTitle": "Science Symposium",
+        "date": "3/4/2029",
+        "createdBy": "Lucas",
+        "status": "Past"
+    },
+    {
+        "id": 56,
+        "eventTitle": "Hiking Trip",
+        "date": "5/19/2029",
+        "createdBy": "Isabella",
+        "status": "Upcoming"
+    },
+    {
+        "id": 57,
+        "eventTitle": "Baking Class",
+        "date": "7/7/2029",
+        "createdBy": "Elijah",
+        "status": "Past"
+    },
+    {
+        "id": 58,
+        "eventTitle": "Veterans Day Parade",
+        "date": "9/11/2029",
+        "createdBy": "Ava",
+        "status": "Upcoming"
+    },
+    {
+        "id": 59,
+        "eventTitle": "Robotics Workshop",
+        "date": "11/2/2029",
+        "createdBy": "Mia",
+        "status": "Upcoming"
+    },
+    {
+        "id": 60,
+        "eventTitle": "Film Festival",
+        "date": "2/8/2029",
+        "createdBy": "Oliver",
+        "status": "Past"
+    },
+    {
+        "id": 61,
+        "eventTitle": "Community Potluck",
+        "date": "4/5/2029",
+        "createdBy": "Emily",
+        "status": "Upcoming"
+    },
+    {
+        "id": 62,
+        "eventTitle": "Tech Conference",
+        "date": "6/30/2029",
+        "createdBy": "Jacob",
+        "status": "Past"
+    },
+    {
+        "id": 63,
+        "eventTitle": "Craft Workshop",
+        "date": "8/14/2029",
+        "createdBy": "Emma",
+        "status": "Upcoming"
+    },
+    {
+        "id": 64,
+        "eventTitle": "Fitness Challenge",
+        "date": "10/9/2029",
+        "createdBy": "William",
+        "status": "Past"
+    },
+    {
+        "id": 65,
+        "eventTitle": "Holiday Market",
+        "date": "12/12/2029",
+        "createdBy": "Sophia",
+        "status": "Upcoming"
+    },
+    {
+        "id": 66,
+        "eventTitle": "Artisan Fair",
+        "date": "1/19/2029",
+        "createdBy": "Logan",
+        "status": "Upcoming"
+    },
+    {
+        "id": 67,
+        "eventTitle": "Coding Workshop",
+        "date": "3/21/2029",
+        "createdBy": "Aria",
+        "status": "Upcoming"
+    },
+    {
+        "id": 68,
+        "eventTitle": "Fashion Expo",
+        "date": "5/28/2029",
+        "createdBy": "Mason",
+        "status": "Past"
+    },
+    {
+        "id": 69,
+        "eventTitle": "Literature Festival",
+        "date": "7/16/2029",
+        "createdBy": "Harper",
+        "status": "Upcoming"
+    },
+    {
+        "id": 70,
+        "eventTitle": "Startup Conference",
+        "date": "9/27/2029",
+        "createdBy": "Charlotte",
+        "status": "Past"
+    },
+    {
+        "id": 71,
+        "eventTitle": "Charity Gala",
+        "date": "11/21/2029",
+        "createdBy": "Mason",
+        "status": "Upcoming"
+    },
+    {
+        "id": 72,
+        "eventTitle": "Language Workshop",
+        "date": "2/1/2029",
+        "createdBy": "Benjamin",
+        "status": "Upcoming"
+    },
+    {
+        "id": 73,
+        "eventTitle": "Cooking Competition",
+        "date": "4/10/2029",
+        "createdBy": "Avery",
+        "status": "Past"
+    },
+    {
+        "id": 74,
+        "eventTitle": "Fitness Expo",
+        "date": "6/3/2029",
+        "createdBy": "Liam",
+        "status": "Upcoming"
+    },
+    {
+        "id": 75,
+        "eventTitle": "Tech Expo",
+        "date": "8/9/2029",
+        "createdBy": "Chloe",
+        "status": "Past"
+    },
+    {
+        "id": 76,
+        "eventTitle": "Fashion Fair",
+        "date": "10/18/2029",
+        "createdBy": "Ella",
+        "status": "Upcoming"
+    },
+    {
+        "id": 77,
+        "eventTitle": "Film Marathon",
+        "date": "12/8/2029",
+        "createdBy": "Henry",
+        "status": "Upcoming"
+    },
+    {
+        "id": 78,
+        "eventTitle": "Dance Workshop",
+        "date": "1/16/2029",
+        "createdBy": "Grace",
+        "status": "Upcoming"
+    },
+    {
+        "id": 79,
+        "eventTitle": "Music Festival",
+        "date": "3/29/2029",
+        "createdBy": "Owen",
+        "status": "Upcoming"
+    },
+    {
+        "id": 80,
+        "eventTitle": "Gardening Expo",
+        "date": "5/14/2029",
+        "createdBy": "Zoe",
+        "status": "Past"
+    },
+    {
+        "id": 81,
+        "eventTitle": "Book Signing",
+        "date": "7/24/2029",
+        "createdBy": "Lucas",
+        "status": "Upcoming"
+    },
+    {
+        "id": 82,
+        "eventTitle": "Art Fair",
+        "date": "9/17/2029",
+        "createdBy": "Ella",
+        "status": "Past"
+    },
+    {
+        "id": 83,
+        "eventTitle": "Startup Workshop",
+        "date": "11/30/2029",
+        "createdBy": "Aiden",
+        "status": "Upcoming"
+    },
+    {
+        "id": 84,
+        "eventTitle": "Coding Conference",
+        "date": "2/7/2029",
+        "createdBy": "Sophia",
+        "status": "Upcoming"
+    },
+    {
+        "id": 85,
+        "eventTitle": "Food Festival",
+        "date": "4/19/2029",
+        "createdBy": "Ethan",
+        "status": "Past"
+    },
+    {
+        "id": 86,
+        "eventTitle": "Music Workshop",
+        "date": "6/9/2029",
+        "createdBy": "Aria",
+        "status": "Upcoming"
+    },
+    {
+        "id": 87,
+        "eventTitle": "Science Camp",
+        "date": "8/4/2029",
+        "createdBy": "James",
+        "status": "Past"
+    },
+    {
+        "id": 88,
+        "eventTitle": "Craft Market",
+        "date": "10/23/2029",
+        "createdBy": "Lily",
+        "status": "Upcoming"
+    },
+    {
+        "id": 89,
+        "eventTitle": "Theater Workshop",
+        "date": "12/14/2029",
+        "createdBy": "Logan",
+        "status": "Upcoming"
+    },
+    {
+        "id": 90,
+        "eventTitle": "Language Exchange",
+        "date": "1/23/2029",
+        "createdBy": "Amelia",
+        "status": "Upcoming"
+    },
+    {
+        "id": 91,
+        "eventTitle": "Dance Class",
+        "date": "3/11/2029",
+        "createdBy": "Jacob",
+        "status": "Past"
+    },
+    {
+        "id": 92,
+        "eventTitle": "Fitness Workshop",
+        "date": "5/6/2029",
+        "createdBy": "Scarlett",
+        "status": "Upcoming"
+    },
+    {
+        "id": 93,
+        "eventTitle": "Writing Seminar",
+        "date": "7/2/2029",
+        "createdBy": "Mason",
+        "status": "Past"
+    },
+    {
+        "id": 94,
+        "eventTitle": "Film Workshop",
+        "date": "8/15/2029",
+        "createdBy": "Harper",
+        "status": "Upcoming"
+    },
+    {
+        "id": 95,
+        "eventTitle": "Art Auction",
+        "date": "10/22/2029",
+        "createdBy": "Mila",
+        "status": "Past"
+    },
+    {
+        "id": 96,
+        "eventTitle": "Technology Fair",
+        "date": "12/15/2029",
+        "createdBy": "Aiden",
+        "status": "Upcoming"
+    },
+    {
+        "id": 97,
+        "eventTitle": "Cooking Workshop",
+        "date": "1/31/2029",
+        "createdBy": "Ella",
+        "status": "Upcoming"
+    },
+    {
+        "id": 98,
+        "eventTitle": "Music Concert",
+        "date": "3/22/2029",
+        "createdBy": "Liam",
+        "status": "Upcoming"
+    },
+    {
+        "id": 99,
+        "eventTitle": "Fashion Week",
+        "date": "5/29/2029",
+        "createdBy": "Chloe",
+        "status": "Past"
+    },
+    {
+        "id": 100,
+        "eventTitle": "Science Workshop",
+        "date": "7/17/2029",
+        "createdBy": "Ella",
+        "status": "Upcoming"
     }
 ]
