@@ -59,10 +59,7 @@ main {
 }
 
 button {
-  padding-top: 10px; /* Adjusted padding for a better look */
-  padding-bottom: 10px; /* Added bottom padding for symmetry */
-  padding-left: 25px; /* Added left padding for horizontal spacing */
-  padding-right: 25px; /* Added right padding for horizontal spacing */
+  padding: 10px 25px; /* Adjusted padding for better spacing */
   color: white; /* Text color */
   background-color: #B28A68; /* Background color */
   border: none; /* Removed border */
@@ -72,8 +69,7 @@ button {
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s ease; /* Smooth transition for background color change */
   margin-bottom: 20px;
+  display: block; /* Display as block to center horizontally */
+  margin: 0 auto; /* Center horizontally */
 }
 
-button:hover {
-  background-color: #B28A68; /* Slightly darker shade of light brown-dark cream on hover */
-}

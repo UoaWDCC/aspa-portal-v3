@@ -13,10 +13,7 @@ const LoginButton = () => {
 export default function Login() {
   return (
     <div className="button-container">
-      <button className="sign-in-button">
-        <img src="google-icon-PNG.png" alt="Google Icon" className="icon" />
-        <SignIn />
-      </button>
+      <SignIn />
     </div>
   );
 }
