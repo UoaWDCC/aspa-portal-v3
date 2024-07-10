@@ -1,5 +1,5 @@
 // components/LoginButton.tsx
-import SignIn from '@/app/components/sign-in';
+import SignIn from '@/ui/login/SignIn';
 import React, { useState } from 'react';
 
 const LoginButton = () => {

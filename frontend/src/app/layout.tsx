@@ -4,7 +4,7 @@ import Header from "@/ui/Header";
 import { zillaSlab } from "@/ui/fonts";
 import "./globals.css";
 import Login from "./home/login/page";
-import SignIn from "./components/sign-in";
+import SignIn from "../ui/login/SignIn";
 
 export const metadata: Metadata = {
   title: "Create Next App",

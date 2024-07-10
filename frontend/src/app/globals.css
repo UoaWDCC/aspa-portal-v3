@@ -51,25 +51,4 @@ main {
     text-align:center;
 }
 
-.icon {
-  width: 30px; /* Adjust icon size as needed */
-  margin-right: 0px; /* Space between icon and button */
-  margin-top: 10px;
-  height: 30px; /* Ensures the aspect ratio is maintained */
-}
-
-button {
-  padding: 10px 25px; /* Adjusted padding for better spacing */
-  color: white; /* Text color */
-  background-color: #B28A68; /* Background color */
-  border: none; /* Removed border */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 25px; /* Font size */
-  font-weight: bolder; /* Thicker font */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for background color change */
-  margin-bottom: 20px;
-  display: block; /* Display as block to center horizontally */
-  margin: 0 auto; /* Center horizontally */
-}
 
