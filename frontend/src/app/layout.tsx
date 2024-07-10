@@ -22,7 +22,7 @@ export default function RootLayout({
         <Header/>
         <main>
           {children}
-          <SignIn />
+          {/* <SignIn /> */}
         </main>
         <Footer/>
       </body>

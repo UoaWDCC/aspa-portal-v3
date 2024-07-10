@@ -47,4 +47,33 @@ main {
     min-width: 80vw;
     border-radius: 12px;
     min-height: 50vh;
+    position: relative;
+    text-align:center;
+}
+
+.icon {
+  width: 30px; /* Adjust icon size as needed */
+  margin-right: 0px; /* Space between icon and button */
+  margin-top: 10px;
+  height: 30px; /* Ensures the aspect ratio is maintained */
+}
+
+button {
+  padding-top: 10px; /* Adjusted padding for a better look */
+  padding-bottom: 10px; /* Added bottom padding for symmetry */
+  padding-left: 25px; /* Added left padding for horizontal spacing */
+  padding-right: 25px; /* Added right padding for horizontal spacing */
+  color: white; /* Text color */
+  background-color: #B28A68; /* Background color */
+  border: none; /* Removed border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 25px; /* Font size */
+  font-weight: bolder; /* Thicker font */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #B28A68; /* Slightly darker shade of light brown-dark cream on hover */
 }

@@ -17,6 +17,7 @@
   "description": "",
   "dependencies": {
     "@next/font": "^14.2.4",
-    "react-google-login": "^5.2.2"
+    "react-google-login": "^5.2.2",
+    "react-icon": "^1.0.0"
   }
 }

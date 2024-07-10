@@ -1,5 +1,6 @@
 import { signIn } from "../../../authentication/auth";
- 
+import '../globals.css';
+
 export default function SignIn() {
   return (
     <form
@@ -8,7 +9,7 @@ export default function SignIn() {
         await signIn("google")
       }}
     >
-      <button type="submit">Sign in with Google</button>
+      <button type="submit">Login</button>
     </form>
   )
 } 
