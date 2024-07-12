@@ -1,10 +1,10 @@
 .pagination-container {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 0px 200px 40px 0px;
 }
 
 .pagination-item {
@@ -15,8 +15,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: #8B4513;
-    /* Brown color */
+    background-color: #87562A;
     color: white;
     cursor: pointer;
     font-size: 16px;
@@ -26,13 +25,11 @@
 .pagination-item.dots {
     cursor: default;
     background-color: transparent;
-    color: #8B4513;
-    /* Brown color for dots */
+    color: #FBF5F0;
 }
 
 .pagination-item.selected {
     background-color: #A0522D;
-    /* Darker brown color for selected item */
 }
 
 .pagination-item.disabled {

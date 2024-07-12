@@ -1,5 +1,5 @@
 .event-table {
-    width: 60%;
+    width: 100%;
 }
 
 .event-title {
@@ -14,7 +14,7 @@
     text-shadow: 12px 9px #5E4127;
     font-size: 90px;
     text-decoration: underline;
-    margin: 10px 40px 30px;
+    margin: 10px 40px 20px;
 }
 
 .solid-line {
@@ -25,8 +25,8 @@
 .search-bar{
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 16px;
-    margin-right: 100px;
+    margin-bottom: 80px;
+    margin-right: 270px;
 }
 
 .search-input{

@@ -2,7 +2,7 @@ import React from 'react';
 import { usePagination, DOTS } from './usePagination';
 import styles from "./Pagination.module.css"
 
-const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, pageSize, className }) => {
+const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, pageSize }) => {
     const paginationRange = usePagination({
         currentPage,
         totalCount,
@@ -25,12 +25,12 @@ const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, p
     let lastPage = paginationRange[paginationRange.length - 1];
 
     return (
-        <ul className={`${styles['pagination-container']} ${className}`}>
+        <ul className={`${styles['pagination-container']}`}>
             <li
                 className={`${styles['pagination-item']} ${currentPage === 1 ? styles['disabled'] : ''}`}
                 onClick={onPrevious}
             >
-                <div className={styles['arrow-left']} />
+                <div className={styles['arrow-left']}> {'<'} </div>
             </li>
             {paginationRange.map((pageNumber, index) => {
                 if (pageNumber === DOTS) {
@@ -50,7 +50,7 @@ const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, p
                 className={`${styles['pagination-item']} ${currentPage === lastPage ? styles['disabled'] : ''}`}
                 onClick={onNext}
             >
-                <div className={styles['arrow-right']} />
+                <div className={styles['arrow-right']}> {'>'} </div>
             </li>
         </ul>
     );
