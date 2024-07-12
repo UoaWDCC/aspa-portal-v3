@@ -11,6 +11,8 @@ interface Event {
 
 interface ReadOnlyRowProps {
     eventdata: Event;
+    handleEditClick: (event: React.MouseEvent<HTMLButtonElement>, eventdata: Event) => void;
+    handleDeleteClick: (eventdataID: number) => void;
 }
 
 const ReadOnlyRow: React.FC<ReadOnlyRowProps> = ({ eventdata, handleEditClick, handleDeleteClick }) => {

@@ -1,7 +1,18 @@
-import React from "react"
+import React, { ChangeEvent } from "react"
 import styles from './EditRows.module.css'
 
-const EditRows = ({ editFormData, handleEditFormChange, handleCancelClick }) => {
+interface EditRowsProps {
+    editFormData: {
+        eventTitle: string;
+        date: string;
+        createdBy: string;
+        status: string;
+    };
+    handleEditFormChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    handleCancelClick: () => void;
+}
+
+const EditRows: React.FC<EditRowsProps> = ({ editFormData, handleEditFormChange, handleCancelClick }) => {
     return (
         <>
             <tr>

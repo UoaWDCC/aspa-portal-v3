@@ -1,8 +1,24 @@
 import React from 'react';
 import { usePagination, DOTS } from './usePagination';
-import styles from "./Pagination.module.css"
+import styles from "./Pagination.module.css";
 
-const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, pageSize }) => {
+interface PaginationProps {
+    onPageChange: (page: number) => void;
+    totalCount: number;
+    siblingCount?: number;
+    currentPage: number;
+    pageSize: number;
+    className?: string;
+}
+
+const Pagination: React.FC<PaginationProps> = ({
+    onPageChange,
+    totalCount,
+    siblingCount = 1,
+    currentPage,
+    pageSize,
+    className
+}) => {
     const paginationRange = usePagination({
         currentPage,
         totalCount,
@@ -10,7 +26,7 @@ const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, p
         pageSize
     });
 
-    if (currentPage === 0 || paginationRange.length < 2) {
+    if (currentPage === 0 || !paginationRange || paginationRange.length < 2) {
         return null;
     }
 
@@ -25,7 +41,7 @@ const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, p
     let lastPage = paginationRange[paginationRange.length - 1];
 
     return (
-        <ul className={`${styles['pagination-container']}`}>
+        <ul className={`${styles['pagination-container']} ${className}`}>
             <li
                 className={`${styles['pagination-item']} ${currentPage === 1 ? styles['disabled'] : ''}`}
                 onClick={onPrevious}
@@ -40,7 +56,7 @@ const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, p
                     <li
                         key={index}
                         className={`${styles['pagination-item']} ${pageNumber === currentPage ? styles['selected'] : ''}`}
-                        onClick={() => onPageChange(pageNumber)}
+                        onClick={() => onPageChange(pageNumber as number)}
                     >
                         {pageNumber}
                     </li>
