@@ -1,7 +1,7 @@
 swagger: '2.0'
 basePath: '/'
 info:
-  title: 'A getting started API.'
+  title: 'ASPA Portal V3 API'
   version: '1.0.0'
 definitions:
   User:
@@ -9,25 +9,38 @@ definitions:
     properties:
       id:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
+        description: Unique identifier for the User.
       email:
         type: 'string'
+        format: email
+        description: Email address of the User.
       firstName:
         type: 'string'
+        description: First name of the User.
       lastName:
         type: 'string'
+        description: Last name of the User.
       university:
         type: 'string'
+        description: University the User attends, if applicable.
       studentId:
-        type: 'string'
+        type: 'integer'
+        format: 'int32'
+        description: Unique student identifier, if applicable.
       upi:
         type: 'string'
+        description: Unique personal identifier, if applicable.
       role:
         type: 'string'
+        default: user
+        description: Role of the User in the system.
       skillLevel:
         type: 'string'
+        description: Skill level of the User.
       phoneNumber:
         type: 'string'
+        description: Contact phone number of the User.
     required:
       - 'id'
       - 'email'
@@ -41,7 +54,7 @@ definitions:
     properties:
       id:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       name:
         type: 'string'
       dateTime:
@@ -72,13 +85,13 @@ definitions:
     properties:
       id:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       userId:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       eventId:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       isPaid:
         type: 'boolean'
       paymentDateTime:
@@ -102,7 +115,7 @@ definitions:
     properties:
       id:
         type: 'integer'
-        format: 'int64'
+        format: 'int32'
       name:
         type: 'string'
       title:
