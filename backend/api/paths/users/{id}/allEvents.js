@@ -10,6 +10,8 @@ export default function (usersService) {
   GET.apiDoc = `
       summary: 'Returns all events a user has registered for, past and future.'
       operationId: 'getAllEventsForUser'
+      tags:
+        - Users
       parameters:
         - name: id
           in: path

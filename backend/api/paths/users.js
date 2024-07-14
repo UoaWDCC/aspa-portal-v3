@@ -17,6 +17,8 @@ export default function (usersService) {
   GET.apiDoc = `
       summary: 'Returns all user objects in the database.'
       operationId: 'getAllUsers'
+      tags:
+        - Users
       parameters: []
       responses:
         200:
@@ -32,6 +34,8 @@ export default function (usersService) {
   POST.apiDoc = `
       summary: 'Creates a new user object in the database (admin creation not allowed).'
       operationId: 'createUser'
+      tags:
+        - Users
       parameters:
         - in: 'body'
           name: 'body'

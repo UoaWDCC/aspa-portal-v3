@@ -10,6 +10,8 @@ export default function (usersService) {
   GET.apiDoc = `
       summary: 'Returns the total number of users as an integer.'
       operationId: 'getTotalNumberOfUsers'
+      tags:
+        - Users
       parameters: []
       responses:
         200:

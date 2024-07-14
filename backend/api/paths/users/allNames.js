@@ -10,6 +10,8 @@ export default function (usersService) {
   GET.apiDoc = `
       summary: 'Returns the first and last names of all users in the database.'
       operationId: 'getAllUserNames'
+      tags:
+        - Users
       parameters: []
       responses:
         200:

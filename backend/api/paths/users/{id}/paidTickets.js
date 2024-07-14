@@ -10,6 +10,8 @@ export default function (usersService) {
   GET.apiDoc = `
       summary: 'Returns paid tickets a user has from registering for events.'
       operationId: 'getPaidTicketsForUser'
+      tags:
+        - Users
       parameters:
         - name: id
           in: path

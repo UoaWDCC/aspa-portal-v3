@@ -31,6 +31,8 @@ export default function (usersService) {
   GET.apiDoc = `
       summary: 'Returns a specific user, given their userID.'
       operationId: 'getUserById'
+      tags:
+        - Users
       parameters:
         - name: id
           in: path
@@ -55,6 +57,8 @@ export default function (usersService) {
   PUT.apiDoc = `
       summary: 'Updates a specific user, given their userID.'
       operationId: 'updateUserById'
+      tags:
+        - Users
       parameters:
         - name: id
           in: path
