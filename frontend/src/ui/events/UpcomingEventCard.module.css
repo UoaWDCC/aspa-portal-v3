@@ -15,13 +15,15 @@
     border-width: 20px; 
     border-color: #DD995B;
     border-radius: 45px;
+    align-self: center;
   }
   
-  .card h1{
+  .card h2{
     text-align: center;
     font-weight: medium;
     font-size: 30px;
     color: #FFFFFF;
     margin-top: 5px;
     margin-bottom: 5px;
+    overflow-y: hidden;
   }

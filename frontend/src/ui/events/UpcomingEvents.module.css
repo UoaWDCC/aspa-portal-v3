@@ -34,3 +34,9 @@
     margin-bottom: 10px;
   }
   
+  @media screen and (max-width: 1250px){
+    .content{
+        flex-direction:column;
+        align-items:center;
+    }
+}
