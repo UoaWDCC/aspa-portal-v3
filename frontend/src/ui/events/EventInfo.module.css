@@ -13,7 +13,7 @@
 }
 
 .descriptionBorder button{
-    min-width: 300px;
+    min-width: 400px;
     max-width:1160px;
     width:100%;
     height:100px;
@@ -39,7 +39,7 @@
     border-radius:75px;
     background-color: #AA6F29;
     max-width: 1160px;
-    min-width: 450px;
+    min-width: 570px;
     width: 100%;
     min-height: 480px;
     height: 100%;
@@ -59,9 +59,11 @@
     font-weight: bold;
     text-decoration: underline 5px;
     text-align: center;
-    line-height:85px;
+    line-height:110px;
     letter-spacing: -1px;
-    width: 570px;
+    max-width: 570px;
+    min-width: 300px;
+    width: 100%;
     font-size: 90px;
     color: #F4E5D7;
     text-shadow: 8px 8px #5E4127;
@@ -72,4 +74,12 @@
     font-size: 30px;
     color: #FBF5F0;
     margin: 15px 50px;
+}
+
+@media screen and (max-width: 1075px){
+    .infoBorder{
+        flex-direction:column;
+        align-items:center;
+        padding-left: 50px;
+    }
 }

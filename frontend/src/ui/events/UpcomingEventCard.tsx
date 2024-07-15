@@ -10,7 +10,7 @@ interface Event {
     return (
       <div className={styles.card}>
         <img src={event.imgUrl} alt={event.eventName} />
-        <h1>{event.eventName}</h1>
+        <h2>{event.eventName}</h2>
       </div>
     );
   }
