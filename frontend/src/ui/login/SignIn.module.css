@@ -1,35 +1,74 @@
-
 .icon {
-    width: 30px; /* Adjust icon size as needed */
+    width: 50px; /* Adjust icon size as needed */
     margin-right: 10px; /* Space between icon and button */
     margin-top: 5px;
-    height: 30px; /* Ensures the aspect ratio is maintained */
-    float: left;
-
+    height: 50px; /* Ensures the aspect ratio is maintained */
 }
-  
+
 .button {
     padding: 10px 25px; /* Adjusted padding for better spacing */
     color: white; /* Text color */
     background-color: #B28A68; /* Background color */
     border: none; /* Removed border */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 15px; /* Rounded corners */
     font-size: 25px; /* Font size */
     font-weight: bolder; /* Thicker font */
     font-style: normal;
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease; /* Smooth transition for background color change */
-    margin-top: 200px;
+    margin-top: 50px;
     margin-bottom: 20px;
-    margin-left: 600px;
-    display: block; /* Display as block to center horizontally */
+    margin-left: 30px;
+    width: 300px;
+    height: 80px;
+    display: flex; /* Use flex to align items within the button */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    position: relative;
 }
 
+.button .icon {
+    position: absolute;
+    left: 15px; /* Adjust as needed to align properly */
+}
+
+
+
 .container {
-    color:white;
-    width: 300px; /* Adjust as needed */
-    padding: 20px; /* Adjust as needed */
-    margin: 0 auto; /* Center the container */
-    border: 1px solid #ccc; /* Add a border */
-    border-radius: 5px; /* Optional: add rounded corners */
+    border-radius: 45px;
+    background-color: #87562A;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the top left */
+    padding: 30px; /* Add padding for spacing */
+    margin: 8em auto;
+    max-width: 80%;
+    width: 500px;
+}
+
+.title {
+    font-family: 'Zilla Slab';
+    font-weight: bold;
+    text-decoration: underline 5px;
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Use full width of container */
+    font-size: 80px;
+    color: #F4E5D7;
+    text-shadow: 8px 8px #5E4127;
+    text-underline-offset: 9px;  
+    margin-bottom: 20px; /* Add margin below the title */
+}
+
+.subtitle {
+    font-family: 'Zilla Slab';
+    font-weight: bold;
+    text-align: center; /* Center the text within the button */
+    font-size: 30px;
+    color: #F4E5D7;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute; /* Position absolutely within the button */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
 }
