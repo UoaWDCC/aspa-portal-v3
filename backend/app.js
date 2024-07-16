@@ -4,16 +4,22 @@ import swaggerUi from 'swagger-ui-express';
 import yamljs from 'yamljs';
 
 import usersService from './api/services/usersService.js';
+import eventsService from './api/services/eventsService.js';
 
 
 // initialise openapi with express, serving api docs at '/api-docs-json' as json :(
 const app = express();
+
+// middleware
+app.use(express.json());
+
 const apiDoc = yamljs.load('./api/api-doc.yml');
 initialize({
   app,
   apiDoc: apiDoc,
   dependencies: {
     usersService: usersService,
+    eventsService: eventsService
   },
   paths: './api/paths',
   docsPath: '/api-docs-json',
