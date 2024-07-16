@@ -12,6 +12,10 @@ RUN apk add --no-cache git
 # Install Docker Compose
 RUN apk add --no-cache docker-compose
 
+# Install gh CLI
+RUN apk add --no-cache github-cli
+
+
 EXPOSE 3307
 
 VOLUME ["/repo"]
