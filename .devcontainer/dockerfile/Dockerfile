@@ -15,6 +15,8 @@ RUN apk add --no-cache docker-compose
 # Install gh CLI
 RUN apk add --no-cache github-cli
 
+#Install curl
+RUN apk add --no-cache curl
 
 EXPOSE 3307
 
