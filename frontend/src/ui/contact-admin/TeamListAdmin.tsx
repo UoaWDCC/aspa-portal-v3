@@ -1,4 +1,4 @@
-import styles from './TeamList.module.css';
+import styles from './TeamListAdmin.module.css';
 import ExecCard from "./ExecCard"
 
 export default function MeetTheTeam() {
