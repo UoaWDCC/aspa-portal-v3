@@ -1,5 +1,5 @@
 
-import TeamList from '@/ui/contact-admin/TeamListAdmin'
+import TeamList from '@/ui/contact-admin/TeamListEdit'
 import Image from "next/image";
 
 export default function Contact() {

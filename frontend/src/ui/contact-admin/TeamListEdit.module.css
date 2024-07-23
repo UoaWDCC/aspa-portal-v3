@@ -39,7 +39,12 @@
   max-width: 80%;
 }
 
-.container button {
+.page{
+  align-items: center;
+  justify-items: center;
+}
+
+.page button {
   font-family: 'Zilla Slab';
   max-width: 1065px;
   width: 100%;

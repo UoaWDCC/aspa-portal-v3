@@ -18,6 +18,7 @@ export default function MeetTheTeam() {
   ];
  
   return (
+    <div className={styles.page}>
       <div className={styles.container}>
         <h1 className={styles.title}>
           Meet The Team
@@ -29,7 +30,10 @@ export default function MeetTheTeam() {
             <ExecCard key={exec.name} exec={exec}/>
           ))}
         </div>
-        <button>EDIT MEMBERS</button>
+        <button>ADD EXECUTIVE MEMBER</button>
       </div>
+      <button style={{margin:"50px"}}>FINISH EDITING MEMBERS</button>
+    </div>
+      
   )
 }
