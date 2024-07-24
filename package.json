@@ -17,6 +17,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@next/font": "^14.2.4"
+    "@next/font": "^14.2.4",
+    "@openapitools/openapi-generator-cli": "^2.13.4"
   }
 }
