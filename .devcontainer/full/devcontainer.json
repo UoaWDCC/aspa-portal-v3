@@ -9,14 +9,15 @@
             "extensions": [
                 "GitHub.copilot-chat",
                 "GitHub.copilot",
-                "ms-vscode.vscode-typescript-next"
+                "ms-vscode.vscode-typescript-next",
+                "material-theme-icons",
             ]
         }
     },
     "workspaceMount": "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached",
     "workspaceFolder": "/repo",
-    "postCreateCommand": "yarn install && cd backend && docker compose up --build -d && npx prisma migrate dev",
-    "postStartCommand": "cd backend && docker compose up -d && npx prisma migrate dev",
+    "postCreateCommand": "yarn install && cd backend && docker compose up --build -d",
+    "postStartCommand": "cd backend && docker compose up -d",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ]

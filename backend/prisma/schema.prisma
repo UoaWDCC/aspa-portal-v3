@@ -26,7 +26,7 @@ model User {
   skillLevel  String
   phoneNumber String
   // isMember  Boolean 
-  Ticket      Ticket[]
+  tickets     Ticket[]
 }
 
 model Event {
@@ -39,7 +39,7 @@ model Event {
   createdBy     String
   attendingExec String?
   imageUrl      String?
-  Ticket        Ticket[]
+  tickets       Ticket[]
 }
 
 model Ticket {
