@@ -18,6 +18,12 @@ RUN apk add --no-cache github-cli
 #Install curl
 RUN apk add --no-cache curl
 
+#Install openjdk17
+RUN apk add --no-cache openjdk17
+
+#Install maven
+RUN apk add --no-cache maven
+
 EXPOSE 3307
 
 VOLUME ["/repo"]
