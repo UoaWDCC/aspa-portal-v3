@@ -10,7 +10,9 @@
     "install": "yarn install:frontend && yarn install:backend",
     "dev:frontend": "cd frontend && yarn dev",
     "dev:backend": "cd backend && yarn dev",
-    "bundle:docs": "cd backend && cd scripts && cd javascript && node api-json-gen.cjs"
+    "bundle:docs": "cd backend && cd scripts && cd javascript && node api-json-gen.cjs",
+    "delete:api-client": "if [ -d frontend/src/api-client ]; then rm -r frontend/src/api-client; fi",
+    "generate:api-client": "yarn bundle:docs && yarn delete:api-client && openapi-generator-cli generate --openapitools openapitools.json"
   },
   "keywords": [],
   "author": "",
