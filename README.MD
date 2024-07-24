@@ -15,6 +15,7 @@ Please see the wiki page [Getting Started](https://github.com/UoaWDCC/aspa-porta
 After installing the necessary pre-requisites tools, follow the steps below to set up the dev container:
 
 1. Clone the repository
+    - Note: If you are using **Windows** you need to clone to WSL2 home/{username} directory for the dev container to be fully functional (Refer to Windows Docker Desktop Section of [Getting Started](https://github.com/UoaWDCC/aspa-portal-v3/wiki/GettingStarted))
 2. Open the repository in Visual Studio Code
 3. Press `F1` and select `Dev Container: Open Folder in Container`
 4. Select the root folder of the repository
