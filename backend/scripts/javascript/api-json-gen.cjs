@@ -3,14 +3,14 @@ const fs = require('fs');
 
 // import services
 async function setupFramework() {
-    const eventsService = await import('../api/services/eventsService.js');
-    const usersService = await import('../api/services/usersService.js');
+    const eventsService = await import('../../api/services/eventsService.js');
+    const usersService = await import('../../api/services/usersService.js');
     
     framework = new OpenAPIFramework.default({
         featureType: 'middleware',
         name: "express-openapi",
-        apiDoc: '../api/api-doc.yml',
-        paths: "../api/paths",
+        apiDoc: '../../api/api-doc.yml',
+        paths: "../../api/paths",
         dependencies: {
             usersService: usersService,
             eventsService: eventsService,
@@ -34,7 +34,7 @@ async function saveApiDoc() {
     await setupFramework();
     await framework.initialize({});
     // Save OpenAPI definition to a file
-    fs.writeFileSync('../docs/api-doc.json', JSON.stringify(framework.apiDoc));
+    fs.writeFileSync('../../docs/api-doc.json', JSON.stringify(framework.apiDoc));
 }
 
 // Call the function
