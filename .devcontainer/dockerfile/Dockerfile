@@ -18,6 +18,9 @@ RUN apk add --no-cache github-cli
 #Install curl
 RUN apk add --no-cache curl
 
+#Install openjdk8
+RUN apk add --no-cache openjdk8
+
 EXPOSE 3307
 
 VOLUME ["/repo"]
