@@ -8,14 +8,16 @@ import { useState } from 'react';
 export default function NavBar() {
     const pathname = usePathname();
     const [isAuthentication, setIsAuthentication] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false)
     console.log(pathname)
 
     const handleLogin = () => {
         setIsAuthentication(true)
     }
 
-        const handleLogout = () => {
+    const handleLogout = () => {
         setIsAuthentication(false)
+        setIsAdmin(false)
     }
 
     return (
@@ -45,6 +47,13 @@ export default function NavBar() {
                                 Profile
                             </Link>
                         </li>
+                        {isAdmin && (
+                            <li className={styles.navitem}>
+                                <Link className={`${styles.navlink} ${pathname === "/member-data" ? styles.currentpage : ""}`} href="/member-data">
+                                    Member Data
+                                </Link>
+                            </li>                           
+                        )}
                         <li className={styles.navitem}>
                             <button className={styles.navlink} onClick={handleLogout}>
                                 Logout
@@ -53,7 +62,7 @@ export default function NavBar() {
                     </>
                 ) : (
                     <li className={styles.navitem}>
-                        <Link className={`${styles.navlink} ${pathname === "/home/login" ? styles.currentpage : ""}`} href="/home/login">
+                        <Link className={`${styles.navlink} ${pathname === "/home/login" ? styles.currentpage : ""}` } href="/home/login">
                             Register/Log In
                         </Link>
                     </li>
