@@ -9,7 +9,8 @@
             "extensions": [
                 "GitHub.copilot-chat",
                 "GitHub.copilot",
-                "ms-vscode.vscode-typescript-next"
+                "ms-vscode.vscode-typescript-next",
+                "material-theme-icons",
             ]
         }
     },
