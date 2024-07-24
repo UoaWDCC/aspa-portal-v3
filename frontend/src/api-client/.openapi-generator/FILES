@@ -9,6 +9,7 @@ common.ts
 configuration.ts
 git_push.sh
 index.ts
+models/create-event-request.ts
 models/create-user401-response.ts
 models/event.ts
 models/exec.ts
