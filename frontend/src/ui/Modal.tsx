@@ -2,7 +2,7 @@
 import { useSearchParams } from 'next/navigation'
 import React from 'react';
 import { useRef, useEffect } from 'react'
-import style from "./Modal.module.css"
+import styles from "./Modal.module.css"
 
 type Props = {
     title: string,
@@ -11,6 +11,16 @@ type Props = {
     children: React.ReactNode,
 }
 
+/**\
+ * Function to return the modal component for any necessary popups
+ * 
+ * @param title The title to be displayed in the modal
+ * @param onClose function handle to tell modal what function to call when closed
+ * @param onOk function handle to tell modal what function to call when ok is clicked
+ * @param children any children of the modal tag to insert to body of modal
+ * 
+ * @returns the modal component
+ */
 export default function Modal({ title, onClose, onOk, children }:
     Props
 ) {
@@ -39,9 +49,9 @@ export default function Modal({ title, onClose, onOk, children }:
     const modal: JSX.Element | null = showModal === "y"
         ? (
             <dialog ref={modalRef}>
-                <div>
+                <div className={styles.modal}>
                     <div>
-                        <h1>{ title }</h1>
+                        <h1 className={styles.h1}>{ title }</h1>
                         <button
                             onClick={closeModal}
                         >x</button>
