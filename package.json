@@ -9,7 +9,8 @@
     "install:backend": "cd backend && yarn install",
     "install": "yarn install:frontend && yarn install:backend",
     "dev:frontend": "cd frontend && yarn dev",
-    "dev:backend": "cd backend && yarn dev"
+    "dev:backend": "cd backend && yarn dev",
+    "bundle:docs": "cd backend && cd scripts && cd javascript && node api-json-gen.cjs"
   },
   "keywords": [],
   "author": "",
