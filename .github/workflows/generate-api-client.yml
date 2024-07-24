@@ -21,7 +21,9 @@ jobs:
             - name: Commit new API client
               uses: stefanzweifel/git-auto-commit-action@v5
               with:
-                commit_message: "chore: update API client"
+                commit_message: "Chore: Update API client"
                 commit_user_name: "github-api-actions[bot]"
                 commit_user_email: "github-api-actions[bot]@users.noreply.github.com"
+                commit_author: Author <actions@github.com>
+
         
