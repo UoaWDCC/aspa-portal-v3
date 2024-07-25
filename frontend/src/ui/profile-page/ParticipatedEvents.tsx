@@ -1,5 +1,7 @@
+"use client";
 import styles from "./ParticipatedEvents.module.css";
 import EventCard from "../EventCard"
+import React, { useRef } from "react";
 
 export default function ParticipatedEvents() {
   const participatedEvents = [
@@ -7,20 +9,28 @@ export default function ParticipatedEvents() {
     {eventName: "Event 2", eventDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Backyardpool.jpg/1200px-Backyardpool.jpg"},
     {eventName: "Event 3", eventDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", imgUrl: "https://spothopper-static.s3.us-east-1.amazonaws.com/web/daviebilliardclub--com/custom/fb_image.jpg"}
 ]
-  return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>
-        My Participated Events:
-      </h1>
-      <div className={styles.content}>
-        {participatedEvents.map((event) => (
-          <EventCard key={event.eventName} event={event} />     
-        ))}
-      </div>
-      <button className={styles.button}>
-        View All Events
-      </button>
-    </div>
+    const containerRef = useRef<HTMLDivElement>(null);
 
-  );
+    const scrollRight = () => {
+        if (containerRef.current) {
+            containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
+        }
+    };
+
+    return (
+    <div className={styles.container}>
+        <h1 className={styles.title}>My Participated Events:</h1>
+        <div className={styles.content} ref={containerRef}>
+        {participatedEvents.map((event) => (
+            <EventCard key={event.eventName} event={event} />
+        ))}
+        </div>
+        <button className={styles.button} onClick={scrollRight}>
+            &gt;
+        </button>
+        <button className={styles.button}>
+            View All Events
+      </button>    
+    </div>
+    );
 }

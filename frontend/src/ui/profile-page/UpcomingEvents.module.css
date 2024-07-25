@@ -36,6 +36,19 @@
     padding: 0px 20px 0px 20px;
     margin-top: 15px;
   }
+
+  .scrollButton {
+    display: block;
+    margin: auto;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: #FBF5F0;
+    background-color: #DD995B;
+    border-radius: 45px;
+    padding: 0px 20px 0px 20px;
+    margin-top: 15px;
+  }
   
   .button:hover {
     background-color: #87562A;
