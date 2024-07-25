@@ -12,7 +12,7 @@
     margin-right: auto;
     margin-top: 6em;
     margin-bottom: 1em;
-    max-width: 80%;
+    max-width: 70%;
   }
 
 
@@ -36,5 +36,5 @@
   align-items: flex-start;
   width: 100%;
   padding:0em 2.5em 1em 2.5em;
-  gap: 40px;
+  gap: 2em;
 }

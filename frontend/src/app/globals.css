@@ -19,7 +19,6 @@ body {
 }
 
 main {
-  outline: red solid 2px;
     flex: 1;
     background-color: #222629;
     margin: 3em 2em 0 2em;
