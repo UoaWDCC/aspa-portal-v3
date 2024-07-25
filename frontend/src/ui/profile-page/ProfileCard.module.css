@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    background: #8C5630;
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    padding: 10px;
+    margin-right: 200px;
+    margin-left: 400px;
+    border-radius: 15px;
+    background: #DD995B;
+    color: #DD995B;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.editButton {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input label {
+    font-weight: bold;
+    width: 40%;
+    text-align: left;
+}
+
+.valueContainer {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    font-weight: bold;
+    color: #8C5630;
+    padding: 10px;
+    border-radius: 10px;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.logoutButton {
+    margin-left: 80%;
+    margin-top: 5px;
+    padding: 10px 20px;
+    background: #DD995B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
