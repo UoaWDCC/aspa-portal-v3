@@ -1,7 +1,7 @@
 .queryFormBorder {
     border-radius: 45px;
     background-color: hsl(29, 66%, 61%);
-    max-width: 80%;
+    max-width: 70%;
     height: 100%;
     padding: 3em;
     margin: 0 auto;
@@ -13,6 +13,7 @@
     background-color: #87562A;
     padding: 50px;
     padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .queryFormBg h1 {
@@ -23,6 +24,7 @@
     color: #F4E5D7;
     text-shadow: 8px 8px #5E4127;
     text-underline-offset: 9px;
+    margin-bottom: 1rem;
 }
 
 .queryFormBg form {
@@ -93,6 +95,6 @@
     padding-bottom: 75px;
     font-weight: bold;
     align-self: center;
-    margin-top: 0.7em;
+    margin-top: 1rem;
     overflow-y: hidden;
 }
