@@ -5,9 +5,8 @@ import { useRef, useEffect } from 'react'
 import styles from "./Modal.module.css"
 
 type Props = {
-    title: string,
-    onClose: () => void,
-    onOk: () => void,
+    onConfirm: () => void,
+    onDeny: () => void,
     children: React.ReactNode,
 }
 
@@ -21,7 +20,7 @@ type Props = {
  * 
  * @returns the modal component
  */
-export default function Modal({ title, onClose, onOk, children }:
+export default function Modal({ onConfirm, onDeny, children }:
     Props
 ) {
     const searchParams = useSearchParams()
@@ -36,34 +35,33 @@ export default function Modal({ title, onClose, onOk, children }:
         }
     }, [showModal])
 
-    const closeModal = () => {
+    const clickDeny = () => {
+        onDeny()
         modalRef.current?.close()
-        onClose()
     }
 
-    const clickOk = () => {
-        onOk()
-        closeModal()
+    const clickConfirm = () => {
+        onConfirm()
+        modalRef.current?.close()
     }
 
     const modal: JSX.Element | null = showModal === "y"
         ? (
             <dialog ref={modalRef}>
                 <div className={styles.modal}>
-                    <div>
-                        <h1 className={styles.h1}>{ title }</h1>
-                        <button
-                            onClick={closeModal}
-                        >x</button>
-                    </div>
-                    <div>
+                    <div className={styles.text}>
                         {children}
-                        <div>
-                            <button
-                                onClick={clickOk}
-                            >Ok</button>
-                        </div>
                     </div>
+                        <div className={styles.buttonContainer}>
+                            {onConfirm==null
+                                ? null
+                                : <button onClick={clickConfirm} className={styles.confirmButton}>Confirm</button>
+                            }
+                            {onDeny==null
+                                ? null
+                                : <button onClick={clickDeny} className={styles.denyButton}>Deny</button>
+                            }
+                        </div>
                 </div>
             </dialog>
         ) : null

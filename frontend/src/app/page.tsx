@@ -1,19 +1,19 @@
 import Modal from "@/ui/Modal"
 
 export default function App() {
-  async function onClose() {
+  async function onDeny() {
     'use server'
-    console.log("Modal has closed")
+    console.log("Deny was clicked")
   }
 
-  async function onOk() {
+  async function onConfirm() {
     'use server'
-    console.log("Ok was clicked")
+    console.log("Confirm was clicked")
   }
 
   return (
     <div>
-      <Modal title="Example Modal" onClose={onClose} onOk={onOk}>
+      <Modal onConfirm={onConfirm} onDeny={onDeny}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore 

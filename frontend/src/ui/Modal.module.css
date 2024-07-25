@@ -3,9 +3,46 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #87562A;
+    border-radius: 3rem;
+    width: 500px;
+}
+
+.text {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .h1 {
     color: white;
     font-size: 32px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* temporary unresponsiveness */
+.confirmButton {
+    background-color: #DD995B;
+    width: auto;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    border-radius: 3rem;
+}
+
+.denyButton {
+    background-color: #A65656;
+    width: auto;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    border-radius: 3rem;
 }
