@@ -3,7 +3,6 @@
 .container {
     border-radius: 45px;
     background-color: #87562A;
-    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +10,7 @@
     padding-bottom: 30px;
     margin: 8em auto;
     max-width: 80%;
-    width: 1500px;
+    outline: solid 4px green;
   }
 
 
@@ -20,21 +19,21 @@
   font-weight: bold;
   text-decoration: underline 5px;
   text-align: center;
-  width: 1178px;
   font-size: 90px;
   color: #F4E5D7;
   text-shadow: 8px 8px #5E4127;
   text-underline-offset: 9px;
-  
+  padding-bottom: 0.2em;
 }
 
 .content {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 1178px;
-  max-width: 80%;
+  justify-content: center;
+  align-items: flex-start;
+  outline: 2px solid red;
+  width: 100%;
+  padding:0em 2em 1em 2em;
+  gap: 2em;
 }
