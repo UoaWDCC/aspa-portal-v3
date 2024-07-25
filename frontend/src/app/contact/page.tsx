@@ -31,6 +31,20 @@ export default function Contact() {
         <TeamList/>
       </section>
       <section id="contact-form" style={{paddingBottom: '8em'}}>
+        <h1 style={{
+            fontFamily: 'Zilla Slab',
+            fontWeight: 'bold',
+            textDecoration: 'underline 5px',
+            color:'#FBF5F0',
+            fontSize: '90px',
+            width:'100%',
+            textShadow: '8px 8px #5E4127',
+            textUnderlineOffset: '9px',
+            textAlign:'center',
+            marginBottom:'0.2em'
+        }}>
+          Contact Us
+        </h1>
         <ContactForm/>
       </section>
     </div>

@@ -1,29 +1,21 @@
-.queryFormBorder{
-    border-radius:45px;
+.queryFormBorder {
+    border-radius: 45px;
     background-color: hsl(29, 66%, 61%);
-    max-width: 1180px;
-    min-width: 450px;
-    width: 100%;
-    min-height: 775px;
+    max-width: 80%;
     height: 100%;
-    padding: 50px;
+    padding: 3em;
     margin: 0 auto;
 }
 
-.queryFormBg{
-    border-radius:45px;
+.queryFormBg {
+    border-radius: 45px;
     color: #FBF5F0;
     background-color: #87562A;
-    max-width: 1080px;
-    min-width: 350px;
-    width: 100%;
-    min-height: 675px;
-    height: 100%;
     padding: 50px;
     padding-top: 25px;
 }
 
-.queryFormBg h1{
+.queryFormBg h1 {
     font-weight: bold;
     text-decoration: underline 5px;
     text-align: left;
@@ -33,25 +25,24 @@
     text-underline-offset: 9px;
 }
 
-.queryFormBg form{
+.queryFormBg form {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
-.names{
+.names {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
-
-.queryFormRow{
+.queryFormRow {
     display: flex;
-    flex-wrap:wrap;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
 }
 
-.queryFormBg label{
+.queryFormBg label {
     color: #FBF5F0;
     font-size: 30px;
     font-weight: bold;
@@ -59,29 +50,25 @@
     padding-left: 30px;
 }
 
-.queryFormBg input{
+.queryFormBg input {
     color: #222629;
-    border-radius:45px;
+    border-radius: 45px;
     font-size: 30px;
-    padding-left:30px;
+    padding-left: 30px;
     padding-right: 30px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
-.input1{
+.input1 {
     height: 60px;
-    min-width: 250px;
+}
+
+.input2 {
+    height: 60px;
     width: 100%;
-    max-width: 440px;
 }
 
-.input2{
-    height: 60px;
-    min-width: 250px;
-    max-width: 980px;
-}
-
-.queryFormBg textarea{
+.queryFormBg textarea {
     color: #222629;
     border-radius: 45px;
     font-size: 20px;
@@ -89,23 +76,23 @@
     padding-right: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     min-height: 190px;
-    min-width: 250px;
-    max-width: 980px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.queryFormBg button{
-    min-width: 300px;
-    max-width:400px;
-    height:60px;
-    border-radius:45px;
-    background-color:#dd995b;
-    color:#FBF5F0;
+.queryFormBg button {
+    width: 400px;
+    max-width: 80%;
+    height: 60px;
+    border-radius: 45px;
+    background-color: #dd995b;
+    color: #FBF5F0;
     font-size: 50px;
-    padding-bottom:75px;
+    padding-bottom: 75px;
     font-weight: bold;
     align-self: center;
-    margin-top:5px;
+    margin-top: 0.7em;
     overflow-y: hidden;
 }
