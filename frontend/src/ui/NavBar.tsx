@@ -20,12 +20,29 @@ export default function NavBar() {
         setIsAdmin(false)
     }
 
+    const links = [
+        { name: 'Home', href: '/home', text: 'Home' },
+        { name: 'Contact', href: '/contact', text: 'Talk To Us' },
+        { name: 'Events', href: '/events', text: 'Events'},
+    ]
+
     return (
         <nav className={styles.nav}>
             <ul>
-    
-                    
-                <li className={styles.navitem}>
+                {links.map((link) => {
+                    return (
+                        <li className={styles.navitem}>
+                            <Link 
+                                key={link.name}
+                                className={`${styles.navlink} ${pathname.includes(link.href) ? styles.currentpage : ""}`}
+                                href={link.href}
+                            >{link.text}
+                            </Link>
+                        </li>
+                    );
+                })}
+
+                {/* <li className={styles.navitem}>
                     <Link className={`${styles.navlink} ${pathname === "/home" ? styles.currentpage : ""}`} href="/home">
                         Home
                     </Link>
@@ -39,7 +56,7 @@ export default function NavBar() {
                     <Link className={`${styles.navlink} ${pathname === "/events" ? styles.currentpage : ""}`} href="/events">
                         Events
                     </Link>
-                </li>
+                </li> */}
                 {isAuthentication ? (
                     <>
                         <li className={styles.navitem}>
