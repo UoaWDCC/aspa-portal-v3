@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/*"flex min-h-screen flex-col items-center justify-between p-24"*/
-/* globals.css */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,32 +10,13 @@
     overflow-x: hidden;
 }
 
-/* Your existing styles */
 body {
     display: flex;
     flex-direction: column;
     background-color: #4F4B47;
     min-height: 100vh;
     min-width: 100vh;
-
 }
-
-/* header {
-    height: 130px;
-    min-width: 100vw;
-    background-color: #DD995B;
-    display: flex;
-    flex-direction: row;
-  }
-
-header img {
-    object-fit: cover;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-top: 15px;
-    margin-left: 15px;
-  } */
 
 main {
     flex: 1;

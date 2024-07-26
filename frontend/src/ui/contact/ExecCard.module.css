@@ -8,30 +8,28 @@
   align-items: center;
   font-weight: 600;
   background-color: #DD995B;
-  width: 20rem;
-  height: auto;
+  max-width: 20rem;
   border-radius: 3rem;
   box-sizing: border-box;
-  margin: 15px 0px 15px 0px;
-  padding: 25px 10px 25px 10px;
+  padding: 25px 30px 25px 30px;
 }
 
 .card img {
-  width: 15rem;
-  height: 15rem;
+  width: 12rem;
+  height: 12rem;
   border-radius: 25%;
 }
 
 .card h1 {
   font-family: 'Zilla Slab';
   font-weight: bold;
-  font-size: 2em; 
+  font-size: 1.5em; 
+  margin-top: 0.2em;
 }
 
 .card p {
   font-weight: 200;
-  font-size: 1.25em;
+  font-size: 1em;
   overflow: auto;
-  inline-size: 100%;
   overflow-wrap: break-word;
 }

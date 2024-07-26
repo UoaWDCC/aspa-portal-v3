@@ -43,7 +43,7 @@ export default function NavBar() {
                 {isAuthentication ? (
                     <>
                         <li className={styles.navitem}>
-                            <Link className={`${styles.navlink} ${pathname === "/profile" ? styles.currentpage : ""}`} href="/profile">
+                            <Link className={`${styles.navlink} ${pathname === "/profile-page" ? styles.currentpage : ""}`} href="/profile-page">
                                 Profile
                             </Link>
                         </li>
