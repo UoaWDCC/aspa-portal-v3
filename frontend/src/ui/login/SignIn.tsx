@@ -3,7 +3,9 @@ import styles from './SignIn.module.css';
 
 
 export default function SignIn() {
+
   return (
+  
     <form
       action={async () => {
         "use server"
@@ -20,6 +22,11 @@ export default function SignIn() {
             Login
           </h1>
         </button>
+        <button type="submit" className={styles.registerButton}>
+          <h1 className={styles.subtitle}>
+            Register
+          </h1>
+        </button>        
       </div>  
     </form>
   )
