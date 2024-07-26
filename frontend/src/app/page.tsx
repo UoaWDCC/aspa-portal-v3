@@ -1,4 +1,5 @@
 import Modal from "@/ui/Modal"
+import Button from "@/ui/TestButton"
 
 export default function App() {
   async function onDeny() {
@@ -13,9 +14,10 @@ export default function App() {
 
   return (
     <div>
-      <Modal onConfirm={onConfirm} onDeny={onDeny}>
+      <Button />
+      <Modal onConfirm={onConfirm} onDeny={null}>
         <p>
-          Are you sure you want to withdraw from the event?
+          You have added a new Member!
         </p>
       </Modal>
     </div>

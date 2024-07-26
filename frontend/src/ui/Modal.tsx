@@ -1,5 +1,5 @@
 'use client'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import React from 'react';
 import { useRef, useEffect } from 'react'
 import styles from "./Modal.module.css"
@@ -8,6 +8,11 @@ type Props = {
     onConfirm: (() => void) | null,
     onDeny: (() => void) | null,
     children: React.ReactNode,
+}
+
+type Params = {
+    key: string,
+    value: string,
 }
 
 /**\
@@ -27,9 +32,24 @@ export default function Modal({ onConfirm, onDeny, children }:
     const modalRef = useRef<null | HTMLDialogElement>(null)
     const showModal = searchParams.get('showModal')
 
+    const pathname = usePathname()
+    const {replace} = useRouter()
+
+    function updateSearchParams({key, value}: Params) {
+        const params = new URLSearchParams(searchParams)
+        if (value) {
+          params.set(key, value)
+        } else {
+          params.delete(key)
+        }
+        
+        const newUrl = `${pathname}?${params.toString()}`
+        replace(newUrl)
+    }
+
     // Ensure that there is at least one button to close the modal
     if (!onConfirm && !onDeny) {
-        return null;
+        throw new InvalidModalError("The modal has no onConfirm and no onDeny function");
     }
 
     useEffect(() => {
@@ -40,18 +60,23 @@ export default function Modal({ onConfirm, onDeny, children }:
         }
     }, [showModal])
 
+    const closeModal = () => {
+        modalRef.current?.close()
+        updateSearchParams({key: "showModal", value: "n"})
+    }
+
     const clickDeny = () => {
         if (onDeny) {
             onDeny()
         }
-        modalRef.current?.close()
+        closeModal()
     }
 
     const clickConfirm = () => {
         if (onConfirm) {
             onConfirm()
         }
-        modalRef.current?.close()
+        closeModal()
     }
 
     const modal: JSX.Element | null = showModal === "y"

@@ -39,6 +39,8 @@
     border-width: 5px;
     border-radius: 3rem;
     color: #FBF5F0;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .denyButton {
@@ -49,4 +51,7 @@
     border-color: #FBF5F0;
     border-width: 5px;
     border-radius: 3rem;
+    color: #FBF5F0;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
