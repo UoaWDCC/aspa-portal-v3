@@ -27,6 +27,7 @@ export default function Modal({ onConfirm, onDeny, children }:
     const modalRef = useRef<null | HTMLDialogElement>(null)
     const showModal = searchParams.get('showModal')
 
+    // Ensure that there is at least one button to close the modal
     if (!onConfirm && !onDeny) {
         return null;
     }
@@ -61,11 +62,12 @@ export default function Modal({ onConfirm, onDeny, children }:
                         {children}
                     </div>
                         <div className={styles.buttonContainer}>
-                            {onConfirm==null
+                            {/*If onConfirm or onDeny are null then don't include their buttons*/}
+                            {!onConfirm
                                 ? null
                                 : <button onClick={clickConfirm} className={styles.confirmButton}>Confirm</button>
                             }
-                            {onDeny==null
+                            {!onDeny
                                 ? null
                                 : <button onClick={clickDeny} className={styles.denyButton}>Deny</button>
                             }

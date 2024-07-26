@@ -4,45 +4,49 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #87562A;
-    border-radius: 3rem;
-    width: 500px;
+    border-radius: 2rem;
+    width: 20rem;
+    padding: 1rem;
+    line-height: 2.4rem;
 }
 
 .text {
     display: flex;
     flex-direction: row;
-    gap: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.h1 {
-    color: white;
-    font-size: 32px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #FBF5F0;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .buttonContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    gap: 50px;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 /* temporary unresponsiveness */
 .confirmButton {
     background-color: #DD995B;
     width: auto;
+    height: 3rem;
     border-style: solid;
-    border-color: white;
+    border-color: #FBF5F0;
     border-width: 5px;
     border-radius: 3rem;
+    color: #FBF5F0;
 }
 
 .denyButton {
     background-color: #A65656;
     width: auto;
+    height: 3rem;
     border-style: solid;
-    border-color: white;
+    border-color: #FBF5F0;
     border-width: 5px;
     border-radius: 3rem;
 }
