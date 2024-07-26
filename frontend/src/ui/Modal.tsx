@@ -5,8 +5,8 @@ import { useRef, useEffect } from 'react'
 import styles from "./Modal.module.css"
 
 type Props = {
-    onConfirm: () => void,
-    onDeny: () => void,
+    onConfirm: (() => void) | null,
+    onDeny: (() => void) | null,
     children: React.ReactNode,
 }
 
@@ -27,6 +27,10 @@ export default function Modal({ onConfirm, onDeny, children }:
     const modalRef = useRef<null | HTMLDialogElement>(null)
     const showModal = searchParams.get('showModal')
 
+    if (!onConfirm && !onDeny) {
+        return null;
+    }
+
     useEffect(() => {
         if (showModal === 'y') {
             modalRef.current?.showModal()
@@ -36,12 +40,16 @@ export default function Modal({ onConfirm, onDeny, children }:
     }, [showModal])
 
     const clickDeny = () => {
-        onDeny()
+        if (onDeny) {
+            onDeny()
+        }
         modalRef.current?.close()
     }
 
     const clickConfirm = () => {
-        onConfirm()
+        if (onConfirm) {
+            onConfirm()
+        }
         modalRef.current?.close()
     }
 
@@ -69,4 +77,11 @@ export default function Modal({ onConfirm, onDeny, children }:
     return (
         modal
     );
+}
+
+class InvalidModalError extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = "Modal is invalid"
+    }
 }
