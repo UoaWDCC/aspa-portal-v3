@@ -1,0 +1,42 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Adjust the gap as needed */
+    color: #FBF5F0;
+  }
+  
+  .leftColumn {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .rightColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 56px;
+    margin-bottom: 16px;
+    font-weight: bold;
+    
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+.button {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
