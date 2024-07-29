@@ -8,8 +8,8 @@ export default function Description() {
             <p>
               Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
             </p>
-            <div>
-              <button>Current Events</button>
+            <div className={styles.horizontalAligned}>
+              <button className={styles.eventsButton}>Current Events</button>
               <p>dolor sit amet, consectetur,</p>
             </div>
           </div>
