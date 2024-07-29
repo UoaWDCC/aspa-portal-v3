@@ -1,16 +1,17 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px; /* Adjust the gap as needed */
+    gap: 30px; 
     color: #FBF5F0;
     width: 75%;
     margin: 0 auto;
-    margin-top:45px;
+    margin-top: 90px;
   }
   
   .leftColumn {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
   
   .rightColumn {
@@ -20,28 +21,31 @@
   }
   
   .title {
-    font-size: 56px;
+    font-size: 60px;
     margin-bottom: 15px;
     font-weight: bold;
     line-height: 1.1;
+    overflow: hidden;
   }
   
   .image {
     width: 100%;
     height: auto;
     margin-bottom: 16px;
+    
   }
   
   .buttonContainer {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 75%;
+    font-size: 20px;
   }
   
 .eventsButton {
     padding: 8px 16px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: #DD995B;
     font-weight: 600;
     margin: 15px 0;
@@ -53,5 +57,28 @@
     gap: 20px;
     align-items: center;
     color: #DD995B;
+  }
+
+  .regButton {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #87562A;
+    margin: 15px 0;
+    color: #FBF5F0;
+    width: 150px;
+    border-width: 2PX;
+
+  }
+
+  .logButton {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #DD995B;
+    margin: 15px 0;
+    color: #FBF5F0;
+    width: 150px;
+    border-width: 2PX;
   }
   

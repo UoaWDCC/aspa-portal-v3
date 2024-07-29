@@ -14,10 +14,10 @@ export default function Description() {
             </div>
           </div>
           <div className={styles.rightColumn}>
-            <img src="path/to/your/image.jpg" alt="Association Image" className={styles.image}/>
+            <img src="/ASPA Title.png" alt="Association Image" className={styles.image}/>
             <div className={styles.buttonContainer}>
-              <button>Register</button>
-              <button>Login</button>
+              <button className={styles.regButton}>REGISTER</button>
+              <button className={styles.logButton}>LOGIN</button>
             </div>
           </div>
         </div>
