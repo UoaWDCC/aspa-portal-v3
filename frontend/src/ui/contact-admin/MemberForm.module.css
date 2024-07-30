@@ -1,0 +1,70 @@
+.memberFormBg{
+    border-radius:45px;
+    color: #FBF5F0;
+    background-color: #F6CDA6;
+    max-width: 1185px;
+    min-width: 450px;
+    width: 100%;
+    min-height: 855px;
+    height: 100%;
+    padding: 50px;
+    padding-top: 25px;
+    margin: 0 auto;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.memberFormBg form{
+    display: flex;
+    flex-direction:column;
+    align-content: stretch;
+}
+
+.memberFormBg label{
+    color: #5E4127;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.memberFormBg input{
+    color: #222629;
+    border-radius:45px;
+    font-size: 30px;
+    padding-left:30px;
+    padding-right: 30px;
+    margin-bottom:10px;
+    height: 60px;
+    min-width: 250px;
+    max-width: 980px;
+}
+
+.memberFormBg textarea{
+    color: #222629;
+    border-radius: 45px;
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom:10px;
+    min-height: 190px;
+    min-width: 250px;
+    max-width: 980px;
+}
+
+.memberFormBg button{
+    min-width: 300px;
+    max-width: 1035px;
+    height: 80px;
+    border-radius:45px;
+    background-color:#dd995b;
+    color:#FBF5F0;
+    font-size: 50px;
+    padding-bottom:75px;
+    font-weight: bold;
+    margin-top:5px;
+    margin-bottom: 50px;
+    overflow-y: hidden;
+}
