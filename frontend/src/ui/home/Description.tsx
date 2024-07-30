@@ -1,5 +1,5 @@
 import styles from "./Description.module.css";
-import AspaLogo from "../../../public/ASPA Title.png";
+import AspaLogo from "../../../public/ASPA Title.svg";
 import Image from "next/image";
 
 export default function Description() {
