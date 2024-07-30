@@ -1,0 +1,4 @@
+app = 'wdcc-aspa'
+primary_region = 'syd'
+
+[build]
