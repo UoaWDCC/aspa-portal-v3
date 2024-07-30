@@ -1,4 +1,6 @@
 import styles from "./Description.module.css";
+import AspaLogo from "../../../public/ASPA Title.svg";
+import Image from "next/image";
 
 export default function Description() {
     return (
@@ -14,7 +16,13 @@ export default function Description() {
             </div>
           </div>
           <div className={styles.rightColumn}>
-            <img src="/ASPA Title.png" alt="Association Image" className={styles.image}/>
+            <Image src={AspaLogo} alt="ASPA Logo"
+            style={{
+              width: '100%',
+              height: 'auto',
+              marginBottom: '1rem',
+            }}
+            />
             <div className={styles.buttonContainer}>
               <button className={styles.regButton}>REGISTER</button>
               <button className={styles.logButton}>LOGIN</button>
