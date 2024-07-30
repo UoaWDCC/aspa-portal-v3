@@ -1,8 +1,7 @@
 export default function Events() {
-    return (
-      <div>
-       Event Page
-      </div>
-    );
-  }
-  
+  return (
+    <div>
+     Event Page
+    </div>
+  );
+}
