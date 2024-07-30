@@ -1,3 +1,4 @@
+export * from './create-event-request';
 export * from './create-user401-response';
 export * from './event';
 export * from './exec';
