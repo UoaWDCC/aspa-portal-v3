@@ -5,16 +5,16 @@ export default function AddEventform() {
     return (
 
         <form className={styles.container}>
-            <div className={styles.input}> 
-              <h1> Event Name: </h1>
-              <input type="text" placeholder="" name="name" required />
+            <div className={styles.input}>
+              <h1 style={{ fontWeight: 600, fontSize: '38px', textAlign: 'center' }}>Event Name:</h1>
+              <input type="text" placeholder="" name="name" required style={{ width: '300px' }} />
             </div>
 
             <div className={styles.content}>
               <div className={styles.input}>
                 <label> Event Description: </label>
-                <textarea id="eventdesc" name="eventdesc" rows="4" cols="50"></textarea>
-                <input type="text" placeholder="" name="name" required />
+                <textarea input type="text" id="eventdesc" name="eventdesc" rows="4" cols="116" requeired   style={{ borderRadius: '10px' }}
+ ></textarea>
               </div>
 
               <div className={styles.input}>
@@ -40,12 +40,6 @@ export default function AddEventform() {
               <div className={styles.input}>
                 <label> Add Image(s): </label>
                 <input type="file" accept="image/*" multiple name="images" required />
-              </div>
-
-              <div className={styles.radioinput}>
-                <label> -: </label>
-                  <input type="radio" name="skill" value="beginner" />
-                  <span>-</span>
               </div>
 
             </div>

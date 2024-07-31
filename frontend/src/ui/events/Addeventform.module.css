@@ -30,6 +30,22 @@
     margin: 0 auto 8px auto;
 }
 
+.bolder-header {
+    font-weight: 900; /* Maximum boldness */
+    font-size: 55px;  /* Slightly bigger font size */
+}
+
+.header h2 {
+    max-width: 278px;
+    font-size: 55px; /* Slightly bigger font size */
+    font-weight: 999; /* Bolder font weight */
+    text-align: right;
+    border-bottom: 0px solid #FFFFFF;
+    line-height: 1.6;
+    overflow-y: hidden;
+    margin: 0 auto 8px auto;
+}
+
 .content {
     width: 964px;
     max-width: 100%;
