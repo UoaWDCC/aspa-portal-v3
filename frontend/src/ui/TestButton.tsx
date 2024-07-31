@@ -20,7 +20,6 @@ export default function TestButton() {
         } else {
           params.delete(key)
         }
-        
         const newUrl = `${pathname}?${params.toString()}`
         replace(newUrl)
     }
