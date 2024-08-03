@@ -1,22 +1,30 @@
-version: '3.1'
+# Use postgres/example user/password credentials
+version: '3.9'
 
 services:
+
   db:
     container_name: aspa-db
-    image: mysql
+    image: postgres
     restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    #volumes:
+    #  - type: tmpfs
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: aspadb
-      MYSQL_USER: aspa
-      MYSQL_PASSWORD: pool
-      MYSQL_TCP_PORT: 3307
-    ports:
-      - 3307:3307
-    expose:
-      - 3307
+      POSTGRES_DB: main
+      POSTGRES_USER: aspa
+      POSTGRES_PASSWORD: pool
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
 
   adminer:
     container_name: aspa-adminer
@@ -24,5 +32,6 @@ services:
     restart: always
     ports:
       - 8080:8080
+
 
   
