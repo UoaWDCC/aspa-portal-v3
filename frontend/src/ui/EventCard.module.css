@@ -3,36 +3,39 @@
   text-align: left;
   flex-direction: column;
   justify-content: center;
-  width: 360px;
+  width: 100%;
   margin: 0px 15px;
+  transition: transform 0.3s ease;
 }
-
+.card:hover {
+  transform: scale(0.95); 
+}
 .card img {
-  width: 360px;
-  height: 360px;
+  aspect-ratio: 1/1;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
   border-style: solid;
   border-width: 20px; 
   border-color: #DD995B;
   border-radius: 75px;
 }
-
 .card h1 {
   font-weight: medium;
-  font-size: 30px;
+  font-size:3em;
   color: #FFFFFF;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
 .card p {
   font-weight: 400px;
-  font-size: 20px;
+  font-size: em;
   color: #FFFFFF;
   line-height: 1.1;
-  overflow: hidden
+  overflow: hidden;
 }
-
 .card .description {
   padding: 0px 20px;
 }
