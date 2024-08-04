@@ -6,7 +6,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box;
     overflow-x: hidden;
 }
 
@@ -14,15 +15,11 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #4F4B47;
-    min-height: 100vh;
-    min-width: 100vh;
 }
 
 main {
     flex: 1;
     background-color: #222629;
     margin: 3em 2em 0 2em;
-    min-width: 80vw;
     border-radius: 12px;
-    min-height: 50vh;
 }
