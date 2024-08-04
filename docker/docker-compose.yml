@@ -2,23 +2,6 @@
 version: '3.9'
 
 services:
-  directus:
-      image: directus/directus:10.13.1
-      ports:
-        - 8055:8055
-      volumes:
-        - ./database:/directus/database
-        - ./uploads:/directus/uploads
-        - ./extensions:/directus/extensions
-      environment:
-        SECRET: "replace-with-secure-random-value"
-        ADMIN_EMAIL: "admin@example.com"
-        ADMIN_PASSWORD: "d1r3ctu5"
-        DB_CLIENT: "pg"
-        DB_HOST: "host.docker.internal"
-        DB_PORT: "5432"
-        WEBSOCKETS_ENABLED: "true"
-
   db:
     container_name: aspa-db
     image: postgres
@@ -48,6 +31,23 @@ services:
     restart: always
     ports:
       - 8080:8080
+  
+  directus:
+      image: directus/directus:10.13.1
+      ports:
+        - 8055:8055
+      volumes:
+        - ./database:/directus/database
+        - ./uploads:/directus/uploads
+        - ./extensions:/directus/extensions
+      environment:
+        SECRET: "replace-with-secure-random-value"
+        ADMIN_EMAIL: "admin@example.com"
+        ADMIN_PASSWORD: "d1r3ctu5"
+        DB_CLIENT: "pg"
+        DB_HOST: "host.docker.internal"
+        DB_PORT: "5432"
+        WEBSOCKETS_ENABLED: "true"
 
 
   
