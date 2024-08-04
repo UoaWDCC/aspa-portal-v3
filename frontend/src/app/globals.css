@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
     margin: 0;
     padding: 0;
@@ -22,4 +21,31 @@ main {
     background-color: #222629;
     margin: 3em 2em 0 2em;
     border-radius: 12px;
+    position: relative;
+    z-index: 1; 
+}
+
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    pointer-events: none; 
+    z-index: 2; 
+}
+
+.ball-overlay {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+.child-content {
+    position: relative;
+    z-index: 3; 
 }
