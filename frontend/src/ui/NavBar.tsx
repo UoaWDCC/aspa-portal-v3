@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 export default function NavBar() {
     const pathname = usePathname();
-    const [isAuthentication, setIsAuthentication] = useState(true);
+    const [isAuthentication, setIsAuthentication] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false)
     console.log(pathname)
 
@@ -31,7 +31,7 @@ export default function NavBar() {
             <ul>
                 {links.map((link) => {
                     return (
-                        <li className={styles.navitem}>
+                        <li key={link.name} className={styles.navitem}>
                             <Link 
                                 key={link.name}
                                 className={`${styles.navlink} ${pathname.includes(link.href) ? styles.currentpage : ""}`}
@@ -41,22 +41,6 @@ export default function NavBar() {
                         </li>
                     );
                 })}
-
-                {/* <li className={styles.navitem}>
-                    <Link className={`${styles.navlink} ${pathname === "/home" ? styles.currentpage : ""}`} href="/home">
-                        Home
-                    </Link>
-                </li>
-                <li className={styles.navitem}>
-                    <Link className={`${styles.navlink} ${pathname === "/contact" ? styles.currentpage : ""}`} href="/contact">
-                        Talk To Us
-                    </Link>
-                </li>
-                <li className={styles.navitem}>
-                    <Link className={`${styles.navlink} ${pathname === "/events" ? styles.currentpage : ""}`} href="/events">
-                        Events
-                    </Link>
-                </li> */}
                 {isAuthentication ? (
                     <>
                         <li className={styles.navitem}>
