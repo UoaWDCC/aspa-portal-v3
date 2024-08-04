@@ -16,7 +16,7 @@
     },
     "workspaceMount": "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached",
     "workspaceFolder": "/repo",
-    "postCreateCommand": "yarn install && cd backend && docker compose up --build -d",
+    "postCreateCommand": "yarn install && cd docker && docker compose up --build -d",
     "postStartCommand": "cd backend && docker compose up -d",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
