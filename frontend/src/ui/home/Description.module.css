@@ -82,3 +82,98 @@
     border-width: 2PX;
   }
   
+/* Responsive Design */
+@media (max-width: 1350px) {
+  .container {
+      width: 90%;
+  }
+
+  .title {
+      font-size: 50px;
+  }
+
+  .buttonContainer {
+      width: 85%;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 20px;
+  }
+
+  .title {
+      font-size: 40px;
+      text-align: center;
+  }
+
+  .buttonContainer {
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .eventsButton,
+  .regButton,
+  .logButton {
+      width: 100%;
+  }
+
+  .horizontalAligned {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+  }
+
+  .leftColumn {
+      order: 3;
+  }
+
+  .rightColumn {
+      order: 1;
+  }
+
+  .image {
+      order: 1;
+  }
+
+  .buttonContainer {
+      order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+      font-size: 35px;
+  }
+
+  .eventsButton,
+  .regButton,
+  .logButton {
+      font-size: 18px;
+      padding: 10px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+      width: 80%;
+      margin-top: 30px;
+  }
+
+  .title {
+      font-size: 30px;
+  }
+
+  .buttonContainer {
+      font-size: 18px;
+  }
+
+  .eventsButton,
+  .regButton,
+  .logButton {
+      font-size: 16px;
+  }
+}
