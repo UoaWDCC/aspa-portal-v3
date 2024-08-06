@@ -32,8 +32,8 @@ function MemberForm(){
                 <input 
                 className = {styles.input}
                 type="text"
-                id="execName"
-                name="execName"
+                id="execTitle"
+                name="execTitle"
                 value={formData.execTitle}
                 onChange={handleChange}
                 />
