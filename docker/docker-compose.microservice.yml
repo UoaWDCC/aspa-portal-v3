@@ -1,5 +1,6 @@
 # Use postgres/example user/password credentials
 
+name: aspa-dev-container
 services:
   db:
     container_name: aspa-db
