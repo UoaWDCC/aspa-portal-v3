@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+// import { FaBars, FaTimes } from 'react-icons/fa';
 import styles from './Navbar.module.css';
 import billairdBall from '../../public/billiard.png';
 import Image from 'next/image';
@@ -56,7 +56,7 @@ export default function NavBar() {
             {/* Hamburger Button */}
             <div className={styles.hamburgerButton}>
                 <button type='button' onClick={handleMenu}>
-                    <FaBars size={30} color='black' />
+                    {/* <FaBars size={30} color='black' /> */}
                 </button>
             </div>
 
@@ -64,7 +64,7 @@ export default function NavBar() {
             {open && (
                 <div className={styles.mobileMenu}>
                     <button type='button' onClick={handleMenu}>
-                        <FaTimes size={30} color='black' />
+                        {/* <FaTimes size={30} color='black' /> */}
                     </button>
 
                     <div className={styles.image}>
