@@ -5,7 +5,7 @@ export default function (eventsService) {
 
   async function GET(req, res, next) {
     const unpaidTickets = await eventsService.getAllUnpaidEventTickets(
-      req.params.eventId
+      req.params.eventId,
     );
     if (!unpaidTickets) {
       res.status(204).json({ message: "No unpaid tickets in event" });
