@@ -11,6 +11,10 @@ interface Exec {
 export default function ExecCard({ exec }: { exec: Exec }) {
   return (
     <div className={styles.card}>
+      <div>
+        <button></button>
+        <button className={styles.deleteBar}></button>
+      </div>
       <img src={exec.imgUrl} alt={exec.name}/>
       <div className={styles.description}>
         <h1>{exec.name}<br/>{exec.title}</h1>
