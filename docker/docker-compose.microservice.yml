@@ -43,13 +43,16 @@ services:
         SECRET: "replace-with-secure-random-value"
         ADMIN_EMAIL: "admin@example.com"
         ADMIN_PASSWORD: "d1r3ctu5"
-        DB_CLIENT: "pg"
-        DB_HOST: "host.docker.internal"
-        DB_PORT: "5432"
-        DB_DATABASE: "main"
-        DB_USER: "aspa"
-        DB_PASSWORD: "pool"
         WEBSOCKETS_ENABLED: "true"
+        DB_CLIENT: "sqlite3"
+        DB_FILENAME: "/directus/database/data.db"
+#        For external database
+#        DB_CLIENT: "pg"
+#        DB_HOST: "host.docker.internal"
+#        DB_PORT: "5432"
+#        DB_DATABASE: "main"
+#        DB_USER: "aspa"
+#        DB_PASSWORD: "pool"
 
 
 
