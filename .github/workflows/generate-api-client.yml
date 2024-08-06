@@ -27,5 +27,6 @@ jobs:
                 commit_user_name: "github-api-actions[bot]"
                 commit_user_email: "github-api-actions[bot]@users.noreply.github.com"
                 commit_author: Author <actions@github.com>
+                commit_options: '--no-verify'
 
         
