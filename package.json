@@ -21,5 +21,8 @@
   "dependencies": {
     "@next/font": "^14.2.4",
     "@openapitools/openapi-generator-cli": "^2.13.4"
+  },
+  "devDependencies": {
+    "husky": "^9.1.4"
   }
 }
