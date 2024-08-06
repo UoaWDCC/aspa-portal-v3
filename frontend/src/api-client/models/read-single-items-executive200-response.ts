@@ -13,6 +13,21 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ItemsExecutive } from './items-executive';
+
+/**
+ * 
+ * @export
+ * @interface ReadSingleItemsExecutive200Response
+ */
+export interface ReadSingleItemsExecutive200Response {
+    /**
+     * 
+     * @type {ItemsExecutive}
+     * @memberof ReadSingleItemsExecutive200Response
+     */
+    'data'?: ItemsExecutive;
+}
+

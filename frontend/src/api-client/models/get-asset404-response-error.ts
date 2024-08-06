@@ -13,6 +13,24 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+
+/**
+ * 
+ * @export
+ * @interface GetAsset404ResponseError
+ */
+export interface GetAsset404ResponseError {
+    /**
+     * 
+     * @type {number}
+     * @memberof GetAsset404ResponseError
+     */
+    'code'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetAsset404ResponseError
+     */
+    'message'?: string;
+}
+

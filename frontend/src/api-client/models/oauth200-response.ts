@@ -13,6 +13,24 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+
+/**
+ * 
+ * @export
+ * @interface Oauth200Response
+ */
+export interface Oauth200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Oauth200Response
+     */
+    'public'?: boolean;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof Oauth200Response
+     */
+    'data'?: Array<string>;
+}
+

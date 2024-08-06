@@ -13,6 +13,24 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+
+/**
+ * 
+ * @export
+ * @interface PasswordResetRequest
+ */
+export interface PasswordResetRequest {
+    /**
+     * One-time use JWT token that is used to verify the user.
+     * @type {string}
+     * @memberof PasswordResetRequest
+     */
+    'token': string;
+    /**
+     * New password for the user.
+     * @type {string}
+     * @memberof PasswordResetRequest
+     */
+    'password': string;
+}
+

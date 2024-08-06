@@ -13,6 +13,18 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+
+/**
+ * 
+ * @export
+ * @interface PasswordRequestRequest
+ */
+export interface PasswordRequestRequest {
+    /**
+     * Email address of the user you\'re requesting a reset for.
+     * @type {string}
+     * @memberof PasswordRequestRequest
+     */
+    'email': string;
+}
+

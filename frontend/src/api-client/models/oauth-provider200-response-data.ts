@@ -13,6 +13,18 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+
+/**
+ * 
+ * @export
+ * @interface OauthProvider200ResponseData
+ */
+export interface OauthProvider200ResponseData {
+    /**
+     * 
+     * @type {string}
+     * @memberof OauthProvider200ResponseData
+     */
+    'token'?: string;
+}
+
