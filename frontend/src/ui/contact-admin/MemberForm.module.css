@@ -1,5 +1,5 @@
-.memberFormBg{
-    border-radius:45px;
+.memberFormBg {
+    border-radius: 45px;
     color: #FBF5F0;
     background-color: #F6CDA6;
     max-width: 1185px;
@@ -11,36 +11,41 @@
     padding-top: 25px;
     margin: 0 auto;
     margin-top: 50px;
-    align-items: center;
-}
-
-.memberFormBg form{
     display: flex;
-    flex-direction:column;
-    align-content: stretch;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
 }
 
-.memberFormBg label{
+.memberFormBg form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form items */
+    width: 100%; /* Ensure the form takes full width */
+    max-width: 980px; /* Adjust the max-width if needed */
+}
+
+.memberFormBg label {
     color: #5E4127;
     font-size: 30px;
     font-weight: bold;
     text-align: left;
     padding-left: 30px;
+    width: 100%;
 }
 
-.memberFormBg input{
+.memberFormBg input {
     color: #222629;
-    border-radius:45px;
+    border-radius: 45px;
     font-size: 30px;
-    padding-left:30px;
+    padding-left: 30px;
     padding-right: 30px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     height: 60px;
-    min-width: 250px;
+    width: 100%; /* Make inputs responsive */
     max-width: 980px;
 }
 
-.memberFormBg textarea{
+.memberFormBg textarea {
     color: #222629;
     border-radius: 45px;
     font-size: 20px;
@@ -48,23 +53,23 @@
     padding-right: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     min-height: 190px;
-    min-width: 250px;
+    width: 100%; /* Make textarea responsive */
     max-width: 980px;
 }
 
-.memberFormBg button{
-    min-width: 300px;
+.memberFormBg button {
+    width: 100%; /* Make buttons responsive */
     max-width: 1035px;
     height: 80px;
-    border-radius:45px;
-    background-color:#dd995b;
-    color:#FBF5F0;
-    font-size: 50px;
-    padding-bottom:75px;
+    border-radius: 45px;
+    background-color: #dd995b;
+    color: #FBF5F0;
+    font-size: 30px; /* Adjusted font size */
     font-weight: bold;
-    margin-top:5px;
+    margin-top: 5px;
     margin-bottom: 50px;
     overflow-y: hidden;
+    padding-bottom: 0;
 }
