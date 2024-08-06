@@ -8,7 +8,6 @@
     min-height: 855px;
     height: 100%;
     padding: 50px;
-    padding-top: 25px;
     margin: 0 auto;
     margin-top: 50px;
     display: flex;
@@ -66,10 +65,11 @@
     border-radius: 45px;
     background-color: #dd995b;
     color: #FBF5F0;
-    font-size: 30px; /* Adjusted font size */
+    font-size: 50px; /* Adjusted font size */
     font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     overflow-y: hidden;
     padding-bottom: 0;
+    font-weight: bold;
 }
