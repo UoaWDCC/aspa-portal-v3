@@ -13,10 +13,6 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v2
-            - name: Run yarn install
-              uses: borales/actions-yarn@v4
-              with:
-                cmd: install
             - name: Generate API Client
               run: yarn generate:api-client
             - name: Commit new API client
