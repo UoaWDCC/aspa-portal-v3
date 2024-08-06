@@ -47,6 +47,9 @@ services:
         DB_CLIENT: "pg"
         DB_HOST: "host.docker.internal"
         DB_PORT: "5432"
+        DB_DATABASE: "main"
+        DB_USER: "aspa"
+        DB_PASSWORD: "pool"
         WEBSOCKETS_ENABLED: "true"
 
 
