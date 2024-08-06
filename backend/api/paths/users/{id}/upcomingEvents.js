@@ -1,6 +1,6 @@
 export default function (usersService) {
   let operations = {
-    GET
+    GET,
   };
 
   async function GET(req, res, next) {
