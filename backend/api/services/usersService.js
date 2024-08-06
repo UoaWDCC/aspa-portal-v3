@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -22,7 +22,7 @@ const usersService = {
   // GET /users/allNames
   async getAllUserNames() {
     const userNames = await this.getAllUsers();
-    return userNames.map(user => `${user.firstName} ${user.lastName}`);
+    return userNames.map((user) => `${user.firstName} ${user.lastName}`);
   },
 
   // GET /users/totalNumber
@@ -53,7 +53,7 @@ const usersService = {
   // GET /users/{id}/allEvents
   async getAllEventsByUserId(id) {
     const userTickets = await this.getAllTicketsByUserId(id);
-    const eventIds = userTickets.map(ticket => ticket.eventId);
+    const eventIds = userTickets.map((ticket) => ticket.eventId);
     const events = await prisma.event.findMany({
       where: {
         id: {
@@ -67,7 +67,7 @@ const usersService = {
   // GET /users/{id}/upcomingEvents
   async getUpcomingEventsByUserId(id) {
     const userTickets = await this.getAllTicketsByUserId(id);
-    const eventIds = userTickets.map(ticket => ticket.eventId);
+    const eventIds = userTickets.map((ticket) => ticket.eventId);
     const events = await prisma.event.findMany({
       where: {
         id: {
@@ -84,7 +84,7 @@ const usersService = {
   // GET /users/{id}/pastEvents
   async getPastEventsByUserId(id) {
     const userTickets = await this.getAllTicketsByUserId(id);
-    const eventIds = userTickets.map(ticket => ticket.eventId);
+    const eventIds = userTickets.map((ticket) => ticket.eventId);
     const events = await prisma.event.findMany({
       where: {
         id: {

@@ -5,7 +5,7 @@ export default function (eventsService) {
 
   async function GET(req, res, next) {
     const numberOfTickets = await eventsService.getNumberOfEventTickets(
-      req.params.eventId
+      req.params.eventId,
     );
     if (!numberOfTickets) {
       res.status(204).json({ message: "No tickets in event" });

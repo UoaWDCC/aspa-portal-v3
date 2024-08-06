@@ -1,6 +1,7 @@
 export default function (usersService) {
   let operations = {
-    GET, PUT
+    GET,
+    PUT,
   };
 
   async function GET(req, res, next) {
@@ -14,7 +15,9 @@ export default function (usersService) {
 
   async function PUT(req, res, next) {
     if (req.body.role) {
-      res.status(401).json({ message: "Cannot update user role using this endpoint." });
+      res
+        .status(401)
+        .json({ message: "Cannot update user role using this endpoint." });
     }
     try {
       const user = await usersService.updateUser(req.params.id, req.body);
@@ -117,7 +120,7 @@ export default function (usersService) {
               message:
                 type: string
                 default: 'User not found.'
-      `
+      `;
 
   return operations;
 }

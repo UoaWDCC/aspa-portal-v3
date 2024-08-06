@@ -32,7 +32,7 @@ export default function (eventsService) {
     try {
       const updatedEvent = await eventsService.updateEvent(
         req.params.eventId,
-        req.body
+        req.body,
       );
       res.json(updatedEvent);
     } catch (error) {

@@ -1,6 +1,7 @@
 export default function (usersService) {
   let operations = {
-    GET, POST
+    GET,
+    POST,
   };
 
   async function GET(req, res, next) {
@@ -8,7 +9,7 @@ export default function (usersService) {
   }
 
   async function POST(req, res, next) {
-    if (req.body.role === 'admin') {
+    if (req.body.role === "admin") {
       res.status(401).json({ message: "Cannot create admin users." });
     }
     res.json(await usersService.createUser(req.body));
@@ -58,7 +59,7 @@ export default function (usersService) {
               message:
                 type: string
                 default: 'Cannot create admin users.'
-    `
+    `;
 
   return operations;
 }
