@@ -1,3 +1,4 @@
+name: aspa-dev-container
 services:
   app:
     container_name: aspa-app
