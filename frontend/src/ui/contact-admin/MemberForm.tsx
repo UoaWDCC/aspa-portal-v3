@@ -19,7 +19,7 @@ function MemberForm(){
   return (
     <div className={styles.memberFormBg}>
         <form onSubmit={handleSubmit}>
-            <label style={{fontSize:"50px", alignSelf:"center", paddingLeft:"0px"}}>Name of Executive Member:</label>
+            <label style={{fontSize:"50px", alignSelf:"center", paddingLeft:"20px"}}>Name of Executive Member:</label>
                 <input 
                 className = {styles.input}
                 type="text"
