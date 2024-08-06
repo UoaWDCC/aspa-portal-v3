@@ -1,1 +1,14 @@
-curl https://www.google.com/
+#!/bin/sh
+# .husky/pre-commit
+
+# Try to curl the URL and pipe the output to a file
+curl http://0.0.0.0:8055/server/specs/oas -o oas_output.json
+
+# Check if the curl command was successful
+if [ $? -ne 0 ]; then
+  echo "Curl command failed are you in the dev-container? Aborting commit."
+  exit 1
+fi
+
+# If successful, proceed with the commit
+echo "Curl command succeeded. Proceeding with commit."
