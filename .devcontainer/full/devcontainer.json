@@ -1,6 +1,10 @@
 {
     "name": "ASPA Dev Container (Full)",
-    "dockerFile": "../dockerfile/Dockerfile",
+    "dockerComposeFile": [
+        "../../docker/docker-compose.microservice.yml",
+        "../../docker/docker-compose.workspace.yml"
+    ],
+    "service": "app",
     "customizations": {
         "vscode": {
             "settings": {
@@ -10,15 +14,15 @@
                 "GitHub.copilot-chat",
                 "GitHub.copilot",
                 "ms-vscode.vscode-typescript-next",
-                "material-theme-icons",
+                "material-theme-icons"
             ]
         }
     },
-    "workspaceMount": "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached",
     "workspaceFolder": "/repo",
-    "postCreateCommand": "yarn install && cd backend && docker compose up --build -d",
-    "postStartCommand": "cd backend && docker compose up -d",
+    "postCreateCommand": "yarn install",
+    "postStartCommand": "",
     "mounts": [
-        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+        "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached"
     ]
 }

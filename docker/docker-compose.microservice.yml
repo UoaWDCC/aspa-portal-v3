@@ -1,8 +1,6 @@
 # Use postgres/example user/password credentials
-version: '3.9'
 
 services:
-
   db:
     container_name: aspa-db
     image: postgres
@@ -32,6 +30,31 @@ services:
     restart: always
     ports:
       - 8080:8080
+      
+  directus:
+      image: directus/directus:10.13.1
+      ports:
+        - 8055:8055
+      volumes:
+        - ./database:/directus/database
+        - ./uploads:/directus/uploads
+        - ./extensions:/directus/extensions
+      environment:
+        SECRET: "replace-with-secure-random-value"
+        ADMIN_EMAIL: "admin@example.com"
+        ADMIN_PASSWORD: "d1r3ctu5"
+        WEBSOCKETS_ENABLED: "true"
+        DB_CLIENT: "sqlite3"
+        DB_FILENAME: "/directus/database/data.db"
+#        For external database
+#        DB_CLIENT: "pg"
+#        DB_HOST: "host.docker.internal"
+#        DB_PORT: "5432"
+#        DB_DATABASE: "main"
+#        DB_USER: "aspa"
+#        DB_PASSWORD: "pool"
+
+
 
 
   

@@ -1,0 +1,14 @@
+name: aspa-dev-container
+services:
+  app:
+    container_name: aspa-app
+    build:
+      context: .
+      dockerfile: ./dockerfile/Dockerfile
+    ports:
+      - "3307:3307"
+    volumes:
+      - .:/repo
+    environment:
+      - NODE_ENV=development
+    command: sh -c "while sleep 1000; do :; done"
