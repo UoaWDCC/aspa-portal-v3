@@ -13,6 +13,11 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+
+/**
+ * @type ReadSingleItemsEventIdParameter
+ * @export
+ */
+export type ReadSingleItemsEventIdParameter = number | string;
+
+

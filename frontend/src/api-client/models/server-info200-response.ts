@@ -13,6 +13,18 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+
+/**
+ * 
+ * @export
+ * @interface ServerInfo200Response
+ */
+export interface ServerInfo200Response {
+    /**
+     * 
+     * @type {object}
+     * @memberof ServerInfo200Response
+     */
+    'data'?: object;
+}
+
