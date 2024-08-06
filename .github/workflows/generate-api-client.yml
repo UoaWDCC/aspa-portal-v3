@@ -1,8 +1,7 @@
 name: Build API Client
 
 on:
-    pull_request:
-      types: [opened, reopened, closed]
+    push
 
 jobs:
     build:
