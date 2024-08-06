@@ -2,7 +2,7 @@
 # .husky/pre-commit
 
 # Try to curl the URL and pipe the output to a file
-curl http://0.0.0.0:8055/server/specs/oas -o oas_output.json
+curl http://0.0.0.0:8055/server/specs/oas -o ./backend/docs/api_docs.json
 
 # Check if the curl command was successful
 if [ $? -ne 0 ]; then
