@@ -24,6 +24,9 @@ RUN apk add --no-cache openjdk17
 #Install maven
 RUN apk add --no-cache maven
 
+#Install jq
+RUN apk add --no-cache jq
+
 EXPOSE 3307
 
 VOLUME ["/repo"]
