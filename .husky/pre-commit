@@ -13,7 +13,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Find and replace "url": "0.0.0.0:8055" with "url": "http://0.0.0.0:8055"
-sed 's|"url": "0.0.0.0:8055"|"url": "http://0.0.0.0:8055"|g' ./backend/docs/api_docs.json
+sed -i 's|"url": "0.0.0.0:8055"|"url": "http://0.0.0.0:8055"|g' ./backend/docs/api_docs.json
 
 # Format the JSON file
 jq . ./backend/docs/api_docs.json > ./backend/docs/api_docs.tmp && mv ./backend/docs/api_docs.tmp ./backend/docs/api_docs.json
