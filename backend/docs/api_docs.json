@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "0.0.0.0:8055",
+            "url": "http://0.0.0.0:8055",
             "description": "Your current Directus instance."
         }
     ],
