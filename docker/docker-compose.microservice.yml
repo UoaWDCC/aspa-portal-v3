@@ -46,6 +46,8 @@ services:
         WEBSOCKETS_ENABLED: "true"
         DB_CLIENT: "sqlite3"
         DB_FILENAME: "/directus/database/data.db"
+        CORS_ENABLED: "true"
+        
 #        For external database
 #        DB_CLIENT: "pg"
 #        DB_HOST: "host.docker.internal"
