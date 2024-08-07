@@ -1,5 +1,6 @@
 import PastEvents from "@/ui/PastEvents";
 import Description from "@/ui/home/Description";
+import Socials from "@/ui/home/Socials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,6 +16,9 @@ export default function Home() {
       </section>
       <section id="past-events">
         <PastEvents />
+      </section>
+      <section id="socials">
+        <Socials /> 
       </section>
     </div>
   );
