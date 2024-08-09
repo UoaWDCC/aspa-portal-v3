@@ -7,6 +7,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "ASPA - Auckland Student Pool Association",
   description: "ASPA Home: View ASPA Landing Page",
+  icons: {
+    icon: '/icon.ico'
+  }
 };
 
 export default function RootLayout({
