@@ -25,7 +25,7 @@ RUN apk add --no-cache openjdk17
 RUN apk add --no-cache maven
 
 #Install jq
-RUN apk add --no-cache jq
+RUN apk add --no-cache yq
 
 EXPOSE 3307
 
