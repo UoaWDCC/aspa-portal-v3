@@ -2,7 +2,7 @@
 # .husky/pre-commit
 
 # Try to curl the URL and pipe the output to a file
-curl http://0.0.0.0:8055/server/specs/oas -o ./backend/docs/api_docs.yaml
+curl http://localhost:8055/server/specs/oas -o ./backend/docs/api_docs.yaml
 
 
 
@@ -16,7 +16,7 @@ fi
 yarn prettier --write ./backend/docs/api_docs.yaml
 
 # Find and replace "url": "0.0.0.0:8055" with "url": "http://0.0.0.0:8055"
-sed -i 's|"url": "0.0.0.0:8055"|"url": "http://localhost:8055"|g' ./backend/docs/api_docs.json
+sed -i 's|"url": "0.0.0.0:8055"|"url": "http://localhost:8055"|g' ./backend/docs/api_docs.yaml
 
 # If successful, proceed with the commit
 echo "Curl command succeeded. Proceeding with commit."
