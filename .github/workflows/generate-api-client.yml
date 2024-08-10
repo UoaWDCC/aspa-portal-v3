@@ -19,6 +19,12 @@ jobs:
                 cmd: install
             - name: Generate API Client
               run: yarn generate:api-client
+            - name: Prettify API client code
+              uses: creyD/prettier_action@v4.3
+              with:
+                # This part is also where you can pass other options, for example:
+                  commit_message: "Chore: Prettify code"
+                  prettier_options: "--write frontend/src/api-client/**/*.ts"
             - name: Commit new API client
               uses: stefanzweifel/git-auto-commit-action@v5
               with:
