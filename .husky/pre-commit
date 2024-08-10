@@ -12,8 +12,8 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Format the JSON file
-jq . ./backend/docs/api_docs.json > ./backend/docs/api_docs.tmp && mv ./backend/docs/api_docs.tmp ./backend/docs/api_docs.json
+# Format the yaml file
+yarn prettier --write ./backend/docs/api_docs.yaml
 
 # Find and replace "url": "0.0.0.0:8055" with "url": "http://0.0.0.0:8055"
 sed -i 's|"url": "0.0.0.0:8055"|"url": "http://localhost:8055"|g' ./backend/docs/api_docs.json
