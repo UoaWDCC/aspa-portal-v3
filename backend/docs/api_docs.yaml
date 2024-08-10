@@ -1559,6 +1559,255 @@ paths:
           schema:
             type: string
           required: true
+  /roles:
+    get:
+      summary: List Roles
+      description: List the roles.
+      operationId: getRoles
+      parameters:
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Meta"
+        - $ref: "#/components/parameters/Sort"
+        - $ref: "#/components/parameters/Filter"
+        - $ref: "#/components/parameters/Search"
+        - $ref: "#/components/parameters/Page"
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Roles"
+                  meta:
+                    $ref: "#/components/schemas/x-metadata"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Roles
+    post:
+      summary: Create a Role
+      description: Create a new role.
+      operationId: createRole
+      parameters:
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Meta"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                description:
+                  description: Description of the role.
+                  type: string
+                enforce_tfa:
+                  description: Whether or not this role enforces the use of 2FA.
+                  type: boolean
+                external_id:
+                  description: ID used with external services in SCIM.
+                  type: string
+                ip_access:
+                  description: Array of IP addresses that are allowed to connect to the API as a user of this role.
+                  type: array
+                  items:
+                    type: string
+                module_listing:
+                  description: Custom override for the admin app module bar navigation.
+                  type: string
+                name:
+                  description: Name of the role.
+                  type: string
+                  example: Interns
+              type: object
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Roles"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Roles
+    patch:
+      summary: Update Multiple Roles
+      description: Update multiple roles at the same time.
+      tags:
+        - Roles
+      operationId: updateRoles
+      parameters:
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Meta"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Sort"
+        - $ref: "#/components/parameters/Filter"
+        - $ref: "#/components/parameters/Search"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                keys:
+                  type: array
+                  items:
+                    type: string
+                data:
+                  type: object
+                  properties:
+                    description:
+                      description: Description of the role.
+                      type: string
+                    enforce_tfa:
+                      description: Whether or not this role enforces the use of 2FA.
+                      type: boolean
+                    external_id:
+                      description: ID used with external services in SCIM.
+                      type: string
+                    ip_access:
+                      description: Array of IP addresses that are allowed to connect to the API as a user of this role.
+                      type: array
+                      items:
+                        type: string
+                    module_listing:
+                      description: Custom override for the admin app module bar navigation.
+                      type: string
+                    name:
+                      description: Name of the role.
+                      type: string
+                      example: Interns
+              type: object
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Roles"
+                  meta:
+                    $ref: "#/components/schemas/x-metadata"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+    delete:
+      summary: Delete Multiple Roles
+      description: Delete multiple existing roles.
+      tags:
+        - Roles
+      operationId: deleteRoles
+      responses:
+        "200":
+          description: Successful request
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+  /roles/{id}:
+    get:
+      summary: Retrieve a Role
+      description: Retrieve a single role by unique identifier.
+      operationId: getRole
+      parameters:
+        - $ref: "#/components/parameters/UUId"
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Meta"
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Roles"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Roles
+    patch:
+      summary: Update a Role
+      description: Update an existing role
+      operationId: updateRole
+      parameters:
+        - $ref: "#/components/parameters/UUId"
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Meta"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                description:
+                  description: Description of the role.
+                  type: string
+                enforce_tfa:
+                  description: Whether or not this role enforces the use of 2FA.
+                  type: boolean
+                external_id:
+                  description: ID used with external services in SCIM.
+                  type: string
+                ip_access:
+                  description: Array of IP addresses that are allowed to connect to the API as a user of this role.
+                  type: array
+                  items:
+                    type: string
+                module_listing:
+                  description: Custom override for the admin app module bar navigation.
+                  type: string
+                name:
+                  description: Name of the role.
+                  type: string
+              type: object
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Roles"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Roles
+    delete:
+      summary: Delete a Role
+      description: Delete an existing role
+      operationId: deleteRole
+      responses:
+        "200":
+          description: Successful request
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Roles
+      parameters:
+        - $ref: "#/components/parameters/UUId"
   /users:
     get:
       summary: List Users
@@ -2366,6 +2615,9 @@ tags:
   - name: Fields
     description: Fields are individual pieces of content within an item. They are mapped to columns in the database.
     x-collection: directus_fields
+  - name: Roles
+    description: Roles are groups of users that share permissions.
+    x-collection: directus_roles
   - name: Users
     description: Users are what gives you access to the data.
     x-collection: directus_users
@@ -2685,6 +2937,53 @@ components:
           nullable: true
           type: string
       x-collection: directus_fields
+    Roles:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the role.
+          example: 2f24211d-d928-469a-aea3-3c8f53d4e426
+          type: string
+        name:
+          description: Name of the role.
+          example: Administrator
+          type: string
+        icon:
+          description: The role's icon.
+          example: verified_user
+          type: string
+        description:
+          description: Description of the role.
+          example: Admins have access to all managed data within the system by default
+          type: string
+          nullable: true
+        ip_access:
+          description: Array of IP addresses that are allowed to connect to the API as a user of this role.
+          example: []
+          type: array
+          items:
+            type: string
+        enforce_tfa:
+          description: Whether or not this role enforces the use of 2FA.
+          example: false
+          type: boolean
+        admin_access:
+          description: Admin role. If true, skips all permission checks.
+          example: false
+          type: boolean
+        app_access:
+          description: The users in the role are allowed to use the app.
+          example: true
+          type: boolean
+        users:
+          nullable: true
+          type: array
+          items:
+            oneOf:
+              - type: string
+                format: uuid
+              - $ref: "#/components/schemas/Users"
+      x-collection: directus_roles
     Users:
       type: object
       properties:
