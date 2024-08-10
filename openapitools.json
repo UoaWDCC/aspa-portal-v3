@@ -7,7 +7,7 @@
       "v2.0": {
         "generatorName": "typescript-axios",
         "output": "frontend/src/api-client",
-        "inputSpec": "backend/docs/api-doc.json",
+        "inputSpec": "backend/docs/api_docs.json",
         "additionalProperties":{
           "withSeparateModelsAndApi": true,
           "modelPackage": "models",

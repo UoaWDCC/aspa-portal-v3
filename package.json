@@ -7,12 +7,14 @@
     "start:frontend": "cd frontend && npm run dev",
     "install:frontend": "cd frontend && yarn install",
     "install:backend": "cd backend && yarn install",
-    "install": "yarn install:frontend && yarn install:backend",
+    "install:ci": "yarn install",
+    "install:all": "yarn install:frontend && yarn install:backend",
     "dev:frontend": "cd frontend && yarn dev",
     "dev:backend": "cd backend && yarn dev",
     "bundle:docs": "cd backend && cd scripts && cd javascript && node api-json-gen.cjs",
     "delete:api-client": "if [ -d frontend/src/api-client ]; then rm -r frontend/src/api-client; fi",
-    "generate:api-client": "yarn bundle:docs && yarn delete:api-client && openapi-generator-cli generate --openapitools openapitools.json"
+    "generate:api-client": "yarn delete:api-client && openapi-generator-cli generate --openapitools openapitools.json",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,11 @@
   "description": "",
   "dependencies": {
     "@next/font": "^14.2.4",
-    "@openapitools/openapi-generator-cli": "^2.13.4"
+    "@openapitools/openapi-generator-cli": "^2.13.4",
+    "@types/express": "^4.17.21",
+    "@types/swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "husky": "^9.1.4"
   }
 }

@@ -18,7 +18,7 @@
 .title {
   font-weight: bold;
   text-decoration: underline 5px;
-  font-size: 90px;
+  font-size: 6em;
   color: #F4E5D7;
   text-shadow: 8px 8px #5E4127;
   text-underline-offset: 9px;
@@ -41,4 +41,20 @@
 .button:hover {
   background-color: #87562A;
   color: #B7B2B8; 
+}
+/* Media queries for responsiveness */
+@media screen and (max-width: 1200px) {
+
+  .title {
+    font-size: 4em;
+    text-align: center;
+  }
+
+  .content{
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+  }
+
 }
