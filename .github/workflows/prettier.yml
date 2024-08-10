@@ -20,3 +20,4 @@ jobs:
         with:
           # This part is also where you can pass other options, for example:
             commit_message: "Chore: Prettify code"
+            prettier_options: "--write **/*.ts"

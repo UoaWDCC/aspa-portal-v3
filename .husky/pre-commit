@@ -1,14 +1,37 @@
 #!/bin/sh
 # .husky/pre-commit
 
-# Try to curl the URL and pipe the output to a file
-curl http://0.0.0.0:8055/server/specs/oas -o ./backend/docs/api_docs.json
+# Try to curl the first URL
+curl http://host.docker.internal:8055/server/specs/oas -o ./backend/docs/api_docs.json
+
+# Check if the first curl command was successful
+if [ $? -ne 0 ]; then
+  echo "First curl command failed. Trying the second URL..."
+  # Try to curl the second URL
+  curl http://localhost:8055/server/specs/oas -o ./backend/docs/api_docs.json
+  # Check if the second curl command was successful
+  if [ $? -ne 0 ]; then
+    echo "Second curl command failed. Aborting commit."
+    exit 1
+  fi
+fi
 
 # Check if the curl command was successful
 if [ $? -ne 0 ]; then
   echo "Curl command failed are you in the dev-container? Aborting commit."
   exit 1
 fi
+
+
+# Convert json to yaml
+yq -p json -o yaml ./backend/docs/api_docs.json > ./backend/docs/api_docs.yaml
+
+
+# Format the yaml file
+yarn prettier --write ./backend/docs/api_docs.yaml
+
+# Find and replace "url": "0.0.0.0:8055" with "url": "http://0.0.0.0:8055"
+sed -i 's|"url": "localhost:8055"|"url": "http://localhost:8055"|g' ./backend/docs/api_docs.yaml
 
 # If successful, proceed with the commit
 echo "Curl command succeeded. Proceeding with commit."
