@@ -1559,6 +1559,350 @@ paths:
           schema:
             type: string
           required: true
+  /users:
+    get:
+      summary: List Users
+      description: List the users.
+      operationId: getUsers
+      parameters:
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Meta"
+        - $ref: "#/components/parameters/Sort"
+        - $ref: "#/components/parameters/Filter"
+        - $ref: "#/components/parameters/Search"
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Users"
+                  meta:
+                    $ref: "#/components/schemas/x-metadata"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+    post:
+      summary: Create a User
+      description: Create a new user.
+      operationId: createUser
+      parameters:
+        - $ref: "#/components/parameters/Meta"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Users"
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Users"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+    patch:
+      summary: Update Multiple Users
+      description: Update multiple users at the same time.
+      tags:
+        - Users
+      operationId: updateUsers
+      parameters:
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Meta"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Sort"
+        - $ref: "#/components/parameters/Filter"
+        - $ref: "#/components/parameters/Search"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  $ref: "#/components/schemas/Users"
+                keys:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Users"
+                  meta:
+                    $ref: "#/components/schemas/x-metadata"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+    delete:
+      summary: Delete Multiple Users
+      description: Delete multiple existing users.
+      tags:
+        - Users
+      operationId: deleteUsers
+      responses:
+        "200":
+          description: Successful request
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+  /users/{id}:
+    get:
+      summary: Retrieve a User
+      description: Retrieve a single user by unique identifier.
+      operationId: getUser
+      parameters:
+        - $ref: "#/components/parameters/UUId"
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Meta"
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Users"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+    patch:
+      summary: Update a User
+      description: Update an existing user
+      operationId: updateUser
+      parameters:
+        - $ref: "#/components/parameters/UUId"
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Meta"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Users"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                type: object
+          description: Successful request
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+    delete:
+      summary: Delete a User
+      description: Delete an existing user
+      operationId: deleteUser
+      responses:
+        "200":
+          description: Successful request
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+      parameters:
+        - $ref: "#/components/parameters/UUId"
+  /users/invite:
+    post:
+      summary: Invite User(s)
+      description: Invites one or more users to this project. It creates a user with an invited status, and then sends an email to the user with instructions on how to activate their account.
+      operationId: invite
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  description: Email address or array of email addresses of the to-be-invited user(s).
+                  type: string
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Users"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+  /users/invite/accept:
+    post:
+      summary: Accept User Invite
+      description: Accepts and enables an invited user using a JWT invitation token.
+      operationId: acceptInvite
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  example: eyJh...KmUk
+                  description: Accept invite token.
+                password:
+                  type: string
+                  description: Password of the user.
+                  format: password
+                  example: d1r3ctu5
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Users"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+  /users/me:
+    get:
+      summary: Retrieve Current User
+      description: Retrieve the currently authenticated user.
+      operationId: getMe
+      parameters:
+        - $ref: "#/components/parameters/Fields"
+        - $ref: "#/components/parameters/Meta"
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Users"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+    patch:
+      summary: Update Current User
+      description: Update the currently authenticated user.
+      operationId: updateMe
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Users"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+  /users/me/track/page:
+    patch:
+      summary: Update Last Page
+      description: Updates the last used page field of the currently authenticated user. This is used internally to be able to open the Directus admin app from the last page you used.
+      operationId: updateLastUsedPageMe
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                last_page:
+                  description: Path of the page you used last.
+                  type: string
+              type: object
+      responses:
+        "200":
+          description: Successful request
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+  /users/me/tfa/enable:
+    post:
+      summary: Enable 2FA
+      description: Enables two-factor authentication for the currently authenticated user.
+      operationId: meTfaEnable
+      responses:
+        "200":
+          description: Successful request
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
+  /users/me/tfa/disable:
+    post:
+      summary: Disable 2FA
+      description: Disables two-factor authentication for the currently authenticated user.
+      operationId: meTfaDisable
+      responses:
+        "200":
+          description: Successful request
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+      tags:
+        - Users
   /items/Event:
     post:
       summary: Create an Item
@@ -2022,6 +2366,9 @@ tags:
   - name: Fields
     description: Fields are individual pieces of content within an item. They are mapped to columns in the database.
     x-collection: directus_fields
+  - name: Users
+    description: Users are what gives you access to the data.
+    x-collection: directus_users
   - name: ItemsEvent
     x-collection: Event
   - name: ItemsExecutive
@@ -2144,7 +2491,10 @@ components:
           format: date-time
         modified_by:
           nullable: true
-          type: string
+          oneOf:
+            - type: string
+              format: uuid
+            - $ref: "#/components/schemas/Users"
         modified_on:
           nullable: false
           type: string
@@ -2335,6 +2685,123 @@ components:
           nullable: true
           type: string
       x-collection: directus_fields
+    Users:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the user.
+          example: 63716273-0f29-4648-8a2a-2af2948f6f78
+          type: string
+        first_name:
+          description: First name of the user.
+          example: Admin
+          type: string
+        last_name:
+          description: Last name of the user.
+          example: User
+          type: string
+        email:
+          description: Unique email address for the user.
+          example: admin@example.com
+          type: string
+          format: email
+        password:
+          description: Password of the user.
+          type: string
+        location:
+          description: The user's location.
+          example: null
+          type: string
+          nullable: true
+        title:
+          description: The user's title.
+          example: null
+          type: string
+          nullable: true
+        description:
+          description: The user's description.
+          example: null
+          type: string
+          nullable: true
+        tags:
+          description: The user's tags.
+          example: null
+          type: array
+          nullable: true
+          items:
+            type: string
+        avatar:
+          description: The user's avatar.
+          example: null
+          oneOf:
+            - type: string
+            - $ref: "#/components/schemas/Files"
+          nullable: true
+        language:
+          description: The user's language used in Directus.
+          example: en-US
+          type: string
+        tfa_secret:
+          description: The 2FA secret string that's used to generate one time passwords.
+          example: null
+          type: string
+          nullable: true
+        status:
+          description: Status of the user.
+          example: active
+          type: string
+          enum:
+            - active
+            - invited
+            - draft
+            - suspended
+            - deleted
+        role:
+          description: Unique identifier of the role of this user.
+          example: 2f24211d-d928-469a-aea3-3c8f53d4e426
+          oneOf:
+            - type: string
+            - $ref: "#/components/schemas/Roles"
+        token:
+          description: Static token for the user.
+          type: string
+          nullable: true
+        last_access:
+          description: When this user used the API last.
+          example: "2020-05-31T14:32:37Z"
+          type: string
+          nullable: true
+          format: date-time
+        last_page:
+          description: Last page that the user was on.
+          example: /my-project/settings/collections/a
+          type: string
+          nullable: true
+        provider:
+          nullable: false
+          type: string
+        external_identifier:
+          nullable: true
+          type: string
+        auth_data:
+          nullable: true
+        email_notifications:
+          nullable: true
+          type: boolean
+        appearance:
+          nullable: true
+          type: string
+        theme_dark:
+          nullable: true
+          type: string
+        theme_light:
+          nullable: true
+          type: string
+        theme_light_overrides:
+          nullable: true
+        theme_dark_overrides:
+          nullable: true
+      x-collection: directus_users
     ItemsEvent:
       type: object
       properties:
@@ -2346,14 +2813,20 @@ components:
           type: string
         user_created:
           nullable: true
-          type: string
+          oneOf:
+            - type: string
+              format: uuid
+            - $ref: "#/components/schemas/Users"
         date_created:
           nullable: true
           type: string
           format: timestamp
         user_updated:
           nullable: true
-          type: string
+          oneOf:
+            - type: string
+              format: uuid
+            - $ref: "#/components/schemas/Users"
         date_updated:
           nullable: true
           type: string
@@ -2394,14 +2867,20 @@ components:
           type: string
         user_created:
           nullable: true
-          type: string
+          oneOf:
+            - type: string
+              format: uuid
+            - $ref: "#/components/schemas/Users"
         date_created:
           nullable: true
           type: string
           format: timestamp
         user_updated:
           nullable: true
-          type: string
+          oneOf:
+            - type: string
+              format: uuid
+            - $ref: "#/components/schemas/Users"
         date_updated:
           nullable: true
           type: string
