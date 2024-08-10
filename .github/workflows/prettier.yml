@@ -2,10 +2,7 @@ name: Continuous Integration
 
 # This action works with pull requests and pushes
 on:
-  workflow_run:
-    workflows: ["Build API Client"]
-    types:
-      - completed
+  push
 
 jobs:
   prettier:
