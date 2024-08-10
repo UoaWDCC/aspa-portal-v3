@@ -13,6 +13,12 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { FilesModifiedBy } from './files-modified-by';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ItemsEventImage } from './items-event-image';
 
 /**
  * 
@@ -34,10 +40,10 @@ export interface ItemsExecutive {
     'status'?: string;
     /**
      * 
-     * @type {string}
+     * @type {FilesModifiedBy}
      * @memberof ItemsExecutive
      */
-    'user_created'?: string | null;
+    'user_created'?: FilesModifiedBy | null;
     /**
      * 
      * @type {string}
@@ -46,10 +52,10 @@ export interface ItemsExecutive {
     'date_created'?: string | null;
     /**
      * 
-     * @type {string}
+     * @type {FilesModifiedBy}
      * @memberof ItemsExecutive
      */
-    'user_updated'?: string | null;
+    'user_updated'?: FilesModifiedBy | null;
     /**
      * 
      * @type {string}
@@ -76,9 +82,9 @@ export interface ItemsExecutive {
     'title'?: string | null;
     /**
      * 
-     * @type {string}
+     * @type {ItemsEventImage}
      * @memberof ItemsExecutive
      */
-    'image'?: string | null;
+    'image'?: ItemsEventImage | null;
 }
 

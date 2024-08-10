@@ -22,7 +22,19 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { CreateItemsEvent200Response } from '../models';
+// @ts-ignore
+import type { CreateItemsEventRequest } from '../models';
+// @ts-ignore
+import type { CreateItemsExecutive200Response } from '../models';
+// @ts-ignore
+import type { CreateItemsExecutiveRequest } from '../models';
+// @ts-ignore
 import type { GetAsset404Response } from '../models';
+// @ts-ignore
+import type { ItemsEvent } from '../models';
+// @ts-ignore
+import type { ItemsExecutive } from '../models';
 // @ts-ignore
 import type { ReadItemsEvent200Response } from '../models';
 // @ts-ignore
@@ -33,12 +45,222 @@ import type { ReadSingleItemsEvent200Response } from '../models';
 import type { ReadSingleItemsEventIdParameter } from '../models';
 // @ts-ignore
 import type { ReadSingleItemsExecutive200Response } from '../models';
+// @ts-ignore
+import type { UpdateItemsEvent200Response } from '../models';
+// @ts-ignore
+import type { UpdateItemsExecutive200Response } from '../models';
 /**
  * ItemsApi - axios parameter creator
  * @export
  */
 export const ItemsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * Create a new Event item.
+         * @summary Create an Item
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {CreateItemsEventRequest} [createItemsEventRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createItemsEvent: async (meta?: string, createItemsEventRequest?: CreateItemsEventRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/items/Event`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (meta !== undefined) {
+                localVarQueryParameter['meta'] = meta;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createItemsEventRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create a new Executive item.
+         * @summary Create an Item
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {CreateItemsExecutiveRequest} [createItemsExecutiveRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createItemsExecutive: async (meta?: string, createItemsExecutiveRequest?: CreateItemsExecutiveRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/items/Executive`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (meta !== undefined) {
+                localVarQueryParameter['meta'] = meta;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createItemsExecutiveRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete multiple existing Event items.
+         * @summary Delete Multiple Items
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteItemsEvent: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/items/Event`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete multiple existing Executive items.
+         * @summary Delete Multiple Items
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteItemsExecutive: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/items/Executive`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an existing Event item.
+         * @summary Delete an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteSingleItemsEvent: async (id: ReadSingleItemsEventIdParameter, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteSingleItemsEvent', 'id', id)
+            const localVarPath = `/items/Event/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an existing Executive item.
+         * @summary Delete an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteSingleItemsExecutive: async (id: ReadSingleItemsEventIdParameter, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteSingleItemsExecutive', 'id', id)
+            const localVarPath = `/items/Executive/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * List the Event items.
          * @summary List Items
@@ -273,6 +495,240 @@ export const ItemsApiAxiosParamCreator = function (configuration?: Configuration
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Update multiple Event items at the same time.
+         * @summary Update Multiple Items
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {number} [limit] A limit on the number of objects that are returned.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {number} [offset] How many items to skip when fetching data.
+         * @param {Array<string>} [sort] How to sort the returned items. &#x60;sort&#x60; is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (&#x60; - &#x60;) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a &#x60; ? &#x60; to sort randomly. 
+         * @param {object} [filter] Select items in collection by given conditions.
+         * @param {string} [search] Filter by items that contain the given search query in one of their fields.
+         * @param {CreateItemsEventRequest} [createItemsEventRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateItemsEvent: async (fields?: Array<string>, limit?: number, meta?: string, offset?: number, sort?: Array<string>, filter?: object, search?: string, createItemsEventRequest?: CreateItemsEventRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/items/Event`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (fields) {
+                localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (meta !== undefined) {
+                localVarQueryParameter['meta'] = meta;
+            }
+
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            if (sort) {
+                localVarQueryParameter['sort'] = sort.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+            if (search !== undefined) {
+                localVarQueryParameter['search'] = search;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createItemsEventRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update multiple Executive items at the same time.
+         * @summary Update Multiple Items
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {number} [limit] A limit on the number of objects that are returned.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {number} [offset] How many items to skip when fetching data.
+         * @param {Array<string>} [sort] How to sort the returned items. &#x60;sort&#x60; is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (&#x60; - &#x60;) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a &#x60; ? &#x60; to sort randomly. 
+         * @param {object} [filter] Select items in collection by given conditions.
+         * @param {string} [search] Filter by items that contain the given search query in one of their fields.
+         * @param {CreateItemsExecutiveRequest} [createItemsExecutiveRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateItemsExecutive: async (fields?: Array<string>, limit?: number, meta?: string, offset?: number, sort?: Array<string>, filter?: object, search?: string, createItemsExecutiveRequest?: CreateItemsExecutiveRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/items/Executive`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (fields) {
+                localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (meta !== undefined) {
+                localVarQueryParameter['meta'] = meta;
+            }
+
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            if (sort) {
+                localVarQueryParameter['sort'] = sort.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+            if (search !== undefined) {
+                localVarQueryParameter['search'] = search;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createItemsExecutiveRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an existing Event item.
+         * @summary Update an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {ItemsEvent} [itemsEvent] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSingleItemsEvent: async (id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, itemsEvent?: ItemsEvent, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateSingleItemsEvent', 'id', id)
+            const localVarPath = `/items/Event/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (fields) {
+                localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (meta !== undefined) {
+                localVarQueryParameter['meta'] = meta;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(itemsEvent, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an existing Executive item.
+         * @summary Update an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {ItemsExecutive} [itemsExecutive] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSingleItemsExecutive: async (id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, itemsExecutive?: ItemsExecutive, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateSingleItemsExecutive', 'id', id)
+            const localVarPath = `/items/Executive/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (fields) {
+                localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (meta !== undefined) {
+                localVarQueryParameter['meta'] = meta;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(itemsExecutive, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -283,6 +739,84 @@ export const ItemsApiAxiosParamCreator = function (configuration?: Configuration
 export const ItemsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ItemsApiAxiosParamCreator(configuration)
     return {
+        /**
+         * Create a new Event item.
+         * @summary Create an Item
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {CreateItemsEventRequest} [createItemsEventRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createItemsEvent(meta?: string, createItemsEventRequest?: CreateItemsEventRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateItemsEvent200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createItemsEvent(meta, createItemsEventRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.createItemsEvent']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Create a new Executive item.
+         * @summary Create an Item
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {CreateItemsExecutiveRequest} [createItemsExecutiveRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createItemsExecutive(meta?: string, createItemsExecutiveRequest?: CreateItemsExecutiveRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateItemsExecutive200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createItemsExecutive(meta, createItemsExecutiveRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.createItemsExecutive']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Delete multiple existing Event items.
+         * @summary Delete Multiple Items
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteItemsEvent(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteItemsEvent(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.deleteItemsEvent']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Delete multiple existing Executive items.
+         * @summary Delete Multiple Items
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteItemsExecutive(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteItemsExecutive(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.deleteItemsExecutive']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Delete an existing Event item.
+         * @summary Delete an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteSingleItemsEvent(id: ReadSingleItemsEventIdParameter, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSingleItemsEvent(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.deleteSingleItemsEvent']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Delete an existing Executive item.
+         * @summary Delete an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteSingleItemsExecutive(id: ReadSingleItemsEventIdParameter, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSingleItemsExecutive(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.deleteSingleItemsExecutive']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
         /**
          * List the Event items.
          * @summary List Items
@@ -353,6 +887,78 @@ export const ItemsApiFp = function(configuration?: Configuration) {
             const localVarOperationServerBasePath = operationServerMap['ItemsApi.readSingleItemsExecutive']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * Update multiple Event items at the same time.
+         * @summary Update Multiple Items
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {number} [limit] A limit on the number of objects that are returned.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {number} [offset] How many items to skip when fetching data.
+         * @param {Array<string>} [sort] How to sort the returned items. &#x60;sort&#x60; is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (&#x60; - &#x60;) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a &#x60; ? &#x60; to sort randomly. 
+         * @param {object} [filter] Select items in collection by given conditions.
+         * @param {string} [search] Filter by items that contain the given search query in one of their fields.
+         * @param {CreateItemsEventRequest} [createItemsEventRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateItemsEvent(fields?: Array<string>, limit?: number, meta?: string, offset?: number, sort?: Array<string>, filter?: object, search?: string, createItemsEventRequest?: CreateItemsEventRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateItemsEvent200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateItemsEvent(fields, limit, meta, offset, sort, filter, search, createItemsEventRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.updateItemsEvent']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Update multiple Executive items at the same time.
+         * @summary Update Multiple Items
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {number} [limit] A limit on the number of objects that are returned.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {number} [offset] How many items to skip when fetching data.
+         * @param {Array<string>} [sort] How to sort the returned items. &#x60;sort&#x60; is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (&#x60; - &#x60;) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a &#x60; ? &#x60; to sort randomly. 
+         * @param {object} [filter] Select items in collection by given conditions.
+         * @param {string} [search] Filter by items that contain the given search query in one of their fields.
+         * @param {CreateItemsExecutiveRequest} [createItemsExecutiveRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateItemsExecutive(fields?: Array<string>, limit?: number, meta?: string, offset?: number, sort?: Array<string>, filter?: object, search?: string, createItemsExecutiveRequest?: CreateItemsExecutiveRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateItemsExecutive200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateItemsExecutive(fields, limit, meta, offset, sort, filter, search, createItemsExecutiveRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.updateItemsExecutive']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Update an existing Event item.
+         * @summary Update an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {ItemsEvent} [itemsEvent] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateSingleItemsEvent(id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, itemsEvent?: ItemsEvent, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReadSingleItemsEvent200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateSingleItemsEvent(id, fields, meta, itemsEvent, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.updateSingleItemsEvent']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Update an existing Executive item.
+         * @summary Update an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {ItemsExecutive} [itemsExecutive] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateSingleItemsExecutive(id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, itemsExecutive?: ItemsExecutive, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReadSingleItemsExecutive200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateSingleItemsExecutive(id, fields, meta, itemsExecutive, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ItemsApi.updateSingleItemsExecutive']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -363,6 +969,66 @@ export const ItemsApiFp = function(configuration?: Configuration) {
 export const ItemsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ItemsApiFp(configuration)
     return {
+        /**
+         * Create a new Event item.
+         * @summary Create an Item
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {CreateItemsEventRequest} [createItemsEventRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createItemsEvent(meta?: string, createItemsEventRequest?: CreateItemsEventRequest, options?: any): AxiosPromise<CreateItemsEvent200Response> {
+            return localVarFp.createItemsEvent(meta, createItemsEventRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create a new Executive item.
+         * @summary Create an Item
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {CreateItemsExecutiveRequest} [createItemsExecutiveRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createItemsExecutive(meta?: string, createItemsExecutiveRequest?: CreateItemsExecutiveRequest, options?: any): AxiosPromise<CreateItemsExecutive200Response> {
+            return localVarFp.createItemsExecutive(meta, createItemsExecutiveRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete multiple existing Event items.
+         * @summary Delete Multiple Items
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteItemsEvent(options?: any): AxiosPromise<void> {
+            return localVarFp.deleteItemsEvent(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete multiple existing Executive items.
+         * @summary Delete Multiple Items
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteItemsExecutive(options?: any): AxiosPromise<void> {
+            return localVarFp.deleteItemsExecutive(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an existing Event item.
+         * @summary Delete an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteSingleItemsEvent(id: ReadSingleItemsEventIdParameter, options?: any): AxiosPromise<void> {
+            return localVarFp.deleteSingleItemsEvent(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an existing Executive item.
+         * @summary Delete an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteSingleItemsExecutive(id: ReadSingleItemsEventIdParameter, options?: any): AxiosPromise<void> {
+            return localVarFp.deleteSingleItemsExecutive(id, options).then((request) => request(axios, basePath));
+        },
         /**
          * List the Event items.
          * @summary List Items
@@ -421,6 +1087,66 @@ export const ItemsApiFactory = function (configuration?: Configuration, basePath
         readSingleItemsExecutive(id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, version?: string, options?: any): AxiosPromise<ReadSingleItemsExecutive200Response> {
             return localVarFp.readSingleItemsExecutive(id, fields, meta, version, options).then((request) => request(axios, basePath));
         },
+        /**
+         * Update multiple Event items at the same time.
+         * @summary Update Multiple Items
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {number} [limit] A limit on the number of objects that are returned.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {number} [offset] How many items to skip when fetching data.
+         * @param {Array<string>} [sort] How to sort the returned items. &#x60;sort&#x60; is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (&#x60; - &#x60;) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a &#x60; ? &#x60; to sort randomly. 
+         * @param {object} [filter] Select items in collection by given conditions.
+         * @param {string} [search] Filter by items that contain the given search query in one of their fields.
+         * @param {CreateItemsEventRequest} [createItemsEventRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateItemsEvent(fields?: Array<string>, limit?: number, meta?: string, offset?: number, sort?: Array<string>, filter?: object, search?: string, createItemsEventRequest?: CreateItemsEventRequest, options?: any): AxiosPromise<UpdateItemsEvent200Response> {
+            return localVarFp.updateItemsEvent(fields, limit, meta, offset, sort, filter, search, createItemsEventRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update multiple Executive items at the same time.
+         * @summary Update Multiple Items
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {number} [limit] A limit on the number of objects that are returned.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {number} [offset] How many items to skip when fetching data.
+         * @param {Array<string>} [sort] How to sort the returned items. &#x60;sort&#x60; is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (&#x60; - &#x60;) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a &#x60; ? &#x60; to sort randomly. 
+         * @param {object} [filter] Select items in collection by given conditions.
+         * @param {string} [search] Filter by items that contain the given search query in one of their fields.
+         * @param {CreateItemsExecutiveRequest} [createItemsExecutiveRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateItemsExecutive(fields?: Array<string>, limit?: number, meta?: string, offset?: number, sort?: Array<string>, filter?: object, search?: string, createItemsExecutiveRequest?: CreateItemsExecutiveRequest, options?: any): AxiosPromise<UpdateItemsExecutive200Response> {
+            return localVarFp.updateItemsExecutive(fields, limit, meta, offset, sort, filter, search, createItemsExecutiveRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an existing Event item.
+         * @summary Update an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {ItemsEvent} [itemsEvent] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSingleItemsEvent(id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, itemsEvent?: ItemsEvent, options?: any): AxiosPromise<ReadSingleItemsEvent200Response> {
+            return localVarFp.updateSingleItemsEvent(id, fields, meta, itemsEvent, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an existing Executive item.
+         * @summary Update an Item
+         * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+         * @param {Array<string>} [fields] Control what fields are being returned in the object.
+         * @param {string} [meta] What metadata to return in the response.
+         * @param {ItemsExecutive} [itemsExecutive] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSingleItemsExecutive(id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, itemsExecutive?: ItemsExecutive, options?: any): AxiosPromise<ReadSingleItemsExecutive200Response> {
+            return localVarFp.updateSingleItemsExecutive(id, fields, meta, itemsExecutive, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -431,6 +1157,78 @@ export const ItemsApiFactory = function (configuration?: Configuration, basePath
  * @extends {BaseAPI}
  */
 export class ItemsApi extends BaseAPI {
+    /**
+     * Create a new Event item.
+     * @summary Create an Item
+     * @param {string} [meta] What metadata to return in the response.
+     * @param {CreateItemsEventRequest} [createItemsEventRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public createItemsEvent(meta?: string, createItemsEventRequest?: CreateItemsEventRequest, options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).createItemsEvent(meta, createItemsEventRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create a new Executive item.
+     * @summary Create an Item
+     * @param {string} [meta] What metadata to return in the response.
+     * @param {CreateItemsExecutiveRequest} [createItemsExecutiveRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public createItemsExecutive(meta?: string, createItemsExecutiveRequest?: CreateItemsExecutiveRequest, options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).createItemsExecutive(meta, createItemsExecutiveRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete multiple existing Event items.
+     * @summary Delete Multiple Items
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public deleteItemsEvent(options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).deleteItemsEvent(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete multiple existing Executive items.
+     * @summary Delete Multiple Items
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public deleteItemsExecutive(options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).deleteItemsExecutive(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an existing Event item.
+     * @summary Delete an Item
+     * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public deleteSingleItemsEvent(id: ReadSingleItemsEventIdParameter, options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).deleteSingleItemsEvent(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an existing Executive item.
+     * @summary Delete an Item
+     * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public deleteSingleItemsExecutive(id: ReadSingleItemsEventIdParameter, options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).deleteSingleItemsExecutive(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * List the Event items.
      * @summary List Items
@@ -495,6 +1293,74 @@ export class ItemsApi extends BaseAPI {
      */
     public readSingleItemsExecutive(id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, version?: string, options?: RawAxiosRequestConfig) {
         return ItemsApiFp(this.configuration).readSingleItemsExecutive(id, fields, meta, version, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update multiple Event items at the same time.
+     * @summary Update Multiple Items
+     * @param {Array<string>} [fields] Control what fields are being returned in the object.
+     * @param {number} [limit] A limit on the number of objects that are returned.
+     * @param {string} [meta] What metadata to return in the response.
+     * @param {number} [offset] How many items to skip when fetching data.
+     * @param {Array<string>} [sort] How to sort the returned items. &#x60;sort&#x60; is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (&#x60; - &#x60;) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a &#x60; ? &#x60; to sort randomly. 
+     * @param {object} [filter] Select items in collection by given conditions.
+     * @param {string} [search] Filter by items that contain the given search query in one of their fields.
+     * @param {CreateItemsEventRequest} [createItemsEventRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public updateItemsEvent(fields?: Array<string>, limit?: number, meta?: string, offset?: number, sort?: Array<string>, filter?: object, search?: string, createItemsEventRequest?: CreateItemsEventRequest, options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).updateItemsEvent(fields, limit, meta, offset, sort, filter, search, createItemsEventRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update multiple Executive items at the same time.
+     * @summary Update Multiple Items
+     * @param {Array<string>} [fields] Control what fields are being returned in the object.
+     * @param {number} [limit] A limit on the number of objects that are returned.
+     * @param {string} [meta] What metadata to return in the response.
+     * @param {number} [offset] How many items to skip when fetching data.
+     * @param {Array<string>} [sort] How to sort the returned items. &#x60;sort&#x60; is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (&#x60; - &#x60;) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a &#x60; ? &#x60; to sort randomly. 
+     * @param {object} [filter] Select items in collection by given conditions.
+     * @param {string} [search] Filter by items that contain the given search query in one of their fields.
+     * @param {CreateItemsExecutiveRequest} [createItemsExecutiveRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public updateItemsExecutive(fields?: Array<string>, limit?: number, meta?: string, offset?: number, sort?: Array<string>, filter?: object, search?: string, createItemsExecutiveRequest?: CreateItemsExecutiveRequest, options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).updateItemsExecutive(fields, limit, meta, offset, sort, filter, search, createItemsExecutiveRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an existing Event item.
+     * @summary Update an Item
+     * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+     * @param {Array<string>} [fields] Control what fields are being returned in the object.
+     * @param {string} [meta] What metadata to return in the response.
+     * @param {ItemsEvent} [itemsEvent] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public updateSingleItemsEvent(id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, itemsEvent?: ItemsEvent, options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).updateSingleItemsEvent(id, fields, meta, itemsEvent, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an existing Executive item.
+     * @summary Update an Item
+     * @param {ReadSingleItemsEventIdParameter} id Index of the item.
+     * @param {Array<string>} [fields] Control what fields are being returned in the object.
+     * @param {string} [meta] What metadata to return in the response.
+     * @param {ItemsExecutive} [itemsExecutive] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemsApi
+     */
+    public updateSingleItemsExecutive(id: ReadSingleItemsEventIdParameter, fields?: Array<string>, meta?: string, itemsExecutive?: ItemsExecutive, options?: RawAxiosRequestConfig) {
+        return ItemsApiFp(this.configuration).updateSingleItemsExecutive(id, fields, meta, itemsExecutive, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -16,8 +16,14 @@
 
 export * from './api/assets-api';
 export * from './api/authentication-api';
+export * from './api/collections-api';
+export * from './api/fields-api';
+export * from './api/files-api';
+export * from './api/folders-api';
 export * from './api/items-api';
 export * from './api/items-event-api';
 export * from './api/items-executive-api';
+export * from './api/roles-api';
 export * from './api/server-api';
+export * from './api/users-api';
 

@@ -19,7 +19,7 @@ import type { Configuration } from './configuration';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 
-export const BASE_PATH = "http://0.0.0.0:8055".replace(/\/+$/, "");
+export const BASE_PATH = "http://host.docker.internal:8055".replace(/\/+$/, "");
 
 /**
  *
