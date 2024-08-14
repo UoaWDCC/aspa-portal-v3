@@ -37,6 +37,11 @@
     flex-direction: column;
 }
 
+.email {
+    display: flex;
+    flex-direction: column;
+}
+
 .queryFormRow {
     display: flex;
     flex-wrap: wrap;
@@ -59,15 +64,17 @@
     padding-left: 30px;
     padding-right: 30px;
     margin-bottom: 10px;
+    margin-right: 300px;
 }
 
 .input1 {
     height: 60px;
+    width: 70%;
 }
 
 .input2 {
     height: 60px;
-    width: 100%;
+    width: 50%;
 }
 
 .queryFormBg textarea {

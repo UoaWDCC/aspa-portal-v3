@@ -45,17 +45,18 @@ function ContactForm(){
                         onChange={handleChange}  
                         />
                     </div>
+                    <div className={styles.names}>
+                        <label>Email:</label>
+                        <input 
+                        className = {styles.input1}
+                        type="text"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        />
+                    </div>
                 </div>
-
-                <label>Email:</label>
-                <input 
-                className = {styles.input2}
-                type="text"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                />
 
                 <label htmlFor="query">How may we assist you?:</label>
                 <textarea 
