@@ -1,18 +1,14 @@
 'use client'
-import { useSearchParams, usePathname, useRouter } from 'next/navigation'
+
 import React from 'react';
 import { useRef, useEffect } from 'react'
 import styles from "./Modal.module.css"
 
 type Props = {
+    showModal: boolean,
     onConfirm: (() => void) | null,
     onDeny: (() => void) | null,
     children: React.ReactNode,
-}
-
-type Params = {
-    key: string,
-    value: string,
 }
 
 /**\
@@ -25,61 +21,26 @@ type Params = {
  * 
  * @returns the modal component
  */
-export default function Modal({ onConfirm, onDeny, children }:
+export default function Modal({ showModal, onConfirm, onDeny, children }:
     Props
 ) {
-    const searchParams = useSearchParams()
     const modalRef = useRef<null | HTMLDialogElement>(null)
-    const showModal = searchParams.get('showModal')
+  
+    useEffect(() => {
+      if (showModal == true) {
+          modalRef.current?.showModal()
+      } else {
+          modalRef.current?.close()
+      }
+    }, [showModal])
 
-    const pathname = usePathname()
-    const {replace} = useRouter()
-
-    function updateSearchParams({key, value}: Params) {
-        const params = new URLSearchParams(searchParams)
-        if (value) {
-          params.set(key, value)
-        } else {
-          params.delete(key)
-        }
-        
-        const newUrl = `${pathname}?${params.toString()}`
-        replace(newUrl)
-    }
 
     // Ensure that there is at least one button to close the modal
     if (!onConfirm && !onDeny) {
-        throw new InvalidModalError("The modal has no onConfirm and no onDeny function");
+        throw new InvalidModalError("The modal has no onConfirm or no onDeny function");
     }
 
-    useEffect(() => {
-        if (showModal === 'y') {
-            modalRef.current?.showModal()
-        } else {
-            modalRef.current?.close()
-        }
-    }, [showModal])
-
-    const closeModal = () => {
-        modalRef.current?.close()
-        updateSearchParams({key: "showModal", value: "n"})
-    }
-
-    const clickDeny = () => {
-        if (onDeny) {
-            onDeny()
-        }
-        closeModal()
-    }
-
-    const clickConfirm = () => {
-        if (onConfirm) {
-            onConfirm()
-        }
-        closeModal()
-    }
-
-    const modal: JSX.Element | null = showModal === "y"
+    const modal: JSX.Element | null = showModal === true
         ? (
             <dialog ref={modalRef}>
                 <div className={styles.modal}>
@@ -90,11 +51,11 @@ export default function Modal({ onConfirm, onDeny, children }:
                             {/*If onConfirm or onDeny are null then don't include their buttons*/}
                             {!onConfirm
                                 ? null
-                                : <button onClick={clickConfirm} className={styles.confirmButton}>Confirm</button>
+                                : <button onClick={onConfirm} className={styles.confirmButton}>Confirm</button>
                             }
                             {!onDeny
                                 ? null
-                                : <button onClick={clickDeny} className={styles.denyButton}>Deny</button>
+                                : <button onClick={onDeny} className={styles.denyButton}>Deny</button>
                             }
                         </div>
                 </div>
