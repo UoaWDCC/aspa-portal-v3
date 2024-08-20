@@ -1,37 +1,83 @@
 'use client';
 
-import Link from 'next/link'
-import styles from './Navbar.module.css'
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+// import { FaBars, FaTimes } from 'react-icons/fa';
+import styles from './Navbar.module.css';
+import billairdBall from '../../public/billiard.png';
+import Image from 'next/image';
 
 export default function NavBar() {
     const pathname = usePathname();
-    console.log(pathname)
+    const [isAuthentication, setIsAuthentication] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [open, setOpen] = useState(false);
+    console.log(pathname);
+
+    const handleLogin = () => {
+        setIsAuthentication(true);
+    };
+
+    const handleLogout = () => {
+        setIsAuthentication(false);
+        setIsAdmin(false);
+    };
+
+    const handleMenu = () => {
+        setOpen((prev) => !prev);
+    };
+
+    const closeMenu = () => {
+        setOpen(false);
+    };
+
+    const links = [
+        { name: 'Home', href: '/home' },
+        { name: 'Contact', href: '/contact' },
+        { name: 'Events', href: '/events' },
+        { name: 'Register/Login', href: '/home/login' },
+    ];
 
     return (
         <nav className={styles.nav}>
-            <ul>
-                <li className={styles.navitem}>
-                    <Link className={`${styles.navlink} ${pathname === "/home" ? styles.currentpage : ""}`} href="/home">
-                        Home
+            <div className={styles.image}>
+                <Image src={billairdBall} alt='Billiard Ball' layout="fill" objectFit="cover" />
+            </div>
+
+            <div className={styles.navlinksContainer}>
+                {links.map((link, index) => (
+                    <Link key={index} href={link.href} className={`${styles.navlink} ${pathname === link.href ? styles.active : ''}`}>
+                        {link.name}
                     </Link>
-                </li>
-                <li className={styles.navitem}>
-                    <Link className={`${styles.navlink} ${pathname === "/contact" ? styles.currentpage : ""}`} href="/contact">
-                        Talk To Us
-                    </Link>
-                </li>
-                <li className={styles.navitem}>
-                    <Link className={`${styles.navlink} ${pathname === "/events" ? styles.currentpage : ""}`} href="/events">
-                        Events
-                    </Link>
-                </li>
-                <li className={styles.navitem}>
-                    <Link className={`${styles.navlink} ${pathname === "/home/login" ? styles.currentpage : ""}`} href="/home/login">
-                        Register/Log In
-                    </Link>
-                </li>
-            </ul>
+                ))}
+            </div>
+
+            {/* Hamburger Button */}
+            <div className={styles.hamburgerButton}>
+                <button type='button' onClick={handleMenu}>
+                    {/* <FaBars size={30} color='black' /> */}
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            {open && (
+                <div className={styles.mobileMenu}>
+                    <button type='button' onClick={handleMenu}>
+                        {/* <FaTimes size={30} color='black' /> */}
+                    </button>
+
+                    <div className={styles.image}>
+                        <Image src={billairdBall} alt='Billiard Ball' layout="fill" objectFit="cover" />
+                    </div>
+
+                    {links.map((link, index) => (
+                        <Link key={index} href={link.href} className={`${styles.navlink} ${pathname === link.href ? styles.active : ''}`} onClick={closeMenu}>
+                            {link.name}
+                        </Link>
+                    ))}
+                </div>
+            )}
         </nav>
-    )
+    );
 }

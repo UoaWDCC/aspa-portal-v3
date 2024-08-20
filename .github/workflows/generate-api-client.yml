@@ -1,0 +1,37 @@
+name: Build API Client
+
+on:
+    push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        permissions:
+            # Give the default GITHUB_TOKEN write permission to commit and push the
+            # added or changed files to the repository.
+            contents: write   
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Run yarn install
+              uses: borales/actions-yarn@v4
+              with:
+                cmd: install
+            - name: Generate API Client
+              run: yarn generate:api-client
+            - name: Prettify API client code
+              uses: creyD/prettier_action@v4.3
+              with:
+                # This part is also where you can pass other options, for example:
+                  commit_message: "Chore: Prettify code"
+                  prettier_options: "--write frontend/src/api-client/**/*.ts"
+            - name: Commit new API client
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                commit_message: "Chore: Update API client"
+                commit_user_name: "github-api-actions[bot]"
+                commit_user_email: "github-api-actions[bot]@users.noreply.github.com"
+                commit_author: Author <actions@github.com>
+                commit_options: '--no-verify'
+
+        

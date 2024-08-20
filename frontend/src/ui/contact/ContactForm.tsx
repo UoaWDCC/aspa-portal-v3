@@ -21,47 +21,51 @@ function ContactForm(){
         <div className={styles.queryFormBg}>
             <h1>Inquiry Form</h1>
             <form onSubmit={handleSubmit}>
+                
                 <div className={styles.queryFormRow}>
                     <div className={styles.names}>
                         <label>First Name:</label>
-                            <input
-                            className = {styles.input1}
-                            type="text"
-                            id="firstName"
-                            name="firstName"
-                            value={formData.firstName}
-                            onChange={handleChange}
-                            />
+                        <input
+                        className = {styles.input1}
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        />
                     </div>
                     <div className={styles.names}>
                         <label>Last Name:</label>
-                            <input 
-                            className = {styles.input1}
-                            type="text"
-                            id="lastName"
-                            name="lastName"
-                            value={formData.lastName}
-                            onChange={handleChange}  
-                            />
+                        <input 
+                        className = {styles.input1}
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}  
+                        />
                     </div>
                 </div>
+
                 <label>Email:</label>
-                    <input 
-                    className = {styles.input2}
-                    type="text"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    />
+                <input 
+                className = {styles.input2}
+                type="text"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                />
+
                 <label htmlFor="query">How may we assist you?:</label>
-                    <textarea 
-                    className = {styles.input3}
-                    id="query"
-                    name="query"
-                    value={formData.query}
-                    onChange={handleChange}
-                    />
+                <textarea 
+                className = {styles.input3}
+                id="query"
+                name="query"
+                value={formData.query}
+                onChange={handleChange}
+                />
+
                 <button onClick={handleSubmit}>Submit</button>
             </form>
         </div>
