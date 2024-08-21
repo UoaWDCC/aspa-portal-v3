@@ -1,11 +1,20 @@
 "use client";
 import React, { useEffect } from "react";
 
+const poolBallColors = [
+  "#A65656", //red
+  "#658A66", //green
+  "#DD995B", //dark yellow
+  "#6156A6", //purple
+  "#B15F4D", //orange
+  "#3E76B4", //blue
+  "#C5B460", //yellow
+  "#222629" //black
+]
+
 function generateRandomColor() {
-  const r = Math.floor((Math.random() * 127) + 127);
-  const g = Math.floor((Math.random() * 127) + 127);
-  const b = Math.floor((Math.random() * 127) + 127);
-  return `rgb(${r}, ${g}, ${b})`;
+  const randomIndex = Math.floor(Math.random() * poolBallColors.length);
+  return poolBallColors[randomIndex];
 }
 
 function generateRandomBalls(mainElement: HTMLElement) {

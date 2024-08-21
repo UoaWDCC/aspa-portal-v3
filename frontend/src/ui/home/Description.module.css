@@ -51,19 +51,7 @@
     color: #DD995B;
   }
 
-  .regButton {
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 45px;
-    background-color: #87562A;
-    margin: 15px 0;
-    color: #FBF5F0;
-    width: 150px;
-    border-width: 2PX;
-
-  }
-
-  .logButton {
+  .reglogButton {
     padding: 8px 16px;
     cursor: pointer;
     border-radius: 45px;
@@ -72,6 +60,10 @@
     color: #FBF5F0;
     width: 150px;
     border-width: 2PX;
+  }
+
+  .reglogButton:hover {
+    background-color: #87562A;
   }
   
   /* Media queries for responsiveness */
