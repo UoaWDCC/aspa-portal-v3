@@ -44,6 +44,10 @@
     color: #FBF5F0;
   }
 
+.eventsButton:hover {
+  background-color: #87562A;
+}
+
   .horizontalAligned {
     display: flex;
     gap: 20px;

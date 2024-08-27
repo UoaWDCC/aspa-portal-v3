@@ -9,7 +9,7 @@ const poolBallColors = [
   "#B15F4D", //orange
   "#3E76B4", //blue
   "#C5B460", //yellow
-  "#222629" //black
+  // "#222629" //black
 ]
 
 function generateRandomColor() {
