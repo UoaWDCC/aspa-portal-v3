@@ -19,7 +19,7 @@
         }
     },
     "workspaceFolder": "/repo",
-    "postCreateCommand": "yarn install:all && yarn prepare",
+    "postCreateCommand": "yarn install:all",
     "postStartCommand": "",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
