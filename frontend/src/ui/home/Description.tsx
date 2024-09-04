@@ -24,8 +24,8 @@ export default function Description() {
             }}
             />
             <div className={styles.buttonContainer}>
-              <button className={styles.regButton}>REGISTER</button>
-              <button className={styles.logButton}>LOGIN</button>
+              <button className={styles.reglogButton}>REGISTER</button>
+              <button className={styles.reglogButton}>LOGIN</button>
             </div>
           </div>
         </div>

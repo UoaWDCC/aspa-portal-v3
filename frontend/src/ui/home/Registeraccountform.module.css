@@ -119,6 +119,8 @@
     border-radius: 25px;
     text-align: center;
     background: #DD995B;
+    border-color: #FFFFFF;
+    border-width: 0.25rem;
     padding: 14px 0;
     color: #FFFFFF;
     font-weight: bold;
@@ -127,4 +129,8 @@
     margin-top: 6px;
     width: 964px;
     max-width: 90%;
+}
+
+.button:hover {
+    background-color: #87562A;
 }
