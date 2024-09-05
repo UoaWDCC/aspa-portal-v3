@@ -1,7 +1,8 @@
+'use client';
 import { Card, Image, Text, Title } from '@mantine/core';
 import styles from './EventCard.module.css';
 
-interface Event {
+export interface Event {
   eventName: string;
   eventDescription: string;
   imgUrl: string;
@@ -26,7 +27,7 @@ export function EventCard(
     cardRadius = "xl", 
     cardWithBorder = true, 
     cardPadding = "lg", 
-    cardMaxWidth = "400px", 
+    cardMaxWidth = "100%", 
     cardTitleOrder = 2, 
     cardTitleMargin = "md", 
     cardDescriptionSize = "md" 
