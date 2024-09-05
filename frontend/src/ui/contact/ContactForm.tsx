@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import styles from './contacts.module.css';
 import emailjs from 'emailjs-com';
 
+const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
 function ContactForm() {
     const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", query: "" });
 
