@@ -6,7 +6,6 @@ import styles from './NavBar.module.css';
 
 interface Link {
     name: string;
-    icon: string;
     href: string;
 }
 
@@ -20,28 +19,25 @@ export function NavBar({ links }: NavBarProps) {
 
     return (
         <AppShell
-            header={{ height: 60 }}
             navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: true, mobile: !opened } }}
             padding="md"
         >
-            <AppShell.Header bg='#DD995B'>
+            <AppShell.Header className={styles.header}>
                 <Group h="100%" px="md">
                     <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
                     <Group justify="space-between" style={{ flex: 1, justifyContent: 'flex-end'}}>
-                        <Group ml="xl" gap={0} visibleFrom="sm">
+                        <Group ml="xl" gap={20} visibleFrom="sm">
                             {links.map((link, index) => (
-                                <Link key={index} href={link.href} className={styles.control}>
-                                    <UnstyledButton onClick={() => setActive(index)}>
-                                        <img
-                                            src={link.icon}
-                                            alt={link.name}
-                                            className={`${styles.controlIcon} ${index === active ? styles.hidden : ''}`}
-                                        />
-                                        <div className={`${styles.controlName} ${index === active ? styles.hidden : ''}`}>
-                                            {link.name}
-                                        </div>
-                                        {index === active && <div className={styles.activeLink}></div>}
-                                    </UnstyledButton>
+                                <Link key={index} href={link.href} passHref legacyBehavior>
+                                    <a className={index === active ? '' : styles.control} onClick={() => setActive(index)}>
+                                        <UnstyledButton>
+                                            <div className={`${styles.controlName} ${index === active ? styles.hidden : ''}`}>
+                                                {link.name}
+                                            </div>
+                                            
+                                            {index === active && <div className={styles.activeLink}></div>}
+                                        </UnstyledButton>
+                                    </a>
                                 </Link>
                             ))}
                         </Group>
