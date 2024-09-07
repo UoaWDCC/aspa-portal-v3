@@ -1,0 +1,12 @@
+@keyframes hoverUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-100px);
+    }
+  }
+  
+  .hoverUpDown {
+    animation: hoverUpDown 2s ease-in-out infinite;
+  }

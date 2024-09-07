@@ -1,5 +1,7 @@
 import { Container, Grid, Title, Text, Button, Group } from '@mantine/core';
 import Image from "next/image";
+import { useState } from 'react';
+import styles from './Banner.module.css';
 
 interface BannerProps {
     title: string;
@@ -57,6 +59,18 @@ export function Banner({
     imageHeight = 'auto',
     imageMarginBottom = '1rem'
 }: BannerProps) {
+
+  const hoverAnimation = {
+    '@keyframes hoverUpDown': {
+      '0%, 100%': {
+        transform: 'translateY(0)',
+      },
+      '50%': {
+        transform: 'translateY(-50px)',
+      },
+    },
+  };
+
   return (
     <Container>
       <Grid gutter="xl">
@@ -116,8 +130,9 @@ export function Banner({
             style={{
               width: imageWidth,
               height: imageHeight,
-              marginBottom: imageMarginBottom
-            }} 
+              marginBottom: imageMarginBottom,
+            }}
+            className={styles.hoverUpDown}
           />
         </Grid.Col>
       </Grid>
