@@ -1,0 +1,26 @@
+.footer {
+    padding: var(--mantine-spacing-md);
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: var(--mantine-spacing-sm);
+}
+
+.description {
+    margin-bottom: var(--mantine-spacing-md);
+}
+
+.socialMediaButton {
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
