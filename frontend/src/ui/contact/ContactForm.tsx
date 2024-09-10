@@ -4,15 +4,19 @@ import React, { useState, useEffect } from 'react';
 import styles from './contacts.module.css';
 import emailjs from 'emailjs-com';
 
-const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
-
 function ContactForm() {
     const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", query: "" });
 
     useEffect(() => {
-        // Initialize EmailJS with your public key
-        emailjs.init('lgHt4sp2yoPmjiPiN');
-    }, []);
+        const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+    
+        if (publicKey) {
+          emailjs.init(publicKey);
+          console.log('EmailJS initialized');
+        } else {
+          console.error('EmailJS public key is missing');
+        }
+      }, []); // Only initialize on mount
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = event.target;
