@@ -3,7 +3,7 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-100px);
+      transform: translateY(-5vw);
     }
   }
   
@@ -12,20 +12,27 @@
   }
 
   .title {
-    font-size: 60px;
-    margin-bottom: 15px;
+    font-size: 6vw;
+    margin-bottom: 1.5vw;
     font-weight: 700;
     line-height: 1.1;
     overflow: hidden;
   }
+
+  .text {
+    font-size: 1.5vw;
+    margin-bottom: 15px;
+  }
   
   .group {
     color: #DD995B;
-    margin-top: 15px;
+    font-size: 1.5vw;
   }
   
   .button {
-    padding: 8px 16px;
+    width: 15vw;
+    height: 4vw;
+    font-size: 1.5vw;
     border-radius: 45px;
     background-color: #DD995B;
     font-weight: 600;
@@ -47,4 +54,25 @@
     width: 100%;
     height: auto;
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 8vw;
+    }
+  
+    .text {
+      font-size: 3vw;
+    }
+  
+    .group {
+      font-size: 3vw;
+    }
+  
+    .button {
+      width: 35vw;
+      height: 8vw;
+      font-size: 3vw;
+    }
+    
   }

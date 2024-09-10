@@ -23,21 +23,23 @@ export function Banner({
 
   return (
     <Grid gutter="xl">
-    <Grid.Col span={6}>
-      <Title order={1} className={styles.title}>
+    <Grid.Col span={{ base: 12, sm: 6 }}>
+      <Title className={styles.title}>
         {title}
       </Title>
-      <Text>
+      <Text className={styles.text}>
         {description}
       </Text>
-      <Group align="center" className={styles.group}>
+      <Group align="center">
         <Button className={styles.button}>
           {buttonText}
         </Button>
-        <Text>{groupText}</Text> 
+        <Text className={styles.group}>
+          {groupText}
+        </Text> 
       </Group>
     </Grid.Col>
-    <Grid.Col span={6} className={styles.imageContainer}>
+    <Grid.Col span={{ base: 12, sm: 6 }} className={styles.imageContainer}>
       <Image 
         src={titleImageSrc} 
         alt={titleImageAlt} 
