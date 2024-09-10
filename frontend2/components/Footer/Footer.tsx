@@ -10,14 +10,19 @@ interface SocialMediaLink {
 
 interface FooterProps {
     socialMediaLinks: SocialMediaLink[];
-    footerBg: string;
-    socialMediaImageWidth: number;
-    socialMediaImageHeight: number;
-    socialMediaBg: string; // New parameter
+    footerBg?: string;
+    socialMediaImageWidth?: number;
+    socialMediaImageHeight?: number;
+    socialMediaBg?: string;
 }
 
 export function Footer(
-    { socialMediaLinks, footerBg = "#474B4F", socialMediaImageWidth = 24, socialMediaImageHeight = 24, socialMediaBg = "#FFFFFF" }: FooterProps
+    { socialMediaLinks, 
+      footerBg = "#474B4F", 
+      socialMediaImageWidth = 24, 
+      socialMediaImageHeight = 24, 
+      socialMediaBg = "#FFFFFF",
+    }: FooterProps
 ) {
     return (
         <AppShell>
@@ -27,14 +32,14 @@ export function Footer(
                     <Text className={styles.description}> A community of students who love to play pool</Text>
                     <Group>
                         {socialMediaLinks.map((link, index) => (
-                            <UnstyledButton 
+                            <UnstyledButton
                                 key={index}
                                 onClick={() => window.open(link.href, '_blank')}
                                 rel="noopener noreferrer"
                                 aria-label={link.name}
                                 title={link.name}
-                                className={styles.socialMediaButton} // Add a class for styling
-                                style={{ backgroundColor: socialMediaBg }} // Use the new parameter
+                                className={styles.socialMediaButton}
+                                style={{ backgroundColor: socialMediaBg }}
                             >
                                 <Image src={link.icon} alt={link.name} width={socialMediaImageWidth} height={socialMediaImageHeight} />
                             </UnstyledButton>
