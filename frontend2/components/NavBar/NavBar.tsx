@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AppShell, Group, Burger, UnstyledButton, NavLink } from '@mantine/core';
+import { AppShell, Group, Burger, UnstyledButton, NavLink, FloatingIndicator } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
 import styles from './NavBar.module.css';
@@ -17,6 +17,31 @@ export function NavBar({ links }: NavBarProps) {
     const [opened, { toggle }] = useDisclosure();
     const [active, setActive] = useState(0);
 
+    const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null);
+    const [controlsRefs, setControlsRefs] = useState<Record<string, HTMLButtonElement | null>>({});
+
+    const setControlRef = (index: number) => (node: HTMLButtonElement) => {
+        controlsRefs[index] = node;
+        setControlsRefs(controlsRefs);
+    };
+
+    const controls = links.map((link, index) => (
+        <Link key={index} href={link.href} passHref legacyBehavior>
+            <UnstyledButton
+                key={index}
+                className={styles.control}
+                onClick={() => setActive(index)}
+                ref={setControlRef(index)}
+                mod={{ active: active === index }}
+            >
+                <div className={`${styles.controlName} ${index === active ? styles.hidden : ''}`}>
+                    {link.name}
+                </div>
+            </UnstyledButton>
+        </Link>
+    ));
+
+
     return (
         <AppShell
             navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: true, mobile: !opened } }}
@@ -25,21 +50,16 @@ export function NavBar({ links }: NavBarProps) {
             <AppShell.Header className={styles.header}>
                 <Group h="100%" px="md">
                     <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-                    <Group justify="space-between" style={{ flex: 1, justifyContent: 'flex-end'}}>
+                    <Group justify="space-between" style={{ flex: 1, justifyContent: 'flex-end' }}>
                         <Group ml="xl" gap={20} visibleFrom="sm">
-                            {links.map((link, index) => (
-                                <Link key={index} href={link.href} passHref legacyBehavior>
-                                    <a className={index === active ? '' : styles.control} onClick={() => setActive(index)}>
-                                        <UnstyledButton>
-                                            <div className={`${styles.controlName} ${index === active ? styles.hidden : ''}`}>
-                                                {link.name}
-                                            </div>
-                                            
-                                            {index === active && <div className={styles.activeLink}></div>}
-                                        </UnstyledButton>
-                                    </a>
-                                </Link>
-                            ))}
+                            <div className={styles.root} ref={setRootRef}>
+                                {controls}
+                                <FloatingIndicator
+                                    target={controlsRefs[active]}
+                                    parent={rootRef}
+                                    className={styles.indicator}
+                                />
+                            </div>
                         </Group>
                     </Group>
                 </Group>
