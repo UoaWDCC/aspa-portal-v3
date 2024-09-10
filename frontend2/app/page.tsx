@@ -73,7 +73,7 @@ const ExampleTestimonial : Testimonial[] = [
 export default function HomePage() {
   return (
     <>
-      <Banner  {...ExampleBannerArguments} paddingTop="8vw" paddingleft="8vw" paddingRight="8vw" paddingBottom="8vw" />
+      <Banner  {...ExampleBannerArguments} paddingTop="12vw" paddingleft="8vw" paddingRight="8vw" paddingBottom="8vw" />
       <PastEvent {...ExampleEvent} paddingTop="8vw" paddingleft="8vw" paddingRight="8vw"/>
       <TestimonialGroup testimonials={ExampleTestimonial} paddingTop="8vw" paddingleft="8vw" paddingRight="8vw" paddingBottom="8vw" paddingBetween="1vw" delay={1000}/>
 
