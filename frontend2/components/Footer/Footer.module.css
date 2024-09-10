@@ -1,6 +1,7 @@
 .footer {
     padding: var(--mantine-spacing-md);
     text-align: center;
+    position: static;
 }
 
 .content {
