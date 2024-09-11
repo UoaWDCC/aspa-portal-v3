@@ -1,6 +1,6 @@
 'use client';
 import { Card, Image, Text, Title, Group, Badge } from '@mantine/core';
-import styles from './ContactCard.module.css';
+import styles from './ExecutiveCard.module.css';
 
 export interface Executive {
     executiveName: string;
@@ -14,7 +14,7 @@ export interface ContactCard {
     badgeColor?: string;
 }
 
-export function ContactCard({ executive, badgeColor }: ContactCard) {
+export function ExecutiveCard({ executive, badgeColor }: ContactCard) {
     return (
         <Card shadow="sm" padding="lg" radius="xl" withBorder={true} style={{ maxWidth: "100%" }} className={styles.card}>
             <Card.Section>

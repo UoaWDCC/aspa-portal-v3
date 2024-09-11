@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ContactCard } from './ContactCard';
+import { ExecutiveCard } from './ExecutiveCard';
 
-const meta: Meta<typeof ContactCard> = {
+const meta: Meta<typeof ExecutiveCard> = {
     title: 'Contact/Card',
-    component: ContactCard,
+    component: ExecutiveCard,
     argTypes: {
         executive: { control: 'object' },
     }
@@ -11,7 +11,7 @@ const meta: Meta<typeof ContactCard> = {
 
 export default meta;
 
-export const Default: StoryObj<typeof ContactCard> = {
+export const Default: StoryObj<typeof ExecutiveCard> = {
     args: {
       executive: {
         executiveName: 'Lorem ipsum',
