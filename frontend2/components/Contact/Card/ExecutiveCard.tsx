@@ -9,12 +9,12 @@ export interface Executive {
     imgUrl: string;
 }
 
-export interface ContactCard {
+export interface ExecutiveCard {
     executive: Executive;
     badgeColor?: string;
 }
 
-export function ExecutiveCard({ executive, badgeColor }: ContactCard) {
+export function ExecutiveCard({ executive, badgeColor }: ExecutiveCard) {
     return (
         <Card shadow="sm" padding="lg" radius="xl" withBorder={true} style={{ maxWidth: "100%" }} className={styles.card}>
             <Card.Section>
