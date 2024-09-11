@@ -1,5 +1,5 @@
 'use client';
-import { Grid, Container, Paper } from '@mantine/core';
+import { Grid, Container, Paper, Title } from '@mantine/core';
 import { ExecutiveCard, Executive } from '../Card/ExecutiveCard';
 import styles from './ExecutiveCollection.module.css';
 
@@ -40,6 +40,7 @@ export function ExecutiveCollection({
         <Container pt={outerPaddingTop} pb={outerPaddingBottom} pl={outerPaddingLeft} pr={outerPaddingRight}>
             <Paper shadow={shadow} radius={radius} withBorder={withBorder} className={styles.collection}>
                 <Container pt={innerPaddingTop} pb={innerPaddingBottom} pl={innerPaddingLeft} pr={innerPaddingRight}>
+                    <Title className={styles.title} pt="1vw" pb="2vw">Meet The Team</Title>
                     <Grid grow gutter={gutter}>
                         {executives.map((executive, index) => (
                             <Grid.Col span={{ base: 12, sm: 4 }}>

@@ -1,2 +1,19 @@
 .collection {
 }
+
+.title {
+    font-size: 10vw;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 8vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: 4vw;
+    }
+}
