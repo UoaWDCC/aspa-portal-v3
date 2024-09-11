@@ -14,7 +14,10 @@ export interface ExecutiveCard {
     badgeColor?: string;
 }
 
-export function ExecutiveCard({ executive, badgeColor }: ExecutiveCard) {
+export function ExecutiveCard({ 
+    executive, 
+    badgeColor="#d78840"
+}: ExecutiveCard) {
     return (
         <Card shadow="sm" padding="lg" radius="xl" withBorder={true} style={{ maxWidth: "100%" }} className={styles.card}>
             <Card.Section>
