@@ -4,6 +4,7 @@
 .title {
     font-size: 10vw;
     text-align: center;
+    text-decoration: underline;
 }
 
 @media (min-width: 768px) {
