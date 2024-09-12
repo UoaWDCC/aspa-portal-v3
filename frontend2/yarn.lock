@@ -1571,6 +1571,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@directus/sdk@npm:^17.0.1":
+  version: 17.0.1
+  resolution: "@directus/sdk@npm:17.0.1"
+  checksum: 10c0/aa902ffe274aad97495e3fc215815cab08f169717dfa72c292a9859244a4304e3f3b1c4acb63f3f9a0c8d43a0d39107535524aa86b123c9108bd6910ddd3d3e6
+  languageName: node
+  linkType: hard
+
 "@discoveryjs/json-ext@npm:0.5.7":
   version: 0.5.7
   resolution: "@discoveryjs/json-ext@npm:0.5.7"
@@ -4676,6 +4683,7 @@ __metadata:
   resolution: "aspa@workspace:."
   dependencies:
     "@babel/core": "npm:^7.24.7"
+    "@directus/sdk": "npm:^17.0.1"
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.3.1"
     "@mantine/carousel": "npm:^7.12.2"
     "@mantine/core": "npm:7.12.2"
