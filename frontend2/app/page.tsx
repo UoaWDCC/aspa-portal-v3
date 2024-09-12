@@ -1,5 +1,3 @@
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-import { Welcome } from '../components/Welcome/Welcome';
 import { Banner, BannerProps } from '@/components/Home/Banner/Banner';
 import { PastEvent } from '@/components/Home/PastEvents/PastEvent';
 import { TestimonialGroup } from '@/components/Home/Testimonials/Group/TestimonialGroup';
