@@ -130,3 +130,6 @@ dist
 .pnp.*
 
 .DS_Store
+
+# Ignore compiled JavaScript
+data/**/*.js
