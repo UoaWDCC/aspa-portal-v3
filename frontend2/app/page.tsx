@@ -1,7 +1,10 @@
+"use client";
+import { useEffect, useState } from 'react';
 import { Banner, BannerProps } from '@/components/Home/Banner/Banner';
 import { PastEvent } from '@/components/Home/PastEvents/PastEvent';
 import { TestimonialGroup } from '@/components/Home/Testimonials/Group/TestimonialGroup';
 import { Testimonial } from '@/components/Home/Testimonials/Card/TestimonialCard';
+import { getTestimonials } from '@/data/service/testimonial';
 
 const ExampleBannerArguments : BannerProps = {
   title: 'Welcome to Auckland Student Pool Association!',
@@ -48,32 +51,37 @@ const ExampleEvent : PastEvent = {
   ]
 }
 
-const ExampleTestimonial : Testimonial[] = [
-  {
-      quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      author: 'John Doe'
-  },
-  {
-      quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      author: 'John Doe'
-  },
-  {
-      quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      author: 'John Doe'
-  },
-] 
 
 
 
+async function testimonialsHandler() : Promise<Testimonial[]> {
+  try {
+    const testimonials = await getTestimonials();
+    console.log('Testimonials:', testimonials);
+    return testimonials;
+  } catch (error) {
+    console.error('Error fetching testimonial:', error);
+    return [];
+  }
+}
 
 
 
 export default function HomePage() {
+  const [testimonials, setTestimonial] = useState<Testimonial[]>([]);
+
+  useEffect(() => {
+    console.log('useEffect is running');
+    testimonialsHandler().then((testimonials) => {
+      setTestimonial(testimonials);
+    })
+  }, []);
+
   return (
     <>
       <Banner  {...ExampleBannerArguments} paddingTop="12vw" paddingleft="8vw" paddingRight="8vw" paddingBottom="8vw" />
       <PastEvent {...ExampleEvent} paddingTop="8vw" paddingleft="8vw" paddingRight="8vw"/>
-      <TestimonialGroup testimonials={ExampleTestimonial} paddingTop="8vw" paddingleft="8vw" paddingRight="8vw" paddingBottom="8vw" paddingBetween="1vw" delay={1000}/>
+      <TestimonialGroup testimonials={testimonials} paddingTop="8vw" paddingleft="8vw" paddingRight="8vw" paddingBottom="8vw" paddingBetween="1vw" delay={1000}/>
 
     </>
   );

@@ -10,6 +10,11 @@ import { theme } from '../theme';
 import { NavBar } from '@/components/NavBar/NavBar';
 import { Footer } from '@/components/Footer/Footer';
 
+// This need to be removed in deployment
+import { setURL } from '@/data/config';
+setURL('http://localhost:8055');
+
+
 const links = [
   { name: 'Home', href: '/' },
   { name: 'Contact', href: '/contact' },
