@@ -18,11 +18,3 @@ export async function getTestimonials(): Promise<TestimonialResponse[]> {
 
     return testimonials
 }
-
-getTestimonials()
-    .then((testimonials) => {
-        console.log(testimonials);
-    })
-    .catch((error) => {
-        console.error('Error fetching testimonial:', error);
-    });
