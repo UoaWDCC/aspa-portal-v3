@@ -4,24 +4,30 @@ import React from 'react';
 import { useState } from 'react';
 import styles from './contacts.module.css';
 
+import Modal from '@/ui/Modal'
+
 function ContactForm(){
     const [formData, setFormData] = useState({firstName: "", lastName: "", email: "", query: ""})
+    const [showModal, setShowModal] = useState(false)
 
     const handleChange = (event: React.ChangeEvent<any>) => {
         const {name, value} = event.target;
         setFormData((prevFormData) => ({...prevFormData, [name]: value}))
     }
 
-    const handleSubmit = (event: React.ChangeEvent<any>) => {
-        alert(`Thank you for submitting your query, we will get back to you as soon as possible.`)
+    const handleSubmit = (event : React.ChangeEvent<any>) => {
+        event.preventDefault(); // Stops page from reloading
+        setShowModal(true)
     }
 
   return (
     <div className={styles.queryFormBorder}>
         <div className={styles.queryFormBg}>
             <h1>Inquiry Form</h1>
-            <form onSubmit={handleSubmit}>
-                
+            <form>
+                <Modal showModal={showModal} onConfirm={() => {}} onDeny={null}>
+                    Thank you for submitting your query, we will get back to you as soon as possible.
+                </Modal>
                 <div className={styles.queryFormRow}>
                     <div className={styles.names}>
                         <label>First Name:</label>
