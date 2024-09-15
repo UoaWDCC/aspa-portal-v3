@@ -1,64 +1,71 @@
 .header {
-    background-color: var(--mantine-color-aspa-orange-5);
+  background-color: var(--mantine-color-aspa-orange-5);
 }
 
 .root {
-    position: relative;
-    width: fit-content;
-    border-radius: var(--mantine-radius-md);
-    height: 8vw;
+  position: relative;
+  width: fit-content;
+  border-radius: var(--mantine-radius-md);
+  height: 8vw;
 }
 
 .control {
-    line-height: 1;
+  line-height: 1;
+  color: var(--mantine-color-white);
+  border-radius: var(--mantine-radius-md);
+  font-size: var(--mantine-font-size-sm);
+  transition: color 100ms ease;
+  font-weight: 500;
+  font-size: 2vw;
+  width: 10vw;
+  height: 10vw;
+  text-align: center;
+
+  @mixin hover {
+    font-weight: 1000;
+  }
+
+  &[data-active] {
     color: var(--mantine-color-white);
-    border-radius: var(--mantine-radius-md);
-    font-size: var(--mantine-font-size-sm);
-    transition: color 100ms ease;
-    font-weight: 500;
-    font-size: 2vw;
-    width: 10vw;
-    height: 10vw;
-    text-align: center;
-
-    @mixin hover {
-        font-weight: 1000;
-    }
-
-    &[data-active] {
-        color: var(--mantine-color-white);
-    }
+  }
 }
 
 .controlLabel {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
-.indicator {
-    background: black;
-    border-radius: 50%;
-    width: 60;
-    height: 60;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    transform: translateX(-50%);
-    position: absolute;
-    top: 20px; 
-    transform: translateX(-50%);
-    z-index: 10;
+.ball {
+  position: absolute;
+  width: 4vh;
+  height: 4vh;
+  background-color: black;
+  border-radius: 50%;
+  transition:
+    left 1.2s ease,
+    transform 1s ease;
+  transform: rotate(90);
+  margin-left: 8.5vh;
+  bottom: 0.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.indicator:before {
-    content: '';
-    position: absolute;
-    width: 6vw;
-    height: 3vw;
-    background: white;
-    border-radius: 50%;
-    transform: translate(-50%, -0%) rotate(90deg);
+.ball::before {
+  content: '8';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2vh;
+  height: 2vh;
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+  font-size: 1.5vh;
+  font-weight: bold;
+}
+
+.ballcontainer {
+  position: relative;
 }
