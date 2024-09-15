@@ -71,20 +71,16 @@ export function NavBar({ links }: NavBarProps) {
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Group justify="space-between" style={{ flex: 1, justifyContent: 'flex-end' }}>
             <Group ml="xl" gap={20} visibleFrom="sm">
-              <Stack>
-                <div className={styles.root} ref={setRootRef}>
-                  {controls}
-                </div>
-                <div className={styles.ballcontainer}>
-                  <div
-                    className={styles.ball}
-                    style={{
-                      left: `${active * 20}vh`,
-                      transform: `rotate(${rotation}deg)`,
-                    }}
-                  ></div>
-                </div>
-              </Stack>
+              <div className={styles.root} ref={setRootRef}>
+                {controls}{' '}
+                <div
+                  className={styles.ball}
+                  style={{
+                    left: `${active * 20}vh`,
+                    transform: `rotate(${rotation}deg)`,
+                  }}
+                ></div>
+              </div>
             </Group>
           </Group>
         </Group>
