@@ -27,6 +27,7 @@
     "@mantine/hooks": "7.12.2",
     "@next/bundle-analyzer": "^14.2.4",
     "@tabler/icons-react": "^3.6.0",
+    "aspa": "file:",
     "embla-carousel-react": "^7.1.0",
     "next": "14.2.4",
     "react": "18.3.1",
