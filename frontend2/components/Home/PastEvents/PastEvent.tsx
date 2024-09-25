@@ -40,7 +40,6 @@ export function PastEvent(
                             <Button variant="filled" className={styles.button}>View All Events</Button>
                         </Link>
                     </div>
-                    <AspaButton> TEST HERE NEW x2 </AspaButton>
                 </Grid.Col>
             </Grid>
         </Container>
