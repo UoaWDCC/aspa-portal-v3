@@ -8,7 +8,7 @@ interface AspaButtonProps {
 
 const AspaButton: React.FC<AspaButtonProps> = ({ children }) => {
     return (
-        <Button className={styles.newbutton}>{children}</Button> // Use children in the button
+        <Button className={styles.testbutton}>{children}</Button>
     );
 };
 

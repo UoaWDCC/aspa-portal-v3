@@ -1,3 +1,17 @@
+.testbutton {
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+    color: black;
+    background-color: var(--mantine-color-aspa-orange-5);
+
+    /* Control Size of Button */
+    font-size: 2vw;
+    height: 4vw;
+    width: 30vw;
+    border-radius: 1vw;
+}
+
 /* .newbutton {
     box-sizing: border-box;
     font-weight: 600;
