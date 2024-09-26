@@ -38,6 +38,7 @@ export function PastEvent(
                     <div className={styles.centeredButton}>
                         <Link href="/events" passHref>
                             <Button variant="filled" className={styles.button}>View All Events</Button>
+                            <AspaButton> Click Me! </AspaButton>
                         </Link>
                     </div>
                 </Grid.Col>

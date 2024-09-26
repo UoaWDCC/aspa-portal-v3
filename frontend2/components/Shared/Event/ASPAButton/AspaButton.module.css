@@ -5,7 +5,7 @@
     background-color: #cd8226;
     padding: 18px 32px;
     border-radius: 6px;
-    box-shadow: 0 6px 0 #cdcdcd;
+    box-shadow: 0 6px 0 #cd8226;
     transition: .3s;
     color: white;
     height: 60px;
@@ -13,9 +13,101 @@
 
 .testbutton:hover {
     background-color: #cdcdcd;
+    box-shadow: 0 6px 0 #cdcdcd;
 }
 
 .testbutton:active {
     transform: translateY(5px);
     box-shadow: 0 3px 0 #cd8226;
 }
+
+/*
+.testbutton {
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+
+    /* Control Size of Button */
+/*
+    height: 4vw;
+    width: 30vw;
+    border-radius: 1vw;
+    transform-style: preserve-3d;
+
+    /* Control Display of Button */
+/*
+    font-size: 2vw;
+    background: var(--mantine-color-aspa-orange-5);
+    color: black
+}
+
+/*
+.newbutton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #f9c4d2;
+    box-shadow: 0 0 0 2px #b18597, 0 .625em 0 0 #ffe3e2;
+    transform: translate3d(0, .75em, -1em);
+}
+*/
+
+
+/* .newbutton {
+    box-sizing: border-box;
+    font-weight: 600;
+    color: #000000;
+    /* Black text for better contrast */
+/* font-size: 2vw;
+    height: 4vw;
+    width: 30vw;
+    border-radius: 1vw;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background-color: var(--mantine-color-aspa-orange-5);
+    border: 2px solid #b18597;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+} */
+/*
+.newbutton::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #f9c4d2;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+    transform: translate3d(0, 0.75em, -1em);
+    z-index: -1;
+}
+
+/* 
+.newbutton:hover {
+    background: #ffe9e9;
+    transform: translate(0, 0.25em);
+}
+
+.newbutton:hover::before {
+    box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+    transform: translate3d(0, 0.5em, -1em);
+}
+
+.newbutton:active {
+    background: #ffe9e9;
+    transform: translate(0em, 0.75em);
+}
+
+.newbutton:active::before {
+    box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+    transform: translate3d(0, 0, -1em);
+} */
