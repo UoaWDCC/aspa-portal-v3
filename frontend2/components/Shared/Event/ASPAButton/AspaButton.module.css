@@ -1,4 +1,5 @@
 /* Version 1 3D Button */
+/*
 .testbutton {
     cursor: pointer;
     border: 0;
@@ -19,6 +20,63 @@
 .testbutton:active {
     transform: translateY(5px);
     box-shadow: 0 3px 0 #cd8226;
+}
+
+*/
+
+/* Version 2 3D Button */
+.testbutton {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    padding: 1.25em 2em;
+    border: 2px solid #86470c;
+    border-radius: 1vw;
+    transform-style: preserve-3d;
+    background: var(--mantine-color-aspa-orange-5);
+    height: 60px;
+    position: relative;
+    transition: background 0.15s cubic-bezier(0, 0, .6, 1), transform 0.15s cubic-bezier(0, 0, .6, 1);
+
+}
+
+.testbutton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #fff2e4;
+    box-shadow: 0 0 0 2px #e5af7e, 0 .625em 0 0 #a9611d;
+    transform: translate3d(0, .75em, -1em);
+    transition: .15s cubic-bezier(0, 0, .6, 1);
+}
+
+.testbutton:hover {
+    background: #e2cdbb;
+    transform: translate(0, .25em);
+}
+
+.testbutton:hover::before {
+    box-shadow: 0 0 0 2px #e5af7e, 0 .625em 0 0 #a9611d;
+    transform: translate3d(0, .5em, -1em);
+}
+
+.testbutton:active {
+    background: #e2cdbb;
+    transform: translate(5px, 5px);
+}
+
+.testbutton:active::before {
+    box-shadow: 0 0 0 2px #e5af7e, 0 .625em 0 0 #a9611d;
+    transform: translate3d(0, 0, -1em);
+
 }
 
 /*
