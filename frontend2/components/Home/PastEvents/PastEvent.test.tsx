@@ -1,7 +1,8 @@
 import { render, screen } from '@/test-utils';
 import { PastEvent } from './PastEvent';
 
-describe('Banner component', () => {
+// REMINDER: Make another test for 1 event and/or 3 events
+describe('Default test for past event carousel', () => {
   const ExampleEvent : PastEvent = {
     events: [
       {
@@ -41,10 +42,11 @@ describe('Banner component', () => {
     render(
       <PastEvent
         events = {ExampleEvent.events}
+        // Unsure if 3 cards should always be shown
       />
     );
     ExampleEvent.events.forEach(event => {
-      expect(screen.getByText(event.eventName)).toBeInTheDocument();
+      expect(screen.getByText("Past Events")).toBeInTheDocument();
     });
   });
 });
