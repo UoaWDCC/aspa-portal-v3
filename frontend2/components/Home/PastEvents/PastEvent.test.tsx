@@ -35,7 +35,6 @@ describe('Default test for past event carousel', () => {
         eventDescription: 'Enjoy a night of pure pool goodness at the Orange Club. $9 entry. Our execs will be there feel free to come say hi!',
         imgUrl: '/event_example.svg'
       },
-  
     ]
   }
   it('renders correctly', () => {
