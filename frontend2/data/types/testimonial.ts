@@ -12,3 +12,4 @@ export interface TestimonialResponse {
 export interface TestimonialSchema {
     Testimonials: TestimonialRequest[];
 }
+
