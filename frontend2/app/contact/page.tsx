@@ -2,6 +2,7 @@
 
 import { Executive } from "@/components/Contact/Card/ExecutiveCard";
 import { ExecutiveCollection } from "@/components/Contact/Collection/ExecutiveCollection";
+import { InquiryForm } from "@/components/Contact/InquiryForm/InquiryForm";
 import { getExecutives } from "@/data/service/executive";
 import { useEffect, useState } from "react";
 
@@ -37,6 +38,9 @@ export default function ContactPage() {
         <div style={{paddingTop: '180px', paddingBottom: '30px'}} >
 
             <ExecutiveCollection executives={executives}></ExecutiveCollection>
+
+       <InquiryForm />
+
 
        
 
