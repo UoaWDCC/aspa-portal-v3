@@ -48,8 +48,5 @@ describe('PastEvent Carousel', () => {
     expect(screen.getByText(ExampleEvent.events[0].eventName)).toBeInTheDocument();
     expect(screen.getByText(ExampleEvent.events[1].eventName)).toBeInTheDocument();
     expect(screen.getByText(ExampleEvent.events[2].eventName)).toBeInTheDocument();
-
-    
-    // Unsure how to run carousel functionality test
   });
 });
