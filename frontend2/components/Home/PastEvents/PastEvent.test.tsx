@@ -1,8 +1,8 @@
-import { render, screen } from '@/test-utils';
+import { render, screen, fireEvent } from '@/test-utils';
 import { PastEvent } from './PastEvent';
 
 // REMINDER: Make another test for 1 event and/or 3 events
-describe('Default test for past event carousel', () => {
+describe('PastEvent Carousel', () => {
   const ExampleEvent : PastEvent = {
     events: [
       {
@@ -44,8 +44,12 @@ describe('Default test for past event carousel', () => {
         // Unsure if 3 cards should always be shown
       />
     );
-    ExampleEvent.events.forEach(event => {
-      expect(screen.getByText("Past Events")).toBeInTheDocument();
-    });
+    // Check that the initial set of events is displayed
+    expect(screen.getByText(ExampleEvent.events[0].eventName)).toBeInTheDocument();
+    expect(screen.getByText(ExampleEvent.events[1].eventName)).toBeInTheDocument();
+    expect(screen.getByText(ExampleEvent.events[2].eventName)).toBeInTheDocument();
+
+    
+    // Unsure how to run carousel functionality test
   });
 });
