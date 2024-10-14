@@ -1,0 +1,14 @@
+.collection{
+    background-color: #87562A;
+    margin: 2rem;
+    margin-top: 10rem;
+    width: 100%;
+    padding: 3rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #F5EDE5;
+    margin-bottom: 1rem;
+}
