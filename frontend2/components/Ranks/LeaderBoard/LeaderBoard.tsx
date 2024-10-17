@@ -1,6 +1,7 @@
 'use client';
 import { Grid, Container, Paper, Title } from '@mantine/core';
 import { MemberCard, Member } from '../MemberCard/MemberCard';
+import { RankBalls } from '../RankBalls/RankBalls';
 import styles from './LeaderBoard.module.css';
 
 export interface LeaderBoard {
@@ -37,7 +38,8 @@ export function LeaderBoard({
     innerPaddingRight = ""
 }: LeaderBoard) {
     return (
-        <Container pt={outerPaddingTop} pb={outerPaddingBottom} pl={outerPaddingLeft} pr={outerPaddingRight}>
+        <Container className={styles.pageContainer} pt={outerPaddingTop} pb={outerPaddingBottom} pl={outerPaddingLeft} pr={outerPaddingRight}>
+            <RankBalls />
             <Paper shadow={shadow} radius={radius} withBorder={withBorder} className={styles.collection}>
                 <Container pt={innerPaddingTop} pb={innerPaddingBottom} pl={innerPaddingLeft} pr={innerPaddingRight}>
                     <Title className={styles.title} pt="1vw" pb="2vw">Leader Board</Title>

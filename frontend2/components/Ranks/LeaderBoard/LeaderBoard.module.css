@@ -1,9 +1,16 @@
+.pageContainer{
+    margin: 10rem auto;
+    background-color: #DD995B;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
 .collection{
     background-color: #87562A;
-    margin: 2rem;
-    margin-top: 10rem;
     width: 100%;
     padding: 3rem;
+    border: none;
 }
 
 .title {
