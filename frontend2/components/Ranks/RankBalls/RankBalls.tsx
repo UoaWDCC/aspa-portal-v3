@@ -1,6 +1,6 @@
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { Paper, Text, Title, Button, useMantineTheme, rem } from '@mantine/core';
+import { Paper, Text, Title, Button, useMantineTheme, rem, px } from '@mantine/core';
 import classes from './RankBalls.module.css';
 
 interface BallProps {
@@ -12,19 +12,26 @@ function Ball({ colour, rank }: BallProps) {
   return (
     <Paper
       shadow='None'
-      style={{ backgroundColor: '#87562A' }}
+      style={{ backgroundColor: 'transparent' }}
     >
-        <div className={classes.ballContainer}>
+        <div 
+        className={classes.ballContainer}
+        >
             <div
             className={classes.ball}
             style={{ backgroundColor: colour }}
             >
-                <Text className={classes.category} size="xs">
-                {rank}
-                </Text>
             </div>
-            <Button variant="white" color="dark">
-                View Leaderboard
+            <Text 
+            className={classes.rank} 
+            size="xs"
+            >
+                Rank {rank}
+            </Text>
+            <Button 
+            className={classes.button}
+            >
+                Leaderboard
             </Button>
         </div>
     </Paper>
@@ -72,10 +79,10 @@ export function RankBalls() {
   return (
     <Carousel
       slideSize={{ base: '100%', sm: '6' }}
-      slideGap={{ base: rem(2), sm: 'xl' }}
-      align="start"
-      slidesToScroll={mobile ? 1 : 2}
-      style={classes.carousel}
+      slideGap="0"
+      align="center"
+      slidesToScroll={mobile ? 2 : 0}
+      style={{ backgroundColor: '#87562A', borderRadius: '3rem', padding: "2rem" }}
     >
       {slides}
     </Carousel>

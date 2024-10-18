@@ -9,8 +9,9 @@
 .collection{
     background-color: #87562A;
     width: 100%;
-    padding: 3rem;
+    padding: 2rem;
     border: none;
+    margin-top: 2rem;
 }
 
 .title {

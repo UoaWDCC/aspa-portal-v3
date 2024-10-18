@@ -1,6 +1,6 @@
 .ball {
-    height: rem(140px);
-    width: rem(140px);
+    height: rem(120px);
+    width: rem(120px);
     border-radius: rem(70px);
     display: flex;
     flex-direction: column;
@@ -12,27 +12,32 @@
 
   .ballContainer{
     background-color: transparent;
+    margin-right: 1rem;
   }
 
-  .title {
+  .text {
     font-weight: 900;
-    color: var(--mantine-color-white);
+    color: #F5EDE5;
     line-height: 1.2;
-    font-size: rem(32px);
     margin-top: var(--mantine-spacing-xs);
   }
   
-  .category {
-    color: var(--mantine-color-white);
+  .rank {
+    color: #F5EDE5;
     opacity: 0.7;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   .button {
-    margin-top: 1rem;
+    margin: 1rem 0;
+    background-color: #DD995B;
+    color: #F5EDE5;
+    border: rem(3px) solid #F5EDE5;
   }
 
-  .carosoul {
-    background-colour: #87562A;
+  .button:hover {
+    background-color: #87562A;
   }
