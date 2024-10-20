@@ -16,42 +16,6 @@ const ExampleBannerArguments : BannerProps = {
   titleImageAlt: 'ASPA Title'
 }
 
-const ExampleEvent : PastEvent = {
-  events: [
-    {
-        eventName: 'Lorem ipsum',
-        eventDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        imgUrl: '/event_example.svg'
-    },
-    {
-        eventName: 'Lorem ipsum',
-        eventDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        imgUrl: '/event_example.svg'
-    },
-    {
-        eventName: 'Lorem ipsum',
-        eventDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        imgUrl: '/event_example.svg'
-    },
-    {
-        eventName: 'Lorem ipsum',
-        eventDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        imgUrl: '/event_example.svg'
-    },
-    {
-        eventName: 'Lorem ipsum',
-        eventDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        imgUrl: '/event_example.svg'
-    },
-    {
-        eventName: 'Lorem ipsum',
-        eventDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        imgUrl: '/event_example.svg'
-    },
-
-  ]
-}
-
 
 
 
@@ -73,6 +37,7 @@ async function eventsHandler() : Promise<PastEvent> {
 
     const current_events = all_events.map((event: any) => {
       return {
+          id: event.id,
           eventName: event.title,
           eventDescription: event.description,
           imgUrl: event.image,

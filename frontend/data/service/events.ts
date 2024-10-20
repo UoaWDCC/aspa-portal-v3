@@ -63,6 +63,7 @@ export async function getEvents() {
 
 
         return {
+            id: event.id,
             title: event.title,
             description: event.description !== undefined ? removeHtmlTags(event.description) : '',
             image: event.description !== undefined ? extractImageUrl(event.description) : '',
