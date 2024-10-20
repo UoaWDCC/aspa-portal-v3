@@ -1,7 +1,0 @@
-COPY --link . .
-
-# Set build time environment variables
-ENV NEXT_API_URL="https://wdcc-aspa-api.fly.dev"
-
-# Build application
-RUN yarn run build
