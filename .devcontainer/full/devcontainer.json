@@ -1,7 +1,6 @@
 {
     "name": "ASPA Dev Container (Full)",
     "dockerComposeFile": [
-        
         "../../docker/events/Hi.Events/docker/all-in-one/docker-compose.yml",
         "../../docker/docker-compose.microservice.yml",
         "../../docker/docker-compose.workspace.yml"

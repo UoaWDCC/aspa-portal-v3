@@ -6,9 +6,9 @@ services:
       ports:
         - 8055:8055
       volumes:
-        - ./database:/directus/database
-        - ./uploads:/directus/uploads
-        - ./extensions:/directus/extensions
+        - ../../../../database:/directus/database
+        - ../../../../uploads:/directus/uploads
+        - ../../../../extensions:/directus/extensions
       environment:
         SECRET: "replace-with-secure-random-value"
         ADMIN_EMAIL: "admin@example.com"
