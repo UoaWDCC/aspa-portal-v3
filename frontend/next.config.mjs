@@ -12,4 +12,10 @@ export default withBundleAnalyzer({
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
+  images: {
+    domains: ['encrypted-tbn0.gstatic.com'], // Allow all domains
+  },
 });
+
+
+

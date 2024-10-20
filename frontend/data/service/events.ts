@@ -11,6 +11,16 @@ type Event = {
     status: string;
 };
 
+const extractImageUrl = (html: string): string | null => {
+    const regex = /<img[^>]+src="([^">]+)"/;
+    const match = html.match(regex);
+    return match ? match[1] : "";
+};
+
+function removeHtmlTags(str: string): string {
+    return str.replace(/<\/?[^>]+(>|$)/g, "");
+}
+
 /**
  * Login to the HiEvents API
  * 
@@ -45,10 +55,17 @@ export async function getEvents() {
     const data = await response.json();
 
     const events: Event[] = data.data.map((event: any) => {
+        console.log(event.images[0]);
+
+        if (event.images[0] !== undefined) {
+            console.log(extractImageUrl(event.images[0]));
+        }
+
+
         return {
             title: event.title,
-            description: event.description,
-            image: event.image,
+            description: event.description !== undefined ? removeHtmlTags(event.description) : '',
+            image: event.description !== undefined ? extractImageUrl(event.description) : '',
             start_date: event.start_date,
             end_date: event.end_date,
             status: event.status,

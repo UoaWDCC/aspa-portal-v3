@@ -8,8 +8,7 @@ export default function EventsPage () {
 
     React.useEffect(() => {
         getEvents().then((data) => {
-            setEvents(data);
-            console.log(data);
+
         });
     }, []);
 

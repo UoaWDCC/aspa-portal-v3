@@ -1,5 +1,6 @@
 'use client';
-import { Card, Image, Text, Title } from '@mantine/core';
+import Image  from 'next/image';
+import { Card, Text, Title } from '@mantine/core';
 import styles from './EventCard.module.css';
 
 export interface Event {
@@ -15,6 +16,7 @@ interface EventCardProps {
   cardWithBorder?: boolean;
   cardPadding?: "xs" | "sm" | "md" | "lg" | "xl";
   cardMaxWidth?: string;
+  cardMaxHeight?: "xs" | "sm" | "md" | "lg" | "xl";
   cardTitleOrder?: 1 | 2 | 3 | 4 | 5 | 6;
   cardTitleMargin?: "xs" | "sm" | "md" | "lg" | "xl";
   cardDescriptionSize?: "xs" | "sm" | "md" | "lg" | "xl";
@@ -27,16 +29,17 @@ export function EventCard(
     cardRadius = "xl", 
     cardWithBorder = true, 
     cardPadding = "lg", 
-    cardMaxWidth = "100%", 
+    cardMaxWidth = "100%",
+    cardMaxHeight = "lg",
     cardTitleOrder = 2, 
     cardTitleMargin = "md", 
     cardDescriptionSize = "md" 
   }: EventCardProps
 ) {
   return (
-    <Card shadow={cardShadow} padding={cardPadding} radius={cardRadius} withBorder={cardWithBorder} style={{ maxWidth: cardMaxWidth }} className={styles.card}>
+    <Card shadow={cardShadow} padding={cardPadding} radius={cardRadius} withBorder={cardWithBorder} style={{ maxWidth: cardMaxWidth, height: "90%" }} className={styles.card}>
       <Card.Section>
-        <Image src={event.imgUrl} alt={event.eventName} />
+        <Image src={event.imgUrl} alt={event.eventName} width={400} height={200} />
       </Card.Section>
       <Title order={cardTitleOrder} mt={cardTitleMargin} mb={cardTitleMargin}>
         {event.eventName}
