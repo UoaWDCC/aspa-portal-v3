@@ -1,0 +1,3 @@
+[submodule "docker/events/Hi.Events"]
+	path = docker/events/Hi.Events
+	url = git@github.com:HiEventsDev/Hi.Events.git
