@@ -4,6 +4,8 @@ import { Event } from "@/components/Shared/Event/Card/EventCard";
 import { EventCarousel } from "@/components/Shared/Event/Carousel/EventCarousel";
 import Link from 'next/link';
 import styles from './PastEvent.module.css';
+import AspaButton from "@/components/Shared/Event/ASPAButton/AspaButton";
+
 
 export interface PastEvent {
     events: Event[];
@@ -38,6 +40,7 @@ export function PastEvent(
                             <Button variant="filled" className={styles.button}>View All Events</Button>
                         </Link>
                     </div>
+                    <AspaButton> Click Me! </AspaButton>
                 </Grid.Col>
             </Grid>
         </Container>
