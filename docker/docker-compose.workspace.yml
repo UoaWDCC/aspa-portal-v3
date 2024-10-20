@@ -3,7 +3,7 @@ services:
   app:
     container_name: aspa-app
     build:
-      context: .
+      context: ../../../../
       dockerfile: ./dockerfile/Dockerfile
     ports:
       - "3307:3307"
