@@ -1,44 +1,14 @@
 # Use postgres/example user/password credentials
 
 services:
-  db:
-    container_name: aspa-db
-    image: postgres
-    restart: always
-    # set shared memory limit when using docker-compose
-    shm_size: 128mb
-    # or set shared memory limit when deploy via swarm stack
-    #volumes:
-    #  - type: tmpfs
-    #    target: /dev/shm
-    #    tmpfs:
-    #      size: 134217728 # 128*2^20 bytes = 128Mb
-    environment:
-      POSTGRES_DB: main
-      POSTGRES_USER: aspa
-      POSTGRES_PASSWORD: pool
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    ports:
-      - 5432:5432
-    expose:
-      - 5432
-
-  adminer:
-    container_name: aspa-adminer
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-      
   directus:
       image: directus/directus:10.13.1
       ports:
         - 8055:8055
       volumes:
-        - ./database:/directus/database
-        - ./uploads:/directus/uploads
-        - ./extensions:/directus/extensions
+        - ../../../../database:/directus/database
+        - ../../../../uploads:/directus/uploads
+        - ../../../../extensions:/directus/extensions
       environment:
         SECRET: "replace-with-secure-random-value"
         ADMIN_EMAIL: "admin@example.com"

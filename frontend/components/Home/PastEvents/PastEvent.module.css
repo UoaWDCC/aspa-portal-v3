@@ -1,0 +1,41 @@
+.centeredText {
+    position: relative;
+    text-align: center;
+}
+
+.shadowTitle {
+    position: absolute;
+    top: 5%;
+    left: 50.5%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: var(--mantine-color-aspa-brown-8); /* Adjust the shadow color as needed */
+    z-index: -1;
+    font-size: 8vw;
+}
+
+.title {
+    font-size: 8vw;
+    color: "#474B4F";
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.centeredButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.button {
+    background-color: var(--mantine-color-aspa-orange-5);
+    font-size: 2vw;
+    height: 4vw;
+    width: 30vw;
+    border-radius: 1vw;
+    
+}
+
+.button:hover {
+    background-color: var(--mantine-color-aspa-orange-6);
+}
