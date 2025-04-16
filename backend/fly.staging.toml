@@ -1,4 +1,0 @@
-app = 'wdcc-aspa-api-staging'
-primary_region = 'syd'
-
-[build]
