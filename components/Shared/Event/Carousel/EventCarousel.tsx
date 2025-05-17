@@ -11,7 +11,12 @@ interface EventCarouselProps {
 export function EventCarousel({ events }: EventCarouselProps) {
   const matches = useMediaQuery('(min-width: 768px)');
   return (
-    <Carousel withIndicators loop slidesToScroll={1} slideSize={matches ? "33.333333%" : "100%"} slideGap="xl" align="start" height={matches ? 400 : 200}>
+    <Carousel withIndicators slideSize={matches ? "33.333333%" : "100%"} slideGap="xl" height={matches ? 400 : 200} emblaOptions={{
+      loop: true,
+      dragFree: false,
+      align: 'start',
+      slidesToScroll: 1,
+    }}>
       {events.map((event, index) => (
         <Carousel.Slide key={index}>
           <EventCard event={event} />

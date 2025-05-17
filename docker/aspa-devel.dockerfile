@@ -11,6 +11,10 @@ RUN apt-get update && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
+# Corepack
+RUN corepack enable
+RUN corepack prepare yarn@stable --activate
+
 # Enable terminal for VSCode
 ENV SHELL /bin/bash
 
