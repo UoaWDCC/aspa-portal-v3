@@ -10,7 +10,7 @@ The Auckland Student Pool Association (ASPA) is centered at the University of Au
 
 Please see the wiki page [Getting Started](https://github.com/UoaWDCC/aspa-portal-v3/wiki/GettingStarted) for the pre-requisites and follow the instructions to install the necessary pre-requisites tools.
 
-## Development
+## Local Development
 
 After installing the necessary pre-requisites tools, follow the steps below to set up the dev container:
 
