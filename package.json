@@ -21,7 +21,6 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
-    "@directus/sdk": "^17.0.1",
     "@mantine/carousel": "^7.12.2",
     "@mantine/core": "7.12.2",
     "@mantine/hooks": "7.12.2",
