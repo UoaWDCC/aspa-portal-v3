@@ -50,5 +50,4 @@ export const theme = createTheme({
   },
 
   fontFamily: zillaSlab.style.fontFamily,
-  
 });
