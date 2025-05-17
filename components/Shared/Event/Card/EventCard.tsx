@@ -5,10 +5,9 @@ import { Card, Text, Title } from '@mantine/core';
 import styles from './EventCard.module.css';
 
 export interface Event {
-  id: number;
-  eventName: string;
-  eventDescription: string;
-  imgUrl: string;
+  name: string;
+  description: string;
+  imageUrl: string;
 }
 
 interface EventCardProps {
@@ -39,10 +38,6 @@ export function EventCard(
 ) {
   const router = useRouter();
 
-  const handleCardClick = () => {
-    router.push(`/event/${event.id}`);
-  };
-
   return (
     <Card 
       shadow={cardShadow} 
@@ -51,16 +46,15 @@ export function EventCard(
       withBorder={cardWithBorder} 
       style={{ maxWidth: cardMaxWidth, height: "90%" }} 
       className={styles.card}
-      onClick={handleCardClick}
     >
       <Card.Section>
-        <Image src={event.imgUrl} alt={event.eventName} width={400} height={200} />
+        <Image src={event.imageUrl} alt={event.name} width={400} height={200} />
       </Card.Section>
       <Title order={cardTitleOrder} mt={cardTitleMargin} mb={cardTitleMargin}>
-        {event.eventName}
+        {event.name}
       </Title>
       <Text size={cardDescriptionSize}>
-        {event.eventDescription}
+        {event.description}
       </Text>
     </Card>
   );

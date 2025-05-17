@@ -24,7 +24,6 @@ export default function HomePage() {
       <Banner  {...ExampleBannerArguments} paddingTop="12vw" paddingleft="8vw" paddingRight="8vw" paddingBottom="8vw" />
       <PastEvent events={events.events} paddingTop="8vw" paddingleft="8vw" paddingRight="8vw"/>
       <TestimonialGroup testimonials={testimonials} paddingTop="8vw" paddingleft="8vw" paddingRight="8vw" paddingBottom="8vw" paddingBetween="1vw" delay={1000}/>
-
     </>
   );
 }

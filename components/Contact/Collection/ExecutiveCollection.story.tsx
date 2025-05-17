@@ -15,34 +15,34 @@ export const Default: StoryObj<typeof ExecutiveCollection> = {
     args: {
       executives: [
         {
-          executiveName: 'Lorem ipsum',
-          executiveTitle: 'Lorem ipsum',
-          executiveBlurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          imgUrl: '/event_example.svg'
+          name: 'Lorem ipsum',
+          title: 'Lorem ipsum',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          
         },
         {
-          executiveName: 'Lorem ipsum',
-          executiveTitle: 'Lorem ipsum',
-          executiveBlurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          imgUrl: '/event_example.svg'
+          name: 'Lorem ipsum',
+          title: 'Lorem ipsum',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          
         },
         {
-          executiveName: 'Lorem ipsum',
-          executiveTitle: 'Lorem ipsum',
-          executiveBlurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          imgUrl: '/event_example.svg'
+          name: 'Lorem ipsum',
+          title: 'Lorem ipsum',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          
         },
         {
-            executiveName: 'Lorem ipsum',
-            executiveTitle: 'Lorem ipsum',
-            executiveBlurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            imgUrl: '/event_example.svg'
+            name: 'Lorem ipsum',
+            title: 'Lorem ipsum',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            
         },
         {
-            executiveName: 'Lorem ipsum',
-            executiveTitle: 'Lorem ipsum',
-            executiveBlurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            imgUrl: '/event_example.svg'
+            name: 'Lorem ipsum',
+            title: 'Lorem ipsum',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            
         }
       ],
       badgeColor: "#d78840",
