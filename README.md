@@ -1,20 +1,30 @@
-# Mantine Next.js template
+# ASPA
 
-This is a template for [Next.js](https://nextjs.org/) app router + [Mantine](https://mantine.dev/).
-If you want to use pages router instead, see [next-pages-template](https://github.com/mantinedev/next-pages-template).
+## Introduction
+This repository houses the ASPA website, a platform designed to streamline ticketing and event management for ASPA. 
 
-## Features
+### Background
+The Auckland Student Pool Association (ASPA) is centered at the University of Auckland, dedicated to fostering a vibrant community united by a love for pool. Their mission is to cultivate an inclusive atmosphere that encourages camaraderie and skill development among billiards enthusiasts. Through a variety of casual gatherings, coaching sessions, and spirited tournaments, they aim to connect members eager to engage in both competitive and social play.
 
-This template comes with the following features:
+## Pre-requisites
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+Please see the wiki page [Getting Started](https://github.com/UoaWDCC/aspa-portal-v3/wiki/GettingStarted) for the pre-requisites and follow the instructions to install the necessary pre-requisites tools.
 
-## npm scripts
+## Development
 
+After installing the necessary pre-requisites tools, follow the steps below to set up the dev container:
+
+1. Clone the repository
+    - Note: If you are using **Windows** you need to clone to WSL2 home/{username} directory for the dev container to be fully functional (Refer to Windows Docker Desktop Section of [Getting Started](https://github.com/UoaWDCC/aspa-portal-v3/wiki/GettingStarted))
+2. Open the repository in Visual Studio Code
+3. Press `F1` and select `Dev Container: Open Folder in Container`
+4. Select the root folder of the repository
+5. Select the dev container `ASPA Dev Container (Full)`
+6. Wait for the dev container to build (this may take a while)
+
+Now you have a development environment set up with all the necessary tools and dependencies installed :)
+
+## Frontend
 ### Build and dev scripts
 
 - `dev` – start dev server
