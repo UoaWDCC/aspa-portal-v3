@@ -32,11 +32,10 @@ COPY --from=builder /app/public /app/public
 COPY --from=builder /app/package.json /app/package.json
 COPY --from=builder /app/.yarn /app/.yarn
 COPY --from=builder /app/yarn.lock /app/yarn.lock
+COPY --from=builder /app/.yarnrc.yml /app/.yarnrc.yml
 COPY --from=builder /app/node_modules /app/node_modules
 COPY --from=builder /app/next.config.mjs /app/next.config.mjs
 COPY --from=builder /app/tsconfig.json /app/tsconfig.json
-
-RUN yarn install --immutable
 
 # Run the app
 EXPOSE 3000
@@ -46,13 +45,3 @@ EXPOSE 3000
 
 # Start the app
 CMD ["yarn", "start"]
-
-
-
-
-
-
-
-
-
-
