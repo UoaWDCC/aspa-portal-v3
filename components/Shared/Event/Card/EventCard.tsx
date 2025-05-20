@@ -1,8 +1,8 @@
-'use client';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { Card, Text, Title } from '@mantine/core';
-import styles from './EventCard.module.css';
+"use client";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { Card, Text, Title } from "@mantine/core";
+import styles from "./EventCard.module.css";
 
 export interface Event {
   name: string;
@@ -23,28 +23,27 @@ interface EventCardProps {
   cardDescriptionSize?: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
-export function EventCard(
-  { event, 
-    cardShadow = "sm", 
-    cardRadius = "xl", 
-    cardWithBorder = true, 
-    cardPadding = "lg", 
-    cardMaxWidth = "100%",
-    cardMaxHeight = "lg",
-    cardTitleOrder = 2, 
-    cardTitleMargin = "md", 
-    cardDescriptionSize = "md" 
-  }: EventCardProps
-) {
+export function EventCard({
+  event,
+  cardShadow = "sm",
+  cardRadius = "xl",
+  cardWithBorder = true,
+  cardPadding = "lg",
+  cardMaxWidth = "100%",
+  cardMaxHeight = "lg",
+  cardTitleOrder = 2,
+  cardTitleMargin = "md",
+  cardDescriptionSize = "md",
+}: EventCardProps) {
   const router = useRouter();
 
   return (
-    <Card 
-      shadow={cardShadow} 
-      padding={cardPadding} 
-      radius={cardRadius} 
-      withBorder={cardWithBorder} 
-      style={{ maxWidth: cardMaxWidth, height: "90%" }} 
+    <Card
+      shadow={cardShadow}
+      padding={cardPadding}
+      radius={cardRadius}
+      withBorder={cardWithBorder}
+      style={{ maxWidth: cardMaxWidth, height: "90%" }}
       className={styles.card}
     >
       <Card.Section>
@@ -53,9 +52,7 @@ export function EventCard(
       <Title order={cardTitleOrder} mt={cardTitleMargin} mb={cardTitleMargin}>
         {event.name}
       </Title>
-      <Text size={cardDescriptionSize}>
-        {event.description}
-      </Text>
+      <Text size={cardDescriptionSize}>{event.description}</Text>
     </Card>
   );
 }

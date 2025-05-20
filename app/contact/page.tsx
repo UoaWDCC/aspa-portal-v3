@@ -5,17 +5,11 @@ import { ExecutiveCollection } from "@/components/Contact/Collection/ExecutiveCo
 import { useEffect, useState } from "react";
 
 export default function ContactPage() {
-
-    const [executives, setExecutives] = useState<Executive[]>([])
-    return (
-        //moves the body down from under the header, should probably fix this in layout
-        <div style={{paddingTop: '180px', paddingBottom: '30px'}} >
-
-            <ExecutiveCollection executives={executives}></ExecutiveCollection>
-
-       
-
-        </div>
-
-    );
+  const [executives, setExecutives] = useState<Executive[]>([]);
+  return (
+    //moves the body down from under the header, should probably fix this in layout
+    <div style={{ paddingTop: "180px", paddingBottom: "30px" }}>
+      <ExecutiveCollection executives={executives}></ExecutiveCollection>
+    </div>
+  );
 }
