@@ -1,15 +1,12 @@
-ARG BASE_REGISTRY=mcr.microsoft.com
-ARG BASE_IMAGE=devcontainers/typescript-node:20
+ARG BASE_REGISTRY=docker.io/library
+ARG BASE_IMAGE=node:lts-alpine3.20
 
 FROM ${BASE_REGISTRY}/${BASE_IMAGE} AS base
 
 USER root
 
-# Install Git
-RUN apt-get update && \
-    apt-get install -y git && \
-    apt-get clean -y && \
-    rm -rf /var/lib/apt/lists/*
+# Install Git and bash
+RUN apk add --no-cache git bash
 
 # Corepack
 RUN corepack enable
