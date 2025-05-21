@@ -9,6 +9,9 @@ on:
       - synchronize
       - reopened
       - closed
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -58,16 +61,16 @@ jobs:
         run: |
           docker build -t aspa-runtime:${{ env.tag }} -f docker/aspa-runtime.dockerfile .
 
-      # Push Docker image (only on merge)
+      # Push Docker image (only on merge or direct push to main)
       - name: Push Docker image
-        if: github.event.action == 'closed' && github.event.pull_request.merged == true
+        if: (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true) || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
           docker push ghcr.io/${{ github.repository_owner }}/aspa-runtime:${{ env.tag }}
 
-      # Create a new Git tag (only on merge)
+      # Create a new Git tag (only on merge or direct push to main)
       - name: Create Git tag
-        if: github.event.action == 'closed' && github.event.pull_request.merged == true
+        if: (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true) || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
