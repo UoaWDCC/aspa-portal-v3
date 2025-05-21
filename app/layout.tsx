@@ -1,26 +1,25 @@
 "use client";
 
-import '@mantine/core/styles.css';
-import '@mantine/carousel/styles.css';
+import "@mantine/core/styles.css";
+import "@mantine/carousel/styles.css";
 
-import React from 'react';
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-import { theme } from '../theme';
+import React from "react";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { theme } from "../theme";
 
-import { NavBar } from '@/components/NavBar/NavBar';
-import { Footer } from '@/components/Footer/Footer';
-
+import { NavBar } from "@/components/NavBar/NavBar";
+import { Footer } from "@/components/Footer/Footer";
 
 const links = [
-  { name: 'Home', href: '/' },
-  { name: 'Contact', href: '/contact' },
-  { name: 'Events', href: '/events' },
+  { name: "Home", href: "/" },
+  { name: "Contact", href: "/contact" },
+  { name: "Events", href: "/events" },
 ];
 
 const socialMediaLinks = [
-  { name: 'Twitter', icon: '/twitter.svg', href: 'https://twitter.com' },
-  { name: 'Facebook', icon: '/facebook.svg', href: 'https://facebook.com' },
-  { name: 'Instagram', icon: '/instagram.svg', href: 'https://instagram.com' },
+  { name: "Twitter", icon: "/twitter.svg", href: "https://twitter.com" },
+  { name: "Facebook", icon: "/facebook.svg", href: "https://facebook.com" },
+  { name: "Instagram", icon: "/instagram.svg", href: "https://instagram.com" },
 ];
 
 export default function RootLayout({ children }: { children: any }) {
@@ -36,13 +35,11 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-
           <NavBar links={links} />
-          
+
           {children}
 
           <Footer socialMediaLinks={socialMediaLinks} />
-          
         </MantineProvider>
       </body>
     </html>
