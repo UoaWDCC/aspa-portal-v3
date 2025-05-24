@@ -1,14 +1,6 @@
 name: Tag, Build, and Push Docker Image for Main Branch
 
 on:
-  pull_request:
-    branches:
-      - main
-    types:
-      - opened
-      - synchronize
-      - reopened
-      - closed
   push:
     branches:
       - main
@@ -27,7 +19,7 @@ jobs:
         run: |
           git fetch --all
           git checkout main
-          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%P" main | head -n 1 | awk '{print $2}' | xargs git name-rev --name-only || echo "unknown")
+          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%s" -n 1 main | sed -n 's/^Merge pull request #[0-9]* from \(.*\)/\1/p' || echo "unknown")
           echo "LATEST_MERGED_BRANCH=${LATEST_MERGED_BRANCH}" >> $GITHUB_ENV
       - name: Determing Version
         id: versioning
@@ -36,13 +28,16 @@ jobs:
           LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1) 2>/dev/null || echo "0.0.0")
           IFS='.' read -r MAJOR MINOR PATCH <<< "$LATEST_TAG"
 
-          BRANCH_NAME="${{ env.LATEST_MERGED_BRANCH }}"
+          BRANCH_NAME=$(echo "${{ env.LATEST_MERGED_BRANCH }}" | sed 's|^remotes/origin/||')
 
-          if [[ "$BRANCH_NAME" == */feature/* ]]; then
+          if [[ "$BRANCH_NAME" == *feature* ]]; then
             MINOR=$((MINOR + 1))
             PATCH=0
-          elif [[ "$BRANCH_NAME" == */bugfix/* ]]; then
+          elif [[ "$BRANCH_NAME" == *bugfix* ]]; then
             PATCH=$((PATCH + 1))
+          else
+            echo "Error: Unsupported branch name '$BRANCH_NAME'. Expected to contain 'feature' or 'bugfix', current name: '$BRANCH_NAME'."
+            exit 1
           fi
 
           NEW_TAG="$MAJOR.$MINOR.$PATCH"
@@ -73,10 +68,17 @@ jobs:
         run: |
           docker build -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }} -f docker/aspa-runtime.dockerfile .
     
+
+      # Log in to GitHub Container Registry
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       # Push Docker image
       - name: Push Docker image
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
           docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }}
 
       # Create a new Git tag
