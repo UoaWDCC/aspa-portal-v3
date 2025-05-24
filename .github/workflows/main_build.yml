@@ -1,0 +1,88 @@
+name: Tag, Build, and Push Docker Image for Main Branch
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+  push:
+    branches:
+      - main
+
+jobs:
+  versioning:
+    runs-on: ubuntu-latest
+    outputs:
+          tag: ${{ steps.versioning.outputs.tag }}
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Get Latest Merged Branch
+        id: latest_merged_branch
+        run: |
+          git fetch --all
+          git checkout main
+          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%P" main | head -n 1 | awk '{print $2}' | xargs git name-rev --name-only || echo "unknown")
+          echo "LATEST_MERGED_BRANCH=${LATEST_MERGED_BRANCH}" >> $GITHUB_ENV
+      - name: Determing Version
+        id: versioning
+        run: |
+          git fetch --tags
+          LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1) 2>/dev/null || echo "0.0.0")
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$LATEST_TAG"
+
+          BRANCH_NAME="${{ env.LATEST_MERGED_BRANCH }}"
+
+          if [[ "$BRANCH_NAME" == */feature/* ]]; then
+            MINOR=$((MINOR + 1))
+            PATCH=0
+          elif [[ "$BRANCH_NAME" == */bugfix/* ]]; then
+            PATCH=$((PATCH + 1))
+          fi
+
+          NEW_TAG="$MAJOR.$MINOR.$PATCH"
+
+          echo "tag=${NEW_TAG}" >> $GITHUB_OUTPUT
+  build:
+    needs: versioning
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Docker
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      # Determine repository name
+      - name: Determine repository name
+        id: repo_name
+        run: |
+          REPO_NAME=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
+
+      # Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }} -f docker/aspa-runtime.dockerfile .
+    
+      # Push Docker image
+      - name: Push Docker image
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }}
+
+      # Create a new Git tag
+      - name: Create Git tag
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git tag -a "${{ needs.versioning.outputs.tag }}" -m "Release version ${{ needs.versioning.outputs.tag }}"
+          git push origin "${{ needs.versioning.outputs.tag }}"
