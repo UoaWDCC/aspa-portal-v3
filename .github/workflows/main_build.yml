@@ -71,13 +71,13 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${REPO_NAME}/aspa-runtime:${{ needs.versioning.outputs.tag }} -f docker/aspa-runtime.dockerfile .
+          docker build -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }} -f docker/aspa-runtime.dockerfile .
     
       # Push Docker image
       - name: Push Docker image
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
-          docker push ghcr.io/${REPO_NAME}/aspa-runtime:${{ needs.versioning.outputs.tag }}
+          docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }}
 
       # Create a new Git tag
       - name: Create Git tag
