@@ -27,7 +27,7 @@ jobs:
         run: |
           git fetch --all
           git checkout main
-          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%P" main | head -n 1 | awk '{print $2}' | xargs git name-rev --name-only || echo "unknown")
+          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%P" main | head -n 1 | awk '{print $2}' | xargs git name-rev --name-only | sed 's|^[^/]*/||' || echo "unknown")
           echo "LATEST_MERGED_BRANCH=${LATEST_MERGED_BRANCH}" >> $GITHUB_ENV
       - name: Determing Version
         id: versioning
@@ -38,13 +38,13 @@ jobs:
 
           BRANCH_NAME=$(echo "${{ env.LATEST_MERGED_BRANCH }}" | sed 's|^remotes/origin/||')
 
-          if [[ "$BRANCH_NAME" == feature/* ]]; then
+          if [[ "$BRANCH_NAME" == *feature* ]]; then
             MINOR=$((MINOR + 1))
             PATCH=0
-          elif [[ "$BRANCH_NAME" == bugfix/* ]]; then
+          elif [[ "$BRANCH_NAME" == *bugfix* ]]; then
             PATCH=$((PATCH + 1))
           else
-            echo "Error: Unsupported branch name '$BRANCH_NAME'. Expected 'feature/*' or 'bugfix/*', current name: '$BRANCH_NAME'."
+            echo "Error: Unsupported branch name '$BRANCH_NAME'. Expected to contain 'feature' or 'bugfix', current name: '$BRANCH_NAME'."
             exit 1
           fi
 
