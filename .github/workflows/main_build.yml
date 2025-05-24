@@ -15,11 +15,13 @@ jobs:
       # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
+      # Determine the latest merged branch
       - name: Get Merged Branch
         id: latest_merged_branch
         run: |
           MERGED_BRANCH=${{ github.head_ref }}
           echo "MERGED_BRANCH=${MERGED_BRANCH}" >> $GITHUB_ENV
+      # Determine the version based on the latest tag and branch name
       - name: Determing Version
         id: versioning
         run: |
