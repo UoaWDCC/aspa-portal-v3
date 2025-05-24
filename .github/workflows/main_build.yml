@@ -44,7 +44,7 @@ jobs:
           elif [[ "$BRANCH_NAME" == bugfix/* ]]; then
             PATCH=$((PATCH + 1))
           else
-            echo "Error: Unsupported branch name '$BRANCH_NAME'. Expected 'feature/*' or 'bugfix/*'."
+            echo "Error: Unsupported branch name '$BRANCH_NAME'. Expected 'feature/*' or 'bugfix/*', current name: '$BRANCH_NAME'."
             exit 1
           fi
 
