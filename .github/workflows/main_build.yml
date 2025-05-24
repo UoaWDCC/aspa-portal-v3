@@ -26,7 +26,8 @@ jobs:
         id: latest_merged_branch
         run: |
           git fetch --all
-          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%P" main | head -n 1 | awk '{print $2}' | xargs git name-rev --name-only | sed 's|^[^/]*/||' || echo "unknown")
+          git checkout main
+          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%s" -n 1 main | sed -n 's/^Merge pull request #[0-9]* from \(.*\)/\1/p' || echo "unknown")
           echo "LATEST_MERGED_BRANCH=${LATEST_MERGED_BRANCH}" >> $GITHUB_ENV
       - name: Determing Version
         id: versioning
