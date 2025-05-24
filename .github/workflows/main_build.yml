@@ -25,8 +25,9 @@ jobs:
       - name: Get Latest Merged Branch
         id: latest_merged_branch
         run: |
-          git fetch origin main
-          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%P" main | head -n 1 | awk '{print $2}' | xargs git name-rev --name-only)
+          git fetch --all
+          git checkout main
+          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%P" main | head -n 1 | awk '{print $2}' | xargs git name-rev --name-only || echo "unknown")
           echo "LATEST_MERGED_BRANCH=${LATEST_MERGED_BRANCH}" >> $GITHUB_ENV
       - name: Determing Version
         id: versioning
