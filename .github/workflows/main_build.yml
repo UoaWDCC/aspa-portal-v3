@@ -84,5 +84,5 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git tag -a "${ needs.versioning.outputs.tag }" -m "Release version ${{ needs.versioning.outputs.tag }}"
-          git push origin "${ needs.versioning.outputs.tag }"
+          git tag -a "${{ needs.versioning.outputs.tag }}" -m "Release version ${{ needs.versioning.outputs.tag }}"
+          git push origin "${{ needs.versioning.outputs.tag }}"
