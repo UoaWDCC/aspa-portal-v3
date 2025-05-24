@@ -61,15 +61,21 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      # Determine repository name
+      - name: Determine repository name
+        id: repo_name
+        run: |
+          REPO_NAME=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
+
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker build -t aspa-runtime:${{ needs.versioning.outputs.tag }} -f docker/aspa-runtime.dockerfile .
+          docker build -t ghcr.io/${REPO_NAME}/aspa-runtime:${{ needs.versioning.outputs.tag }} -f docker/aspa-runtime.dockerfile .
     
       # Push Docker image
       - name: Push Docker image
         run: |
-          REPO_NAME=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
           docker push ghcr.io/${REPO_NAME}/aspa-runtime:${{ needs.versioning.outputs.tag }}
 
