@@ -1,12 +1,13 @@
 name: Tag, Build, and Push Docker Image for Main Branch
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types:
+      - closed
 
 jobs:
   versioning:
+    if: contains(github.base_ref, 'main') && github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     outputs:
           tag: ${{ steps.versioning.outputs.tag }}
@@ -14,13 +15,13 @@ jobs:
       # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Get Latest Merged Branch
+      # Determine the latest merged branch
+      - name: Get Merged Branch
         id: latest_merged_branch
         run: |
-          git fetch --all
-          git checkout main
-          LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%s" -n 1 main | sed -n 's/^Merge pull request #[0-9]* from \(.*\)/\1/p' || echo "unknown")
-          echo "LATEST_MERGED_BRANCH=${LATEST_MERGED_BRANCH}" >> $GITHUB_ENV
+          MERGED_BRANCH=${{ github.head_ref }}
+          echo "MERGED_BRANCH=${MERGED_BRANCH}" >> $GITHUB_ENV
+      # Determine the version based on the latest tag and branch name
       - name: Determing Version
         id: versioning
         run: |
@@ -28,7 +29,7 @@ jobs:
           LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1) 2>/dev/null || echo "0.0.0")
           IFS='.' read -r MAJOR MINOR PATCH <<< "$LATEST_TAG"
 
-          BRANCH_NAME=$(echo "${{ env.LATEST_MERGED_BRANCH }}" | sed 's|^remotes/origin/||')
+          BRANCH_NAME=$(echo "${{ env.MERGED_BRANCH }}")
 
           if [[ "$BRANCH_NAME" == *feature* ]]; then
             MINOR=$((MINOR + 1))
