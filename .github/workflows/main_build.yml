@@ -1,4 +1,4 @@
-name: Build and Tag Docker Image
+name: Tag, Build, and Push Docker Image for Main Branch
 
 on:
   pull_request:
@@ -24,7 +24,7 @@ jobs:
         run: |
           git fetch origin main
           LATEST_MERGED_BRANCH=$(git log --merges --pretty=format:"%P" main | head -n 1 | awk '{print $2}' | xargs git name-rev --name-only)
-          echo "=${LATEST_MERGED_BRANCH}" >> $GITHUB_ENV
+          echo "LATEST_MERGED_BRANCH=${LATEST_MERGED_BRANCH}" >> $GITHUB_ENV
       - name: Determing Version
         id: versioning
         run: |
@@ -32,12 +32,12 @@ jobs:
           LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1) 2>/dev/null || echo "0.0.0")
           IFS='.' read -r MAJOR MINOR PATCH <<< "$LATEST_TAG"
 
-          BRANCH_NAME="$latest_merged_branch"
+          BRANCH_NAME="${{ env.LATEST_MERGED_BRANCH }}"
 
-          if [[ "$BRANCH_NAME" == feature/* ]]; then
+          if [[ "$BRANCH_NAME" == */feature/* ]]; then
             MINOR=$((MINOR + 1))
             PATCH=0
-          elif [[ "$BRANCH_NAME" == bugfix/* ]]; then
+          elif [[ "$BRANCH_NAME" == */bugfix/* ]]; then
             PATCH=$((PATCH + 1))
           fi
 
