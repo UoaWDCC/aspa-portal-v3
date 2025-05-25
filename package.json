@@ -25,10 +25,12 @@
     "@mantine/hooks": "8.0.1",
     "@next/bundle-analyzer": "^15.2.3",
     "@tabler/icons-react": "^3.31.0",
+    "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "next": "15.2.3",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "webpack": "^5.99.9"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
@@ -43,7 +45,9 @@
     "@types/eslint-plugin-jsx-a11y": "^6",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.11",
-    "@types/react": "19.0.12",
+    "@types/react": "18.3.1",
+    "@types/webpack": "^5.28.5",
+    "babel-jest": "^29.7.0",
     "babel-loader": "^10.0.0",
     "eslint": "^9.23.0",
     "eslint-config-mantine": "^4.0.3",
@@ -60,8 +64,10 @@
     "stylelint": "^16.16.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "ts-jest": "^29.2.6",
+    "ts-node": "^10.9.2",
     "typescript": "5.8.2",
-    "typescript-eslint": "^8.27.0"
+    "typescript-eslint": "^8.27.0",
+    "webpack-cli": "^6.0.1"
   },
   "packageManager": "yarn@4.9.1"
 }
