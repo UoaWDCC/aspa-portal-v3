@@ -20,6 +20,9 @@ FROM ${BASE_REGISTRY}/${BASE_IMAGE} AS runtime
 
 USER root
 
+# Install curl for health check
+RUN apk add --no-cache curl
+
 # Install corepack
 RUN corepack enable
 RUN corepack prepare yarn@stable --activate
@@ -39,6 +42,10 @@ COPY --from=builder /app/tsconfig.json /app/tsconfig.json
 
 # Run the app
 EXPOSE 3000
+
+# Add health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:3000/api/health || exit 1
 
 # Keep the container running indefinitely
 #CMD ["sleep", "infinity"] # USED FOR DEBUGGING
