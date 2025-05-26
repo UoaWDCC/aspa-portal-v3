@@ -8,6 +8,9 @@ USER root
 # Install Git and bash
 RUN apk add --no-cache git bash
 
+# # Install PostgreSQL and related tools
+# RUN apk add --no-cache postgresql postgresql-client postgresql-contrib su-exec
+
 # Corepack
 RUN corepack enable
 RUN corepack prepare yarn@stable --activate
