@@ -2,7 +2,7 @@
     "name": "ASPA Dev Container",
     "build":{
         "dockerfile": "../docker/aspa-devel.dockerfile"
-    },
+    },        
     "customizations": {
       "vscode": {
         "extensions": [
