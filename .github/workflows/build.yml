@@ -67,7 +67,9 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }} -f docker/aspa-runtime.dockerfile .
+          docker build -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }} \
+                       -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:latest \
+                       -f docker/aspa-runtime.dockerfile .
     
 
       # Log in to GitHub Container Registry
@@ -91,4 +93,3 @@ jobs:
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git tag -a "${{ needs.versioning.outputs.tag }}" -m "Release version ${{ needs.versioning.outputs.tag }}"
           git push origin "${{ needs.versioning.outputs.tag }}"
-          
