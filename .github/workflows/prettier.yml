@@ -1,8 +1,10 @@
 name: Prettier Action
 
-# This action works with pull requests and pushes
+# This action works with pushes to pull requests, synchronizing the code with the latest changes.
 on:
-  push
+  pull_request:
+    types:
+      - synchronize
 
 jobs:
   prettier:
