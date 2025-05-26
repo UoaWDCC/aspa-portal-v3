@@ -22,7 +22,7 @@ jobs:
           echo "tag=${TAG}" >> $GITHUB_OUTPUT
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lateststatu
     needs: get_tag
     steps:
     - uses: actions/checkout@v4
