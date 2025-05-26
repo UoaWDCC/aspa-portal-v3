@@ -1,6 +1,9 @@
 name: PR Image CI
 
 on:
+  push:
+    branches:
+      - feature/pull-request-ci # Test
   pull_request:
     branches: [ "main" ]
 
