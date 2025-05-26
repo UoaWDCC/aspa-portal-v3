@@ -2,7 +2,7 @@ name: Trigger re-deployment to render production
 
 on:
   workflow_run:
-    workflows: ["Tag, Build, Push Docker Image for Main Branch"] 
+    workflows: ["Tag, Build, and Push Docker Image for Main Branch"] 
     types:
       - completed
 
