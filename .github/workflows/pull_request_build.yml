@@ -21,7 +21,7 @@ jobs:
       - name: Get all tag variables
         id: combined_tag
         run: |
-          TAG="${{ github.head_ref }}-pr${{ github.event.pull_request.number }}-$(git rev-parse --short ${{ github.sha }})"
+          TAG= "testing build" # "${{ github.head_ref }}-pr${{ github.event.pull_request.number }}-$(git rev-parse --short ${{ github.sha }})"
           echo "tag=${TAG}" >> $GITHUB_OUTPUT
 
   build:
