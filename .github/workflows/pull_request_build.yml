@@ -1,0 +1,42 @@
+name: PR Image CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  get_tag:
+    runs-on: ubuntu-latest
+    outputs:
+          tag: ${{ steps.combined_tag.outputs.tag }}
+    steps:
+      # Checkout the repository
+      - name: Checkout PR code
+        uses: actions/checkout@v4
+
+      # Determine the Tag 
+      - name: Get all tag variables
+        id: combined_tag
+        run: |
+          TAG="${{ github.head_ref }}-pr${{ github.event.pull_request.number }}-$(git rev-parse --short ${{ github.sha }})"
+          echo "TAG=${TAG}" >> $GITHUB_ENV\
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build -t ${{ env.TAG }} -f docker/aspa-runtime.dockerfile .
+
+    # Log in to GitHub Container Registry
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    # Push Docker image
+    - name: Push Docker image
+      run: |
+        docker push ${{ env.TAG }}
