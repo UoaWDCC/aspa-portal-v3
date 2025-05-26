@@ -64,6 +64,14 @@ jobs:
           REPO_NAME=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
           echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
 
+      # Create a new Git tag
+      - name: Create Git tag
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git tag -a "${{ needs.versioning.outputs.tag }}" -m "Release version ${{ needs.versioning.outputs.tag }}"
+          git push origin "${{ needs.versioning.outputs.tag }}"
+
       # Build Docker image
       - name: Build Docker image
         run: |
@@ -84,12 +92,3 @@ jobs:
         run: |
           docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }}
           docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:latest
-
-
-      # Create a new Git tag
-      - name: Create Git tag
-        run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git tag -a "${{ needs.versioning.outputs.tag }}" -m "Release version ${{ needs.versioning.outputs.tag }}"
-          git push origin "${{ needs.versioning.outputs.tag }}"
