@@ -44,7 +44,7 @@ COPY --from=builder /app/tsconfig.json /app/tsconfig.json
 EXPOSE 3000
 
 # Add health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=90s --retries=3 \
   CMD curl -f http://localhost:3000/api/health || exit 1
 
 # Keep the container running indefinitely
