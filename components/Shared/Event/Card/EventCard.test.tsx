@@ -1,5 +1,5 @@
 describe("Placeholder test", () => {
   test("does nothing yet", () => {
-    expect(true).toBe(true);
+    expect(true).toBe(false);
   });
 });
