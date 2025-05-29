@@ -22,7 +22,7 @@ jobs:
           git fetch --tags origin "${{ github.event.pull_request.base.ref }}"
 
           SHORT_SHA=$(git rev-parse --short "$GITHUB_SHA")
-          TARGET=$(git describe --tags --abbrev=0 origin/"${{ github.event.pull_request.base.ref })
+          TARGET=$(git describe --tags --abbrev=0 origin/"${{ github.event.pull_request.base.ref }}")
           PR_NUMBER="${{ github.event.pull_request.number }}"
 
           TAG=${TARGET}-pr${PR_NUMBER}-${SHORT_SHA}
