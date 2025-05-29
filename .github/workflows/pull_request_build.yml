@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
           tag: ${{ steps.combined_tag.outputs.tag }}
+          repo_name: ${{ steps.combined_tag.outputs.repo_name }}
     steps:
       # Checkout the repository
       - name: Checkout PR code
@@ -22,7 +23,10 @@ jobs:
         id: combined_tag
         run: |
           TAG="testingbuild"
+          REPO_NAME=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+
           echo "tag=${TAG}" >> $GITHUB_OUTPUT
+          echo "repo_name=${REPO_NAME}" >> $GITHUB_OUTPUT
 
   build:
     runs-on: ubuntu-latest
@@ -30,7 +34,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build -t ghcr.io/${{ github.repository_owner }}/${{ needs.get_tag.outputs.tag }} -f docker/aspa-runtime.dockerfile .
+      run: docker build -t ghcr.io/${{ needs.get_tag.outputs.repo_name }}/${{ needs.get_tag.outputs.tag }} -f docker/aspa-runtime.dockerfile .
 
     # Log in to GitHub Container Registry
     - name: Log in to GitHub Container Registry
@@ -41,4 +45,4 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     # Push Docker image
     - name: Push Docker image
-      run: docker push ghcr.io/${{ github.repository_owner }}/${{ needs.get_tag.outputs.tag }}
+      run: docker push ghcr.io/${{ needs.get_tag.outputs.repo_name }}/${{ needs.get_tag.outputs.tag }}
