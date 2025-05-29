@@ -1,9 +1,6 @@
 name: PR Image CI
 
 on:
-  push:
-    branches:
-      - feature/pull-request-ci # Test
   pull_request:
     branches: [ "main" ]
 
@@ -22,7 +19,13 @@ jobs:
       - name: Get all tag variables
         id: combined_tag
         run: |
-          TAG="testingbuild"
+          git fetch --tags origin "${{ github.event.pull_request.base.ref }}"
+
+          SHORT_SHA=$(git rev-parse --short "$GITHUB_SHA")
+          TARGET=$(git describe --tags --abbrev=0 origin/"${{ github.event.pull_request.base.ref })
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+
+          TAG=${TARGET}-pr${PR_NUMBER}-${SHORT_SHA}
           REPO_NAME=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
 
           echo "tag=${TAG}" >> $GITHUB_OUTPUT
@@ -34,8 +37,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build -t ghcr.io/${{ needs.get_tag.outputs.repo_name }}/${{ needs.get_tag.outputs.tag }} -f docker/aspa-runtime.dockerfile .
-
+      run: docker build -t ghcr.io/${{ needs.get_tag.outputs.repo_name }}/aspa-runtime:${{ needs.get_tag.outputs.tag }} -f docker/aspa-runtime.dockerfile .
+      
     # Log in to GitHub Container Registry
     - name: Log in to GitHub Container Registry
       uses: docker/login-action@v2
@@ -45,4 +48,4 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     # Push Docker image
     - name: Push Docker image
-      run: docker push ghcr.io/${{ needs.get_tag.outputs.repo_name }}/${{ needs.get_tag.outputs.tag }}
+      run: docker push ghcr.io/${{ needs.get_tag.outputs.repo_name }}/aspa-runtime:${{ needs.get_tag.outputs.tag }}
