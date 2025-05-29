@@ -21,7 +21,7 @@ jobs:
       - name: Get all tag variables
         id: combined_tag
         run: |
-          TAG="testing build"
+          TAG="testingbuild"
           echo "tag=${TAG}" >> $GITHUB_OUTPUT
 
   build:
