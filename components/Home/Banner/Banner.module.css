@@ -76,3 +76,19 @@
     }
     
   }
+
+  .brandingTitle {
+  font-size: 14vw;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 1px 0 #F3F4F3, 0 2px 0 #F3F4F3,
+               0 3px 0 #F3F4F3, 0 4px 0 #F3F4F3,
+               0 5px 0 #F3F4F3, 0 6px 0 #F3F4F3,
+               0 7px 0 #F3F4F3, 0 8px 0 #F3F4F3,
+               0 9px 0 #F3F4F3, 0 10px 0 #F3F4F3,
+               0 11px 0 #F3F4F3, 0 12px 0 #1bff1b,
+               0 30px 40px rgb(0, 0, 0);
+  animation: hoverUpDown 2.5s ease-in-out infinite;
+  text-align: center;
+  -webkit-text-stroke: 3.5px black;
+}

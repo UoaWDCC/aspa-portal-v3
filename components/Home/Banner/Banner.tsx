@@ -45,7 +45,7 @@ export function Banner({
           </Group>
         </Grid.Col>
         <Grid.Col span={{ base: 12, sm: 6 }} className={styles.imageContainer}>
-          <Text className={styles.text}>{brandingTitle}</Text>
+          <Title className={styles.brandingTitle}>{brandingTitle}</Title>
         </Grid.Col>
       </Grid>
     </Container>
