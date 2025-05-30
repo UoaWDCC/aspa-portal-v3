@@ -11,6 +11,6 @@ RUN apk add --no-cache git bash && \
 	corepack prepare yarn@stable --activate
 
 # Enable terminal for VSCode
-ENV SHELL /bin/bash
+ENV SHELL=/bin/bash
 
 VOLUME [ "/repo" ]
