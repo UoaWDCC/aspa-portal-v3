@@ -1,12 +1,16 @@
 # ASPA 🎱
 
-### What is ASPA?
+## Table of Contents
+
+## What is ASPA?
 
 The **Auckland Student Pool Association (ASPA)** is centered at the University of Auckland, dedicated to fostering a vibrant community united by a love for pool. Their mission is to cultivate an inclusive atmosphere that encourages camaraderie and skill development among billiards enthusiasts. Through a variety of casual gatherings, coaching sessions, and spirited tournaments, they aim to connect members eager to engage in both competitive and social play.
 
 ## Overview
 
 This project aims to develop a fully fledged website that provides a space for members to learn more about **ASPA’s** mission, events, and initiatives, while also offering useful tools for participation. The core functionality of the site includes a reusable and scalable **ticketing system** designed for use in **ASPA** and future **WDCC** projects. Additionally, the platform will feature an integrated **ELO ranking system** to support interactive and competitive elements, helping to foster engagement within the community.
+### Disclaimers ⚠️: 
+This project is only to be worked on by those who are a part of the team. We are **NOT** accepting contributions outside of our team.
 
 ## Pre-requisites
 
