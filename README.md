@@ -1,6 +1,5 @@
 <picture>
   <source srcset="docs/images/logo-dark.png" media="(prefers-color-scheme: dark)">
-  <source srcset="docs/images/logo-light.png" media="(prefers-color-scheme: light)">
   <img src="docs/images/logo-light.png" alt="Logo" width="200">
 </picture>
 
