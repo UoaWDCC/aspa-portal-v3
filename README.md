@@ -1,5 +1,5 @@
-![Logo Dark](./assets/logo-dark.png#gh-dark-mode-only)
-![Logo Light](./assets/logo-light.png#gh-light-mode-only)
+![Logo Dark](docs/images/logo-light.png#gh-dark-mode-only)
+![Logo Light](docs/images/logo-dark.png#gh-light-mode-only)
 
 ## What is ASPA?
 
