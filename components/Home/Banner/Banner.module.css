@@ -78,13 +78,35 @@
   }
 
   .brandingTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .shadowText,
+  .mainText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 15vw;
     font-weight: 900;
-    color: #FCF4E9;
-    text-align: center;
-    -webkit-text-stroke: 3.5px black;
-    animation: hoverUpDown 2.5s ease-in-out infinite;
+    pointer-events: none;
+  }
 
+  .mainText {
+    color: white;
+    -webkit-text-stroke: 3.5px black;
+    z-index: 2;
+    animation: hoverUpDown 2.5s ease-in-out infinite;
+  }
+
+  .shadowText {
+    color: transparent;
+    z-index: 1;
     text-shadow:
       1px 1px 0 #160E03,
       2px 2px 0 #160E03,
@@ -98,6 +120,11 @@
       10px 10px 0 #E5A64D,
       12px 12px 0 #E5A64D,
       15px 15px 0 #f6c47e,
-      18px 18px 6px #f6c47e, /* add a bit of blur to the outer colour */
-      20px 20px 40px rgb(5, 5, 5);
+      18px 18px 7px #f6c47e,
+      20px 20px 20px rgba(5, 5, 5);
+    animation: hoverUpDown 2.5s ease-in-out infinite;
+    animation-delay: 0.05s;
   }
+
+  
+
