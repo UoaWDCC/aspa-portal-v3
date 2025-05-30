@@ -6,6 +6,7 @@ on:
 
 jobs:
   get_tag:
+    if: ${{ github.event.issue.pull_request != null }} && startsWith(github.event.comment.body, '/build')
     runs-on: ubuntu-latest
     outputs:
           tag: ${{ steps.combined_tag.outputs.tag }}
