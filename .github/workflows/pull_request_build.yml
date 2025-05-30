@@ -6,7 +6,6 @@ on:
 
 jobs:
   get_tag:
-    if: ${{ github.event.issue.pull_request }} && startsWith(github.event.comment.body, '/build')
     runs-on: ubuntu-latest
     outputs:
           tag: ${{ steps.combined_tag.outputs.tag }}
@@ -33,7 +32,7 @@ jobs:
           echo "repo_name=${REPO_NAME}" >> $GITHUB_OUTPUT
 
   build:
-    if: ${{ github.event.issue.pull_request }} && startsWith(github.event.comment.body, '/build')
+    if: ${{ github.event.issue.pull_request != null }} && startsWith(github.event.comment.body, '/build')
     runs-on: ubuntu-latest
     needs: get_tag
     steps:
