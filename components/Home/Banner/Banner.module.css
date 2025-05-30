@@ -98,7 +98,7 @@
   }
 
   .mainText {
-    color: white;
+    color: #FCF4E9;
     -webkit-text-stroke: 3.5px black;
     z-index: 2;
     animation: hoverUpDown 2.5s ease-in-out infinite;
