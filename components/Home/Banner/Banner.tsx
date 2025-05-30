@@ -1,6 +1,5 @@
 "use client";
 import { Container, Grid, Title, Text, Button, Group } from "@mantine/core";
-import Image from "next/image";
 import styles from "./Banner.module.css";
 
 export interface BannerProps {
@@ -10,6 +9,7 @@ export interface BannerProps {
   groupText: string;
   titleImageSrc: string;
   titleImageAlt: string;
+  brandingTitle: string;
   paddingTop?: string;
   paddingBottom?: string;
   paddingleft?: string;
@@ -21,8 +21,7 @@ export function Banner({
   description,
   buttonText,
   groupText,
-  titleImageSrc,
-  titleImageAlt,
+  brandingTitle,
   paddingTop = "",
   paddingBottom = "",
   paddingleft = "",
@@ -46,13 +45,7 @@ export function Banner({
           </Group>
         </Grid.Col>
         <Grid.Col span={{ base: 12, sm: 6 }} className={styles.imageContainer}>
-          <Image
-            src={titleImageSrc}
-            alt={titleImageAlt}
-            width={0}
-            height={0}
-            className={`${styles.image} ${styles.hoverUpDown}`}
-          />
+          <Text className={styles.text}>{brandingTitle}</Text>
         </Grid.Col>
       </Grid>
     </Container>
