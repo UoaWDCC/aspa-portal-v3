@@ -1,4 +1,5 @@
-name: PR Image CI
+name: PR Image CI on Request
+# This workflow builds a Docker image for the ASPA Runtime on pull requests with the 'Build' label.
 
 on:
   pull_request:
