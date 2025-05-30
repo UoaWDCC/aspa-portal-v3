@@ -1,7 +1,5 @@
-<picture>
-  <source srcset="docs/images/logo-dark.png" media="(prefers-color-scheme: dark)">
-  <img src="docs/images/logo-light.png" alt="Logo" width="200">
-</picture>
+![Logo Dark](./assets/logo-dark.png#gh-dark-mode-only)
+![Logo Light](./assets/logo-light.png#gh-light-mode-only)
 
 ## What is ASPA?
 
