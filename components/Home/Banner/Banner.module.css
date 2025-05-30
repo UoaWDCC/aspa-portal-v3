@@ -78,19 +78,26 @@
   }
 
   .brandingTitle {
-  font-size: 14vw;
-  font-weight: 900;
-  color: rgb(255, 255, 255);
-  text-shadow: 0 1px 0 #160E03, 0 2px 0 #160E03,
-               0 3px 0 #160E03, 0 4px 0 #160E03,
-               0 3px 0 #59390D, 0 4px 0 #59390D,
-               0 5px 0 #59390D, 0 6px 0 #59390D,
-               0 7px 0 #B2731A, 0 8px 0 #B2731A,
-               0 9px 0 #B2731A, 0 10px 0 #B2731A,
-               0 20px 0 #E5A64D, 0 12px 0 #E5A64D,
-               0 25px 0 #f6c47e, 0 12px 0 #f6c47e,
-               0 30px 40px rgb(5, 5, 5);
-  animation: hoverUpDown 2.5s ease-in-out infinite;
-  text-align: center;
-  -webkit-text-stroke: 3.5px black;
-}
+    font-size: 15vw;
+    font-weight: 900;
+    color: #FCF4E9;
+    text-align: center;
+    -webkit-text-stroke: 3.5px black;
+    animation: hoverUpDown 2.5s ease-in-out infinite;
+
+    text-shadow:
+      1px 1px 0 #160E03,
+      2px 2px 0 #160E03,
+      3px 3px 0 #160E03,
+      4px 4px 0 #160E03,
+      5px 5px 0 #59390D,
+      6px 6px 0 #59390D,
+      7px 7px 0 #B2731A,
+      8px 8px 0 #B2731A,
+      9px 9px 0 #B2731A,
+      10px 10px 0 #E5A64D,
+      12px 12px 0 #E5A64D,
+      15px 15px 0 #f6c47e,
+      18px 18px 6px #f6c47e, /* add a bit of blur to the outer colour */
+      20px 20px 40px rgb(5, 5, 5);
+  }
