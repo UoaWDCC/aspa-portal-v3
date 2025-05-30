@@ -1,8 +1,8 @@
-import type { CollectionConfig } from 'payload';
+import type { CollectionConfig } from 'payload'
 
 export const Events: CollectionConfig = {
   slug: 'events',
-	access: {
+  access: {
     read: () => true,
   },
   fields: [
@@ -24,4 +24,4 @@ export const Events: CollectionConfig = {
       type: 'richText',
     },
   ],
-};
+}
