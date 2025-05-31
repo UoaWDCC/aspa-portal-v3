@@ -1,0 +1,39 @@
+# Development
+node_modules
+.git
+.storybook
+.husky
+.yarn/cache
+.devcontainer
+.github
+
+# Testing
+coverage
+*.test.*
+*.story.*
+jest.config.cjs
+jest.setup.cjs
+
+# Documentation
+README.md
+README
+CHANGELOG.md
+docs
+
+# Build outputs
+.next
+out
+dist
+build
+
+# IDE and Editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Misc
+.DS_Store
+*.log
+.env*
+.eslintcache
