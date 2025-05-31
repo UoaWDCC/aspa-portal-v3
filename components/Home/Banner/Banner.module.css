@@ -83,22 +83,19 @@
     align-items: center;
     position: relative;
     text-align: center;
-    overflow: hidden;
   }
 
   .shadowText,
   .mainText {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 15vw;
     font-weight: 900;
+    text-align: center;
     pointer-events: none;
   }
 
   .mainText {
-    color: #FCF4E9;
+    color: white;
     -webkit-text-stroke: 3.5px black;
     z-index: 2;
     animation: hoverUpDown 2.5s ease-in-out infinite;
