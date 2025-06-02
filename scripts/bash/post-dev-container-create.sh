@@ -7,6 +7,8 @@ git config --global --add safe.directory $PATH_TO_BASE
 # install all the dependencies
 cd $PATH_TO_BASE && yarn install
 
+# install CMS dependencies
+cd "$PATH_TO_BASE/cms" && yarn install
 
 # # Start and initialize PostgreSQL server for local CMS development
 echo "[post-dev-container-create.sh] Initializing PostgreSQL..."
