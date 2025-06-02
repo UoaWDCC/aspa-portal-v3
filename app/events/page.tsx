@@ -1,27 +1,21 @@
-"use client";
-import { useEffect } from "react";
+// app/events/page.tsx
+import { getEvents } from "@/lib/cms-api/events";
 
-export default function EventsPage() {
-  // const [events, setEvents] = useState<any[]>([]);
+export default async function EventsPage() {
+  const events = await getEvents();
 
-  useEffect(() => {
-    async function fetchEvents() {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_CMS_URL}/api/events?limit=10`,
-      );
-      if (!res.ok) {
-        console.error("Failed to fetch events");
-        return;
-      }
-      const data = await res.json();
-
-      console.log("Fetched events:", data.docs);
-
-      // setEvents(data.docs);
-    }
-
-    fetchEvents();
-  }, []);
-
-  return <h1>Events Page</h1>;
+  return (
+    <div className="p-8">
+      <h1 className="text-3xl font-bold mb-4">Events</h1>
+      <ul className="space-y-4">
+        {events.map(event => (
+          <li key={event.id} className="border p-4 rounded-md">
+            <h2 className="text-xl font-semibold">{event.title}</h2>
+            <p className="text-gray-600">{event.date}</p>
+            <p>{event.location}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
