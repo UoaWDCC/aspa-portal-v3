@@ -12,7 +12,6 @@ WORKDIR /app
 
 # Copy only package files first to leverage cache (separate layer for dependencies)
 COPY package.json yarn.lock .yarnrc.yml ./
-COPY .yarn ./.yarn
 
 # Install dependencies 
 RUN yarn install --immutable
