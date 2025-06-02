@@ -7,7 +7,10 @@ import { MantineProvider, useMantineColorScheme } from "@mantine/core";
 import { theme } from "../theme";
 
 export const parameters = {
-  layout: "fullscreen",
+  nextjs:{
+    appDirectory: true,
+  },
+  layout: 'fullscreen',
   options: {
     showPanel: false,
   },

@@ -6,11 +6,12 @@ const config: StorybookConfig = {
     disableTelemetry: true,
     enableCrashReports: false,
   },
-  stories: ["../components/**/*.(stories|story).@(js|jsx|ts|tsx)"],
-  addons: ["storybook-dark-mode"],
+  stories: ['../components/**/*.(stories|story).@(js|jsx|ts|tsx)'],
+  addons: ['storybook-dark-mode', '@storybook/addon-essentials', '@storybook/addon-interactions'],
   framework: {
     name: "@storybook/nextjs",
     options: {},
   },
+  staticDirs: [{from: '../public', to: ''}],
 };
 export default config;
