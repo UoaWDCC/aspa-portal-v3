@@ -17,6 +17,7 @@ export function ExecutiveCard({
   executive,
   badgeColor = "#d78840",
 }: ExecutiveCard) {
+  console.log(badgeColor);
   return (
     <Card
       shadow="sm"
