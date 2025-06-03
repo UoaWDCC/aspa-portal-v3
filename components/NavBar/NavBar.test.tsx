@@ -22,7 +22,7 @@ describe("NavBar Component testing", () => {
     });
   });
 
-  it("highlights the active link when clicked", () => {
+  it("Link click should work properly", () => {
     render(<NavBar links={links} />);
     const homeButton = screen.getAllByText("Home")[0];
     fireEvent.click(homeButton);
@@ -30,8 +30,8 @@ describe("NavBar Component testing", () => {
     expect(homeButton.closest("button")).toHaveAttribute("data-active");
   });
 
-  it("shows the burger menu on mobile and toggles navbar", () => {
-    global.innerWidth = 500;
+  it("should show burger navbar in mobile view", () => {
+    global.innerWidth = 375;
     global.dispatchEvent(new Event("resize"));
     render(<NavBar links={links} />);
     const burger = screen.getByRole("button", { name: ""});
@@ -41,14 +41,10 @@ describe("NavBar Component testing", () => {
     expect(screen.getAllByText("Home")[0]).toBeInTheDocument();
   });
 
-  it("renders correctly on desktop and mobile", () => {
-    // Desktop
-    global.innerWidth = 1200;
-    global.dispatchEvent(new Event("resize"));
+  it("properly switches between desktop and mobile views", () => {
     const { rerender } = render(<NavBar links={links} />);
     expect(screen.getAllByText("Home")[0]).toBeInTheDocument();
 
-    // Mobile
     global.innerWidth = 375;
     global.dispatchEvent(new Event("resize"));
     rerender(<NavBar links={links} />);
