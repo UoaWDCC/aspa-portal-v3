@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExecutiveCard Component Testing matches snapshot 1`] = `
+exports[`NavBar Component testing matches snapshot 1`] = `
 <DocumentFragment>
   <style
     data-mantine-styles="true"
@@ -12,51 +12,149 @@ exports[`ExecutiveCard Component Testing matches snapshot 1`] = `
   >
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
-  <div
-    class="card m_e615b15f mantine-Card-root m_1b7284a3 mantine-Paper-root"
-    data-with-border="true"
-    style="--paper-radius: var(--mantine-radius-xl); --paper-shadow: var(--mantine-shadow-sm); --card-padding: var(--mantine-spacing-lg); max-width: 100%;"
+  <style
+    data-mantine-styles="inline"
   >
-    <div
-      class="m_599a2148 mantine-Card-section"
-      data-first-section="true"
+    :root{--app-shell-navbar-width:calc(18.75rem * var(--mantine-scale));--app-shell-navbar-offset:calc(18.75rem * var(--mantine-scale));--app-shell-padding:var(--mantine-spacing-md);}@media(min-width: 48em){:root{--app-shell-navbar-transform:translateX(calc(var(--app-shell-navbar-width) * -1));--app-shell-navbar-transform-rtl:translateX(var(--app-shell-navbar-width));--app-shell-navbar-offset:0px !important;}}@media(max-width: 47.99375em){:root{--app-shell-navbar-width:100%;--app-shell-navbar-offset:0px;--app-shell-navbar-transform:translateX(calc(var(--app-shell-navbar-width) * -1));--app-shell-navbar-transform-rtl:translateX(var(--app-shell-navbar-width));}}
+  </style>
+  <div
+    class="m_89ab340 mantine-AppShell-root"
+    data-resizing="true"
+    style="--app-shell-transition-duration: 200ms; --app-shell-transition-timing-function: ease;"
+  >
+    <header
+      class="m_3b16f56b mantine-AppShell-header right-scroll-bar-position header"
+      data-with-border="true"
+      style="--app-shell-header-z-index: 100;"
     >
-      <img
-        alt="Johnny Shen"
-        class="m_9e117634 mantine-Image-root"
-        src="https://media.istockphoto.com/id/96333863/photo/retro-dude.jpg?s=612x612&w=0&k=20&c=L9_H1c8MP41PGEcg36VEakeMoVC8uf1Jq5hs-NErQ0k="
-      />
-    </div>
-    <div
-      class="m_4081bf90 mantine-Group-root"
-      style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap;"
-    >
-      <h2
-        class="m_8a5d1357 mantine-Title-root"
-        data-order="2"
-        style="--title-fw: var(--mantine-h2-font-weight); --title-lh: var(--mantine-h2-line-height); --title-fz: var(--mantine-h2-font-size);"
-      >
-        Johnny Shen
-      </h2>
       <div
-        class="m_347db0ec mantine-Badge-root"
-        data-size="md"
-        style="--badge-height: var(--badge-height-md); --badge-padding-x: var(--badge-padding-x-md); --badge-fz: var(--badge-fz-md); --badge-bg: #d78840; --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+        class="m_4081bf90 mantine-Group-root"
+        style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap; padding-inline: var(--mantine-spacing-md); height: 100%;"
       >
-        <span
-          class="m_5add502a mantine-Badge-label"
+        <button
+          class="mantine-focus-auto m_fea6bf1a mantine-Burger-root m_87cf2631 mantine-UnstyledButton-root mantine-hidden-from-sm"
+          data-size="sm"
+          style="--burger-size: var(--burger-size-sm);"
+          type="button"
         >
-          President
-        </span>
+          <div
+            class="m_d4fb9cad mantine-Burger-burger"
+            data-reduce-motion="true"
+          />
+        </button>
+        <div
+          class="m_4081bf90 mantine-Group-root"
+          style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap; flex: 1; justify-content: flex-end;"
+        >
+          <div
+            class="m_4081bf90 mantine-Group-root mantine-visible-from-sm"
+            style="--group-gap: calc(1.25rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+          >
+            <div
+              class="root"
+            >
+              <button
+                class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                data-active="true"
+                href="/home"
+                type="button"
+              >
+                <div
+                  class="controlName hidden"
+                >
+                  Home
+                </div>
+              </button>
+              <button
+                class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                href="/contact"
+                type="button"
+              >
+                <div
+                  class="controlName "
+                >
+                  Contact
+                </div>
+              </button>
+              <button
+                class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                href="/events"
+                type="button"
+              >
+                <div
+                  class="controlName "
+                >
+                  Events
+                </div>
+              </button>
+              <div
+                class="indicator m_96b553a6 mantine-FloatingIndicator-root"
+                style="transform: translateY(-2px) translateX(-2px); width: 0px; height: 0px;"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <p
-      class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
-      data-size="md"
-      style="--text-fz: var(--mantine-font-size-md); --text-lh: var(--mantine-line-height-md);"
+    </header>
+    <nav
+      class="m_45252eee mantine-AppShell-navbar"
+      data-with-border="true"
+      style="--app-shell-navbar-z-index: calc(100 + 1); padding-inline: calc(0.25rem * var(--mantine-scale)); padding-block: var(--mantine-spacing-md);"
     >
-      Your friendly neighbourhood President of ASPA
-    </p>
+      <a
+        class="mantine-focus-auto m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
+        data-active="true"
+        href="/home"
+      >
+        <div
+          class="m_f07af9d2 mantine-NavLink-body"
+        >
+          <span
+            class="m_1f6ac4c4 mantine-NavLink-label"
+          >
+            Home
+          </span>
+          <span
+            class="m_57492dcc mantine-NavLink-description"
+            data-active="true"
+          />
+        </div>
+      </a>
+      <a
+        class="mantine-focus-auto m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
+        href="/contact"
+      >
+        <div
+          class="m_f07af9d2 mantine-NavLink-body"
+        >
+          <span
+            class="m_1f6ac4c4 mantine-NavLink-label"
+          >
+            Contact
+          </span>
+          <span
+            class="m_57492dcc mantine-NavLink-description"
+          />
+        </div>
+      </a>
+      <a
+        class="mantine-focus-auto m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
+        href="/events"
+      >
+        <div
+          class="m_f07af9d2 mantine-NavLink-body"
+        >
+          <span
+            class="m_1f6ac4c4 mantine-NavLink-label"
+          >
+            Events
+          </span>
+          <span
+            class="m_57492dcc mantine-NavLink-description"
+          />
+        </div>
+      </a>
+    </nav>
   </div>
 </DocumentFragment>
 `;
