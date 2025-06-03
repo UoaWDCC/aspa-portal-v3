@@ -14,15 +14,11 @@ describe("ExecutiveCard Component Testing", () => {
 
   beforeEach(() => {
     global.innerWidth = originalInnerWidth;
-    global.dispatchEvent(new Event('resize'));
-  })
+    global.dispatchEvent(new Event("resize"));
+  });
 
   it("should render the whole card properly", () => {
-    render(
-        <ExecutiveCard 
-            executive={executive} 
-        />
-    );
+    render(<ExecutiveCard executive={executive} />);
     expect(screen.getByText(executive.name)).toBeInTheDocument();
     expect(screen.getByText(executive.title)).toBeInTheDocument();
     expect(screen.getByText(executive.description)).toBeInTheDocument();
@@ -32,20 +28,20 @@ describe("ExecutiveCard Component Testing", () => {
     expect(img.tagName.toLowerCase()).toBe("img");
   });
 
-  it("should resize to fit mobile views after starting in desktop view" , () => {
-      const { rerender } = render(<ExecutiveCard executive={executive} />);
-  
-      expect(screen.getByText(executive.name)).toBeInTheDocument();
-  
-      global.innerWidth = 375;
-      global.dispatchEvent(new Event('resize'));
-      rerender(<ExecutiveCard executive={executive} />);
-  
-      expect(screen.getByText(executive.name)).toBeInTheDocument();
-      const img = screen.getByAltText(executive.name);
-      expect(img).toBeInTheDocument();
-      expect(img.tagName.toLowerCase()).toBe("img");
-    });
+  it("should resize to fit mobile views after starting in desktop view", () => {
+    const { rerender } = render(<ExecutiveCard executive={executive} />);
+
+    expect(screen.getByText(executive.name)).toBeInTheDocument();
+
+    global.innerWidth = 375;
+    global.dispatchEvent(new Event("resize"));
+    rerender(<ExecutiveCard executive={executive} />);
+
+    expect(screen.getByText(executive.name)).toBeInTheDocument();
+    const img = screen.getByAltText(executive.name);
+    expect(img).toBeInTheDocument();
+    expect(img.tagName.toLowerCase()).toBe("img");
+  });
 
   it("matches snapshot", () => {
     const { asFragment } = render(<ExecutiveCard executive={executive} />);

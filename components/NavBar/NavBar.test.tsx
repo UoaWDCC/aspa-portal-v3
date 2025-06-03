@@ -34,7 +34,7 @@ describe("NavBar Component testing", () => {
     global.innerWidth = 375;
     global.dispatchEvent(new Event("resize"));
     render(<NavBar links={links} />);
-    const burger = screen.getByRole("button", { name: ""});
+    const burger = screen.getByRole("button", { name: "" });
     expect(burger).toBeInTheDocument();
     fireEvent.click(burger);
     // After clicking, the navbar should be visible (NavLink should be in the document)
