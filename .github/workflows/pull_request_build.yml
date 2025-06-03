@@ -1,0 +1,54 @@
+name: PR Image CI on Request
+# This workflow builds a Docker image for the ASPA Runtime on pull requests with the 'Build' label.
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    types: [labeled, synchronize, opened, reopened]
+
+jobs:
+  get_tag:
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'Build')
+    outputs:
+          tag: ${{ steps.combined_tag.outputs.tag }}
+          repo_name: ${{ steps.combined_tag.outputs.repo_name }}
+    steps:
+      # Checkout the repository
+      - name: Checkout PR code
+        uses: actions/checkout@v4
+
+      # Determine the Tag 
+      - name: Get all tag variables
+        id: combined_tag
+        run: |
+          git fetch --tags origin "${{ github.event.pull_request.base.ref }}"
+
+          SHORT_SHA=$(git rev-parse --short "$GITHUB_SHA")
+          TARGET=$(git describe --tags --abbrev=0 origin/"${{ github.event.pull_request.base.ref }}")
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+
+          TAG=${TARGET}-pr${PR_NUMBER}-${SHORT_SHA}
+          REPO_NAME=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+
+          echo "tag=${TAG}" >> $GITHUB_OUTPUT
+          echo "repo_name=${REPO_NAME}" >> $GITHUB_OUTPUT
+
+  build:
+    runs-on: ubuntu-latest
+    needs: get_tag
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build -t ghcr.io/${{ needs.get_tag.outputs.repo_name }}/aspa-runtime-rc:${{ needs.get_tag.outputs.tag }} -f docker/aspa-runtime.dockerfile .
+      
+    # Log in to GitHub Container Registry
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    # Push Docker image
+    - name: Push Docker image
+      run: docker push ghcr.io/${{ needs.get_tag.outputs.repo_name }}/aspa-runtime-rc:${{ needs.get_tag.outputs.tag }}
