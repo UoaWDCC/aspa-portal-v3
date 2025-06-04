@@ -329,7 +329,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 export interface HomeContent {
   id: number;
   mainTitle: string;
-  ',mainDescription'?: string | null;
+  mainDescription?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -356,7 +356,7 @@ export interface Footer {
  */
 export interface HomeContentSelect<T extends boolean = true> {
   mainTitle?: T;
-  ',mainDescription'?: T;
+  mainDescription?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

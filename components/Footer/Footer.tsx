@@ -9,6 +9,8 @@ interface SocialMediaLink {
 }
 
 interface FooterProps {
+	organizationName?: string;
+	organizationDescription?: string;
   socialMediaLinks: SocialMediaLink[];
   footerBg?: string;
   socialMediaImageWidth?: number;
@@ -17,6 +19,8 @@ interface FooterProps {
 }
 
 export function Footer({
+	organizationName,
+	organizationDescription,
   socialMediaLinks,
   footerBg = "#474B4F",
   socialMediaImageWidth = 24,
@@ -31,11 +35,10 @@ export function Footer({
       >
         <div className={styles.content}>
           <Title order={2} className={styles.title}>
-            Auckland Student Pool Association
+            {organizationName || "Your Organization Name"}	
           </Title>
           <Text className={styles.description}>
-            {" "}
-            A community of students who love to play pool
+            {organizationDescription || "Your organization description goes here."}
           </Text>
           <Group>
             {socialMediaLinks.map((link, index) => (

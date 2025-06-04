@@ -4,8 +4,8 @@ import Image from "next/image";
 import styles from "./Banner.module.css";
 
 export interface BannerProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   buttonText: string;
   groupText: string;
   titleImageSrc: string;
@@ -38,8 +38,8 @@ export function Banner({
     >
       <Grid gutter="xl">
         <Grid.Col span={{ base: 12, sm: 6 }}>
-          <Title className={styles.title}>{title}</Title>
-          <Text className={styles.text}>{description}</Text>
+          <Title className={styles.title}>{(title ? title: "Title Here")}</Title>
+          <Text className={styles.text}>{description ? description : "Description here."}</Text>
           <Group align="center">
             <Button className={styles.button}>{buttonText}</Button>
             <Text className={styles.group}>{groupText}</Text>

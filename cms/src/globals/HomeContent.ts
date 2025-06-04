@@ -14,7 +14,7 @@ export const HomeContent: GlobalConfig = {
       required: true,
     },
     {
-      name: ',mainDescription',
+      name: 'mainDescription',
       type: 'textarea',
       label: 'Main Description',
     }
