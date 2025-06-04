@@ -17,7 +17,7 @@
         ],
         "settings": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "prettier.configPath": "${containerWorkspaceFolder}/frontend/.prettierrc",
+          "prettier.configPath": "${containerWorkspaceFolder}/.prettierrc",
           "editor.formatOnSave": true
         }
       }
