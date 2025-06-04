@@ -86,8 +86,14 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    home_content: HomeContent;
+    footer: Footer;
+  };
+  globalsSelect: {
+    home_content: HomeContentSelect<false> | HomeContentSelect<true>;
+    footer: FooterSelect<false> | FooterSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -315,6 +321,59 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home_content".
+ */
+export interface HomeContent {
+  id: number;
+  mainTitle: string;
+  ',mainDescription'?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: number;
+  organizationName: string;
+  /**
+   * Brief description of the organization shown in the footer.
+   */
+  organizationDescription: string;
+  twitterUrl: string;
+  facebookUrl: string;
+  instagramUrl: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home_content_select".
+ */
+export interface HomeContentSelect<T extends boolean = true> {
+  mainTitle?: T;
+  ',mainDescription'?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  organizationName?: T;
+  organizationDescription?: T;
+  twitterUrl?: T;
+  facebookUrl?: T;
+  instagramUrl?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
