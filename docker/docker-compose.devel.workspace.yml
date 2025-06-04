@@ -7,3 +7,12 @@ services:
       - ../:/repo
     working_dir: /repo
     command: sleep infinity
+    environment:
+      - DATABASE_URI=postgresql://payload:aspa@db:5432/payload
+      - PAYLOAD_SECRET=example
+    networks:
+      - aspa-network
+
+networks:
+  aspa-network:
+    driver: bridge
