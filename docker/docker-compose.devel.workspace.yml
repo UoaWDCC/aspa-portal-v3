@@ -1,0 +1,9 @@
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: ./aspa-devel.dockerfile
+    volumes:
+      - ../:/repo
+    working_dir: /repo
+    command: sleep infinity
