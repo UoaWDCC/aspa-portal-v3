@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar Component testing matches snapshot 1`] = `
+<DocumentFragment>
+  <style
+    data-mantine-styles="true"
+  >
+    :root{--mantine-font-family: fontFamily;--mantine-font-family-headings: fontFamily;--mantine-color-aspa-orange-0: #fff2e4;--mantine-color-aspa-orange-1: #fbe6d3;--mantine-color-aspa-orange-2: #f0ccaa;--mantine-color-aspa-orange-3: #e5af7e;--mantine-color-aspa-orange-4: #dc9758;--mantine-color-aspa-orange-5: #d78840;--mantine-color-aspa-orange-6: #d68032;--mantine-color-aspa-orange-7: #bd6d24;--mantine-color-aspa-orange-8: #a9611d;--mantine-color-aspa-orange-9: #945212;--mantine-color-aspa-brown-0: #faf5ef;--mantine-color-aspa-brown-1: #f0e8e0;--mantine-color-aspa-brown-2: #e2cdbb;--mantine-color-aspa-brown-3: #d5b192;--mantine-color-aspa-brown-4: #c9996f;--mantine-color-aspa-brown-5: #c38a59;--mantine-color-aspa-brown-6: #c1834d;--mantine-color-aspa-brown-7: #a96f3d;--mantine-color-aspa-brown-8: #986335;--mantine-color-aspa-brown-9: #845429;--mantine-color-aspa-gray-0: #f4f5f5;--mantine-color-aspa-gray-1: #e7e7e7;--mantine-color-aspa-gray-2: #cdcdcd;--mantine-color-aspa-gray-3: #b1b1b1;--mantine-color-aspa-gray-4: #999999;--mantine-color-aspa-gray-5: #8a8a8a;--mantine-color-aspa-gray-6: #838383;--mantine-color-aspa-gray-7: #707071;--mantine-color-aspa-gray-8: #636466;--mantine-color-aspa-gray-9: #52575b;}:root[data-mantine-color-scheme="dark"]{--mantine-color-aspa-orange-text: var(--mantine-color-aspa-orange-4);--mantine-color-aspa-orange-filled: var(--mantine-color-aspa-orange-8);--mantine-color-aspa-orange-filled-hover: var(--mantine-color-aspa-orange-9);--mantine-color-aspa-orange-light: rgba(214, 128, 50, 0.15);--mantine-color-aspa-orange-light-hover: rgba(214, 128, 50, 0.2);--mantine-color-aspa-orange-light-color: var(--mantine-color-aspa-orange-3);--mantine-color-aspa-orange-outline: var(--mantine-color-aspa-orange-4);--mantine-color-aspa-orange-outline-hover: rgba(220, 151, 88, 0.05);--mantine-color-aspa-brown-text: var(--mantine-color-aspa-brown-4);--mantine-color-aspa-brown-filled: var(--mantine-color-aspa-brown-8);--mantine-color-aspa-brown-filled-hover: var(--mantine-color-aspa-brown-9);--mantine-color-aspa-brown-light: rgba(193, 131, 77, 0.15);--mantine-color-aspa-brown-light-hover: rgba(193, 131, 77, 0.2);--mantine-color-aspa-brown-light-color: var(--mantine-color-aspa-brown-3);--mantine-color-aspa-brown-outline: var(--mantine-color-aspa-brown-4);--mantine-color-aspa-brown-outline-hover: rgba(201, 153, 111, 0.05);--mantine-color-aspa-gray-text: var(--mantine-color-aspa-gray-4);--mantine-color-aspa-gray-filled: var(--mantine-color-aspa-gray-8);--mantine-color-aspa-gray-filled-hover: var(--mantine-color-aspa-gray-9);--mantine-color-aspa-gray-light: rgba(131, 131, 131, 0.15);--mantine-color-aspa-gray-light-hover: rgba(131, 131, 131, 0.2);--mantine-color-aspa-gray-light-color: var(--mantine-color-aspa-gray-3);--mantine-color-aspa-gray-outline: var(--mantine-color-aspa-gray-4);--mantine-color-aspa-gray-outline-hover: rgba(153, 153, 153, 0.05);}:root[data-mantine-color-scheme="light"]{--mantine-color-aspa-orange-text: var(--mantine-color-aspa-orange-filled);--mantine-color-aspa-orange-filled: var(--mantine-color-aspa-orange-6);--mantine-color-aspa-orange-filled-hover: var(--mantine-color-aspa-orange-7);--mantine-color-aspa-orange-light: rgba(214, 128, 50, 0.1);--mantine-color-aspa-orange-light-hover: rgba(214, 128, 50, 0.12);--mantine-color-aspa-orange-light-color: var(--mantine-color-aspa-orange-6);--mantine-color-aspa-orange-outline: var(--mantine-color-aspa-orange-6);--mantine-color-aspa-orange-outline-hover: rgba(214, 128, 50, 0.05);--mantine-color-aspa-brown-text: var(--mantine-color-aspa-brown-filled);--mantine-color-aspa-brown-filled: var(--mantine-color-aspa-brown-6);--mantine-color-aspa-brown-filled-hover: var(--mantine-color-aspa-brown-7);--mantine-color-aspa-brown-light: rgba(193, 131, 77, 0.1);--mantine-color-aspa-brown-light-hover: rgba(193, 131, 77, 0.12);--mantine-color-aspa-brown-light-color: var(--mantine-color-aspa-brown-6);--mantine-color-aspa-brown-outline: var(--mantine-color-aspa-brown-6);--mantine-color-aspa-brown-outline-hover: rgba(193, 131, 77, 0.05);--mantine-color-aspa-gray-text: var(--mantine-color-aspa-gray-filled);--mantine-color-aspa-gray-filled: var(--mantine-color-aspa-gray-6);--mantine-color-aspa-gray-filled-hover: var(--mantine-color-aspa-gray-7);--mantine-color-aspa-gray-light: rgba(131, 131, 131, 0.1);--mantine-color-aspa-gray-light-hover: rgba(131, 131, 131, 0.12);--mantine-color-aspa-gray-light-color: var(--mantine-color-aspa-gray-6);--mantine-color-aspa-gray-outline: var(--mantine-color-aspa-gray-6);--mantine-color-aspa-gray-outline-hover: rgba(131, 131, 131, 0.05);}
+  </style>
+  <style
+    data-mantine-styles="classes"
+  >
+    @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+  </style>
+  <style
+    data-mantine-styles="inline"
+  >
+    :root{--app-shell-navbar-width:calc(18.75rem * var(--mantine-scale));--app-shell-navbar-offset:calc(18.75rem * var(--mantine-scale));--app-shell-padding:var(--mantine-spacing-md);}@media(min-width: 48em){:root{--app-shell-navbar-transform:translateX(calc(var(--app-shell-navbar-width) * -1));--app-shell-navbar-transform-rtl:translateX(var(--app-shell-navbar-width));--app-shell-navbar-offset:0px !important;}}@media(max-width: 47.99375em){:root{--app-shell-navbar-width:100%;--app-shell-navbar-offset:0px;--app-shell-navbar-transform:translateX(calc(var(--app-shell-navbar-width) * -1));--app-shell-navbar-transform-rtl:translateX(var(--app-shell-navbar-width));}}
+  </style>
+  <div
+    class="m_89ab340 mantine-AppShell-root"
+    data-resizing="true"
+    style="--app-shell-transition-duration: 200ms; --app-shell-transition-timing-function: ease;"
+  >
+    <header
+      class="m_3b16f56b mantine-AppShell-header right-scroll-bar-position header"
+      data-with-border="true"
+      style="--app-shell-header-z-index: 100;"
+    >
+      <div
+        class="m_4081bf90 mantine-Group-root"
+        style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap; padding-inline: var(--mantine-spacing-md); height: 100%;"
+      >
+        <button
+          class="mantine-focus-auto m_fea6bf1a mantine-Burger-root m_87cf2631 mantine-UnstyledButton-root mantine-hidden-from-sm"
+          data-size="sm"
+          style="--burger-size: var(--burger-size-sm);"
+          type="button"
+        >
+          <div
+            class="m_d4fb9cad mantine-Burger-burger"
+            data-reduce-motion="true"
+          />
+        </button>
+        <div
+          class="m_4081bf90 mantine-Group-root"
+          style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap; flex: 1; justify-content: flex-end;"
+        >
+          <div
+            class="m_4081bf90 mantine-Group-root mantine-visible-from-sm"
+            style="--group-gap: calc(1.25rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+          >
+            <div
+              class="root"
+            >
+              <button
+                class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                data-active="true"
+                data-control-index="0"
+                href="/home"
+                type="button"
+              >
+                <div
+                  class="controlName hidden"
+                >
+                  Home
+                </div>
+              </button>
+              <button
+                class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                data-control-index="1"
+                href="/contact"
+                type="button"
+              >
+                <div
+                  class="controlName "
+                >
+                  Contact
+                </div>
+              </button>
+              <button
+                class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                data-control-index="2"
+                href="/events"
+                type="button"
+              >
+                <div
+                  class="controlName "
+                >
+                  Events
+                </div>
+              </button>
+              <div
+                class="indicator m_96b553a6 mantine-FloatingIndicator-root"
+                style="transform: translateY(-2px) translateX(-2px); width: 0px; height: 0px;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav
+      class="m_45252eee mantine-AppShell-navbar"
+      data-with-border="true"
+      style="--app-shell-navbar-z-index: calc(100 + 1); padding-inline: calc(0.25rem * var(--mantine-scale)); padding-block: var(--mantine-spacing-md);"
+    >
+      <a
+        class="mantine-focus-auto m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
+        data-active="true"
+        href="/home"
+      >
+        <div
+          class="m_f07af9d2 mantine-NavLink-body"
+        >
+          <span
+            class="m_1f6ac4c4 mantine-NavLink-label"
+          >
+            Home
+          </span>
+          <span
+            class="m_57492dcc mantine-NavLink-description"
+            data-active="true"
+          />
+        </div>
+      </a>
+      <a
+        class="mantine-focus-auto m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
+        href="/contact"
+      >
+        <div
+          class="m_f07af9d2 mantine-NavLink-body"
+        >
+          <span
+            class="m_1f6ac4c4 mantine-NavLink-label"
+          >
+            Contact
+          </span>
+          <span
+            class="m_57492dcc mantine-NavLink-description"
+          />
+        </div>
+      </a>
+      <a
+        class="mantine-focus-auto m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
+        href="/events"
+      >
+        <div
+          class="m_f07af9d2 mantine-NavLink-body"
+        >
+          <span
+            class="m_1f6ac4c4 mantine-NavLink-label"
+          >
+            Events
+          </span>
+          <span
+            class="m_57492dcc mantine-NavLink-description"
+          />
+        </div>
+      </a>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
