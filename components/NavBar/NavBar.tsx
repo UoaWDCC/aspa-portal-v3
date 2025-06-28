@@ -29,7 +29,7 @@ export function NavBar({ links }: NavBarProps) {
   function getControlButton(index: number): HTMLElement | null {
     if (!rootRef) return null;
     return rootRef.querySelector(`[data-control-index="${index}"]`);
-  };
+  }
 
   const controls = links.map((link, index) => (
     <Link key={index} href={link.href} passHref legacyBehavior>
