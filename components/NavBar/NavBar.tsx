@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   AppShell,
   Group,
@@ -25,13 +25,10 @@ export function NavBar({ links }: NavBarProps) {
   const [active, setActive] = useState(0);
 
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null);
-  const [controlsRefs, setControlsRefs] = useState<
-    Record<string, HTMLButtonElement | null>
-  >({});
 
-  const setControlRef = (index: number) => (node: HTMLButtonElement) => {
-    controlsRefs[index] = node;
-    setControlsRefs(controlsRefs);
+  function getControlButton(index: number): HTMLElement | null {
+    if (!rootRef) return null;
+    return rootRef.querySelector(`[data-control-index="${index}"]`);
   };
 
   const controls = links.map((link, index) => (
@@ -40,7 +37,7 @@ export function NavBar({ links }: NavBarProps) {
         key={index}
         className={styles.control}
         onClick={() => setActive(index)}
-        ref={setControlRef(index)}
+        data-control-index={index}
         mod={{ active: active === index }}
       >
         <div
@@ -72,7 +69,7 @@ export function NavBar({ links }: NavBarProps) {
               <div className={styles.root} ref={setRootRef}>
                 {controls}
                 <FloatingIndicator
-                  target={controlsRefs[active]}
+                  target={getControlButton(active)}
                   parent={rootRef}
                   className={styles.indicator}
                 />

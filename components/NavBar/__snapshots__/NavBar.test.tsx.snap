@@ -56,6 +56,7 @@ exports[`NavBar Component testing matches snapshot 1`] = `
               <button
                 class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
                 data-active="true"
+                data-control-index="0"
                 href="/home"
                 type="button"
               >
@@ -67,6 +68,7 @@ exports[`NavBar Component testing matches snapshot 1`] = `
               </button>
               <button
                 class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                data-control-index="1"
                 href="/contact"
                 type="button"
               >
@@ -78,6 +80,7 @@ exports[`NavBar Component testing matches snapshot 1`] = `
               </button>
               <button
                 class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                data-control-index="2"
                 href="/events"
                 type="button"
               >
