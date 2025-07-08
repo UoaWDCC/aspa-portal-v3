@@ -6,10 +6,14 @@ import {
   UnstyledButton,
   NavLink,
   FloatingIndicator,
+  Drawer,
+  Stack,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
+import { IconX } from "@tabler/icons-react";
+import Image from "next/image";
 
 interface Link {
   name: string;
@@ -21,7 +25,7 @@ interface NavBarProps {
 }
 
 export function NavBar({ links }: NavBarProps) {
-  const [opened, { toggle }] = useDisclosure();
+  const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(0);
 
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null);
@@ -61,14 +65,29 @@ export function NavBar({ links }: NavBarProps) {
       }}
       padding="md"
     >
+
       <AppShell.Header className={styles.header}>
-        <Group h="100%" px="md">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Group
-            justify="space-between"
-            style={{ flex: 1, justifyContent: "flex-end" }}
-          >
-            <Group ml="xl" gap={20} visibleFrom="sm">
+        <Group h="100%" px="md" justify="space-between" style={{ width: "100%" }}>
+          <Link href="/" passHref>
+            <Image
+              src="/aspa_logo.png"
+              alt="ASPA Logo"
+              width={37}
+              height={37}
+              className={styles.logoCircle}
+            />
+          </Link>
+
+          {/* Right side: burger (mobile) + nav links (desktop) */}
+          <Group gap="md" align="center">
+            <Burger
+              opened={opened}
+              onClick={toggle}
+              hiddenFrom="sm"
+              size="sm"
+              aria-label="Toggle menu"
+            />
+            <Group visibleFrom="sm" gap={20}>
               <div className={styles.root} ref={setRootRef}>
                 {controls}
                 <FloatingIndicator
@@ -81,6 +100,41 @@ export function NavBar({ links }: NavBarProps) {
           </Group>
         </Group>
       </AppShell.Header>
+
+      {/* Mobile Drawer Navigation */}
+      <Drawer
+        opened={opened}
+        onClose={toggle}
+        padding="md"
+        size="100%" // Full screen on mobile
+        withCloseButton={false}
+        hiddenFrom="sm"
+        position="right"
+        zIndex={1001}
+      >
+        <Group justify="flex-end" mb="xl">
+          <UnstyledButton onClick={toggle}>
+            <IconX size={24} />
+          </UnstyledButton>
+        </Group>
+
+        <Stack gap="md">
+          {links.map((link, index) => (
+            <NavLink
+              key={index}
+              label={link.name}
+              component={Link}
+              href={link.href}
+              active={index === active}
+              onClick={() => {
+                setActive(index);
+                toggle(); // Close the drawer
+              }}
+            />
+          ))}
+        </Stack>
+      </Drawer>
+
 
       <AppShell.Navbar py="md" px={4}>
         {links.map((link, index) => (
