@@ -90,11 +90,13 @@ export function NavBar({ links }: NavBarProps) {
             <Group visibleFrom="sm" gap={20}>
               <div className={styles.root} ref={setRootRef}>
                 {controls}
-                <FloatingIndicator
-                  target={controlsRefs[active]}
-                  parent={rootRef}
-                  className={styles.indicator}
-                />
+              <FloatingIndicator
+                target={controlsRefs[active]}
+                parent={rootRef}
+              >
+                <div className={styles.indicator}>8</div>
+              </FloatingIndicator>
+
               </div>
             </Group>
           </Group>
