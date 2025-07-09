@@ -1,18 +1,20 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-type ButtonVariant = "grey" | "lightgrey" | "darkgrey" | "grey-border" | "lightgrey-border" | "darkgrey-border";
-
+type ButtonColor = "grey" | "orange";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
+  color?: ButtonColor;
+  outlined?: boolean;
   children: React.ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({variant = "grey", children, className = "", ...props}) => {
+export const Button: React.FC<ButtonProps> = ({color = "grey", outlined = false, children, className = "", ...props}) => {
+  const colorClass = styles[color];
+  const outlineClass = outlined ? styles.outlined : "";
   return (
     <button
       type="button"
-      className={`${styles.button} ${styles[variant]} ${className}`}
+      className={`${styles.button} ${colorClass} ${outlineClass} ${className}`}
       {...props}
     >
       {children}
