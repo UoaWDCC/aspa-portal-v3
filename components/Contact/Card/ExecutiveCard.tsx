@@ -2,6 +2,7 @@
 import { Card, Image, Text, Title, Group, Badge } from "@mantine/core";
 import styles from "./ExecutiveCard.module.css";
 
+
 export interface Executive {
   name: string;
   title: string;
