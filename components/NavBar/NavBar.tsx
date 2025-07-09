@@ -43,18 +43,29 @@ export function NavBar({ links }: NavBarProps) {
       <UnstyledButton
         key={index}
         className={styles.control}
-        onClick={() => setActive(index)}
+        onClick={() => handleClick(index)}
         ref={setControlRef(index)}
         mod={{ active: active === index }}
       >
         <div
-          className={`${styles.controlName} ${index === active ? styles.hidden : ""}`}
+          className={`${styles.controlName} ${
+            index === active ? styles.hidden : ""
+          }`}
         >
           {link.name}
         </div>
       </UnstyledButton>
     </Link>
   ));
+
+
+  const [rotation, setRotation] = useState(0);
+
+  const handleClick = (index: number) => {
+    const delta = Math.abs(index - active);
+    setRotation((prev) => prev + 360 * delta);
+    setActive(index);
+  };
 
   return (
     <AppShell
@@ -93,13 +104,18 @@ export function NavBar({ links }: NavBarProps) {
               <FloatingIndicator
                 target={controlsRefs[active]}
                 parent={rootRef}
+                transitionDuration={400}
               >
-                <div className={styles.indicator}>8</div>
+                <div
+                  className={styles.indicatorRotatingWrapper}
+                  style={{ '--rotation': `${rotation}deg` } as React.CSSProperties}
+                >
+                  <div className={styles.indicator}>8</div>
+                </div>
               </FloatingIndicator>
-
-              </div>
-            </Group>
+            </div>
           </Group>
+        </Group>
         </Group>
       </AppShell.Header>
 
@@ -129,7 +145,7 @@ export function NavBar({ links }: NavBarProps) {
               href={link.href}
               active={index === active}
               onClick={() => {
-                setActive(index);
+                handleClick(index);
                 toggle(); // Close the drawer
               }}
             />
@@ -145,7 +161,7 @@ export function NavBar({ links }: NavBarProps) {
             label={link.name}
             href={link.href}
             active={index === active}
-            onClick={() => setActive(index)}
+            onClick={() => handleClick(index)}
           />
         ))}
       </AppShell.Navbar>

@@ -20,6 +20,7 @@
     width: 8vw;
     height: 5vw;
     text-align: center;
+    padding-top: 2%;
 
     @mixin hover {
         font-weight: 1000;
@@ -43,6 +44,15 @@
   cursor: pointer;
 }
 
+@keyframes roll {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(var(--mantine-indicator-x, 0px)) rotate(360deg);
+  }
+}
+
 .indicator {
   background: black;
   border-radius: 50%;
@@ -55,18 +65,13 @@
   font-weight: bold;
   font-size: 0.75rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  
-  position: absolute;
-  transform: translate(0%, -15%);
+  position: relative;
+  bottom: 15%;
+  left: 40%;
   z-index: 10;
 }
 
-.indicator::before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.8;
+.indicatorRotatingWrapper {
+  transform: rotate(var(--rotation));
+  transition: transform 0.4s ease-in-out;
 }
