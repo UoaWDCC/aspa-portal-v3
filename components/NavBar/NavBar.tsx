@@ -109,10 +109,10 @@ export function NavBar({ links }: NavBarProps) {
                 transitionDuration={400}
               >
                 <div
-                  className={styles.indicatorRotatingWrapper}
-                  style={{ '--rotation': `${rotation}deg` } as React.CSSProperties}
+                  className={styles.indicator}
+                  style={{ "--rotation": `${rotation}deg` } as React.CSSProperties}
                 >
-                  <div className={styles.indicator}>8</div>
+                  8
                 </div>
               </FloatingIndicator>
             </div>
