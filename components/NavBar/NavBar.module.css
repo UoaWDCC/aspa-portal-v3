@@ -1,12 +1,12 @@
 .header {
-    background-color: var(--mantine-color-aspa-orange-5);
+    background-color: #717882;
 }
 
 .root {
     position: relative;
     width: fit-content;
     border-radius: var(--mantine-radius-md);
-    height: 8vw;
+    height: 5vw;
 }
 
 .control {
@@ -16,10 +16,11 @@
     font-size: var(--mantine-font-size-sm);
     transition: color 100ms ease;
     font-weight: 500;
-    font-size: 2vw;
-    width: 10vw;
-    height: 10vw;
+    font-size: 1.5vw;
+    width: 8vw;
+    height: 5vw;
     text-align: center;
+    padding-top: 2%;
 
     @mixin hover {
         font-weight: 1000;
@@ -35,30 +36,40 @@
     z-index: 1;
 }
 
-.indicator {
-    background: black;
-    border-radius: 50%;
-    width: 60;
-    height: 60;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    transform: translateX(-50%);
-    position: absolute;
-    top: 20px; 
-    transform: translateX(-50%);
-    z-index: 10;
+.logoCircle {
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
 }
 
-.indicator:before {
-    content: '';
-    position: absolute;
-    width: 6vw;
-    height: 3vw;
-    background: white;
-    border-radius: 50%;
-    transform: translate(-50%, -0%) rotate(90deg);
+@keyframes roll {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(var(--mantine-indicator-x, 0px)) rotate(360deg);
+  }
 }
+
+.indicator {
+  background: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0.4vw; /* Negative moves it above the text */
+  left: 50%;
+  transform: translateX(-50%) rotate(var(--rotation));
+  transition: transform 0.4s ease-in-out;
+  z-index: 10;
+}
+

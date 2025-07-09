@@ -12,8 +12,9 @@ import { Footer } from "@/components/Footer/Footer";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Contact", href: "/contact" },
   { name: "Events", href: "/events" },
+  { name: "ASPA Team", href: "/contact" },
+  { name: "Profile", href: "/contact" },
 ];
 
 const socialMediaLinks = [
