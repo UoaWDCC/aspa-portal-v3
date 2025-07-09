@@ -79,14 +79,16 @@ export function NavBar({ links }: NavBarProps) {
 
       <AppShell.Header className={styles.header}>
         <Group h="100%" px="md" justify="space-between" style={{ width: "100%" }}>
-          <Link href="/" passHref>
-            <Image
-              src="/aspa_logo.png"
-              alt="ASPA Logo"
-              width={37}
-              height={37}
-              className={styles.logoCircle}
-            />
+          <Link href="/" passHref legacyBehavior>
+            <a onClick={() => handleClick(0)}>
+              <Image
+                src="/aspa_logo.png"
+                alt="ASPA Logo"
+                width={37}
+                height={37}
+                className={styles.logoCircle}
+              />
+            </a>
           </Link>
 
           {/* Right side: burger (mobile) + nav links (desktop) */}
