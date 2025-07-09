@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap'); 
+
+:root {
+  --color-primary: #ebebeb;
+  --color-grey: #717882;
+  --color-lightgrey: #adb2b8;
+  --color-darkgrey: #414750;
+}
+
+.button {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 25px;
+  border-radius: 2.5rem;
+  padding: 0.5em 2.5em;
+  border: none;
+  cursor: pointer;
+  transition: 
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s,
+    border 0.2s;
+  outline: none;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+  display: inline-block;
+}
+
+.grey {
+  background: var(--color-grey);
+  color: var(--color-primary);
+}
+
+
+.lightgrey {
+  background: var(--color-lightgrey);
+  color: var(--color-primary);
+}
+
+.darkgrey {
+  background: var(--color-darkgrey);
+  color: var(--color-primary);
+}
+
+.grey-border {
+  background: var(--color-grey);
+  color: var(--color-primary);
+  border: 3px solid var(--color-primary);
+}
+
+.lightgrey-border {
+  background: var(--color-lightgrey);
+  color: var(--color-primary);
+  border: 3px solid var(--color-primary)
+}
+
+.darkgrey-border {
+  background: var(--color-darkgrey);
+  color: var(--color-primary);
+  border: 3px solid var(--color-primary);
+}
