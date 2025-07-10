@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-type ButtonColor = "grey" | "orange";
+type ButtonColor = "grey" | "orange" | "blue";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: ButtonColor;

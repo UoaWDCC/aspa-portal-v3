@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap'); 
 
 :root {
   --color-primary: #ebebeb;
@@ -8,10 +7,14 @@
   --color-orange: #df8f20;
   --color-lightorange: #f2b57c;
   --color-darkorange: #b76a00;
+  --color-blue: #2070df;
+  --color-lightblue: #7cb8f2;
+  --color-darkblue: #004a7c;
+  
 }
 
 .button {
-  font-family: 'Nova Square', sans-serif;
+  font-family: 'Krungthep', sans-serif;
   color: var(--color-primary);
   padding: 0.75em 1.25em;
   border-radius: 45px;
@@ -37,6 +40,7 @@
   transition: none;
 }
 
+/* ---------------- GREY ---------------- */
 .grey {
   background: var(--color-grey);
 }
@@ -50,6 +54,7 @@
   background: var(--color-darkgrey);
 }
 
+/* ---------------- ORANGE ---------------- */
 .orange {
   background: var(--color-orange)
 }
@@ -61,4 +66,18 @@
 
 .orange:active {
   background: var(--color-darkorange);
+}
+
+/* ---------------- BLUE ---------------- */
+.blue {
+  background: var(--color-blue);
+}
+
+.blue:hover,
+.blue:focus {
+  background: var(--color-lightblue)
+}
+
+.blue:active {
+  background: var(--color-darkblue);
 }
