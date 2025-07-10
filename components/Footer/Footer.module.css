@@ -1,27 +1,142 @@
 .footer {
-    padding: var(--mantine-spacing-md);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: center;
     position: static;
+    justify-content: space-between;
+}
+.footerContent {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.image {
+  border-radius: 50%;
 }
 
-.title {
-    margin-bottom: var(--mantine-spacing-sm);
+.centerLinks a {
+  color: #ebebeb;
+  transition: color 0.3s, background 0.3s;
+  border-radius: 4px;
+  padding: 4px 10px;
+  display: inline-block;
 }
 
-.description {
-    margin-bottom: var(--mantine-spacing-md);
+.centerLinks a:hover,
+.centerLinks a:focus {
+  color: #222;
+  background: #ebebeb;
+}
+
+.centerLinks a:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.centerLinks a:active {
+  color: #ebebeb;
+  background: #444;
+}
+
+.footerRow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 16px;
+}
+
+.topRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+}
+
+.centerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  color: #ebebeb
+}
+
+.socialLinks {
+  display: flex;
+  gap: 12px;
 }
 
 .socialMediaButton {
-    border-radius: 50%;
-    padding: 10px;
-    display: flex;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.socialMediaButton:hover,
+.socialMediaButton:focus {
+  transform: scale(1.08);
+}
+
+.socialMediaButton:active {
+  transform: scale(0.96);
+}
+
+.socialMediaButton:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media (min-width: 750px) {
+  .footerRow {
+    flex-direction: row;
     align-items: center;
+    gap: 0;
+  }
+  .logoContainer {
+    flex: 0 0 auto;
+  }
+  .centerLinks {
+    flex: 1;
+    display: flex;
     justify-content: center;
+    width: auto;
+  }
+  .socialLinks {
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 749px) {
+  .footerRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .logoContainer,
+  .socialLinks {
+    margin-bottom: 0;
+    grid-area: social;
+    justify-self: end;
+  }
+  .centerLinks {
+    grid-area: center;
+    justify-self: stretch;
+    width: 100%;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 393px) {
+  .centerLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    justify-items: center;
+    width: 100%;
+  }
 }

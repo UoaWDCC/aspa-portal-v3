@@ -19,7 +19,15 @@ const links = [
 const socialMediaLinks = [
   { name: "Twitter", icon: "/twitter.svg", href: "https://twitter.com" },
   { name: "Facebook", icon: "/facebook.svg", href: "https://facebook.com" },
-  { name: "Instagram", icon: "/instagram.svg", href: "https://instagram.com" },
+  { name: "Instagram", icon: "/instagram.svg", href: "https://www.instagram.com/aspa.uoa/" },
+  { name: "LinkedIn", icon: "/linkedin.png", href: "https://www.linkedin.com/company/aspa-uoa/" },
+];
+
+const pages = [
+  { title: "Home", route: "/" },
+  { title: "Events", route: "/events" },
+  { title: "ASPA Team", route: "/contact" },
+  { title: "Register/Login", route: "/login-placeholder" },
 ];
 
 export default function RootLayout({ children }: { children: any }) {
@@ -39,7 +47,7 @@ export default function RootLayout({ children }: { children: any }) {
 
           {children}
 
-          <Footer socialMediaLinks={socialMediaLinks} />
+          <Footer socialMediaLinks={socialMediaLinks} pages={pages} />
         </MantineProvider>
       </body>
     </html>
