@@ -11,6 +11,6 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-export const Grey: StoryObj<typeof Button> = {
-  args: { color: "grey", children: "H5 Button" },
+export const TemplateButton: StoryObj<typeof Button> = {
+  args: { color: "orange", children: "Button", outlined: true},
 };

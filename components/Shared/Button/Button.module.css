@@ -5,6 +5,9 @@
   --color-grey: #717882;
   --color-lightgrey: #adb2b8;
   --color-darkgrey: #414750;
+  --color-orange: #df8f20;
+  --color-lightorange: #f2b57c;
+  --color-darkorange: #b76a00;
 }
 
 .button {
@@ -14,18 +17,29 @@
   border-radius: 45px;
   border: none;
   cursor: pointer;
-  transition: 
-    background 0.5s,
-    color 0.5s,
-    box-shadow 0.5s,
-    border 0.5s;
   display: inline-block;
+}
+
+.outlined {
+  outline: 3px solid var(--color-primary);
+}
+
+.button:hover,
+.button:focus {
+  transition: 
+    background 0.4s,
+    color 0.4s,
+    box-shadow 0.4s,
+    border 0.4s;
+}
+
+.button:active {
+  transition: none;
 }
 
 .grey {
   background: var(--color-grey);
 }
-
 
 .grey:hover,
 .grey:focus {
@@ -34,9 +48,17 @@
 
 .grey:active {
   background: var(--color-darkgrey);
-  color: var(--color-primary);
 }
 
-.outline {
-  outline: 3px solid var(--color-primary);
+.orange {
+  background: var(--color-orange)
+}
+
+.orange:hover,
+.orange:focus {
+  background: var(--color-lightorange)
+}
+
+.orange:active {
+  background: var(--color-darkorange);
 }
