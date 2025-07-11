@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner Component Testing should match snapshot 1`] = `
+<DocumentFragment>
+  <style
+    data-mantine-styles="true"
+  >
+    :root{--mantine-font-family: fontFamily;--mantine-font-family-headings: fontFamily;--mantine-color-aspa-orange-0: #fff2e4;--mantine-color-aspa-orange-1: #fbe6d3;--mantine-color-aspa-orange-2: #f0ccaa;--mantine-color-aspa-orange-3: #e5af7e;--mantine-color-aspa-orange-4: #dc9758;--mantine-color-aspa-orange-5: #d78840;--mantine-color-aspa-orange-6: #d68032;--mantine-color-aspa-orange-7: #bd6d24;--mantine-color-aspa-orange-8: #a9611d;--mantine-color-aspa-orange-9: #945212;--mantine-color-aspa-brown-0: #faf5ef;--mantine-color-aspa-brown-1: #f0e8e0;--mantine-color-aspa-brown-2: #e2cdbb;--mantine-color-aspa-brown-3: #d5b192;--mantine-color-aspa-brown-4: #c9996f;--mantine-color-aspa-brown-5: #c38a59;--mantine-color-aspa-brown-6: #c1834d;--mantine-color-aspa-brown-7: #a96f3d;--mantine-color-aspa-brown-8: #986335;--mantine-color-aspa-brown-9: #845429;--mantine-color-aspa-gray-0: #f4f5f5;--mantine-color-aspa-gray-1: #e7e7e7;--mantine-color-aspa-gray-2: #cdcdcd;--mantine-color-aspa-gray-3: #b1b1b1;--mantine-color-aspa-gray-4: #999999;--mantine-color-aspa-gray-5: #8a8a8a;--mantine-color-aspa-gray-6: #838383;--mantine-color-aspa-gray-7: #707071;--mantine-color-aspa-gray-8: #636466;--mantine-color-aspa-gray-9: #52575b;}:root[data-mantine-color-scheme="dark"]{--mantine-color-aspa-orange-text: var(--mantine-color-aspa-orange-4);--mantine-color-aspa-orange-filled: var(--mantine-color-aspa-orange-8);--mantine-color-aspa-orange-filled-hover: var(--mantine-color-aspa-orange-9);--mantine-color-aspa-orange-light: rgba(214, 128, 50, 0.15);--mantine-color-aspa-orange-light-hover: rgba(214, 128, 50, 0.2);--mantine-color-aspa-orange-light-color: var(--mantine-color-aspa-orange-3);--mantine-color-aspa-orange-outline: var(--mantine-color-aspa-orange-4);--mantine-color-aspa-orange-outline-hover: rgba(220, 151, 88, 0.05);--mantine-color-aspa-brown-text: var(--mantine-color-aspa-brown-4);--mantine-color-aspa-brown-filled: var(--mantine-color-aspa-brown-8);--mantine-color-aspa-brown-filled-hover: var(--mantine-color-aspa-brown-9);--mantine-color-aspa-brown-light: rgba(193, 131, 77, 0.15);--mantine-color-aspa-brown-light-hover: rgba(193, 131, 77, 0.2);--mantine-color-aspa-brown-light-color: var(--mantine-color-aspa-brown-3);--mantine-color-aspa-brown-outline: var(--mantine-color-aspa-brown-4);--mantine-color-aspa-brown-outline-hover: rgba(201, 153, 111, 0.05);--mantine-color-aspa-gray-text: var(--mantine-color-aspa-gray-4);--mantine-color-aspa-gray-filled: var(--mantine-color-aspa-gray-8);--mantine-color-aspa-gray-filled-hover: var(--mantine-color-aspa-gray-9);--mantine-color-aspa-gray-light: rgba(131, 131, 131, 0.15);--mantine-color-aspa-gray-light-hover: rgba(131, 131, 131, 0.2);--mantine-color-aspa-gray-light-color: var(--mantine-color-aspa-gray-3);--mantine-color-aspa-gray-outline: var(--mantine-color-aspa-gray-4);--mantine-color-aspa-gray-outline-hover: rgba(153, 153, 153, 0.05);}:root[data-mantine-color-scheme="light"]{--mantine-color-aspa-orange-text: var(--mantine-color-aspa-orange-filled);--mantine-color-aspa-orange-filled: var(--mantine-color-aspa-orange-6);--mantine-color-aspa-orange-filled-hover: var(--mantine-color-aspa-orange-7);--mantine-color-aspa-orange-light: rgba(214, 128, 50, 0.1);--mantine-color-aspa-orange-light-hover: rgba(214, 128, 50, 0.12);--mantine-color-aspa-orange-light-color: var(--mantine-color-aspa-orange-6);--mantine-color-aspa-orange-outline: var(--mantine-color-aspa-orange-6);--mantine-color-aspa-orange-outline-hover: rgba(214, 128, 50, 0.05);--mantine-color-aspa-brown-text: var(--mantine-color-aspa-brown-filled);--mantine-color-aspa-brown-filled: var(--mantine-color-aspa-brown-6);--mantine-color-aspa-brown-filled-hover: var(--mantine-color-aspa-brown-7);--mantine-color-aspa-brown-light: rgba(193, 131, 77, 0.1);--mantine-color-aspa-brown-light-hover: rgba(193, 131, 77, 0.12);--mantine-color-aspa-brown-light-color: var(--mantine-color-aspa-brown-6);--mantine-color-aspa-brown-outline: var(--mantine-color-aspa-brown-6);--mantine-color-aspa-brown-outline-hover: rgba(193, 131, 77, 0.05);--mantine-color-aspa-gray-text: var(--mantine-color-aspa-gray-filled);--mantine-color-aspa-gray-filled: var(--mantine-color-aspa-gray-6);--mantine-color-aspa-gray-filled-hover: var(--mantine-color-aspa-gray-7);--mantine-color-aspa-gray-light: rgba(131, 131, 131, 0.1);--mantine-color-aspa-gray-light-hover: rgba(131, 131, 131, 0.12);--mantine-color-aspa-gray-light-color: var(--mantine-color-aspa-gray-6);--mantine-color-aspa-gray-outline: var(--mantine-color-aspa-gray-6);--mantine-color-aspa-gray-outline-hover: rgba(131, 131, 131, 0.05);}
+  </style>
+  <style
+    data-mantine-styles="classes"
+  >
+    @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+  </style>
+  <div
+    class="m_7485cace mantine-Container-root"
+    data-fluid="true"
+  >
+    <style
+      data-mantine-styles="inline"
+    >
+      .__m__-«r1l»{--grid-gutter:var(--mantine-spacing-xl);}
+    </style>
+    <div
+      class="m_410352e9 mantine-Grid-root __m__-«r1l»"
+    >
+      <div
+        class="m_dee7bd2f mantine-Grid-inner"
+      >
+        <style
+          data-mantine-styles="inline"
+        >
+          .__m__-«r1n»{--col-flex-grow:auto;--col-flex-basis:100%;--col-max-width:100%;}@media(min-width: 48em){.__m__-«r1n»{--col-flex-grow:auto;--col-flex-basis:50%;--col-max-width:50%;}}
+        </style>
+        <div
+          class="m_96bdd299 mantine-Grid-col __m__-«r1n»"
+        >
+          <h1
+            class="title m_8a5d1357 mantine-Title-root"
+            data-order="1"
+            style="--title-fw: var(--mantine-h1-font-weight); --title-lh: var(--mantine-h1-line-height); --title-fz: var(--mantine-h1-font-size);"
+          >
+            ASPA - Auckland Student Pool Association
+          </h1>
+          <p
+            class="mantine-focus-auto text m_b6d8b162 mantine-Text-root"
+          >
+            Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet
+          </p>
+          <div
+            class="m_4081bf90 mantine-Group-root"
+            style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+          >
+            <button
+              class="mantine-focus-auto mantine-active button m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
+              style="--button-color: var(--mantine-color-white);"
+              type="button"
+            >
+              <span
+                class="m_80f1301b mantine-Button-inner"
+              >
+                <span
+                  class="m_811560b9 mantine-Button-label"
+                >
+                  View ASPA Page
+                </span>
+              </span>
+            </button>
+            <p
+              class="mantine-focus-auto group m_b6d8b162 mantine-Text-root"
+            >
+              View ASPA Page
+            </p>
+          </div>
+        </div>
+        <style
+          data-mantine-styles="inline"
+        >
+          .__m__-«r1v»{--col-flex-grow:auto;--col-flex-basis:100%;--col-max-width:100%;}@media(min-width: 48em){.__m__-«r1v»{--col-flex-grow:auto;--col-flex-basis:50%;--col-max-width:50%;}}
+        </style>
+        <div
+          class="m_96bdd299 mantine-Grid-col imageContainer __m__-«r1v»"
+        >
+          <img
+            alt="ASPA Title"
+            class="image hoverUpDown"
+            data-nimg="1"
+            decoding="async"
+            height="0"
+            loading="lazy"
+            src="/aspa_title.svg"
+            style="color: transparent;"
+            width="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
