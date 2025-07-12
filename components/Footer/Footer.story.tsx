@@ -2,10 +2,10 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Footer } from "./Footer";
 
 const socialMediaLinks = [
-  { name: "Twitter", icon: "/twitter.svg", href: "https://twitter.com" },
-  { name: "Facebook", icon: "/facebook.svg", href: "https://facebook.com" },
-  { name: "Instagram", icon: "/instagram.svg", href: "https://www.instagram.com/aspa.uoa/" },
+  { name: "Discord", icon: "/discord.png", href: "https://discord.com" },
   { name: "LinkedIn", icon: "/linkedin.png", href: "https://www.linkedin.com/company/aspa-uoa/" },
+  { name: "Instagram", icon: "/instagram.png", href: "https://www.instagram.com/aspa.uoa/" },
+  { name: "Facebook", icon: "/facebook.png", href: "https://facebook.com" }
 ];
 const pages = [
   { title: "Home", route: "/home" },
