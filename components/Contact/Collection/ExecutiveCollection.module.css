@@ -1,11 +1,9 @@
 .collection {
+  background-color: #000000; /* black */
+  color: black; /* optional: text white for contrast */
+  border-color: #000000;
 }
 
-.title {
-    font-size: 10vw;
-    text-align: center;
-    text-decoration: underline;
-}
 
 @media (min-width: 768px) {
     .title {
@@ -25,3 +23,13 @@
   gap: 24px;
   justify-content: center;
 }
+
+.sectionTitle {
+  margin-bottom: 0.5vw;
+  margin-top: 0.5vw;
+  background-color: black;
+  color: white;
+}
+
+
+

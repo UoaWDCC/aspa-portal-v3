@@ -6,6 +6,7 @@ import styles from "./ExecutiveCollection.module.css";
 
 export interface ExecutiveCollection {
   executives: Executive[];
+  sectionTitle?: string;
   badgeColor?: string;
   gutter?: "xs" | "sm" | "md" | "lg" | "xl";
   radius?: "xs" | "sm" | "md" | "lg" | "xl";
@@ -23,6 +24,7 @@ export interface ExecutiveCollection {
 
 export function ExecutiveCollection({
   executives,
+  sectionTitle,
   badgeColor = "#d78840",
   gutter = "lg",
   radius = "xl",
@@ -56,9 +58,11 @@ export function ExecutiveCollection({
           pl={innerPaddingLeft}
           pr={innerPaddingRight}
         >
-          <Title className={styles.title} pt="1vw" pb="2vw">
-            Meet The Team
-          </Title>
+          {sectionTitle && (
+            <Title order={2} ta="center" className={styles.sectionTitle}>
+              {sectionTitle}
+            </Title>
+          )}
           <Grid gutter={gutter}>
             {executives.map((executive, index) => (
               <Grid.Col
