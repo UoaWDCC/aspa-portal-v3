@@ -5,6 +5,7 @@
     padding-right: 30px;
     text-align: center;
     position: static;
+    display: flex;
     justify-content: space-between;
 }
 .footerContent {
@@ -29,7 +30,7 @@
 
 .centerLinks a:hover,
 .centerLinks a:focus {
-  color: #222;
+  color: #1a1a1a;
   background: #ebebeb;
 }
 
@@ -45,27 +46,16 @@
 
 .footerRow {
   display: flex;
-  flex-direction: column;
   align-items: stretch;
-  width: 100%;
-  gap: 16px;
-}
-
-.topRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   gap: 16px;
 }
 
 .centerLinks {
   display: flex;
-  justify-content: center;
   gap: 24px;
   width: 100%;
-  color: #ebebeb
+  color: #ebebeb;
 }
 
 .socialLinks {
@@ -114,20 +104,28 @@
 
 @media (max-width: 749px) {
   .footerRow {
-    flex-direction: column;
+    display: grid;
+    grid-template-areas:
+      "logo social"
+      "center center";
+    grid-template-columns: 1fr auto;
     gap: 16px;
+    align-items: center;
   }
-  .logoContainer,
+  .logoContainer {
+    grid-area: logo;
+    justify-self: start;
+  }
   .socialLinks {
-    margin-bottom: 0;
     grid-area: social;
     justify-self: end;
   }
   .centerLinks {
     grid-area: center;
-    justify-self: stretch;
-    width: 100%;
     margin-top: 12px;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
   }
 }
 
