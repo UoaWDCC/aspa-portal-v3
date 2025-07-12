@@ -24,7 +24,7 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
         <div className={styles.cardFront}>
           <Box
             p="md"
-            radius="md"
+            radius="xl"
             style={{ display: "flex", alignItems: "center", gap: "1rem" }}
           >
             <Image
