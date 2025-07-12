@@ -1,47 +1,56 @@
 "use client";
-import { Card, Image, Text, Title, Group, Badge } from "@mantine/core";
-import styles from "./ExecutiveCard.module.css";
-
+import { useState } from "react";
+import { Image, Text, Box } from "@mantine/core";
+import styles from "./ExecutiveCardDisplay.module.css";
 
 export interface Executive {
   name: string;
   title: string;
   description: string;
+  imageUrl: string;
+  backContent: string; // new field for back side content
 }
 
-export interface ExecutiveCard {
+export interface ExecutiveCardProps {
   executive: Executive;
-  badgeColor?: string;
 }
 
-export function ExecutiveCard({
-  executive,
-  badgeColor = "#d78840",
-}: ExecutiveCard) {
+export function ExecutiveCard({ executive }: ExecutiveCardProps) {
+  const [flipped, setFlipped] = useState(false);
+
   return (
-    <Card
-      shadow="sm"
-      padding="lg"
-      radius="xl"
-      withBorder={true}
-      style={{ maxWidth: "100%" }}
-      className={styles.card}
-    >
-      <Card.Section>
-        <Image
-          src="https://media.istockphoto.com/id/96333863/photo/retro-dude.jpg?s=612x612&w=0&k=20&c=L9_H1c8MP41PGEcg36VEakeMoVC8uf1Jq5hs-NErQ0k="
-          alt={executive.name}
-        />
-      </Card.Section>
-      <Group justify="space-between" mt="md" mb="xs">
-        <Title order={2} mt="md" mb="md">
-          {executive.name}
-        </Title>
-        <Badge size="md" color={badgeColor}>
-          {executive.title}
-        </Badge>
-      </Group>
-      <Text size="md">{executive.description}</Text>
-    </Card>
+    <div className={styles.cardContainer} onClick={() => setFlipped(!flipped)}>
+      <div className={`${styles.card} ${flipped ? styles.flipped : ""}`}>
+        <div className={styles.cardFront}>
+          <Box
+            p="md"
+            radius="md"
+            style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+          >
+            <Image
+              src={executive.imageUrl}
+              alt={executive.name}
+              width={120}
+              height={120}
+              radius="md"
+            />
+            <Box>
+              <Text fw={700} size="lg">
+                {executive.name}
+              </Text>
+              <Text c="dimmed" size="sm" mb={4}>
+                {executive.title}
+              </Text>
+              <Text size="sm">{executive.description}</Text>
+            </Box>
+          </Box>
+        </div>
+        <div className={styles.cardBack}>
+          <Box p="md" style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Text size="sm">{executive.backContent}</Text>
+          </Box>
+        </div>
+      </div>
+    </div>
   );
 }
