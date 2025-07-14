@@ -27,8 +27,7 @@
   outline: 3px solid var(--color-primary);
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
   transition: 
     background 0.4s,
     color 0.4s,
@@ -45,8 +44,7 @@
   background: var(--color-grey);
 }
 
-.grey:hover,
-.grey:focus {
+.grey:hover {
   background: var(--color-lightgrey);
 }
 
@@ -59,8 +57,7 @@
   background: var(--color-orange)
 }
 
-.orange:hover,
-.orange:focus {
+.orange:hover {
   background: var(--color-lightorange)
 }
 
@@ -73,8 +70,7 @@
   background: var(--color-blue);
 }
 
-.blue:hover,
-.blue:focus {
+.blue:hover {
   background: var(--color-lightblue)
 }
 

@@ -3,10 +3,7 @@ import { Button } from "./Button";
 
 const meta: Meta<typeof Button> = {
   title: "Shared/Button",
-  component: Button,
-  argTypes: {
-    onClick: { action: "clicked" },
-  },
+  component: Button
 };
 
 export default meta;
