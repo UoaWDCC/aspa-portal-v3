@@ -36,3 +36,7 @@
 .cardBack {
   transform: rotateY(180deg);
 }
+
+.positionText {
+  color: #d6d6d6;
+}
