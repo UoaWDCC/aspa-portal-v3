@@ -3,11 +3,11 @@ import { Button } from "./Button";
 
 const meta: Meta<typeof Button> = {
   title: "Shared/Button",
-  component: Button
+  component: Button,
 };
 
 export default meta;
 
 export const TemplateButton: StoryObj<typeof Button> = {
-  args: { color: "grey", children: "Button", outlined: true},
+  args: { color: "grey", children: "Button", outlined: true },
 };

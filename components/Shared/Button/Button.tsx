@@ -1,5 +1,8 @@
 import styles from "./Button.module.css";
-import { Button as MantineButton, ButtonProps as MantineButtonProps } from "@mantine/core";
+import {
+  Button as MantineButton,
+  ButtonProps as MantineButtonProps,
+} from "@mantine/core";
 
 type ButtonColor = "grey" | "orange" | "blue";
 
@@ -10,10 +13,10 @@ interface ButtonProps extends MantineButtonProps {
 }
 
 export function Button({
-  color = "grey", 
-  outlined = false, 
-  children, 
-  className = "", 
+  color = "grey",
+  outlined = false,
+  children,
+  className = "",
   ...props
 }: ButtonProps) {
   const colorClass = styles[color];
@@ -27,4 +30,4 @@ export function Button({
       {children}
     </MantineButton>
   );
-};
+}
