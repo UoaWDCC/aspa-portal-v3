@@ -7,9 +7,7 @@ describe("Banner Component Testing", () => {
     title:
       "ASPA - Auckland Student Pool Association of the University of Auckland, New Zealand, Waipapa Taumata Rau",
     description:
-      "Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur",
-    buttonText:
-      "View Auckland Student Pool Association of the the University of Auckland Page",
+      "Here you can register to become a member of the club, log in to your account, and sign up for club events. Check out the list of current events to see what we’ve planned for the future, or have a look at our past events to see what we’re all about and some of the highlights of past years.",
     groupText:
       "Button to view the Auckland Student Pool Association of the the University of Auckland Page",
     titleImageSrc: "/aspa_title.svg",
@@ -18,8 +16,7 @@ describe("Banner Component Testing", () => {
   const bannerProps: BannerProps = {
     title: "ASPA - Auckland Student Pool Association",
     description:
-      "Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet",
-    buttonText: "View ASPA Page",
+      "Here you can register to become a member of the club, log in to your account, and sign up for club events. Check out the list of current events to see what we’ve planned for the future, or have a look at our past events to see what we’re all about and some of the highlights of past years.",
     groupText: "Click Here To View ASPA Page",
     titleImageSrc: "/aspa_title.svg",
     titleImageAlt: "ASPA Title",
@@ -34,7 +31,6 @@ describe("Banner Component Testing", () => {
     render(<Banner {...longBannerProps} />);
     expect(screen.getByText(longBannerProps.title)).toBeInTheDocument();
     expect(screen.getByText(longBannerProps.description)).toBeInTheDocument();
-    expect(screen.getByText(longBannerProps.buttonText)).toBeInTheDocument();
     expect(screen.getByText(longBannerProps.groupText)).toBeInTheDocument();
     const img = screen.getByAltText(longBannerProps.titleImageAlt);
     expect(img).toBeInTheDocument();
@@ -59,7 +55,6 @@ describe("Banner Component Testing", () => {
 
     expect(screen.getByText(bannerProps.title)).toBeInTheDocument();
     expect(screen.getByText(bannerProps.description)).toBeInTheDocument();
-    expect(screen.getByText(bannerProps.buttonText)).toBeInTheDocument();
     expect(screen.getByText(bannerProps.groupText)).toBeInTheDocument();
     const img = screen.getByAltText(bannerProps.titleImageAlt);
     expect(img).toBeInTheDocument();
@@ -69,15 +64,13 @@ describe("Banner Component Testing", () => {
   it("should match snapshot", () => {
     const title = "ASPA - Auckland Student Pool Association";
     const description =
-      "Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet";
-    const buttonText = "View ASPA Page";
+      "Here you can register to become a member of the club, log in to your account, and sign up for club events. Check out the list of current events to see what we’ve planned for the future, or have a look at our past events to see what we’re all about and some of the highlights of past years.";
     const groupText = "View ASPA Page";
     const imageAlt = "ASPA Title";
     const { asFragment } = render(
       <Banner
         title={title}
         description={description}
-        buttonText={buttonText}
         groupText={groupText}
         titleImageSrc="/aspa_title.svg"
         titleImageAlt={imageAlt}

@@ -1,12 +1,20 @@
 "use client";
-import { Container, Grid, Title, Text, Button, Group } from "@mantine/core";
+import {
+  Container,
+  Grid,
+  Title,
+  Text,
+  Button,
+  Group,
+  Stack,
+} from "@mantine/core";
 import Image from "next/image";
 import styles from "./Banner.module.css";
 
 export interface BannerProps {
   title: string;
   description: string;
-  buttonText: string;
+  secondaryDescription?: string;
   groupText: string;
   titleImageSrc: string;
   titleImageAlt: string;
@@ -19,8 +27,7 @@ export interface BannerProps {
 export function Banner({
   title,
   description,
-  buttonText,
-  groupText,
+  secondaryDescription = "",
   titleImageSrc,
   titleImageAlt,
   paddingTop = "",
@@ -36,23 +43,32 @@ export function Banner({
       pl={paddingleft}
       pr={paddingRight}
     >
-      <Grid gutter="xl">
-        <Grid.Col span={{ base: 12, sm: 6 }}>
-          <Title className={styles.title}>{title}</Title>
-          <Text className={styles.text}>{description}</Text>
-          <Group align="center">
-            <Button className={styles.button}>{buttonText}</Button>
-            <Text className={styles.group}>{groupText}</Text>
-          </Group>
+      <Grid gutter="6vw">
+        <Grid.Col span={{ base: 12, md: 5.5}}>
+          <Stack h="100%" justify="space-between" className={styles.IntroductionStyles}>
+            <Title className={styles.title}>{title}</Title>
+            <Text className={styles.text}>{description}</Text>
+            <Text className={styles.text}><b>{secondaryDescription}</b></Text>
+          </Stack>
         </Grid.Col>
-        <Grid.Col span={{ base: 12, sm: 6 }} className={styles.imageContainer}>
-          <Image
-            src={titleImageSrc}
-            alt={titleImageAlt}
-            width={0}
-            height={0}
-            className={`${styles.image} ${styles.hoverUpDown}`}
-          />
+        <Grid.Col span={{ base: 12, md: 6.5}}>
+          <Stack h="100%" align="center" gap="xl" justify="space-between">
+            <Image
+              src={titleImageSrc}
+              alt={titleImageAlt}
+              width={0}
+              height={0}
+              className={`${styles.image}`}
+            />
+            <Group w="100%" justify="space-between" className={styles.buttonGroup}>
+              <Button className={styles.button}>LOGIN</Button>
+              <Button className={styles.button}>REGISTER</Button>
+            </Group>
+          </Stack>
+        </Grid.Col>
+        <Grid.Col className={`${styles.IntroductionStyles} ${styles.popup}`}>
+          <Text className={styles.text}>{description}</Text>
+          <Text className={styles.text}><b>{secondaryDescription}</b></Text>
         </Grid.Col>
       </Grid>
     </Container>

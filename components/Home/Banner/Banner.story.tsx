@@ -7,7 +7,6 @@ const meta: Meta<typeof Banner> = {
   argTypes: {
     title: { control: "text" },
     description: { control: "text" },
-    buttonText: { control: "text" },
     groupText: { control: "text" },
     titleImageSrc: { control: "text" },
     titleImageAlt: { control: "text" },
@@ -20,8 +19,7 @@ export const Default: StoryObj<typeof Banner> = {
   args: {
     title: "Welcome to Auckland Student Pool Association!",
     description:
-      "Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur",
-    buttonText: "Current Events",
+      "Here you can register to become a member of the club, log in to your account, and sign up for club events. Check out the list of current events to see what we’ve planned for the future, or have a look at our past events to see what we’re all about and some of the highlights of past years.",
     groupText: "dolor sit amet, consectetur",
     titleImageSrc: "/aspa_title.svg",
     titleImageAlt: "ASPA Title",
