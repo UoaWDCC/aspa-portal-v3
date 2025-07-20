@@ -39,7 +39,7 @@ export function NavBar({ links }: NavBarProps) {
   };
 
   const controls = links.map((link, index) => (
-    <Link key={index} href={link.href} passHref legacyBehavior>
+    <Link key={index} href={link.href} passHref>
       <UnstyledButton
         key={index}
         className={styles.control}
