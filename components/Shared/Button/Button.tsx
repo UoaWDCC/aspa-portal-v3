@@ -4,27 +4,27 @@ import {
   ButtonProps as MantineButtonProps,
 } from "@mantine/core";
 
-type ButtonColor = "grey" | "orange" | "blue";
+type ButtonSize = "h1" | "h2" | "h3" | "h4" | "h5";
 
 interface ButtonProps extends MantineButtonProps {
-  color?: ButtonColor;
   outlined?: boolean;
+  variant?: ButtonSize;
   children: React.ReactNode;
 }
 
 export function Button({
-  color = "grey",
   outlined = false,
+  variant = "h4",
   children,
   className = "",
   ...props
 }: ButtonProps) {
-  const colorClass = styles[color];
   const outlineClass = outlined ? styles.outlined : "";
+  const sizeClass = styles[variant];
   return (
     <MantineButton
       type="button"
-      className={`${styles.button} ${colorClass} ${outlineClass} ${className}`}
+      className={`${styles.button} ${sizeClass} ${outlineClass} ${className}`}
       {...props}
     >
       {children}

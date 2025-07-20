@@ -1,22 +1,17 @@
-
-:root {
-  --color-primary: #ebebeb;
-  --color-grey: #717882;
-  --color-lightgrey: #adb2b8;
-  --color-darkgrey: #414750;
-  --color-orange: #df8f20;
-  --color-lightorange: #f2b57c;
-  --color-darkorange: #b76a00;
-  --color-blue: #2070df;
-  --color-lightblue: #7cb8f2;
-  --color-darkblue: #004a7c;
-  
-}
+.h1 { font-size: var(--font-size-h1)}
+.h2 { font-size: var(--font-size-h2)}
+.h3 { font-size: var(--font-size-h3)}
+.h4 { font-size: var(--font-size-h4)}
+.h5 { font-size: var(--font-size-h5)}
 
 .button {
-  font-family: 'Krungthep', sans-serif;
-  color: var(--color-primary);
-  padding: 0.75em 1.25em;
+  font-family: var(--font-heading);
+  font-weight: 500; /* thin */
+  box-sizing: content-box;
+  text-transform: uppercase;
+  background: var(--aspa-grey);
+  color: var(--aspa-white);
+  padding: 0.4em 1.2em;
   border-radius: 45px;
   border: none;
   cursor: pointer;
@@ -24,10 +19,11 @@
 }
 
 .outlined {
-  outline: 3px solid var(--color-primary);
+  outline: 3px solid var(--aspa-white);
 }
 
 .button:hover {
+  background: #adb2b8; /* Light Grey */
   transition: 
     background 0.4s,
     color 0.4s,
@@ -37,43 +33,5 @@
 
 .button:active {
   transition: none;
-}
-
-/* ---------------- GREY ---------------- */
-.grey {
-  background: var(--color-grey);
-}
-
-.grey:hover {
-  background: var(--color-lightgrey);
-}
-
-.grey:active {
-  background: var(--color-darkgrey);
-}
-
-/* ---------------- ORANGE ---------------- */
-.orange {
-  background: var(--color-orange)
-}
-
-.orange:hover {
-  background: var(--color-lightorange)
-}
-
-.orange:active {
-  background: var(--color-darkorange);
-}
-
-/* ---------------- BLUE ---------------- */
-.blue {
-  background: var(--color-blue);
-}
-
-.blue:hover {
-  background: var(--color-lightblue)
-}
-
-.blue:active {
-  background: var(--color-darkblue);
+  background: #414750; /* Dark Grey */
 }
