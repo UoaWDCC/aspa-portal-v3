@@ -32,6 +32,14 @@
   height: auto;
 }
 
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 8vw;
@@ -42,7 +50,7 @@
   }
 
   .text {
-    font-size: 3vw;
+    font-size: 5.1vw;
   }
 
   .buttonGroup {
@@ -54,6 +62,14 @@
     width: 35vw;
     height: 8vw;
     font-size: 3vw;
+  }
+  
+  .hidden {
+    display: block;
+  }
+
+  .show {
+    display: none;
   }
   
 }

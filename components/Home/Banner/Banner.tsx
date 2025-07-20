@@ -47,8 +47,8 @@ export function Banner({
         <Grid.Col span={{ base: 12, md: 5.5}}>
           <Stack h="100%" justify="space-between" className={styles.IntroductionStyles}>
             <Title className={styles.title}>{title}</Title>
-            <Text className={styles.text}>{description}</Text>
-            <Text className={styles.text}><b>{secondaryDescription}</b></Text>
+            <Text className={`${styles.text} ${styles.show}`} >{description}</Text>
+            <Text className={`${styles.text} ${styles.show}`}><b>{secondaryDescription}</b></Text>
           </Stack>
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 6.5}}>
@@ -66,7 +66,7 @@ export function Banner({
             </Group>
           </Stack>
         </Grid.Col>
-        <Grid.Col className={`${styles.IntroductionStyles} ${styles.popup}`}>
+        <Grid.Col className={`${styles.IntroductionStyles} ${styles.hidden}`}>
           <Text className={styles.text}>{description}</Text>
           <Text className={styles.text}><b>{secondaryDescription}</b></Text>
         </Grid.Col>
