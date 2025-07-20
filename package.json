@@ -28,6 +28,7 @@
     "@payloadcms/db-postgres": "^3.40.0",
     "@payloadcms/next": "^3.40.0",
     "@payloadcms/richtext-lexical": "^3.40.0",
+    "@remixicon/react": "^4.6.0",
     "@tabler/icons-react": "^3.31.0",
     "embla-carousel-react": "^8.6.0",
     "graphql": "^16.11.0",

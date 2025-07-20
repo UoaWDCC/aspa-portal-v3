@@ -3,8 +3,9 @@ import { NavBar } from "./NavBar";
 
 const links = [
   { name: "Home", href: "/home" },
-  { name: "Contact", href: "/contact" },
   { name: "Events", href: "/events" },
+  { name: "ASPA Team", href: "/contact" },
+  { name: "Profile", href: "/contact" },
 ];
 
 const meta: Meta<typeof NavBar> = {
