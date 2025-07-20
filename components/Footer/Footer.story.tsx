@@ -3,9 +3,17 @@ import { Footer } from "./Footer";
 
 const socialMediaLinks = [
   { name: "Discord", icon: "/discord.png", href: "https://discord.com" },
-  { name: "LinkedIn", icon: "/linkedin.png", href: "https://www.linkedin.com/company/aspa-uoa/" },
-  { name: "Instagram", icon: "/instagram.png", href: "https://www.instagram.com/aspa.uoa/" },
-  { name: "Facebook", icon: "/facebook.png", href: "https://facebook.com" }
+  {
+    name: "LinkedIn",
+    icon: "/linkedin.png",
+    href: "https://www.linkedin.com/company/aspa-uoa/",
+  },
+  {
+    name: "Instagram",
+    icon: "/instagram.png",
+    href: "https://www.instagram.com/aspa.uoa/",
+  },
+  { name: "Facebook", icon: "/facebook.png", href: "https://facebook.com" },
 ];
 const pages = [
   { title: "Home", route: "/home" },

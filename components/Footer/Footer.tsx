@@ -30,7 +30,10 @@ export function Footer({
 }: FooterProps) {
   return (
     <AppShell>
-      <AppShell.Footer className={styles.footer} style={{ backgroundColor: footerBg }}>
+      <AppShell.Footer
+        className={styles.footer}
+        style={{ backgroundColor: footerBg }}
+      >
         <div className={styles.footerRow}>
           <div className={styles.logoContainer}>
             <Image
