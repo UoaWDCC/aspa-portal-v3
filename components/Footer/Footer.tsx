@@ -1,12 +1,12 @@
 import { AppShell, UnstyledButton } from "@mantine/core";
 import Image from "next/image";
-import { 
+import {
   RiFacebookFill as FacebookFillIcon,
-  RiTwitterXFill as TwitterXFillIcon, 
-  RiInstagramFill as InstagramFillIcon, 
+  RiTwitterXFill as TwitterXFillIcon,
+  RiInstagramFill as InstagramFillIcon,
   RiLinkedinFill as LinkedinFillIcon,
   RiYoutubeFill as YoutubeFillIcon,
-  RiDiscordFill as DiscordFillIcon
+  RiDiscordFill as DiscordFillIcon,
 } from "@remixicon/react";
 import styles from "./Footer.module.css";
 
@@ -59,7 +59,7 @@ export function Footer({
           <div className={styles.socialLinks}>
             {socialMediaLinks.map((link, index) => {
               const IconComponent = iconMap[link.icon as keyof typeof iconMap];
-              
+
               if (!IconComponent) {
                 console.warn(`Icon "${link.icon}" not found in iconMap`);
                 return null;
@@ -74,7 +74,7 @@ export function Footer({
                   title={`Visit our ${link.name} page`}
                   className={styles.socialMediaButton}
                 >
-                  <IconComponent 
+                  <IconComponent
                     size={iconSize}
                     aria-hidden="true" // Icon is decorative, button has aria-label
                   />

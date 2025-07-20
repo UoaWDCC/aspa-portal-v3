@@ -23,9 +23,17 @@ const links = [
 
 const socialMediaLinks = [
   { name: "Discord", icon: "discord", href: "https://discord.com" },
-  { name: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/company/aspa-uoa/" },
-  { name: "Instagram", icon: "instagram", href: "https://www.instagram.com/aspa.uoa/" },
-  { name: "Facebook", icon: "facebook", href: "https://facebook.com" }
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    href: "https://www.linkedin.com/company/aspa-uoa/",
+  },
+  {
+    name: "Instagram",
+    icon: "instagram",
+    href: "https://www.instagram.com/aspa.uoa/",
+  },
+  { name: "Facebook", icon: "facebook", href: "https://facebook.com" },
 ];
 
 export default function RootLayout({ children }: { children: any }) {
