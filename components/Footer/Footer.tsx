@@ -1,32 +1,41 @@
-import { AppShell, Group, UnstyledButton, Anchor, Stack } from "@mantine/core";
+import { AppShell, UnstyledButton } from "@mantine/core";
 import Image from "next/image";
+import { 
+  RiFacebookFill as FacebookFillIcon,
+  RiTwitterXFill as TwitterXFillIcon, 
+  RiInstagramFill as InstagramFillIcon, 
+  RiLinkedinFill as LinkedinFillIcon,
+  RiYoutubeFill as YoutubeFillIcon,
+  RiDiscordFill as DiscordFillIcon
+} from "@remixicon/react";
 import styles from "./Footer.module.css";
 
 interface SocialMediaLink {
   name: string;
-  icon: string;
+  icon: string; // This will now be the icon key instead of image path
   href: string;
-}
-
-interface Page {
-  title: string;
-  route: string;
 }
 
 interface FooterProps {
   socialMediaLinks: SocialMediaLink[];
   footerBg?: string;
-  socialMediaImageWidth?: number;
-  socialMediaImageHeight?: number;
-  pages: Page[];
+  iconSize?: number; // Changed from separate width/height to single size
 }
+
+// Icon mapping object
+const iconMap = {
+  facebook: FacebookFillIcon,
+  twitter: TwitterXFillIcon,
+  instagram: InstagramFillIcon,
+  linkedin: LinkedinFillIcon,
+  youtube: YoutubeFillIcon,
+  discord: DiscordFillIcon,
+} as const;
 
 export function Footer({
   socialMediaLinks,
   footerBg = "#717882",
-  socialMediaImageWidth = 40,
-  socialMediaImageHeight = 40,
-  pages,
+  iconSize = 24, // Standard accessible size
 }: FooterProps) {
   return (
     <AppShell>
@@ -44,32 +53,34 @@ export function Footer({
               className={styles.image}
             />
           </div>
-          <div className={styles.centerLinks}>
-            {pages.map((page, index) => (
-              <Anchor key={index} href={page.route} className={styles.link}>
-                {page.title}
-              </Anchor>
-            ))}
+          <div>
+            <></>
           </div>
           <div className={styles.socialLinks}>
-            {socialMediaLinks.map((link, index) => (
-              <UnstyledButton
-                key={index}
-                onClick={() => window.open(link.href, "_blank")}
-                rel="noopener noreferrer"
-                aria-label={link.name}
-                title={link.name}
-                className={styles.socialMediaButton}
-              >
-                <Image
-                  src={link.icon}
-                  alt={link.name}
-                  width={socialMediaImageWidth}
-                  height={socialMediaImageHeight}
-                  className={styles.image}
-                />
-              </UnstyledButton>
-            ))}
+            {socialMediaLinks.map((link, index) => {
+              const IconComponent = iconMap[link.icon as keyof typeof iconMap];
+              
+              if (!IconComponent) {
+                console.warn(`Icon "${link.icon}" not found in iconMap`);
+                return null;
+              }
+
+              return (
+                <UnstyledButton
+                  key={index}
+                  onClick={() => window.open(link.href, "_blank")}
+                  rel="noopener noreferrer"
+                  aria-label={`Visit our ${link.name} page`}
+                  title={`Visit our ${link.name} page`}
+                  className={styles.socialMediaButton}
+                >
+                  <IconComponent 
+                    size={iconSize}
+                    aria-hidden="true" // Icon is decorative, button has aria-label
+                  />
+                </UnstyledButton>
+              );
+            })}
           </div>
         </div>
       </AppShell.Footer>

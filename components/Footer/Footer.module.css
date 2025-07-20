@@ -20,30 +20,6 @@
   border-radius: 50%;
 }
 
-.centerLinks a {
-  color: #ebebeb;
-  transition: color 0.3s, background 0.3s;
-  border-radius: 4px;
-  padding: 4px 10px;
-  display: inline-block;
-}
-
-.centerLinks a:hover,
-.centerLinks a:focus {
-  color: #1a1a1a;
-  background: #ebebeb;
-}
-
-.centerLinks a:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.centerLinks a:active {
-  color: #ebebeb;
-  background: #444;
-}
-
 .footerRow {
   display: flex;
   align-items: stretch;
