@@ -29,6 +29,7 @@ export function NavBar({ links }: NavBarProps) {
   const pathname = usePathname();
 
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null);
+
   const [controlsRefs, setControlsRefs] = useState<
     Record<string, HTMLButtonElement | null>
   >({});
