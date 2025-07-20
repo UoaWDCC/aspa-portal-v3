@@ -9,7 +9,8 @@ export default function ContactPage() {
     {
       name: "Johnny Shen",
       title: "President",
-      description: "Leads the team with a strong vision and strategy. Tap to see more.",
+      description:
+        "Leads the team with a strong vision and strategy. Tap to see more.",
       imageUrl: "/images/johnny.jpg",
       backContent: "Johnny has been leading the team since 2020.",
     },
@@ -20,7 +21,7 @@ export default function ContactPage() {
       imageUrl: "/images/ryan.jpg",
       backContent: "Ryan has a background in logistics and leadership.",
     },
-        {
+    {
       name: "Amado Manaois III",
       title: "Secretary",
       description: "Leads the team with a strong vision and strategy.",
@@ -34,7 +35,7 @@ export default function ContactPage() {
       imageUrl: "/images/Ping.jpg",
       backContent: "Ping has a background in logistics and leadership.",
     },
-        {
+    {
       name: "Sky Zhang",
       title: "Senior Advisor",
       description: "Leads the team with a strong vision and strategy.",
@@ -109,9 +110,21 @@ export default function ContactPage() {
   ]);
 
   return (
-    <div style={{ paddingTop: "180px",  backgroundColor: "#000000ff", paddingBottom: "30px" }}>
-      <ExecutiveCollection executives={mainExecs} sectionTitle="Meet The Team" />
-      <ExecutiveCollection executives={marketingExecs} sectionTitle="Marketing" />
+    <div
+      style={{
+        paddingTop: "180px",
+        backgroundColor: "#000000ff",
+        paddingBottom: "30px",
+      }}
+    >
+      <ExecutiveCollection
+        executives={mainExecs}
+        sectionTitle="Meet The Team"
+      />
+      <ExecutiveCollection
+        executives={marketingExecs}
+        sectionTitle="Marketing"
+      />
       <ExecutiveCollection executives={eventsExecs} sectionTitle="Events" />
       <ExecutiveCollection executives={coachExecs} sectionTitle="Coach" />
     </div>

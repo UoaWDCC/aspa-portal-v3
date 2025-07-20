@@ -22,7 +22,11 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
     <div className={styles.cardContainer} onClick={() => setFlipped(!flipped)}>
       <div className={`${styles.card} ${flipped ? styles.flipped : ""}`}>
         <div className={styles.cardFront}>
-          <Box p="md" radius="xl" style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          <Box
+            p="md"
+            radius="xl"
+            style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+          >
             <Image
               src={executive.imageUrl}
               alt={executive.name}
@@ -42,7 +46,15 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
           </Box>
         </div>
         <div className={styles.cardBack}>
-          <Box p="md" style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Box
+            p="md"
+            style={{
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Text size="sm">{executive.backContent}</Text>
           </Box>
         </div>
