@@ -2612,9 +2612,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ianvs/prettier-plugin-sort-imports@npm:^4.4.1":
-  version: 4.4.2
-  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.4.2"
+"@ianvs/prettier-plugin-sort-imports@npm:^4.5.1":
+  version: 4.5.1
+  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.5.1"
   dependencies:
     "@babel/generator": "npm:^7.26.2"
     "@babel/parser": "npm:^7.26.2"
@@ -2622,12 +2622,15 @@ __metadata:
     "@babel/types": "npm:^7.26.0"
     semver: "npm:^7.5.2"
   peerDependencies:
+    "@prettier/plugin-oxc": ^0.0.4
     "@vue/compiler-sfc": 2.7.x || 3.x
     prettier: 2 || 3 || ^4.0.0-0
   peerDependenciesMeta:
+    "@prettier/plugin-oxc":
+      optional: true
     "@vue/compiler-sfc":
       optional: true
-  checksum: 10c0/98f3bf00d4e02af561c4dee52aabc9d6be3549c7d080ab876bbcdde31c160af1775263815164df2f426fe44ee6b22c9cccbd643dad6b299b99ce4fa134c07996
+  checksum: 10c0/3645a0bb85aa155b755ff4ae16b753139e7813d08e1f40b07b8f69a99b9829c2d8dbf1dbb4f00817240fed0dab3742a6110f6186adf233a2125aec83260a57ae
   languageName: node
   linkType: hard
 
@@ -5749,7 +5752,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@eslint/js": "npm:^9.23.0"
-    "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.1"
+    "@ianvs/prettier-plugin-sort-imports": "npm:^4.5.1"
     "@mantine/carousel": "npm:^8.0.1"
     "@mantine/core": "npm:8.0.1"
     "@mantine/hooks": "npm:8.0.1"
