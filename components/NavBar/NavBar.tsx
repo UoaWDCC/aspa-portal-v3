@@ -11,7 +11,7 @@ import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 
 interface Link {
   name: string;
@@ -61,7 +61,7 @@ export function NavBar({ links }: NavBarProps) {
 
   // Update active state when pathname changes
   useEffect(() => {
-    const currentIndex = links.findIndex(link => link.href === pathname);
+    const currentIndex = links.findIndex((link) => link.href === pathname);
     if (currentIndex !== -1) {
       setActive(currentIndex);
     }
@@ -84,9 +84,13 @@ export function NavBar({ links }: NavBarProps) {
       }}
       padding="md"
     >
-
       <AppShell.Header className={styles.header}>
-        <Group h="100%" px="md" justify="space-between" style={{ width: "100%" }}>
+        <Group
+          h="100%"
+          px="md"
+          justify="space-between"
+          style={{ width: "100%" }}
+        >
           <Link href="/" passHref legacyBehavior>
             <a onClick={() => handleClick(0)}>
               <Image
@@ -111,24 +115,25 @@ export function NavBar({ links }: NavBarProps) {
             <Group visibleFrom="sm" gap={20}>
               <div className={styles.root} ref={setRootRef}>
                 {controls}
-              <FloatingIndicator
-                target={controlsRefs[active]}
-                parent={rootRef}
-                transitionDuration={400}
-              >
-                <div
-                  className={styles.indicator}
-                  style={{ "--rotation": `${rotation}deg` } as React.CSSProperties}
+                <FloatingIndicator
+                  target={controlsRefs[active]}
+                  parent={rootRef}
+                  transitionDuration={400}
                 >
-                  8
-                </div>
-              </FloatingIndicator>
-            </div>
+                  <div
+                    className={styles.indicator}
+                    style={
+                      { "--rotation": `${rotation}deg` } as React.CSSProperties
+                    }
+                  >
+                    8
+                  </div>
+                </FloatingIndicator>
+              </div>
+            </Group>
           </Group>
         </Group>
-        </Group>
       </AppShell.Header>
-
 
       <AppShell.Navbar py="md" px={4}>
         {links.map((link, index) => (

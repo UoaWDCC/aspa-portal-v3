@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { NavBar } from "./NavBar";
 
 const links = [
-  { name: "Home", href: "/home" },  
+  { name: "Home", href: "/home" },
   { name: "Events", href: "/events" },
   { name: "ASPA Team", href: "/contact" },
   { name: "Profile", href: "/contact" },

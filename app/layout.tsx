@@ -4,7 +4,11 @@ import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 
 import React from "react";
-import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from "@mantine/core";
+import {
+  ColorSchemeScript,
+  MantineProvider,
+  mantineHtmlProps,
+} from "@mantine/core";
 import { theme } from "../theme";
 
 import { NavBar } from "@/components/NavBar/NavBar";
@@ -25,7 +29,7 @@ const socialMediaLinks = [
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en" {...mantineHtmlProps}> 
+    <html lang="en" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
