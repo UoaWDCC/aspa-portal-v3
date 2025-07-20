@@ -6,13 +6,10 @@ import {
   UnstyledButton,
   NavLink,
   FloatingIndicator,
-  Drawer,
-  Stack,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
-import { IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import { usePathname } from 'next/navigation';
 
