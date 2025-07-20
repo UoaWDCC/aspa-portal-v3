@@ -1,13 +1,6 @@
 "use client";
-import {
-  Container,
-  Grid,
-  Title,
-  Text,
-  Button,
-  Group,
-  Stack,
-} from "@mantine/core";
+import { Container, Grid, Title, Text, Group, Stack } from "@mantine/core";
+import { Button } from "@/components/Shared/Button/Button";
 import Image from "next/image";
 import styles from "./Banner.module.css";
 
@@ -61,8 +54,8 @@ export function Banner({
               className={`${styles.image}`}
             />
             <Group w="100%" justify="space-between" className={styles.buttonGroup}>
-              <Button className={styles.button}>LOGIN</Button>
-              <Button className={styles.button}>REGISTER</Button>
+              <Button outlined variant="h2" className={styles.buttonStyle}>LOGIN</Button>
+              <Button outlined variant="h2" className={styles.buttonStyle}>REGISTER</Button>
             </Group>
           </Stack>
         </Grid.Col>

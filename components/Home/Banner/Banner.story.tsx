@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Banner } from "./Banner";
+import "@/lib/variables.css";
 
 const meta: Meta<typeof Banner> = {
   title: "Home/Banner",

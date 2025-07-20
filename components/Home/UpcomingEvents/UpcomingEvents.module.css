@@ -1,0 +1,96 @@
+.centeredText {
+    position: relative;
+    text-align: center;
+}
+
+.title {
+    font-size: 3vw;
+    color: var(--aspa-grey);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.mainEventImage {
+    width: 30%;
+    height: 100%;
+}
+
+.otherEventImage {
+    width: 100%;
+    height: 100%;
+}
+
+.centeredButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.signUpButton {
+    align-self: flex-end;
+}
+
+.mainEvent {
+    width: 70%;
+    height: 100%;
+    padding: 1.38vw;
+    background-color: var(--aspa-grey);
+}
+
+.mainEventTitle {
+    font-size: 2vw;
+    color: var(--aspa-white);
+    text-transform: uppercase;
+}
+
+.mainEventDate {
+    font-size: 1.5vw;
+    color: var(--aspa-white);
+    text-transform: uppercase;
+}
+
+.mainEventPrice {
+    font-size: 1.5vw;
+    color: var(--aspa-white);
+}
+
+.mainEventLocation {
+    font-size: 1.5vw;
+    color: var(--aspa-white);
+}
+
+.mainEventDescription {
+    font-size: 1.11vw;
+    line-height: 2.6vw;
+    letter-spacing: -0.5px;
+    color: var(--aspa-white);
+    margin-top: 10px;
+}
+
+.otherEventDetails {
+    display: flex;
+}
+
+.otherEventTitle {
+    font-size: 1.5vw;
+    color: var(--aspa-white);
+    text-transform: uppercase;
+}
+
+.otherEventDate {
+    font-size: 1vw;
+    font-weight: bold;
+    color: var(--aspa-white);
+    text-transform: uppercase;
+}
+
+.otherEventPrice {
+    font-size: 1vw;
+    color: var(--aspa-white);
+}
+
+.otherEventLocation {
+    font-size: 1vw;
+    font-weight: bold;
+    color: var(--aspa-white);
+}
