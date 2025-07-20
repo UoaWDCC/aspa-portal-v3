@@ -1,17 +1,10 @@
-import { useEffect, useState } from "react";
-import {
-  AppShell,
-  Group,
-  Burger,
-  UnstyledButton,
-  NavLink,
-  FloatingIndicator,
-} from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import Link from "next/link";
-import styles from "./NavBar.module.css";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from 'react';
+import { AppShell, Group, Burger, UnstyledButton, NavLink, FloatingIndicator } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import Link from 'next/link';
+import styles from './NavBar.module.css';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 interface Link {
   name: string;
@@ -30,9 +23,7 @@ export function NavBar({ links }: NavBarProps) {
 
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null);
 
-  const [controlsRefs, setControlsRefs] = useState<
-    Record<string, HTMLButtonElement | null>
-  >({});
+  const [controlsRefs, setControlsRefs] = useState<Record<string, HTMLButtonElement | null>>({});
 
   const setControlRef = (index: number) => (node: HTMLButtonElement) => {
     controlsRefs[index] = node;
@@ -48,11 +39,7 @@ export function NavBar({ links }: NavBarProps) {
         ref={setControlRef(index)}
         mod={{ active: active === index }}
       >
-        <div
-          className={`${styles.controlName} ${
-            index === active ? styles.hidden : ""
-          }`}
-        >
+        <div className={`${styles.controlName} ${index === active ? styles.hidden : ''}`}>
           {link.name}
         </div>
       </UnstyledButton>
@@ -79,18 +66,13 @@ export function NavBar({ links }: NavBarProps) {
     <AppShell
       navbar={{
         width: 300,
-        breakpoint: "sm",
+        breakpoint: 'sm',
         collapsed: { desktop: true, mobile: !opened },
       }}
       padding="md"
     >
       <AppShell.Header className={styles.header}>
-        <Group
-          h="100%"
-          px="md"
-          justify="space-between"
-          style={{ width: "100%" }}
-        >
+        <Group h="100%" px="md" justify="space-between" style={{ width: '100%' }}>
           <Link href="/" passHref legacyBehavior>
             <a onClick={() => handleClick(0)}>
               <Image
@@ -122,9 +104,7 @@ export function NavBar({ links }: NavBarProps) {
                 >
                   <div
                     className={styles.indicator}
-                    style={
-                      { "--rotation": `${rotation}deg` } as React.CSSProperties
-                    }
+                    style={{ '--rotation': `${rotation}deg` } as React.CSSProperties}
                   >
                     8
                   </div>

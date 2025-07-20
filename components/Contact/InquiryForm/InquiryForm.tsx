@@ -1,13 +1,6 @@
-"use client";
-import {
-  TextInput,
-  Textarea,
-  Fieldset,
-  Container,
-  Paper,
-  Title,
-} from "@mantine/core";
-import styles from "./InquiryForm.module.css";
+'use client';
+import { TextInput, Textarea, Fieldset, Container, Paper, Title } from '@mantine/core';
+import styles from './InquiryForm.module.css';
 
 export interface InquiryForm {
   paddingTop?: string;
@@ -17,20 +10,15 @@ export interface InquiryForm {
 }
 
 export function InquiryForm({
-  paddingTop = "",
-  paddingBottom = "",
-  paddingLeft = "",
-  paddingRight = "",
+  paddingTop = '',
+  paddingBottom = '',
+  paddingLeft = '',
+  paddingRight = '',
 }: InquiryForm) {
   return (
     <Container>
       <Title className={styles.title}>Contact Us</Title>
-      <Paper
-        pt={paddingTop}
-        pb={paddingBottom}
-        pl={paddingLeft}
-        pr={paddingRight}
-      >
+      <Paper pt={paddingTop} pb={paddingBottom} pl={paddingLeft} pr={paddingRight}>
         <Fieldset legend="Personal Information">
           <TextInput label="First Name" placeholder="" required />
           <TextInput label="Last Name" placeholder="" required />

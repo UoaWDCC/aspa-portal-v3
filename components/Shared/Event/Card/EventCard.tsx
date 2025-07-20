@@ -1,8 +1,8 @@
-"use client";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { Card, Text, Title } from "@mantine/core";
-import styles from "./EventCard.module.css";
+'use client';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { Card, Text, Title } from '@mantine/core';
+import styles from './EventCard.module.css';
 
 export interface Event {
   name: string;
@@ -12,28 +12,28 @@ export interface Event {
 
 interface EventCardProps {
   event: Event;
-  cardShadow?: "xs" | "sm" | "md" | "lg" | "xl";
-  cardRadius?: "xs" | "sm" | "md" | "lg" | "xl";
+  cardShadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  cardRadius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   cardWithBorder?: boolean;
-  cardPadding?: "xs" | "sm" | "md" | "lg" | "xl";
+  cardPadding?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   cardMaxWidth?: string;
-  cardMaxHeight?: "xs" | "sm" | "md" | "lg" | "xl";
+  cardMaxHeight?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   cardTitleOrder?: 1 | 2 | 3 | 4 | 5 | 6;
-  cardTitleMargin?: "xs" | "sm" | "md" | "lg" | "xl";
-  cardDescriptionSize?: "xs" | "sm" | "md" | "lg" | "xl";
+  cardTitleMargin?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  cardDescriptionSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }
 
 export function EventCard({
   event,
-  cardShadow = "sm",
-  cardRadius = "xl",
+  cardShadow = 'sm',
+  cardRadius = 'xl',
   cardWithBorder = true,
-  cardPadding = "lg",
-  cardMaxWidth = "100%",
-  cardMaxHeight = "lg",
+  cardPadding = 'lg',
+  cardMaxWidth = '100%',
+  cardMaxHeight = 'lg',
   cardTitleOrder = 2,
-  cardTitleMargin = "md",
-  cardDescriptionSize = "md",
+  cardTitleMargin = 'md',
+  cardDescriptionSize = 'md',
 }: EventCardProps) {
   const router = useRouter();
 
@@ -43,7 +43,7 @@ export function EventCard({
       padding={cardPadding}
       radius={cardRadius}
       withBorder={cardWithBorder}
-      style={{ maxWidth: cardMaxWidth, height: "90%" }}
+      style={{ maxWidth: cardMaxWidth, height: '90%' }}
       className={styles.card}
     >
       <Card.Section>
