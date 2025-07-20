@@ -4,7 +4,11 @@ import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 
 import React from "react";
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import {
+  ColorSchemeScript,
+  MantineProvider,
+  mantineHtmlProps,
+} from "@mantine/core";
 import { theme } from "../theme";
 
 import { NavBar } from "@/components/NavBar/NavBar";
@@ -12,8 +16,9 @@ import { Footer } from "@/components/Footer/Footer";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Contact", href: "/contact" },
   { name: "Events", href: "/events" },
+  { name: "ASPA Team", href: "/contact" },
+  { name: "Profile", href: "/contact" },
 ];
 
 const socialMediaLinks = [
@@ -32,7 +37,7 @@ const pages = [
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en">
+    <html lang="en" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
