@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AppShell,
   Group,
@@ -6,14 +6,12 @@ import {
   UnstyledButton,
   NavLink,
   FloatingIndicator,
-  Drawer,
-  Stack,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
-import { IconX } from "@tabler/icons-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 interface Link {
   name: string;
@@ -28,7 +26,10 @@ export function NavBar({ links }: NavBarProps) {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(0);
 
+  const pathname = usePathname();
+
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null);
+
   const [controlsRefs, setControlsRefs] = useState<
     Record<string, HTMLButtonElement | null>
   >({});
@@ -39,7 +40,7 @@ export function NavBar({ links }: NavBarProps) {
   };
 
   const controls = links.map((link, index) => (
-    <Link key={index} href={link.href} passHref legacyBehavior>
+    <Link key={index} href={link.href} passHref>
       <UnstyledButton
         key={index}
         className={styles.control}
@@ -58,6 +59,13 @@ export function NavBar({ links }: NavBarProps) {
     </Link>
   ));
 
+  // Update active state when pathname changes
+  useEffect(() => {
+    const currentIndex = links.findIndex((link) => link.href === pathname);
+    if (currentIndex !== -1) {
+      setActive(currentIndex);
+    }
+  }, [pathname, links]);
 
   const [rotation, setRotation] = useState(0);
 
@@ -76,9 +84,13 @@ export function NavBar({ links }: NavBarProps) {
       }}
       padding="md"
     >
-
       <AppShell.Header className={styles.header}>
-        <Group h="100%" px="md" justify="space-between" style={{ width: "100%" }}>
+        <Group
+          h="100%"
+          px="md"
+          justify="space-between"
+          style={{ width: "100%" }}
+        >
           <Link href="/" passHref legacyBehavior>
             <a onClick={() => handleClick(0)}>
               <Image
@@ -103,58 +115,25 @@ export function NavBar({ links }: NavBarProps) {
             <Group visibleFrom="sm" gap={20}>
               <div className={styles.root} ref={setRootRef}>
                 {controls}
-              <FloatingIndicator
-                target={controlsRefs[active]}
-                parent={rootRef}
-                transitionDuration={400}
-              >
-                <div
-                  className={styles.indicator}
-                  style={{ "--rotation": `${rotation}deg` } as React.CSSProperties}
+                <FloatingIndicator
+                  target={controlsRefs[active]}
+                  parent={rootRef}
+                  transitionDuration={400}
                 >
-                  8
-                </div>
-              </FloatingIndicator>
-            </div>
+                  <div
+                    className={styles.indicator}
+                    style={
+                      { "--rotation": `${rotation}deg` } as React.CSSProperties
+                    }
+                  >
+                    8
+                  </div>
+                </FloatingIndicator>
+              </div>
+            </Group>
           </Group>
         </Group>
-        </Group>
       </AppShell.Header>
-
-      {/* Mobile Drawer Navigation */}
-      <Drawer
-        opened={opened}
-        onClose={toggle}
-        padding="md"
-        size="100%" // Full screen on mobile
-        withCloseButton={false}
-        hiddenFrom="sm"
-        position="right"
-        zIndex={1001}
-      >
-        <Group justify="flex-end" mb="xl">
-          <UnstyledButton onClick={toggle}>
-            <IconX size={24} />
-          </UnstyledButton>
-        </Group>
-
-        <Stack gap="md">
-          {links.map((link, index) => (
-            <NavLink
-              key={index}
-              label={link.name}
-              component={Link}
-              href={link.href}
-              active={index === active}
-              onClick={() => {
-                handleClick(index);
-                toggle(); // Close the drawer
-              }}
-            />
-          ))}
-        </Stack>
-      </Drawer>
-
 
       <AppShell.Navbar py="md" px={4}>
         {links.map((link, index) => (
