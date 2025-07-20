@@ -2,9 +2,18 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Footer } from "./Footer";
 
 const socialMediaLinks = [
-  { name: "Twitter", icon: "/twitter.svg", href: "https://twitter.com" },
-  { name: "Facebook", icon: "/facebook.svg", href: "https://facebook.com" },
-  { name: "Instagram", icon: "/instagram.svg", href: "https://instagram.com" },
+  { name: "Discord", icon: "discord", href: "https://discord.com" },
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    href: "https://www.linkedin.com/company/aspa-uoa/",
+  },
+  {
+    name: "Instagram",
+    icon: "instagram",
+    href: "https://www.instagram.com/aspa.uoa/",
+  },
+  { name: "Facebook", icon: "facebook", href: "https://facebook.com" },
 ];
 
 const meta: Meta<typeof Footer> = {
