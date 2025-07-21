@@ -2,7 +2,6 @@
 import React from "react";
 import { EventCard } from "@/components/Shared/Event/Card/SingleEventCard";
 
-
 const sampleEvent: Event = {
   name: "CASUAL NIGHT @ AKL CBD",
   description: "Fun games at night!",
@@ -14,7 +13,7 @@ const sampleEvent: Event = {
 
 export default function EventsPage() {
   return (
-    <div style={{ padding: "2rem" }}>
+    <div style={{ padding: "2rem", paddingTop: "7vw"}}>
       <EventCard event={sampleEvent} />
     </div>
   );
