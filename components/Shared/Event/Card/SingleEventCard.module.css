@@ -1,0 +1,63 @@
+.card {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #4b4b4b;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.cardFlex {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.imageWrapper {
+  flex: 1 1 300px;
+}
+
+.eventImage {
+  border-radius: 8px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.infoSection {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eventTitle {
+  font-family: monospace;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.signUpButton {
+  align-self: start;
+  background-color: #5f6572;
+  color: white;
+  font-weight: 600;
+  border-radius: 999px;
+  width: 50%;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signUpButton:hover {
+  background-color: #7a818f;
+}
+
+.footerText {
+  color: #cccccc;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
