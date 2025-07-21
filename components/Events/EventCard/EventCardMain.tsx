@@ -8,29 +8,35 @@ export interface Event {
     location: string; // Added location field
     description: string;
     imageUrl: string;
+    buttonText: string;
 }
 
-export function EventCardMain({ event }: { event: Event }) {
-    // Temp colors, waiting for universal color
-    // Need website font as well
-    const bg_color = rgba('#717882', 1);
-    const font_color = rgba('#FFFFFF', 1);
+export interface EventCardMainProps {
+    event: Event
+    bg_color: string,
+    font_color: string,
+    max_height: number,
+    min_height: number,
+}
 
+export function EventCardMain({ event, bg_color=rgba('#717882', 1), font_color=rgba('#FFFFFF', 1), max_height=350, min_height=250}: EventCardMainProps) {
     return (
         <Flex 
-            direction="row" 
-            align="center" 
-            justify="flex-start" 
+            direction="row"
+            align="center"
+            justify="flex-start"
             bg={bg_color}
-            style={{ position: 'relative', minHeight: '200px' }}
+            style={{ position: 'relative', minHeight: min_height, maxHeight: max_height }}
         >
             <Image
                 src={event.imageUrl}
-                w="20%"
+                fit="fill"
+                mah={max_height}
+                w="auto"
                 alt={event.name}
             />
 
-            <Flex direction="column" m="md" justify="space-around" gap="md" style={{ flex: 1 }}>
+            <Flex direction="column" m="md" justify="space-around" gap="md" mah={max_height} style={{ flex: 1 }}>
                 {/* Title of event */}
                 <Text size="xl" tt="uppercase" mt="md" mb="md" c={font_color} w="100%">
                     {event.name}
@@ -47,8 +53,8 @@ export function EventCardMain({ event }: { event: Event }) {
                 <Text size="md" mt="xs" c={font_color}>{event.description}</Text>
 
                 <Flex direction="column" justify="flex-end" align="flex-end" p="md">
-                    <Button variant="outline" radius="xl" color='white' size="compact-xl">
-                        Sign Up Now
+                    <Button variant="outline" radius="xl" color='white' size="compact-xl" bg={bg_color}>
+                        {event.buttonText}
                     </Button>
                 </Flex>
             </Flex>
