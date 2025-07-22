@@ -1,7 +1,6 @@
 import styles from "./HeroBanner.module.css";
 import { Title, Image } from "@mantine/core";
 
-
 export interface HeroBannerProps {
   title: string;
   backgroundUrl: string;
@@ -9,11 +8,11 @@ export interface HeroBannerProps {
   animated?: boolean;
 }
 
-export function HeroBanner({ 
-  title, 
-  backgroundUrl, 
-  backgroundType = "image", 
-  animated = false
+export function HeroBanner({
+  title,
+  backgroundUrl,
+  backgroundType = "image",
+  animated = false,
 }: HeroBannerProps) {
   const isAnimated = animated ? styles.animated : "";
 
