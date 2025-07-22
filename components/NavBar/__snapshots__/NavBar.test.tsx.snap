@@ -29,23 +29,40 @@ exports[`NavBar Component testing matches snapshot 1`] = `
     >
       <div
         class="m_4081bf90 mantine-Group-root"
-        style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap; padding-inline: var(--mantine-spacing-md); height: 100%;"
+        style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap; width: 100%; padding-inline: var(--mantine-spacing-md); height: 100%;"
       >
-        <button
-          class="mantine-focus-auto m_fea6bf1a mantine-Burger-root m_87cf2631 mantine-UnstyledButton-root mantine-hidden-from-sm"
-          data-size="sm"
-          style="--burger-size: var(--burger-size-sm);"
-          type="button"
+        <a
+          href="/"
         >
-          <div
-            class="m_d4fb9cad mantine-Burger-burger"
-            data-reduce-motion="true"
+          <img
+            alt="ASPA Logo"
+            class="logoCircle"
+            data-nimg="1"
+            decoding="async"
+            height="37"
+            loading="lazy"
+            src="/_next/image?url=%2Faspa_logo.png&w=96&q=75"
+            srcset="/_next/image?url=%2Faspa_logo.png&w=48&q=75 1x, /_next/image?url=%2Faspa_logo.png&w=96&q=75 2x"
+            style="color: transparent;"
+            width="37"
           />
-        </button>
+        </a>
         <div
           class="m_4081bf90 mantine-Group-root"
-          style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap; flex: 1; justify-content: flex-end;"
+          style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
         >
+          <button
+            aria-label="Toggle menu"
+            class="mantine-focus-auto m_fea6bf1a mantine-Burger-root m_87cf2631 mantine-UnstyledButton-root mantine-hidden-from-sm"
+            data-size="sm"
+            style="--burger-size: var(--burger-size-sm);"
+            type="button"
+          >
+            <div
+              class="m_d4fb9cad mantine-Burger-burger"
+              data-reduce-motion="true"
+            />
+          </button>
           <div
             class="m_4081bf90 mantine-Group-root mantine-visible-from-sm"
             style="--group-gap: calc(1.25rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
@@ -53,47 +70,60 @@ exports[`NavBar Component testing matches snapshot 1`] = `
             <div
               class="root"
             >
-              <button
-                class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
-                data-active="true"
-                data-control-index="0"
+              <a
                 href="/home"
-                type="button"
               >
-                <div
-                  class="controlName hidden"
+                <button
+                  class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                  data-active="true"
+                  type="button"
                 >
-                  Home
-                </div>
-              </button>
-              <button
-                class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
-                data-control-index="1"
+                  <div
+                    class="controlName hidden"
+                  >
+                    Home
+                  </div>
+                </button>
+              </a>
+              <a
                 href="/contact"
-                type="button"
               >
-                <div
-                  class="controlName "
+                <button
+                  class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                  type="button"
                 >
-                  Contact
-                </div>
-              </button>
-              <button
-                class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
-                data-control-index="2"
+                  <div
+                    class="controlName "
+                  >
+                    Contact
+                  </div>
+                </button>
+              </a>
+              <a
                 href="/events"
-                type="button"
+              >
+                <button
+                  class="mantine-focus-auto control m_87cf2631 mantine-UnstyledButton-root"
+                  type="button"
+                >
+                  <div
+                    class="controlName "
+                  >
+                    Events
+                  </div>
+                </button>
+              </a>
+              <div
+                class="m_96b553a6 mantine-FloatingIndicator-root"
+                style="--transition-duration: 400ms; transform: translateY(-2px) translateX(-2px); width: 0px; height: 0px;"
               >
                 <div
-                  class="controlName "
+                  class="indicator"
+                  style="--rotation: 0deg;"
                 >
-                  Events
+                  8
                 </div>
-              </button>
-              <div
-                class="indicator m_96b553a6 mantine-FloatingIndicator-root"
-                style="transform: translateY(-2px) translateX(-2px); width: 0px; height: 0px;"
-              />
+              </div>
             </div>
           </div>
         </div>

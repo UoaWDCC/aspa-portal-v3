@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { EventCarousel } from "./EventCarousel";
+import { PastEvent } from "./PastEvent";
 
-const meta: Meta<typeof EventCarousel> = {
-  title: "Shared/Event/Carousel",
-  component: EventCarousel,
+const meta: Meta<typeof PastEvent> = {
+  title: "Home/PastEvents",
+  component: PastEvent,
   argTypes: {
     events: { control: "object" },
   },
@@ -11,7 +11,7 @@ const meta: Meta<typeof EventCarousel> = {
 
 export default meta;
 
-export const Default: StoryObj<typeof EventCarousel> = {
+export const Default: StoryObj<typeof PastEvent> = {
   args: {
     events: [
       {

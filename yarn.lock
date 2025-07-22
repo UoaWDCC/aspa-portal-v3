@@ -2572,6 +2572,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remixicon/react@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "@remixicon/react@npm:4.6.0"
+  peerDependencies:
+    react: ">=18.2.0"
+  checksum: 10c0/52e21dabd5b5149206f2ef2d8ff59e38a0b7f4a043435ba65b1b8d1c41c755daea84da6c64e80f2ada0e582b4436366dbcef318add96ec11393b08b259b49df8
+  languageName: node
+  linkType: hard
+
 "@sinclair/typebox@npm:^0.27.8":
   version: 0.27.8
   resolution: "@sinclair/typebox@npm:0.27.8"
@@ -4176,6 +4185,7 @@ __metadata:
     "@mantine/core": "npm:8.0.1"
     "@mantine/hooks": "npm:8.0.1"
     "@next/bundle-analyzer": "npm:^15.2.3"
+    "@remixicon/react": "npm:^4.6.0"
     "@storybook/addon-essentials": "npm:^8.6.8"
     "@storybook/addon-interactions": "npm:^8.6.8"
     "@storybook/nextjs": "npm:^8.6.8"
