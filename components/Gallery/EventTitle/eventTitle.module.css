@@ -1,0 +1,16 @@
+.eventTitle {
+  text-align: center;
+  margin: 150px 0;
+  background-color: #1A1A1A;
+}
+.titleText {
+  font-size: 48.8px;
+  text-transform: uppercase;
+  color: #717882;
+}
+.eventDetailsRow {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  color: #EBEBEB;
+}
