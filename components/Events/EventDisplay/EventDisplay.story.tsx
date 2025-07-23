@@ -11,7 +11,8 @@ const meta: Meta<typeof EventDisplay> = {
   title: "Events/EventDisplay",
   component: EventDisplay,
   argTypes: {
-    events: eventsList,
+    events: { control: 'object' },
+    title: { control: 'text' }
   },
 };
 
@@ -20,5 +21,6 @@ export default meta;
 export const Default: StoryObj<typeof EventDisplay> = {
   args: {
     events: eventsList,
+    title: "Upcoming Events"
   },
 };

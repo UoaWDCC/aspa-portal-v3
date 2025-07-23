@@ -1,4 +1,4 @@
-import { Flex, Image, Text, rgba, Button } from '@mantine/core';
+import { Flex, Image, Text, rgba, Button, Group, Stack } from '@mantine/core';
 import { Event } from './EventCardMain';
 
 export interface EventCardSecondaryProps {
@@ -21,7 +21,9 @@ export function EventCardSecondary({ events, bg_color=rgba('#717882', 1), font_c
             align="center" 
             justify="flex-start"
             gap="md"
-            style={{ minHeight: min_height}}
+            w="100%"
+            flex={1}
+            style={{ minHeight: min_height, maxHeight: max_height}}
         >
             <Image
                 src={event1.imageUrl}
@@ -38,42 +40,44 @@ export function EventCardSecondary({ events, bg_color=rgba('#717882', 1), font_c
                 alt={event2.name}
             />
             
-            <Flex direction="column" m="md" justify="space-around" gap="xs" style={{ flex: 1 }}>
-                {/* Event 1 */}
-                {/* Title of event */}
-                <Text size="xl" tt="uppercase" c={font_color} w="100%">
-                    {event1.name}
-                </Text>
+            <Flex direction="column" ml="md" justify="space-between" gap="lg" style={{ flex: 1 }}>
+                <Stack> {/* Event 1 */}
+                    {/* Title of event */}
+                    <Text size="md" tt="uppercase" c={font_color} w="100%" fw="bold">
+                        {event1.name}
+                    </Text>
 
-                {/* Event date, price and location */}
-                <Flex direction="row" justify="space-between" align="center" c={font_color}>
-                    <Text size="md">{event1.date}</Text>
-                    <Text>${event1.price}</Text>
-                    <Text>{event1.location}</Text>
-                </Flex>
-                <Flex direction="column" justify="flex-end" align="flex-end">
-                    <Button variant="filled" radius="xl" color={bg_color} size="compact-lg">
-                        {event1.buttonText}
-                    </Button>
-                </Flex>
+                    {/* Event date, price and location */}
+                    <Group justify="space-between" align="center" c={font_color}>
+                        <Text size="sm">{event1.date}</Text>
+                        <Text>${event1.price}</Text>
+                        <Text>{event1.location}</Text>
+                    </Group>
+                    <Flex direction="column" justify="flex-end" align="flex-end">
+                        <Button variant="filled" radius="xl" color={bg_color} size="compact-md" fw="normal" w="15vw">
+                            {event1.buttonText}
+                        </Button>
+                    </Flex>
+                </Stack>
+                
+                <Stack> {/* Event 2 */}
+                    {/* Title of event */}
+                    <Text size="md" tt="uppercase" c={font_color} w="100%" fw="bold">
+                        {event2.name}
+                    </Text>
 
-                {/* Event 2 */}
-                {/* Title of event */}
-                <Text size="xl" tt="uppercase" c={font_color} w="100%">
-                    {event2.name}
-                </Text>
-
-                {/* Event date, price and location */}
-                <Flex direction="row" justify="space-between" align="center" c={font_color}>
-                    <Text size="md">{event2.date}</Text>
-                    <Text>${event2.price}</Text>
-                    <Text>{event2.location}</Text>
-                </Flex>
-                <Flex direction="column" justify="flex-end" align="flex-end">
-                    <Button variant="filled" radius="xl" color={bg_color} size="compact-lg">
-                        {event2.buttonText}
-                    </Button>
-                </Flex>
+                    {/* Event date, price and location */}
+                    <Group justify="space-between" align="center" c={font_color}>
+                        <Text size="sm">{event2.date}</Text>
+                        <Text>${event2.price}</Text>
+                        <Text>{event2.location}</Text>
+                    </Group>
+                    <Flex direction="column" justify="flex-end" align="flex-end">
+                        <Button variant="filled" radius="xl" color={bg_color} size="compact-md" fw="normal" w="15vw">
+                            {event2.buttonText}
+                        </Button>
+                    </Flex>
+                </Stack>
             </Flex>
         </Flex>
     );

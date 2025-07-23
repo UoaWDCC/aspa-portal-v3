@@ -38,12 +38,12 @@ export function EventCardMain({ event, bg_color=rgba('#717882', 1), font_color=r
 
             <Flex direction="column" m="md" justify="space-around" gap="md" mah={max_height} style={{ flex: 1 }}>
                 {/* Title of event */}
-                <Text size="xl" tt="uppercase" mt="md" mb="md" c={font_color} w="100%">
+                <Text size="xl" tt="uppercase" mt="md" mb="md" c={font_color} w="100%" fw="bolder">
                     {event.name}
                 </Text>
 
                 {/* Event date, price and location */}
-                <Flex direction="row" justify="space-between" align="center" gap="auto" mt="sm" mb="sm" c={font_color}>
+                <Flex direction="row" justify="space-between" align="center" gap="auto" mt="sm" mb="sm" c={font_color} fw="bold">
                     <Text size="md">{event.date}</Text>
                     <Text>${event.price}</Text>
                     <Text>{event.location}</Text>
