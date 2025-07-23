@@ -1,6 +1,7 @@
 import { Event, EventCardMain } from "../EventCard/EventCardMain"
 import { EventCardSecondary } from "../EventCard/EventCardSecondary"
 import { Stack, Text, Button, rgba } from "@mantine/core"
+import { useRouter } from "next/navigation"
 
 export interface EventDisplayProps {
     events: Event[],
@@ -25,6 +26,12 @@ export function EventDisplay({
     second_max_h, 
     second_min_h
 }: EventDisplayProps) {
+    const router = useRouter();
+
+    const handleViewMore = () => {
+        router.push("/events");
+    };
+
     return (
         <Stack align="center" gap="lg">
             <Text size="8vh" fw="bold">{title}</Text>
@@ -33,7 +40,7 @@ export function EventDisplay({
 
             <EventCardSecondary events={[events[1], events[2]]} bg_color={bg_color} font_color={font_color} max_height={second_max_h} min_height={second_min_h}/>
 
-            <Button variant="filled" size="md" bg={bg_color} w="30vw" radius="xl">View More Events</Button>
+            <Button variant="filled" size="md" bg={bg_color} w="30vw" radius="xl" onClick={handleViewMore}>View More Events</Button>
         </Stack>
     )
 }
