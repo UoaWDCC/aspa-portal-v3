@@ -2,7 +2,6 @@
 
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
-import "@/styles/variables.css";
 
 import React from "react";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
