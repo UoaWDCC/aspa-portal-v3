@@ -3,15 +3,24 @@
   margin: 150px 0;
   background-color: #1A1A1A;
 }
+
 .titleText {
   font-size: 48.8px;
   font-family: "Nova Square", sans-serif;
   text-transform: uppercase;
+  padding: 0 30px;
   color: #717882;
 }
 .eventDetailsRow {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 20px 50px;
+  padding: 0 30px;
   color: #EBEBEB;
+}
+
+@media (max-width: 600px) {
+  .eventTitle {
+    margin: 50px 0;
+  }
 }

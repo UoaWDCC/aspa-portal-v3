@@ -1,6 +1,6 @@
 "use client"
 import EventTitle from '@/components/Gallery/EventTitle/eventTitle';
-import PhotoRow from '@/components/Gallery/photoRow/photoRow';
+import GalleryPage from '@/components/Gallery/GalleryPage/galleryPage';
 import { Box } from '@mantine/core';
 import { useEffect, useState } from 'react';
 
@@ -68,47 +68,164 @@ const placeholderEvents: Record<string, Event> = {
         src: "/event_example.svg",
         alt: "Photo 7"
       },
+      {
+        id: 8,
+        src: "/event_example.svg",
+        alt: "Photo 8"
+      },
+      {
+        id: 9,
+        src: "/event_example.svg",
+        alt: "Photo 9"
+      },
+      {
+        id: 10,
+        src: "/event_example.svg",
+        alt: "Photo 10"
+      },
+      {
+        id: 11,
+        src: "/event_example.svg",
+        alt: "Photo 11"
+      },
+      {
+        id: 12,
+        src: "/event_example.svg",
+        alt: "Photo 12"
+      },
+      {        id: 13,
+        src: "/event_example.svg",
+        alt: "Photo 13"
+      },
+      {        id: 14,
+        src: "/event_example.svg",
+        alt: "Photo 14"
+      },
+      {        id: 15,
+        src: "/event_example.svg",
+        alt: "Photo 15"
+      },
+      {        id: 16,
+        src: "/event_example.svg",
+        alt: "Photo 16"
+      },
+      {        id: 17,
+        src: "/event_example.svg",
+        alt: "Photo 17"
+      },
+      {        id: 18,
+        src: "/event_example.svg",
+        alt: "Photo 18"
+      },
+      {        id: 19,
+        src: "/event_example.svg",
+        alt: "Photo 19"
+      },
+      {        id: 20,
+        src: "/event_example.svg",
+        alt: "Photo 20"
+      },
+      {        id: 21,
+        src: "/event_example.svg",
+        alt: "Photo 21"
+      },
+      {        id: 22,
+        src: "/event_example.svg",
+        alt: "Photo 22"
+      },
+      {        id: 23,
+        src: "/event_example.svg",
+        alt: "Photo 23"
+      },
+      {        id: 24,
+        src: "/event_example.svg",
+        alt: "Photo 24"
+      },
+      {        id: 25,
+        src: "/event_example.svg",
+        alt: "Photo 25"
+      },
+      {        id: 26,
+        src: "/event_example.svg",
+        alt: "Photo 26"
+      },
+      {        id: 27,
+        src: "/event_example.svg",
+        alt: "Photo 27"
+      },
+      {        id: 28,
+        src: "/event_example.svg",
+        alt: "Photo 28"
+      },
+      {        id: 29,
+        src: "/event_example.svg",
+        alt: "Photo 29"
+      },
+      {        id: 30,
+        src: "/event_example.svg",
+        alt: "Photo 30"
+      },
+      {        id: 31,
+        src: "/event_example.svg",
+        alt: "Photo 31"
+      },
+      {        id: 32,
+        src: "/event_example.svg",
+        alt: "Photo 32"
+      },
+      {        id: 33,
+        src: "/event_example.svg",
+        alt: "Photo 33"
+      },
+      {        id: 34,
+        src: "/event_example.svg",
+        alt: "Photo 34"
+      },
+      {        id: 35,
+        src: "/event_example.svg",
+        alt: "Photo 35"
+      },
+      {        id: 36,
+        src: "/event_example.svg",
+        alt: "Photo 36"
+      },
     ]
   }
 }
-const Gallery = () => {
-  return (
-    <div>
-      {}
-      <PhotoRow photoListChunk={photoListChunk} />
-    </div>
-  );
-};
+
 export default function GalleryEventPage({ params }: { params: { eventId: string } }) {
   const event = placeholderEvents[params.eventId];
   if (!event) return <h1>Invalid Event</h1>;
 
   const DEFAULT_PHOTOS = 7;
+  const TABLET_PHOTOS = 5;
   const MOBILE_PHOTOS = 2;
   const GALLERY_ROWS = 5;
-  const [numberOfPhotos, setNumberOfPhotos] = useState(DEFAULT_PHOTOS);
+  const [photosPerRow, setPhotosPerRow] = useState(DEFAULT_PHOTOS);
+  const [currentPage, setCurrentPage] = useState(1);
 
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 600) {
-        setNumberOfPhotos(MOBILE_PHOTOS)
+        setPhotosPerRow(MOBILE_PHOTOS)
+      } else if (window.innerWidth <= 900) {
+        setPhotosPerRow(TABLET_PHOTOS)
       } else {
-        setNumberOfPhotos(DEFAULT_PHOTOS)
+        setPhotosPerRow(DEFAULT_PHOTOS)
       }
     }
     handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
+  console.log(currentPage * (photosPerRow * GALLERY_ROWS))
 
-  const photoListChunk = event.photos.slice(0, numberOfPhotos);
-
+  const photoList = event.photos.slice((currentPage - 1) * (photosPerRow * GALLERY_ROWS), currentPage * (photosPerRow * GALLERY_ROWS));
   return (
     <Box style={{ backgroundColor: '#1A1A1A', padding: '90px 0 0 0' }}> {/* padding for navbar displacement*/}
       <EventTitle event={event} />
-      {}
-      <PhotoRow photoListChunk={photoListChunk} />
+      <GalleryPage photoList={photoList} photosPerRow={photosPerRow}/>
     </Box>
   );
 }

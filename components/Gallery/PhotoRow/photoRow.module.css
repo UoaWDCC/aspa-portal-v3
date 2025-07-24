@@ -1,9 +1,9 @@
 .photoGrid {
   display: grid;
   padding: 2vw;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 0.8vw;
   margin-top: 1.7vw;
-  background-color: azure;
 }
 
 .photoCard {
