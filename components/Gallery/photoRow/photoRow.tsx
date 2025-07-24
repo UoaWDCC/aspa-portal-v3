@@ -1,33 +1,22 @@
-import styles from "./photoRow.module.css";
+import styles from "./photoRow.module.css"
 
 type Photo = {
   id: number,
-  src: String,
-  alt: String,
-}
+  src: string,
+  alt: string,
+};
 
-type Details = { 
-  year: number
-  month: string
-  day: number
-  location?: string
-  description: string
-}
+const PhotoRow = ({ photoListChunk }: { photoListChunk: Photo[] }) => {
 
-type Event = {
-  title: string,
-  details: Details,
-  photos: Photo[]
-}
-const PhotoRow = ({ event }: { event: Event }) => {
   return (
     <div className={styles.photoGrid}>
-    {event.photos.map((photo) => (
+      {photoListChunk.map((photo) => (
         <div key={photo.id} className={styles.photoCard}>
-        <img src={photo.src as string} alt={photo.alt as string} />
+          <img src={photo.src} alt={photo.alt} />
         </div>
-    ))}
+      ))}
     </div>
-  )
-}
-export default PhotoRow
+  );
+};
+
+export default PhotoRow;

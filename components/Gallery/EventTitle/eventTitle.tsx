@@ -12,8 +12,7 @@ type Details = {
   year: number
   month: string
   day: number
-  location?: string
-  description: string
+  location: string
 }
 
 type Event = {
