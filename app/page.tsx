@@ -16,7 +16,7 @@ const ExampleBannerArguments: BannerProps = {
 };
 
 export default function HomePage() {
-  const [testimonials, setTestimonial] = useState<Testimonial[]>([]);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [events, setEvents] = useState<PastEvent>({ events: [] });
 
   return (
