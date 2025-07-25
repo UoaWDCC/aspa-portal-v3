@@ -22,7 +22,10 @@ export interface EventCardMainProps {
 
 export function EventCardMain({ event, bg_color=rgba('#717882', 1), font_color=rgba('#FFFFFF', 1), max_height=350, min_height=250}: EventCardMainProps) {
     return (
-        <Link href={`/events/${event.id}`}>
+        <Link 
+            href={`/events/${event.id}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+        >
             <Flex 
                 direction="row"
                 align="center"

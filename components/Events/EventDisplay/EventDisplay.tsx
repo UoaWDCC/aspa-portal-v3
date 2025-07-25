@@ -34,13 +34,13 @@ export function EventDisplay({
 
     return (
         <Stack align="center" gap="lg">
-            <Text size="8vh" fw="bold">{title}</Text>
+            <Text size="8vh" fw="bold" mb="md">{title}</Text>
             
             <EventCardMain event={events[0]} bg_color={bg_color} font_color={font_color} max_height={main_max_h} min_height={main_min_h}/>
 
             <EventCardSecondary events={[events[1], events[2]]} bg_color={bg_color} font_color={font_color} max_height={second_max_h} min_height={second_min_h}/>
 
-            <Button variant="filled" size="md" bg={bg_color} w="30vw" radius="xl" onClick={handleViewMore}>View More Events</Button>
+            <Button variant="filled" size="md" bg={bg_color} w="30vw" radius="xl" onClick={handleViewMore}>{buttonText}</Button>
         </Stack>
     )
 }
