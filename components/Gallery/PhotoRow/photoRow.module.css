@@ -1,14 +1,12 @@
 .photoGrid {
   display: grid;
-  padding: 2vw;
+  padding: 40px 5vw;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 0.8vw;
+  gap: 10px;
   margin-top: 1.7vw;
 }
 
 .photoCard {
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
   aspect-ratio: 1 / 1;    
   display: flex;

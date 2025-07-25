@@ -2,7 +2,7 @@
 import EventTitle from '@/components/Gallery/EventTitle/eventTitle';
 import GalleryPage from '@/components/Gallery/GalleryPage/galleryPage';
 import { Box } from '@mantine/core';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, } from 'react';
 
 type Photo = {
   id: number,
@@ -93,109 +93,153 @@ const placeholderEvents: Record<string, Event> = {
         src: "/event_example.svg",
         alt: "Photo 12"
       },
-      {        id: 13,
+      {
+        id: 13,
         src: "/event_example.svg",
         alt: "Photo 13"
       },
-      {        id: 14,
+      {
+        id: 14,
         src: "/event_example.svg",
         alt: "Photo 14"
       },
-      {        id: 15,
-        src: "/event_example.svg",
+      {
+        id: 15,
+        src: "/aspa_logo.svg",
         alt: "Photo 15"
       },
-      {        id: 16,
+      {
+        id: 16,
         src: "/event_example.svg",
         alt: "Photo 16"
       },
-      {        id: 17,
+      {
+        id: 17,
         src: "/event_example.svg",
         alt: "Photo 17"
       },
-      {        id: 18,
+      {
+        id: 18,
         src: "/event_example.svg",
         alt: "Photo 18"
       },
-      {        id: 19,
+      {
+        id: 19,
         src: "/event_example.svg",
         alt: "Photo 19"
       },
-      {        id: 20,
+      {
+        id: 20,
         src: "/event_example.svg",
         alt: "Photo 20"
       },
-      {        id: 21,
+      {
+        id: 21,
         src: "/event_example.svg",
         alt: "Photo 21"
       },
-      {        id: 22,
-        src: "/event_example.svg",
+      {
+        id: 22,
+        src: "/aspa_title.svg",
         alt: "Photo 22"
       },
-      {        id: 23,
+      {
+        id: 23,
         src: "/event_example.svg",
         alt: "Photo 23"
       },
-      {        id: 24,
+      {
+        id: 24,
         src: "/event_example.svg",
         alt: "Photo 24"
       },
-      {        id: 25,
+      {
+        id: 25,
         src: "/event_example.svg",
         alt: "Photo 25"
       },
-      {        id: 26,
+      {
+        id: 26,
         src: "/event_example.svg",
         alt: "Photo 26"
       },
-      {        id: 27,
+      {
+        id: 27,
         src: "/event_example.svg",
         alt: "Photo 27"
       },
-      {        id: 28,
+      {
+        id: 28,
         src: "/event_example.svg",
         alt: "Photo 28"
       },
-      {        id: 29,
+      {
+        id: 29,
         src: "/event_example.svg",
         alt: "Photo 29"
       },
-      {        id: 30,
+      {
+        id: 30,
         src: "/event_example.svg",
         alt: "Photo 30"
       },
-      {        id: 31,
+      {
+        id: 31,
         src: "/event_example.svg",
         alt: "Photo 31"
       },
-      {        id: 32,
+      {
+        id: 32,
         src: "/event_example.svg",
         alt: "Photo 32"
       },
-      {        id: 33,
+      {
+        id: 33,
         src: "/event_example.svg",
         alt: "Photo 33"
       },
-      {        id: 34,
+      {
+        id: 34,
         src: "/event_example.svg",
         alt: "Photo 34"
       },
-      {        id: 35,
+      {
+        id: 35,
         src: "/event_example.svg",
         alt: "Photo 35"
       },
-      {        id: 36,
+      {
+        id: 36,
         src: "/event_example.svg",
         alt: "Photo 36"
       },
     ]
+  },
+  event2: {
+    title: "ASPA 2024",
+    details: {  
+      year: 2024,
+      month: "November",
+      day: 15,
+      location: "ASPA Headquarters",
+    },
+    photos: [
+      {
+        id: 1,
+        src: "/aspa_logo.svg",
+        alt: "ASPA Logo"
+      }
+    ]
   }
 }
 
-export default function GalleryEventPage({ params }: { params: { eventId: string } }) {
-  const event = placeholderEvents[params.eventId];
-  if (!event) return <h1>Invalid Event</h1>;
+export default function GalleryEventPage({ params }: { params: Promise<{ eventId: string }> }) {
+  const { eventId } = React.use(params);
+  const event = eventId ? placeholderEvents[eventId] : null;
+  if (!event) {
+    return
+  }
+  console.log('event', event.photos)
 
   const DEFAULT_PHOTOS = 7;
   const TABLET_PHOTOS = 5;
@@ -222,6 +266,7 @@ export default function GalleryEventPage({ params }: { params: { eventId: string
   console.log(currentPage * (photosPerRow * GALLERY_ROWS))
 
   const photoList = event.photos.slice((currentPage - 1) * (photosPerRow * GALLERY_ROWS), currentPage * (photosPerRow * GALLERY_ROWS));
+  
   return (
     <Box style={{ backgroundColor: '#1A1A1A', padding: '90px 0 0 0' }}> {/* padding for navbar displacement*/}
       <EventTitle event={event} />

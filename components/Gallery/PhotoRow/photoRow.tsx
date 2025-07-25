@@ -1,4 +1,5 @@
 import styles from "./photoRow.module.css"
+import { Image } from "@mantine/core"
 
 type Photo = {
   id: number,
@@ -6,25 +7,21 @@ type Photo = {
   alt: string,
 };
 
-const PhotoRow = ({ photoListChunk, style }: { photoListChunk: Photo[], style: boolean }) => {
+const PhotoRow = ({ photoListChunk, style, onImageClick }: { photoListChunk: Photo[], style: boolean , onImageClick: (key: number) => void }) => {
   if (style) {
     return (
       <div className={styles.photoGrid} style={{ backgroundColor: "#717882" }}>
         {photoListChunk.map((photo) => (
-          <div key={photo.id} className={styles.photoCard}>
-          <img src={photo.src} alt={photo.alt} />
-        </div>
-      ))}
-    </div>
+          <Image key={photo.id} className={styles.photoCard} onClick={() => onImageClick(photo.id - 1)} src={photo.src} alt={photo.alt} />
+        ))}
+      </div>
   )
   }
   return (
     <div className={styles.photoGrid}>
       {photoListChunk.map((photo) => (
-        <div key={photo.id} className={styles.photoCard}>
-        <img src={photo.src} alt={photo.alt} />
-      </div>
-    ))}
+        <Image key={photo.id} className={styles.photoCard} onClick={() => onImageClick(photo.id - 1)} src={photo.src} alt={photo.alt} />
+      ))}
   </div>
   )
 }
