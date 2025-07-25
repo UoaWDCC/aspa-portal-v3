@@ -2,7 +2,6 @@
   display: grid;
   padding: 40px 5vw;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 10px;
   margin-top: 1.7vw;
 }
 

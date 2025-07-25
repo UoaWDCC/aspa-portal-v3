@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./lightbox.module.css";
-import { Stack, Group, Button, CloseButton } from "@mantine/core";
+import { Stack, Group, Button, CloseButton} from "@mantine/core";
 
 type Photo = {
   id: number;
@@ -55,13 +55,12 @@ const Lightbox: React.FC<Props> = ({
           className={styles.image}
         />
         <CloseButton size="xl" onClick={close} className={styles.closeBtn} />
-        <Group justify="space-between">
-          <Button onClick={onPrev}>{'<'}</Button>
-          <Button onClick={onNext}>{'>'}</Button>
+        <Group className={styles.buttonGroup}>
+          <Button variant="subtle" color="#fff" size="xl" radius="md" onClick={onPrev} className={styles.navBtn}>{'<'}</Button>
+          <Button variant="subtle" color="#fff" size="xl" radius="md" onClick={onNext} className={styles.navBtn}>{'>'}</Button>
         </Group>
       </Stack>
     </div>
   );
 };
-
 export default Lightbox;
