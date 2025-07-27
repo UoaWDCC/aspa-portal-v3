@@ -22,7 +22,6 @@ export function EventCardSecondary({ events, bg_color=rgba('#717882', 1), font_c
             align="center" 
             justify="flex-start"
             gap="md"
-            maw="90vw"
             w="100%"
             flex={1}
             style={{ minHeight: min_height, maxHeight: max_height}}
