@@ -22,6 +22,7 @@ export function EventCardSecondary({ events, bg_color=rgba('#717882', 1), font_c
             align="center" 
             justify="flex-start"
             gap="md"
+            maw="90vw"
             w="100%"
             flex={1}
             style={{ minHeight: min_height, maxHeight: max_height}}
@@ -48,7 +49,7 @@ export function EventCardSecondary({ events, bg_color=rgba('#717882', 1), font_c
             
             
             <Flex direction="column" ml="md" justify="space-between" gap="lg" style={{ flex: 1 }}>
-                <Link href={`/events/${event1.id}`}>
+                <Link href={`/events/${event1.id}`} style={{ textDecoration: "none", color: "inherit" }}>
                     <Stack> {/* Event 1 */}
                         {/* Title of event */}
                         <Text size="md" tt="uppercase" c={font_color} w="100%" fw="bold">
@@ -69,7 +70,7 @@ export function EventCardSecondary({ events, bg_color=rgba('#717882', 1), font_c
                     </Stack>
                 </Link>
                 
-                <Link href={`/events/${event2.id}`}>
+                <Link href={`/events/${event2.id}`} style={{ textDecoration: "none", color: "inherit" }}>
                     <Stack> {/* Event 2 */}
                         {/* Title of event */}
                         <Text size="md" tt="uppercase" c={font_color} w="100%" fw="bold">
