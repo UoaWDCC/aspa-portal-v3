@@ -1,69 +1,111 @@
-import { Flex, Image, Text, rgba, Button } from '@mantine/core';
-import Link from 'next/link'
+import { Flex, Image, Text, rgba, Button } from "@mantine/core";
+import Link from "next/link";
 
 export interface Event {
-    id: string;
-    name: string;
-    date: string;
-    price: number;
-    location: string;
-    description: string;
-    imageUrl: string;
-    buttonText: string; // Text to show in event card button
+  id: string;
+  name: string;
+  date: string;
+  price: number;
+  location: string;
+  description: string;
+  imageUrl: string;
+  buttonText: string; // Text to show in event card button
 }
 
 export interface EventCardMainProps {
-    event: Event
-    bg_color: string,
-    font_color: string,
-    max_height: number,
-    min_height: number,
+  event: Event;
+  bg_color: string;
+  font_color: string;
+  max_height: number;
+  min_height: number;
 }
 
-export function EventCardMain({ event, bg_color=rgba('#717882', 1), font_color=rgba('#FFFFFF', 1), max_height=350, min_height=250}: EventCardMainProps) {
-    return (
-        <Link 
-            href={`/events/${event.id}`}
-            style={{ textDecoration: "none", color: "inherit" }}
+export function EventCardMain({
+  event,
+  bg_color = rgba("#717882", 1),
+  font_color = rgba("#FFFFFF", 1),
+  max_height = 350,
+  min_height = 250,
+}: EventCardMainProps) {
+  return (
+    <Link
+      href={`/events/${event.id}`}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      <Flex
+        direction="row"
+        align="center"
+        justify="flex-start"
+        bg={bg_color}
+        style={{
+          position: "relative",
+          minHeight: min_height,
+          maxHeight: max_height,
+        }}
+      >
+        <Image
+          src={event.imageUrl}
+          fit="fill"
+          mah={max_height}
+          w="auto"
+          alt={event.name}
+        />
+
+        <Flex
+          direction="column"
+          m="md"
+          justify="space-around"
+          gap="sm"
+          mah={max_height}
+          style={{ flex: 1 }}
         >
-            <Flex 
-                direction="row"
-                align="center"
-                justify="flex-start"
-                bg={bg_color}
-                style={{ position: 'relative', minHeight: min_height, maxHeight: max_height }}
+          {/* Title of event */}
+          <Text
+            size="5vh"
+            tt="uppercase"
+            mt="sm"
+            mb="sm"
+            c={font_color}
+            w="100%"
+            fw="bolder"
+          >
+            {event.name}
+          </Text>
+
+          {/* Event date, price and location */}
+          <Flex
+            direction="row"
+            justify="space-between"
+            align="center"
+            gap="auto"
+            mt="sm"
+            mb="sm"
+            c={font_color}
+            fw="bold"
+          >
+            <Text>{event.date}</Text>
+            <Text>${event.price}</Text>
+            <Text>{event.location}</Text>
+          </Flex>
+
+          {/* Event description */}
+          <Text size="md" mt="xs" c={font_color} lineClamp={4}>
+            {event.description}
+          </Text>
+
+          <Flex direction="column" justify="flex-end" align="flex-end" p="md">
+            <Button
+              variant="outline"
+              radius="xl"
+              color="white"
+              size="compact-xl"
+              bg={bg_color}
             >
-                <Image
-                    src={event.imageUrl}
-                    fit="fill"
-                    mah={max_height}
-                    w="auto"
-                    alt={event.name}
-                />
-
-                <Flex direction="column" m="md" justify="space-around" gap="sm" mah={max_height} style={{ flex: 1 }}>
-                    {/* Title of event */}
-                    <Text size="5vh" tt="uppercase" mt="sm" mb="sm" c={font_color} w="100%" fw="bolder">
-                        {event.name}
-                    </Text>
-
-                    {/* Event date, price and location */}
-                    <Flex direction="row" justify="space-between" align="center" gap="auto" mt="sm" mb="sm" c={font_color} fw="bold">
-                        <Text>{event.date}</Text>
-                        <Text>${event.price}</Text>
-                        <Text>{event.location}</Text>
-                    </Flex>
-
-                    {/* Event description */}
-                    <Text size="md" mt="xs" c={font_color} lineClamp={4}>{event.description}</Text>
-
-                    <Flex direction="column" justify="flex-end" align="flex-end" p="md">
-                        <Button variant="outline" radius="xl" color='white' size="compact-xl" bg={bg_color}>
-                            {event.buttonText}
-                        </Button>
-                    </Flex>
-                </Flex>
-            </Flex>
-        </Link>
-    );
+              {event.buttonText}
+            </Button>
+          </Flex>
+        </Flex>
+      </Flex>
+    </Link>
+  );
 }
