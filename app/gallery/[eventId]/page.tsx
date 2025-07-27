@@ -10,28 +10,22 @@ type Photo = {
   alt: string,
 }
 
-type Details = { 
-  year: number
-  month: string
-  day: number
-  location: string
-}
-
 type Event = {
   title: string,
-  details: Details,
+  year: number,
+  month: string,
+  day: number,
+  location: string,
   photos: Photo[]
 }
 
 const placeholderEvents: Record<string, Event> = {
   event1: {
     title: "CASUAL NIGHT @ AKL CBD",
-    details: {
-      year: 2025,
-      month: "October",
-      day: 1,
-      location: "Orange pool club (9 city road)",
-    },
+    year: 2025,
+    month: "October",
+    day: 1,
+    location: "Orange pool club (9 city road)",
     photos: [
       {
         id: 1,
@@ -216,13 +210,11 @@ const placeholderEvents: Record<string, Event> = {
     ]
   },
   event2: {
-    title: "ASPA 2024",
-    details: {  
-      year: 2024,
-      month: "November",
-      day: 15,
-      location: "ASPA Headquarters",
-    },
+    title: "ASPA 2024", 
+    year: 2024,
+    month: "November",
+    day: 15,
+    location: "ASPA Headquarters",
     photos: [
       {
         id: 1,
@@ -233,13 +225,17 @@ const placeholderEvents: Record<string, Event> = {
   }
 }
 
-export default function GalleryEventPage({ params }: { params: Promise<{ eventId: string }> }) {
+export default function GalleryEventPage({
+  params,
+}: {
+  params: Promise<{ eventId: string }>;
+}) {
   const { eventId } = React.use(params);
   const event = eventId ? placeholderEvents[eventId] : null;
   if (!event) {
-    return
+    return;
   }
-  console.log('event', event.photos)
+  console.log("event", event.photos);
 
   const DEFAULT_PHOTOS = 7;
   const TABLET_PHOTOS = 5;
@@ -248,29 +244,33 @@ export default function GalleryEventPage({ params }: { params: Promise<{ eventId
   const [photosPerRow, setPhotosPerRow] = useState(DEFAULT_PHOTOS);
   const [currentPage, setCurrentPage] = useState(1);
 
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 600) {
-        setPhotosPerRow(MOBILE_PHOTOS)
+        setPhotosPerRow(MOBILE_PHOTOS);
       } else if (window.innerWidth <= 900) {
-        setPhotosPerRow(TABLET_PHOTOS)
+        setPhotosPerRow(TABLET_PHOTOS);
       } else {
-        setPhotosPerRow(DEFAULT_PHOTOS)
+        setPhotosPerRow(DEFAULT_PHOTOS);
       }
-    }
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-  console.log(currentPage * (photosPerRow * GALLERY_ROWS))
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  console.log(currentPage * (photosPerRow * GALLERY_ROWS));
 
-  const photoList = event.photos.slice((currentPage - 1) * (photosPerRow * GALLERY_ROWS), currentPage * (photosPerRow * GALLERY_ROWS));
-  
+  const photoList = event.photos.slice(
+    (currentPage - 1) * (photosPerRow * GALLERY_ROWS),
+    currentPage * (photosPerRow * GALLERY_ROWS),
+  );
+
   return (
-    <Box style={{ backgroundColor: '#1A1A1A', padding: '90px 0 0 0' }}> {/* padding for navbar displacement*/}
+    <Box style={{ backgroundColor: "#1A1A1A", padding: "90px 0 0 0" }}>
+      {" "}
+      {/* padding for navbar displacement*/}
       <EventTitle event={event} />
-      <GalleryPage photoList={photoList} photosPerRow={photosPerRow}/>
+      <GalleryPage photoList={photoList} photosPerRow={photosPerRow} />
     </Box>
   );
 }
