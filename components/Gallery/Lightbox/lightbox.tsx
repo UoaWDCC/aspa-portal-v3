@@ -47,6 +47,7 @@ const Lightbox: React.FC<Props> = ({
       onClick={close}
       onKeyDown={handleKeyDown}
       tabIndex={0}
+      data-testid="overlay"
     >
       <Stack className={styles.content} onClick={(e) => e.stopPropagation()}>
         <img
@@ -54,10 +55,10 @@ const Lightbox: React.FC<Props> = ({
           alt={photoList[photoIndex].alt}
           className={styles.image}
         />
-        <CloseButton size="xl" onClick={close} className={styles.closeBtn} />
+        <CloseButton aria-label="close" size="xl" onClick={close} className={styles.closeBtn} />
         <Group className={styles.buttonGroup}>
-          <Button variant="subtle" color="#fff" size="xl" radius="md" onClick={onPrev} className={styles.navBtn}>{'<'}</Button>
-          <Button variant="subtle" color="#fff" size="xl" radius="md" onClick={onNext} className={styles.navBtn}>{'>'}</Button>
+          <Button aria-label="prev" variant="subtle" color="#fff" size="xl" radius="md" onClick={onPrev} className={styles.navBtn}>{'<'}</Button>
+          <Button aria-label="next" variant="subtle" color="#fff" size="xl" radius="md" onClick={onNext} className={styles.navBtn}>{'>'}</Button>
         </Group>
       </Stack>
     </div>

@@ -1,6 +1,5 @@
 import { render, screen } from "@/test-utils";
 import GalleryPage from "./galleryPage";
-import { log } from "console";
 
 const samplePhotos = Array.from({ length: 14 }, (_, i) => ({
   id: i + 1,

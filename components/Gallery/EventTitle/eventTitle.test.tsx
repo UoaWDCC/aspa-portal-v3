@@ -8,7 +8,7 @@ describe("EventTitle component", () => {
         title: "ASPA test event",
         year: 2024,
         month: "November",
-        day: 15,
+        day: '15th',
         location: "ASPA Headquarters",
         photos: [
           {
@@ -41,7 +41,7 @@ describe("EventTitle component", () => {
         title: "ASPA test event",
         year: 2024,
         month: "November",
-        day: 15,
+        day: '15th',
         location: "ASPA Headquarters",
         photos: [
           {
@@ -60,7 +60,7 @@ describe("EventTitle component", () => {
         title: "ASPA test event",
         year: 2024,
         month: "November",
-        day: 15,
+        day: '15th',
         location: "ASPA Headquarters",
         photos: [
           {

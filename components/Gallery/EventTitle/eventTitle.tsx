@@ -11,7 +11,7 @@ type Event = {
   title: string,
   year: number,
   month: string,
-  day: number,
+  day: string,
   location: string,
   photos: Photo[]
 }

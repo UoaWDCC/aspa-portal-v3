@@ -4,6 +4,9 @@ import GalleryPage from '@/components/Gallery/GalleryPage/galleryPage';
 import { Box } from '@mantine/core';
 import React, { useEffect, useState, } from 'react';
 
+import photos from './photos.json'; // Temp photo data
+
+
 type Photo = {
   id: number,
   src: string,
@@ -14,7 +17,7 @@ type Event = {
   title: string,
   year: number,
   month: string,
-  day: number,
+  day: string,
   location: string,
   photos: Photo[]
 }
@@ -24,204 +27,17 @@ const placeholderEvents: Record<string, Event> = {
     title: "CASUAL NIGHT @ AKL CBD",
     year: 2025,
     month: "October",
-    day: 1,
+    day: "1st",
     location: "Orange pool club (9 city road)",
-    photos: [
-      {
-        id: 1,
-        src: "/event_example.svg",
-        alt: "Photo 1"
-      },
-      {
-        id: 2,
-        src: "/event_example.svg",
-        alt: "Photo 2"
-      },
-      {
-        id: 3,
-        src: "/event_example.svg",
-        alt: "Photo 3"
-      },
-      {
-        id: 4,
-        src: "/event_example.svg",
-        alt: "Photo 4"
-      },
-      {
-        id: 5,
-        src: "/event_example.svg",
-        alt: "Photo 5"
-      },
-      {
-        id: 6,
-        src: "/event_example.svg",
-        alt: "Photo 6"
-      },
-      {
-        id: 7,
-        src: "/event_example.svg",
-        alt: "Photo 7"
-      },
-      {
-        id: 8,
-        src: "/event_example.svg",
-        alt: "Photo 8"
-      },
-      {
-        id: 9,
-        src: "/event_example.svg",
-        alt: "Photo 9"
-      },
-      {
-        id: 10,
-        src: "/event_example.svg",
-        alt: "Photo 10"
-      },
-      {
-        id: 11,
-        src: "/event_example.svg",
-        alt: "Photo 11"
-      },
-      {
-        id: 12,
-        src: "/event_example.svg",
-        alt: "Photo 12"
-      },
-      {
-        id: 13,
-        src: "/event_example.svg",
-        alt: "Photo 13"
-      },
-      {
-        id: 14,
-        src: "/event_example.svg",
-        alt: "Photo 14"
-      },
-      {
-        id: 15,
-        src: "/aspa_logo.svg",
-        alt: "Photo 15"
-      },
-      {
-        id: 16,
-        src: "/event_example.svg",
-        alt: "Photo 16"
-      },
-      {
-        id: 17,
-        src: "/event_example.svg",
-        alt: "Photo 17"
-      },
-      {
-        id: 18,
-        src: "/event_example.svg",
-        alt: "Photo 18"
-      },
-      {
-        id: 19,
-        src: "/event_example.svg",
-        alt: "Photo 19"
-      },
-      {
-        id: 20,
-        src: "/event_example.svg",
-        alt: "Photo 20"
-      },
-      {
-        id: 21,
-        src: "/event_example.svg",
-        alt: "Photo 21"
-      },
-      {
-        id: 22,
-        src: "/aspa_title.svg",
-        alt: "Photo 22"
-      },
-      {
-        id: 23,
-        src: "/event_example.svg",
-        alt: "Photo 23"
-      },
-      {
-        id: 24,
-        src: "/event_example.svg",
-        alt: "Photo 24"
-      },
-      {
-        id: 25,
-        src: "/event_example.svg",
-        alt: "Photo 25"
-      },
-      {
-        id: 26,
-        src: "/event_example.svg",
-        alt: "Photo 26"
-      },
-      {
-        id: 27,
-        src: "/event_example.svg",
-        alt: "Photo 27"
-      },
-      {
-        id: 28,
-        src: "/event_example.svg",
-        alt: "Photo 28"
-      },
-      {
-        id: 29,
-        src: "/event_example.svg",
-        alt: "Photo 29"
-      },
-      {
-        id: 30,
-        src: "/event_example.svg",
-        alt: "Photo 30"
-      },
-      {
-        id: 31,
-        src: "/event_example.svg",
-        alt: "Photo 31"
-      },
-      {
-        id: 32,
-        src: "/event_example.svg",
-        alt: "Photo 32"
-      },
-      {
-        id: 33,
-        src: "/event_example.svg",
-        alt: "Photo 33"
-      },
-      {
-        id: 34,
-        src: "/event_example.svg",
-        alt: "Photo 34"
-      },
-      {
-        id: 35,
-        src: "/event_example.svg",
-        alt: "Photo 35"
-      },
-      {
-        id: 36,
-        src: "/event_example.svg",
-        alt: "Photo 36"
-      },
-    ]
+    photos: photos
   },
   event2: {
     title: "ASPA 2024", 
     year: 2024,
     month: "November",
-    day: 15,
+    day: "15th",
     location: "ASPA Headquarters",
-    photos: [
-      {
-        id: 1,
-        src: "/aspa_logo.svg",
-        alt: "ASPA Logo"
-      }
-    ]
+    photos: photos
   }
 }
 
@@ -266,9 +82,7 @@ export default function GalleryEventPage({
   );
 
   return (
-    <Box style={{ backgroundColor: "#1A1A1A", padding: "90px 0 0 0" }}>
-      {" "}
-      {/* padding for navbar displacement*/}
+    <Box style={{ backgroundColor: "#1A1A1A", padding: "90px 0 0 0" }}> {/* padding for navbar displacement*/}
       <EventTitle event={event} />
       <GalleryPage photoList={photoList} photosPerRow={photosPerRow} />
     </Box>
