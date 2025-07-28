@@ -3,12 +3,10 @@ import EventTitle from "./eventTitle";
 
 const sampleEvent = {
   title: "CASUAL NIGHT @ AKL CBD",
-  details: {
-    year: 2025,
-    month: "October",
-    day: 1,
-    location: "Orange pool club (9 city road)",
-  },
+  year: 2025,
+  month: "October",
+  day: '1st',
+  location: "Orange pool club (9 city road)",
   photos: [
     { id: 1, src: "/event_example.svg", alt: "Photo 1" },
     { id: 2, src: "/event_example.svg", alt: "Photo 2" },

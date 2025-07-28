@@ -17,19 +17,19 @@
 }
 
 .photoCardAdjacent.leftPhotos {
-  transform: scale(1.08) translateX(-28px);
+  transform: scale(1.08) translateX(-1.5vw);
 }
 
 .photoCardAdjacent.rightPhotos {
-  transform: scale(1.08) translateX(28px);
+  transform: scale(1.08) translateX(1.5vw);
 }
 
 .leftPhotos {
-  transform: translateX(-38px); 
+  transform: translateX(-2vw); 
 }
 
 .rightPhotos {
-  transform: translateX(38px); 
+  transform: translateX(2vw); 
 }
 
 .photoCard img {
