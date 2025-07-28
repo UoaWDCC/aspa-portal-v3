@@ -1,7 +1,5 @@
 .heroBannerContainer {
 	position: relative;
-	width: 100%;
-	height: 100%;
 	overflow: hidden;
 }
 
@@ -12,11 +10,11 @@
 }
 
 .backgroundMedia {
-	width: 100%;
-	height: 34vw;
-	object-fit: cover; /* Stretches if smaller, crops if larger */
-	object-position: center; /* Center the image */
 	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 
 /* -- TITLE AND ANIMATIONS -- */
