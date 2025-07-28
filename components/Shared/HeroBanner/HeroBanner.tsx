@@ -29,7 +29,7 @@ export function HeroBanner({
   mih,
 }: HeroBannerProps) {
   return (
-    <Box 
+    <Box
       className={styles.heroBannerContainer}
       w={w}
       h={h}
@@ -40,7 +40,7 @@ export function HeroBanner({
     >
       {backgroundType === "video" ? (
         <video
-          className={`${styles.backgroundMedia} ${mediaClassName || ''}`}
+          className={`${styles.backgroundMedia} ${mediaClassName || ""}`}
           src={backgroundUrl}
           autoPlay
           loop
@@ -51,7 +51,7 @@ export function HeroBanner({
         <Image
           src={backgroundUrl}
           alt={`${title} background`}
-          className={`${styles.backgroundMedia} ${mediaClassName || ''}`}
+          className={`${styles.backgroundMedia} ${mediaClassName || ""}`}
           w="100%"
           h="100%"
         />
