@@ -26,7 +26,7 @@ describe("EventTitle component", () => {
       screen.getByText("2024"),
     ).toBeInTheDocument();
     expect(
-      screen.getByText("November 15"),
+      screen.getByText("November 15th"),
     ).toBeInTheDocument();
     expect(
       screen.getByText("ASPA Headquarters"),

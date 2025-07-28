@@ -1,20 +1,35 @@
 .photoGrid {
   display: grid;
   padding: 40px 5vw;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   margin-top: 1.7vw;
 }
 
 .photoCard {
-  transition: transform 0.2s ease;
-  aspect-ratio: 1 / 1;    
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1 / 1;  
 }
 
-.photoCard:hover {
-  transform: translateY(-4px);
+.photoCardHovered {
+  transform: scale(1.16) ;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.photoCardAdjacent.leftPhotos {
+  transform: scale(1.08) translateX(-28px);
+}
+
+.photoCardAdjacent.rightPhotos {
+  transform: scale(1.08) translateX(28px);
+}
+
+.leftPhotos {
+  transform: translateX(-38px); 
+}
+
+.rightPhotos {
+  transform: translateX(38px); 
 }
 
 .photoCard img {
