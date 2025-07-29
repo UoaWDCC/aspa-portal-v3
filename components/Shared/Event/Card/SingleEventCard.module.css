@@ -1,5 +1,7 @@
 .card {
-  background-color: #1a1a1a;
+  width: var(--card-width, 100%);
+  height: var(--card-height, auto);
+  background-color: var(--card-bg, #1a1a1a);
   color: #ffffff;
   border: 1px solid #4b4b4b;
   padding: 1.5vw;
@@ -61,4 +63,3 @@
   font-size: 0.9vw;
   margin-top: 2vw;
 }
-

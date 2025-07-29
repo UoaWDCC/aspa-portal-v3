@@ -2,20 +2,41 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Event } from "./EventCard"; // assuming the type is reused here
+import { Event } from "./EventCard";
 import styles from "./SingleEventCard.module.css";
+
+// Default values for the card dimensions and background color
+const DEFAULT_WIDTH = "100%";
+const DEFAULT_HEIGHT = "auto";
+const DEFAULT_BACKGROUND_COLOR = "#1a1a1a";
 
 interface EventCardProps {
   event: Event;
+  width?: string;
+  height?: string;
+  backgroundColor?: string;
 }
 
-export function EventCard({ event }: EventCardProps) {
+export function EventCard({
+  event,
+  width = DEFAULT_WIDTH,
+  height = DEFAULT_HEIGHT,
+  backgroundColor = DEFAULT_BACKGROUND_COLOR,
+}: EventCardProps) {
   const router = useRouter();
 
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      style={
+        {
+          "--card-width": width,
+          "--card-height": height,
+          "--card-bg": backgroundColor,
+        } as React.CSSProperties
+      }
+    >
       <div className={styles.cardFlex}>
-        {/* Image Section */}
         <div className={styles.imageWrapper}>
           <Image
             src={event.imageUrl}
@@ -26,7 +47,6 @@ export function EventCard({ event }: EventCardProps) {
           />
         </div>
 
-        {/* Info Section */}
         <div className={styles.infoSection}>
           <h2 className={styles.eventTitle}>{event.name}</h2>
           <p>Date & Time: {event.dateTime}</p>
@@ -43,7 +63,6 @@ export function EventCard({ event }: EventCardProps) {
         </div>
       </div>
 
-      {/* Footer Description */}
       <p className={styles.footerText}>
         Here you can register to become a member of the club, log in to your
         account, and sign up for club events. Check out the list of current
