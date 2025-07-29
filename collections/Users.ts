@@ -20,7 +20,7 @@ const Users: CollectionConfig = {
       name: 'elo',
       type: 'number',
       defaultValue: 0,
-    }
+    },
   ],
 };
 
