@@ -6,18 +6,8 @@ const meta: Meta<typeof EventCard> = {
   component: EventCard,
   tags: ["autodocs"],
   argTypes: {
-    event: { control: "object" },
-    width: {
-      control: "text",
-      defaultValue: "100%",
-    },
-    height: {
-      control: "text",
-      defaultValue: "auto",
-    },
-    backgroundColor: {
-      control: "color",
-      defaultValue: "#1a1a1a",
+    event: {
+      control: "object",
     },
   },
 };
@@ -35,8 +25,5 @@ export const Default: StoryObj<typeof EventCard> = {
       price: "$10",
       location: "University of Auckland, OGGB 260-092",
     },
-    width: "100%",
-    height: "auto",
-    backgroundColor: "#1a1a1a",
   },
 };
