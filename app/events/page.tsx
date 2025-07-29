@@ -13,9 +13,8 @@ const sampleEvent: Event = {
 
 export default function EventsPage() {
   return (
-    <div style={{ padding: "2rem", paddingTop: "7vw"}}>
+    <div style={{ padding: "2rem", paddingTop: "7vw" }}>
       <EventCard event={sampleEvent} />
     </div>
   );
 }
-
