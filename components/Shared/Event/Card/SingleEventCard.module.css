@@ -1,0 +1,65 @@
+.card {
+  width: var(--card-width, 100%);
+  height: var(--card-height, auto);
+  background-color: var(--card-bg, #1a1a1a);
+  color: #ffffff;
+  border: 1px solid #4b4b4b;
+  padding: 1.5vw;
+  border-radius: 0.75vw;
+}
+
+.cardFlex {
+  display: flex;
+  gap: 1.5vw;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.imageWrapper {
+  flex: 1 1 300px;
+}
+
+.eventImage {
+  border-radius: 0.5vw;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.infoSection {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eventTitle {
+  font-family: monospace;
+  font-size: 1.75vw;
+  font-weight: 700;
+  margin-bottom: 1vw;
+}
+
+.signUpButton {
+  align-self: start;
+  background-color: #5f6572;
+  color: white;
+  font-weight: 600;
+  border-radius: 5vw;
+  width: 50%;
+  padding: 0.75vw 1vw;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signUpButton:hover {
+  background-color: #7a818f;
+}
+
+.footerText {
+  color: #cccccc;
+  font-size: 0.9vw;
+  margin-top: 2vw;
+}
