@@ -7,6 +7,7 @@ export interface AnimatedTitleProps {
   text: string;
   className?: string;
   shadowLayers?: number;
+  textSize?: string;
 }
 
 const shadowArray = [
@@ -30,6 +31,7 @@ export function HeaderTitle({
   text,
   className,
   shadowLayers,
+  textSize = "15vw",
 }: AnimatedTitleProps) {
   const shadowStyle: React.CSSProperties =
     shadowLayers !== undefined
@@ -40,12 +42,21 @@ export function HeaderTitle({
         }
       : {};
 
+  const textStyles: React.CSSProperties = {
+    fontSize: textSize,
+  };
+
   return (
     <Title className={`${styles.brandingTitle} ${className || ""}`}>
-      <span className={styles.shadowText} style={shadowStyle}>
+      <span
+        className={styles.shadowText}
+        style={{ ...shadowStyle, ...textStyles }}
+      >
         {text}
       </span>
-      <span className={styles.mainText}>{text}</span>
+      <span className={styles.mainText} style={textStyles}>
+        {text}
+      </span>
     </Title>
   );
 }

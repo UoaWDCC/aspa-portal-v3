@@ -27,6 +27,10 @@ const meta: Meta<typeof HeaderTitle> = {
       control: { type: "range", min: 0, max: 14, step: 1 },
       description: "The number of shadow layers to display (0-14)",
     },
+    textSize: {
+      control: "text",
+      description: "The font size of the title text",
+    },
   },
 };
 

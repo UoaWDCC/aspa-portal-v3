@@ -18,7 +18,6 @@
 .shadowText,
 .mainText {
   position: absolute;
-  font-size: 15vw;
   font-weight: 900;
   text-align: center;
   pointer-events: none;
