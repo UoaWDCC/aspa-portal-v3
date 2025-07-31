@@ -12,9 +12,9 @@ const DEFAULT_BACKGROUND_COLOR = "#1a1a1a";
 
 interface EventCardProps {
   event: Event;
-  width?: string;
-  height?: string;
-  backgroundColor?: string;
+  width?: typeof DEFAULT_WIDTH;
+  height?: typeof DEFAULT_HEIGHT;
+  backgroundColor?: typeof DEFAULT_BACKGROUND_COLOR;
 }
 
 export function EventCard({

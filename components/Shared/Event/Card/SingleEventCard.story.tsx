@@ -21,9 +21,9 @@ export const Default: StoryObj<typeof EventCard> = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       imageUrl: "/event_example.svg",
-      dateTime: "2025-08-15 18:00",
+      dateTime: "Tuesday & Thursday, 6:30 - 8:00 PM",
       price: "$10",
-      location: "University of Auckland, OGGB 260-092",
+      location: "Engineering building, Room 101",
     },
   },
 };
