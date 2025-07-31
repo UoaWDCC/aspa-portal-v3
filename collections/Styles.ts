@@ -1,4 +1,4 @@
-import { GlobalConfig } from 'payload/types';
+import { GlobalConfig } from 'payload';
 
 const Styles: GlobalConfig = {
   slug: 'styles',

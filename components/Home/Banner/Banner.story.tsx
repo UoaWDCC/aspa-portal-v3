@@ -9,8 +9,6 @@ const meta: Meta<typeof Banner> = {
     description: { control: 'text' },
     buttonText: { control: 'text' },
     groupText: { control: 'text' },
-    titleImageSrc: { control: 'text' },
-    titleImageAlt: { control: 'text' },
   },
 };
 
@@ -23,7 +21,5 @@ export const Default: StoryObj<typeof Banner> = {
       'Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur',
     buttonText: 'Current Events',
     groupText: 'dolor sit amet, consectetur',
-    titleImageSrc: '/aspa_title.svg',
-    titleImageAlt: 'ASPA Title',
   },
 };

@@ -14,6 +14,7 @@ export default withPayload({
   },
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
+    reactCompiler: false,
   },
 });
 
