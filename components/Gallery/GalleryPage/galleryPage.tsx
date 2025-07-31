@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useState } from 'react';
 import PhotoRow from '@/components/Gallery/PhotoRow/photoRow';
 import Lightbox from '@/components/Gallery/Lightbox/lightbox';
 
 type Photo = {
-  id: number,
-  src: string,
-  alt: string,
+  id: number;
+  src: string;
+  alt: string;
 };
 
-const GalleryPage = ({ photoList , photosPerRow }: { photoList: Photo[] , photosPerRow: number }) => {
-  const [lightboxOpen, setlightboxOpen] = useState(false)
-  const [photoIndex, setPhotoIndex] = useState(0)
+const GalleryPage = ({ photoList, photosPerRow }: { photoList: Photo[]; photosPerRow: number }) => {
+  const [lightboxOpen, setlightboxOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
 
   const openLightbox = (index: number) => {
     setPhotoIndex(index);
     setlightboxOpen(true);
-  }
+  };
 
-  const closeLightbox = () => setlightboxOpen(false)
+  const closeLightbox = () => setlightboxOpen(false);
 
   const showPrev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -30,11 +30,11 @@ const GalleryPage = ({ photoList , photosPerRow }: { photoList: Photo[] , photos
   };
 
   const splitArray = (array: Photo[], length: number): Photo[][] => {
-    const result: Photo[][] = []
+    const result: Photo[][] = [];
     for (let i = 0; i < array.length; i += length) {
-      result.push(array.slice(i, i + length))
+      result.push(array.slice(i, i + length));
     }
-    return result
+    return result;
   };
 
   const photoListChunks = splitArray(photoList, photosPerRow);
@@ -50,7 +50,7 @@ const GalleryPage = ({ photoList , photosPerRow }: { photoList: Photo[] , photos
             onImageClick={openLightbox}
             style={odd}
           />
-        )
+        );
       })}
 
       <Lightbox

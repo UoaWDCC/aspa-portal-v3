@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import styles from "./lightbox.module.css";
-import { Stack, Group, Button, CloseButton} from "@mantine/core";
+import React, { useEffect, useRef } from 'react';
+import styles from './lightbox.module.css';
+import { Stack, Group, Button, CloseButton } from '@mantine/core';
 
 type Photo = {
   id: number;
@@ -17,14 +17,7 @@ interface Props {
   onNext: (e: React.MouseEvent) => void;
 }
 
-const Lightbox: React.FC<Props> = ({
-  open,
-  photoList,
-  photoIndex,
-  close,
-  onPrev,
-  onNext,
-}) => {
+const Lightbox: React.FC<Props> = ({ open, photoList, photoIndex, close, onPrev, onNext }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,7 +27,7 @@ const Lightbox: React.FC<Props> = ({
   }, [open]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Escape") {
+    if (e.key === 'Escape') {
       close();
     }
   };
@@ -57,8 +50,28 @@ const Lightbox: React.FC<Props> = ({
         />
         <CloseButton aria-label="close" size="xl" onClick={close} className={styles.closeBtn} />
         <Group className={styles.buttonGroup}>
-          <Button aria-label="prev" variant="subtle" color="#fff" size="xl" radius="md" onClick={onPrev} className={styles.navBtn}>{'<'}</Button>
-          <Button aria-label="next" variant="subtle" color="#fff" size="xl" radius="md" onClick={onNext} className={styles.navBtn}>{'>'}</Button>
+          <Button
+            aria-label="prev"
+            variant="subtle"
+            color="#fff"
+            size="xl"
+            radius="md"
+            onClick={onPrev}
+            className={styles.navBtn}
+          >
+            {'<'}
+          </Button>
+          <Button
+            aria-label="next"
+            variant="subtle"
+            color="#fff"
+            size="xl"
+            radius="md"
+            onClick={onNext}
+            className={styles.navBtn}
+          >
+            {'>'}
+          </Button>
         </Group>
       </Stack>
     </div>

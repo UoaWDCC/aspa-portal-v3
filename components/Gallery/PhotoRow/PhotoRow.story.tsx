@@ -1,14 +1,14 @@
-import { Meta, StoryObj } from "@storybook/react";
-import PhotoRow from "./photoRow";
+import { Meta, StoryObj } from '@storybook/react';
+import PhotoRow from './photoRow';
 
 const samplePhotos = Array.from({ length: 7 }, (_, i) => ({
   id: i + 1,
-  src: "/event_example.svg",
+  src: '/event_example.svg',
   alt: `Photo ${i + 1}`,
 }));
 
 const meta: Meta<typeof PhotoRow> = {
-  title: "Gallery/PhotoRow",
+  title: 'Gallery/PhotoRow',
   component: PhotoRow,
   argTypes: {},
 };

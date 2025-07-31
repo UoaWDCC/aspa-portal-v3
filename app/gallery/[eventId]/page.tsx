@@ -1,57 +1,52 @@
-"use client"
+'use client';
 import EventTitle from '@/components/Gallery/EventTitle/eventTitle';
 import GalleryPage from '@/components/Gallery/GalleryPage/galleryPage';
 import { Box } from '@mantine/core';
-import React, { useEffect, useState, } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import photos from './photos.json'; // Temp photo data
 
-
 type Photo = {
-  id: number,
-  src: string,
-  alt: string,
-}
+  id: number;
+  src: string;
+  alt: string;
+};
 
 type Event = {
-  title: string,
-  year: number,
-  month: string,
-  day: string,
-  location: string,
-  photos: Photo[]
-}
+  title: string;
+  year: number;
+  month: string;
+  day: string;
+  location: string;
+  photos: Photo[];
+};
 
 const placeholderEvents: Record<string, Event> = {
   event1: {
-    title: "CASUAL NIGHT @ AKL CBD",
+    title: 'CASUAL NIGHT @ AKL CBD',
     year: 2025,
-    month: "October",
-    day: "1st",
-    location: "Orange pool club (9 city road)",
-    photos: photos
+    month: 'October',
+    day: '1st',
+    location: 'Orange pool club (9 city road)',
+    photos: photos,
   },
   event2: {
-    title: "ASPA 2024", 
+    title: 'ASPA 2024',
     year: 2024,
-    month: "November",
-    day: "15th",
-    location: "ASPA Headquarters",
-    photos: photos
-  }
-}
+    month: 'November',
+    day: '15th',
+    location: 'ASPA Headquarters',
+    photos: photos,
+  },
+};
 
-export default function GalleryEventPage({
-  params,
-}: {
-  params: Promise<{ eventId: string }>;
-}) {
+export default function GalleryEventPage({ params }: { params: Promise<{ eventId: string }> }) {
   const { eventId } = React.use(params);
   const event = eventId ? placeholderEvents[eventId] : null;
   if (!event) {
     return;
   }
-  console.log("event", event.photos);
+  console.log('event', event.photos);
 
   const DEFAULT_PHOTOS = 7;
   const TABLET_PHOTOS = 5;
@@ -71,18 +66,20 @@ export default function GalleryEventPage({
       }
     };
     handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
   console.log(currentPage * (photosPerRow * GALLERY_ROWS));
 
   const photoList = event.photos.slice(
     (currentPage - 1) * (photosPerRow * GALLERY_ROWS),
-    currentPage * (photosPerRow * GALLERY_ROWS),
+    currentPage * (photosPerRow * GALLERY_ROWS)
   );
 
   return (
-    <Box style={{ backgroundColor: "#1A1A1A", padding: "90px 0 0 0" }}> {/* padding for navbar displacement*/}
+    <Box style={{ backgroundColor: '#1A1A1A', padding: '90px 0 0 0' }}>
+      {' '}
+      {/* padding for navbar displacement*/}
       <EventTitle event={event} />
       <GalleryPage photoList={photoList} photosPerRow={photosPerRow} />
     </Box>
