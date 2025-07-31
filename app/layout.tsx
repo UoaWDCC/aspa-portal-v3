@@ -1,30 +1,40 @@
-"use client";
+'use client';
 
-import "@mantine/core/styles.css";
-import "@mantine/carousel/styles.css";
+import '@mantine/core/styles.css';
+import '@mantine/carousel/styles.css';
 
-import React from "react";
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
-import { theme } from "../theme";
+import React from 'react';
+import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
+import { theme } from '../theme';
 
-import { NavBar } from "@/components/NavBar/NavBar";
-import { Footer } from "@/components/Footer/Footer";
+import { NavBar } from '@/components/NavBar/NavBar';
+import { Footer } from '@/components/Footer/Footer';
 
 const links = [
-  { name: "Home", href: "/" },
-  { name: "Contact", href: "/contact" },
-  { name: "Events", href: "/events" },
+  { name: 'Home', href: '/' },
+  { name: 'Events', href: '/events' },
+  { name: 'ASPA Team', href: '/contact' },
+  { name: 'Profile', href: '/contact' },
 ];
 
 const socialMediaLinks = [
-  { name: "Twitter", icon: "/twitter.svg", href: "https://twitter.com" },
-  { name: "Facebook", icon: "/facebook.svg", href: "https://facebook.com" },
-  { name: "Instagram", icon: "/instagram.svg", href: "https://instagram.com" },
+  { name: 'Discord', icon: 'discord', href: 'https://discord.com' },
+  {
+    name: 'LinkedIn',
+    icon: 'linkedin',
+    href: 'https://www.linkedin.com/company/aspa-uoa/',
+  },
+  {
+    name: 'Instagram',
+    icon: 'instagram',
+    href: 'https://www.instagram.com/aspa.uoa/',
+  },
+  { name: 'Facebook', icon: 'facebook', href: 'https://facebook.com' },
 ];
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en">
+    <html lang="en" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
