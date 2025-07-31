@@ -28,10 +28,17 @@ describe("EventCard", () => {
     render(<EventCard event={sampleEvent} />);
 
     expect(screen.getByText("Sample Event")).toBeInTheDocument();
-    expect(screen.getByText(/Date & Time/i)).toHaveTextContent("Tuesday & Thursday, 6:30 - 8:00 PM");
+    expect(screen.getByText(/Date & Time/i)).toHaveTextContent(
+      "Tuesday & Thursday, 6:30 - 8:00 PM",
+    );
     expect(screen.getByText(/Entry Price/i)).toHaveTextContent("$10");
-    expect(screen.getByText(/Location/i)).toHaveTextContent("Engineering building, Room 101");
-    expect(screen.getByRole("img")).toHaveAttribute("src", expect.stringContaining("sample.jpg"));
+    expect(screen.getByText(/Location/i)).toHaveTextContent(
+      "Engineering building, Room 101",
+    );
+    expect(screen.getByRole("img")).toHaveAttribute(
+      "src",
+      expect.stringContaining("sample.jpg"),
+    );
   });
 
   it("navigates to /signup on button click", () => {
