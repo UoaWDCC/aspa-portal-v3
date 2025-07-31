@@ -8,9 +8,6 @@ export interface BannerProps {
   description: string;
   buttonText: string;
   groupText: string;
-  titleImageSrc: string;
-  titleImageAlt: string;
-  brandingTitle: string;
   paddingTop?: string;
   paddingBottom?: string;
   paddingleft?: string;
@@ -22,8 +19,6 @@ export function Banner({
   description,
   buttonText,
   groupText,
-  titleImageSrc,
-  titleImageAlt,
   paddingTop = '',
   paddingBottom = '',
   paddingleft = '',
