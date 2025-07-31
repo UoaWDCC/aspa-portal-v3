@@ -4,16 +4,23 @@ import { EventCard } from "./SingleEventCard";
 import { useRouter } from "next/navigation";
 import "@testing-library/jest-dom";
 
-// Mocking next/navigation's useRouter
+// use npx jest components/Shared/Event/Card/SingleEventCard.test.tsx to run
+
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
+}));
+
+jest.mock("next/image", () => ({
+  __esModule: true,
+  default: (props: any) => <img alt={props.alt || ""} {...props} />,
 }));
 
 describe("EventCard", () => {
   const mockPush = jest.fn();
 
   beforeEach(() => {
-    (useRouter as jest.Mock).mockReturnValue({ push: mockPush });
+    const mockedUseRouter = useRouter as jest.Mock;
+    mockedUseRouter.mockReturnValue({ push: mockPush });
   });
 
   const sampleEvent = {
@@ -21,7 +28,7 @@ describe("EventCard", () => {
     dateTime: "Tuesday & Thursday, 6:30 - 8:00 PM",
     price: "$10",
     location: "Engineering building, Room 101",
-    imageUrl: "/sample.jpg",
+    imageUrl: "/event_example.jpg",
   };
 
   it("renders event details correctly", () => {
@@ -37,7 +44,7 @@ describe("EventCard", () => {
     );
     expect(screen.getByRole("img")).toHaveAttribute(
       "src",
-      expect.stringContaining("sample.jpg"),
+      expect.stringContaining("event_example.jpg"),
     );
   });
 
