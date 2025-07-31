@@ -10,6 +10,7 @@ export interface BannerProps {
   groupText: string;
   titleImageSrc: string;
   titleImageAlt: string;
+  brandingTitle: string;
   paddingTop?: string;
   paddingBottom?: string;
   paddingleft?: string;
@@ -38,15 +39,6 @@ export function Banner({
             <Button className={styles.button}>{buttonText}</Button>
             <Text className={styles.group}>{groupText}</Text>
           </Group>
-        </Grid.Col>
-        <Grid.Col span={{ base: 12, sm: 6 }} className={styles.imageContainer}>
-          <Image
-            src={titleImageSrc}
-            alt={titleImageAlt}
-            width={0}
-            height={0}
-            className={`${styles.image} ${styles.hoverUpDown}`}
-          />
         </Grid.Col>
       </Grid>
     </Container>
