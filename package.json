@@ -2,6 +2,7 @@
   "name": "aspa",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -24,16 +25,23 @@
     "@mantine/core": "8.0.1",
     "@mantine/hooks": "8.0.1",
     "@next/bundle-analyzer": "^15.2.3",
+    "@payloadcms/db-postgres": "^3.40.0",
+    "@payloadcms/next": "^3.40.0",
+    "@payloadcms/richtext-lexical": "^3.40.0",
+    "@remixicon/react": "^4.6.0",
     "@tabler/icons-react": "^3.31.0",
     "embla-carousel-react": "^8.6.0",
+    "graphql": "^16.11.0",
     "next": "15.2.3",
+    "payload": "^3.40.0",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "sharp": "^0.34.2"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@eslint/js": "^9.23.0",
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@ianvs/prettier-plugin-sort-imports": "^4.5.1",
     "@storybook/addon-essentials": "^8.6.8",
     "@storybook/addon-interactions": "^8.6.8",
     "@storybook/nextjs": "^8.6.8",

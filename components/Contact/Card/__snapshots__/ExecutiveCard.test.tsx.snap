@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExecutiveCard Component Testing matches snapshot 1`] = `
+<DocumentFragment>
+  <style
+    data-mantine-styles="true"
+  >
+    :root{--mantine-font-family: fontFamily;--mantine-font-family-headings: fontFamily;--mantine-color-aspa-orange-0: #fff2e4;--mantine-color-aspa-orange-1: #fbe6d3;--mantine-color-aspa-orange-2: #f0ccaa;--mantine-color-aspa-orange-3: #e5af7e;--mantine-color-aspa-orange-4: #dc9758;--mantine-color-aspa-orange-5: #d78840;--mantine-color-aspa-orange-6: #d68032;--mantine-color-aspa-orange-7: #bd6d24;--mantine-color-aspa-orange-8: #a9611d;--mantine-color-aspa-orange-9: #945212;--mantine-color-aspa-brown-0: #faf5ef;--mantine-color-aspa-brown-1: #f0e8e0;--mantine-color-aspa-brown-2: #e2cdbb;--mantine-color-aspa-brown-3: #d5b192;--mantine-color-aspa-brown-4: #c9996f;--mantine-color-aspa-brown-5: #c38a59;--mantine-color-aspa-brown-6: #c1834d;--mantine-color-aspa-brown-7: #a96f3d;--mantine-color-aspa-brown-8: #986335;--mantine-color-aspa-brown-9: #845429;--mantine-color-aspa-gray-0: #f4f5f5;--mantine-color-aspa-gray-1: #e7e7e7;--mantine-color-aspa-gray-2: #cdcdcd;--mantine-color-aspa-gray-3: #b1b1b1;--mantine-color-aspa-gray-4: #999999;--mantine-color-aspa-gray-5: #8a8a8a;--mantine-color-aspa-gray-6: #838383;--mantine-color-aspa-gray-7: #707071;--mantine-color-aspa-gray-8: #636466;--mantine-color-aspa-gray-9: #52575b;}:root[data-mantine-color-scheme="dark"]{--mantine-color-aspa-orange-text: var(--mantine-color-aspa-orange-4);--mantine-color-aspa-orange-filled: var(--mantine-color-aspa-orange-8);--mantine-color-aspa-orange-filled-hover: var(--mantine-color-aspa-orange-9);--mantine-color-aspa-orange-light: rgba(214, 128, 50, 0.15);--mantine-color-aspa-orange-light-hover: rgba(214, 128, 50, 0.2);--mantine-color-aspa-orange-light-color: var(--mantine-color-aspa-orange-3);--mantine-color-aspa-orange-outline: var(--mantine-color-aspa-orange-4);--mantine-color-aspa-orange-outline-hover: rgba(220, 151, 88, 0.05);--mantine-color-aspa-brown-text: var(--mantine-color-aspa-brown-4);--mantine-color-aspa-brown-filled: var(--mantine-color-aspa-brown-8);--mantine-color-aspa-brown-filled-hover: var(--mantine-color-aspa-brown-9);--mantine-color-aspa-brown-light: rgba(193, 131, 77, 0.15);--mantine-color-aspa-brown-light-hover: rgba(193, 131, 77, 0.2);--mantine-color-aspa-brown-light-color: var(--mantine-color-aspa-brown-3);--mantine-color-aspa-brown-outline: var(--mantine-color-aspa-brown-4);--mantine-color-aspa-brown-outline-hover: rgba(201, 153, 111, 0.05);--mantine-color-aspa-gray-text: var(--mantine-color-aspa-gray-4);--mantine-color-aspa-gray-filled: var(--mantine-color-aspa-gray-8);--mantine-color-aspa-gray-filled-hover: var(--mantine-color-aspa-gray-9);--mantine-color-aspa-gray-light: rgba(131, 131, 131, 0.15);--mantine-color-aspa-gray-light-hover: rgba(131, 131, 131, 0.2);--mantine-color-aspa-gray-light-color: var(--mantine-color-aspa-gray-3);--mantine-color-aspa-gray-outline: var(--mantine-color-aspa-gray-4);--mantine-color-aspa-gray-outline-hover: rgba(153, 153, 153, 0.05);}:root[data-mantine-color-scheme="light"]{--mantine-color-aspa-orange-text: var(--mantine-color-aspa-orange-filled);--mantine-color-aspa-orange-filled: var(--mantine-color-aspa-orange-6);--mantine-color-aspa-orange-filled-hover: var(--mantine-color-aspa-orange-7);--mantine-color-aspa-orange-light: rgba(214, 128, 50, 0.1);--mantine-color-aspa-orange-light-hover: rgba(214, 128, 50, 0.12);--mantine-color-aspa-orange-light-color: var(--mantine-color-aspa-orange-6);--mantine-color-aspa-orange-outline: var(--mantine-color-aspa-orange-6);--mantine-color-aspa-orange-outline-hover: rgba(214, 128, 50, 0.05);--mantine-color-aspa-brown-text: var(--mantine-color-aspa-brown-filled);--mantine-color-aspa-brown-filled: var(--mantine-color-aspa-brown-6);--mantine-color-aspa-brown-filled-hover: var(--mantine-color-aspa-brown-7);--mantine-color-aspa-brown-light: rgba(193, 131, 77, 0.1);--mantine-color-aspa-brown-light-hover: rgba(193, 131, 77, 0.12);--mantine-color-aspa-brown-light-color: var(--mantine-color-aspa-brown-6);--mantine-color-aspa-brown-outline: var(--mantine-color-aspa-brown-6);--mantine-color-aspa-brown-outline-hover: rgba(193, 131, 77, 0.05);--mantine-color-aspa-gray-text: var(--mantine-color-aspa-gray-filled);--mantine-color-aspa-gray-filled: var(--mantine-color-aspa-gray-6);--mantine-color-aspa-gray-filled-hover: var(--mantine-color-aspa-gray-7);--mantine-color-aspa-gray-light: rgba(131, 131, 131, 0.1);--mantine-color-aspa-gray-light-hover: rgba(131, 131, 131, 0.12);--mantine-color-aspa-gray-light-color: var(--mantine-color-aspa-gray-6);--mantine-color-aspa-gray-outline: var(--mantine-color-aspa-gray-6);--mantine-color-aspa-gray-outline-hover: rgba(131, 131, 131, 0.05);}
+  </style>
+  <style
+    data-mantine-styles="classes"
+  >
+    @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+  </style>
+  <div
+    class="card m_e615b15f mantine-Card-root m_1b7284a3 mantine-Paper-root"
+    data-with-border="true"
+    style="--paper-radius: var(--mantine-radius-xl); --paper-shadow: var(--mantine-shadow-sm); --card-padding: var(--mantine-spacing-lg); max-width: 100%;"
+  >
+    <div
+      class="m_599a2148 mantine-Card-section"
+      data-first-section="true"
+    >
+      <img
+        alt="Johnny Shen"
+        class="m_9e117634 mantine-Image-root"
+        src="https://media.istockphoto.com/id/96333863/photo/retro-dude.jpg?s=612x612&w=0&k=20&c=L9_H1c8MP41PGEcg36VEakeMoVC8uf1Jq5hs-NErQ0k="
+      />
+    </div>
+    <div
+      class="m_4081bf90 mantine-Group-root"
+      style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap;"
+    >
+      <h2
+        class="m_8a5d1357 mantine-Title-root"
+        data-order="2"
+        style="--title-fw: var(--mantine-h2-font-weight); --title-lh: var(--mantine-h2-line-height); --title-fz: var(--mantine-h2-font-size);"
+      >
+        Johnny Shen
+      </h2>
+      <div
+        class="m_347db0ec mantine-Badge-root"
+        data-size="md"
+        style="--badge-height: var(--badge-height-md); --badge-padding-x: var(--badge-padding-x-md); --badge-fz: var(--badge-fz-md); --badge-bg: #d78840; --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+      >
+        <span
+          class="m_5add502a mantine-Badge-label"
+        >
+          President
+        </span>
+      </div>
+    </div>
+    <p
+      class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
+      data-size="md"
+      style="--text-fz: var(--mantine-font-size-md); --text-lh: var(--mantine-line-height-md);"
+    >
+      Your friendly neighbourhood President of ASPA
+    </p>
+  </div>
+</DocumentFragment>
+`;

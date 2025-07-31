@@ -1,6 +1,7 @@
-"use client";
-import { Container, Grid, Title, Text, Button, Group } from "@mantine/core";
-import styles from "./Banner.module.css";
+'use client';
+import { Container, Grid, Title, Text, Button, Group } from '@mantine/core';
+import Image from 'next/image';
+import styles from './Banner.module.css';
 
 export interface BannerProps {
   title: string;
@@ -21,19 +22,15 @@ export function Banner({
   description,
   buttonText,
   groupText,
-  paddingTop = "",
-  paddingBottom = "",
-  paddingleft = "",
-  paddingRight = "",
+  titleImageSrc,
+  titleImageAlt,
+  paddingTop = '',
+  paddingBottom = '',
+  paddingleft = '',
+  paddingRight = '',
 }: BannerProps) {
   return (
-    <Container
-      fluid
-      pt={paddingTop}
-      pb={paddingBottom}
-      pl={paddingleft}
-      pr={paddingRight}
-    >
+    <Container fluid pt={paddingTop} pb={paddingBottom} pl={paddingleft} pr={paddingRight}>
       <Grid gutter="xl">
         <Grid.Col span={{ base: 12, sm: 6 }}>
           <Title className={styles.title}>{title}</Title>
