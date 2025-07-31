@@ -5,7 +5,7 @@ import '@mantine/carousel/styles.css';
 
 import React from 'react';
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
-import { theme } from '../../theme';
+import { theme } from '../theme';
 
 import { NavBar } from '@/components/NavBar/NavBar';
 import { Footer } from '@/components/Footer/Footer';
