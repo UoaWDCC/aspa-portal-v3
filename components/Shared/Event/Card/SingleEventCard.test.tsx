@@ -18,9 +18,9 @@ describe("EventCard", () => {
 
   const sampleEvent = {
     name: "Sample Event",
-    dateTime: "2025-08-10 18:00",
+    dateTime: "Tuesday & Thursday, 6:30 - 8:00 PM",
     price: "$10",
-    location: "Auckland City Hall",
+    location: "Engineering building, Room 101",
     imageUrl: "/sample.jpg",
   };
 
@@ -28,9 +28,9 @@ describe("EventCard", () => {
     render(<EventCard event={sampleEvent} />);
 
     expect(screen.getByText("Sample Event")).toBeInTheDocument();
-    expect(screen.getByText(/Date & Time/i)).toHaveTextContent("2025-08-10 18:00");
+    expect(screen.getByText(/Date & Time/i)).toHaveTextContent("Tuesday & Thursday, 6:30 - 8:00 PM");
     expect(screen.getByText(/Entry Price/i)).toHaveTextContent("$10");
-    expect(screen.getByText(/Location/i)).toHaveTextContent("Auckland City Hall");
+    expect(screen.getByText(/Location/i)).toHaveTextContent("Engineering building, Room 101");
     expect(screen.getByRole("img")).toHaveAttribute("src", expect.stringContaining("sample.jpg"));
   });
 
