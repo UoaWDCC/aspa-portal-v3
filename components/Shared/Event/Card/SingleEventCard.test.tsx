@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { EventCard } from "./singleeventcard";
+import { EventCard } from "./SingleEventCard";
 import { useRouter } from "next/navigation";
 import "@testing-library/jest-dom";
 
