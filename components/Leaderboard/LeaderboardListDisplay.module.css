@@ -1,7 +1,23 @@
 .container {
-  overflow-y: auto;
   border-radius: 0.6vw;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.stickyRow {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  color: white;
+}
+
+.scrollArea {
+  overflow-y: auto;
 }
 
 .row {
