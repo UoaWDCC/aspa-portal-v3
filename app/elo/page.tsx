@@ -3,9 +3,9 @@
 import { LeaderboardListDisplay } from "@/components/Leaderboard/LeaderboardListDisplay";
 import { useEffect, useState } from "react";
 
-// Constants for padding (in px)
-const PAGE_PADDING_TOP = 180; 
-const PAGE_PADDING_BOTTOM = 30;
+// Page padding (in vw)
+const PAGE_PADDING_TOP_VW = 12;
+const PAGE_PADDING_BOTTOM_VW = 2;
 
 interface LeaderboardEntry {
   rank: number;
@@ -34,8 +34,8 @@ export default function LeaderboardPage() {
   return (
     <div
       style={{
-        paddingTop: `${PAGE_PADDING_TOP}px`,
-        paddingBottom: `${PAGE_PADDING_BOTTOM}px`,
+        paddingTop: `${PAGE_PADDING_TOP_VW}vw`,
+        paddingBottom: `${PAGE_PADDING_BOTTOM_VW}vw`,
       }}
     >
       <LeaderboardListDisplay leaderboard={leaderboard} />

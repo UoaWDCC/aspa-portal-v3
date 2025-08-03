@@ -1,6 +1,6 @@
 .container {
   overflow-y: auto;
-  border-radius: 8px;
+  border-radius: 0.6vw;
   font-family: sans-serif;
 }
 
@@ -11,7 +11,6 @@
   color: white;
 }
 
-
 .name {
   flex: 1;
 }
@@ -19,7 +18,7 @@
 .wins {
   font-size: 0.9rem;
   text-align: right;
-  margin-right: 20px;
+  margin-right: 1.5vw;
 }
 
 .points {
