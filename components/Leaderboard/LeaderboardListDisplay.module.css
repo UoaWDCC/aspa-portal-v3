@@ -1,5 +1,4 @@
 .container {
-  max-height: 400px; /* Fits ~5 rows */
   overflow-y: auto;
   border-radius: 8px;
   font-family: sans-serif;
@@ -9,21 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 20px;
   color: white;
 }
 
-.lightRow {
-  background-color: #7a7f87;
-}
-
-.darkRow {
-  background-color: #111111;
-}
-
-.rank {
-  width: 40px;
-}
 
 .name {
   flex: 1;
@@ -37,6 +24,5 @@
 
 .points {
   font-weight: bold;
-  width: 50px;
   text-align: right;
 }
