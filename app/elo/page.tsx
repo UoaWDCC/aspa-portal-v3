@@ -3,6 +3,10 @@
 import { LeaderboardListDisplay } from "@/components/Leaderboard/LeaderboardListDisplay";
 import { useEffect, useState } from "react";
 
+// Constants for padding (in px)
+const PAGE_PADDING_TOP = 180; 
+const PAGE_PADDING_BOTTOM = 30;
+
 interface LeaderboardEntry {
   rank: number;
   name: string;
@@ -15,7 +19,6 @@ export default function LeaderboardPage() {
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
 
   useEffect(() => {
-    // TODO: Replace with API call if needed
     const sampleData: LeaderboardEntry[] = [
       { rank: 1, name: "Person 1", soloWon: 14, duoWon: 1, points: 150 },
       { rank: 2, name: "Person 12", soloWon: 12, duoWon: 2, points: 140 },
@@ -29,7 +32,12 @@ export default function LeaderboardPage() {
   }, []);
 
   return (
-    <div style={{ paddingTop: "180px", paddingBottom: "30px" }}>
+    <div
+      style={{
+        paddingTop: `${PAGE_PADDING_TOP}px`,
+        paddingBottom: `${PAGE_PADDING_BOTTOM}px`,
+      }}
+    >
       <LeaderboardListDisplay leaderboard={leaderboard} />
     </div>
   );

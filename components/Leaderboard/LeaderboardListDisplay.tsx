@@ -3,6 +3,19 @@
 import React from "react";
 import styles from "./LeaderboardListDisplay.module.css";
 
+// Styling constants
+export const ROW_HEIGHT = 80; 
+export const VISIBLE_ROWS = 5; 
+export const MAX_HEIGHT = ROW_HEIGHT * VISIBLE_ROWS; 
+
+export const LIGHT_ROW_COLOR = "#7a7f87";
+export const DARK_ROW_COLOR = "#111111";
+
+export const RANK_WIDTH = 40;
+export const POINTS_WIDTH = 50;
+export const PADDING_X = 20;
+export const PADDING_Y = 12;
+
 interface LeaderboardEntry {
   rank: number;
   name: string;
@@ -17,13 +30,22 @@ interface LeaderboardListDisplayProps {
 
 export const LeaderboardListDisplay: React.FC<LeaderboardListDisplayProps> = ({ leaderboard }) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ maxHeight: `${MAX_HEIGHT}px` }} // Uses constant
+    >
       {leaderboard.map((entry) => (
         <div
           key={entry.rank}
-          className={`${styles.row} ${entry.rank % 2 === 0 ? styles.darkRow : styles.lightRow}`}
+          className={styles.row}
+          style={{
+            backgroundColor: entry.rank % 2 === 0 ? DARK_ROW_COLOR : LIGHT_ROW_COLOR,
+            padding: `${PADDING_Y}px ${PADDING_X}px`,
+          }}
         >
-          <div className={styles.rank}>{entry.rank}.</div>
+          <div className={styles.rank} style={{ width: `${RANK_WIDTH}px` }}>
+            {entry.rank}.
+          </div>
 
           <div className={styles.name}>{entry.name}</div>
 
@@ -32,24 +54,11 @@ export const LeaderboardListDisplay: React.FC<LeaderboardListDisplayProps> = ({ 
             <div>Duo won: {entry.duoWon}</div>
           </div>
 
-          <div className={styles.points}>{entry.points}</div>
+          <div className={styles.points} style={{ width: `${POINTS_WIDTH}px` }}>
+            {entry.points}
+          </div>
         </div>
       ))}
     </div>
   );
 };
-
-// Example usage
-const sampleData: LeaderboardEntry[] = [
-  { rank: 1, name: "Person 1", soloWon: 14, duoWon: 1, points: 150 },
-  { rank: 2, name: "Person 12", soloWon: 12, duoWon: 2, points: 140 },
-  { rank: 3, name: "Person 51", soloWon: 12, duoWon: 0, points: 120 },
-  { rank: 4, name: "Person 17", soloWon: 10, duoWon: 2, points: 120 },
-  { rank: 5, name: "Person 7", soloWon: 10, duoWon: 1, points: 110 },
-  { rank: 6, name: "Person 20", soloWon: 9, duoWon: 3, points: 100 },
-  { rank: 7, name: "Person 25", soloWon: 8, duoWon: 4, points: 95 },
-];
-
-export default function LeaderboardPage() {
-  return <LeaderboardListDisplay leaderboard={sampleData} />;
-}
