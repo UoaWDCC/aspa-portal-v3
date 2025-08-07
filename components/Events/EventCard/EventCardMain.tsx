@@ -1,16 +1,6 @@
-import { Flex, Image, Text, rgba, Button } from "@mantine/core";
-import Link from "next/link";
-
-export interface Event {
-  id: string;
-  name: string;
-  date: string;
-  price: number;
-  location: string;
-  description: string;
-  imageUrl: string;
-  buttonText: string; // Text to show in event card button
-}
+import { Flex, Image, Text, rgba, Button } from '@mantine/core';
+import Link from 'next/link'
+import { Event } from '../EventDisplay/EventDisplay'
 
 export interface EventCardMainProps {
     event: Event

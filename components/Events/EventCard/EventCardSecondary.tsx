@@ -1,6 +1,6 @@
-import { Flex, Image, Text, rgba, Button, Group, Stack } from "@mantine/core";
-import { Event } from "./EventCardMain";
-import Link from "next/link";
+import { Flex, Image, Text, rgba, Button, Group, Stack } from '@mantine/core';
+import { Event } from '../EventDisplay/EventDisplay';
+import Link from 'next/link';
 
 export interface EventCardSecondaryProps {
     events: Event[]

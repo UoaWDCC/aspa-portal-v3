@@ -1,10 +1,20 @@
-import { Event, EventCardMain, EventCardMainProps } from "../EventCard/EventCardMain"
+import { EventCardMain, EventCardMainProps } from "../EventCard/EventCardMain"
 import { EventCardSecondary, EventCardSecondaryProps } from "../EventCard/EventCardSecondary"
 import { EventCardTertiary, EventCardTertiaryProps } from "../EventCard/EventCardTertiary";
 import { Stack, Text, Button, rgba } from "@mantine/core"
-import { useRouter } from "next/navigation"
 
 export type EventCardProps = EventCardMainProps | EventCardSecondaryProps | EventCardTertiaryProps
+
+export interface Event {
+    id: string;
+    name: string;
+    date: string;
+    price: number;
+    location: string;
+    description: string;
+    imageUrl: string;
+    buttonText: string; // Text to show in event card button
+}
 
 export interface EventDisplayProps {
     events: Event[],
@@ -37,11 +47,6 @@ export function EventDisplay({
     title_fw="bold",
     gap="lg",
 }: EventDisplayProps) {
-  const router = useRouter();
-
-  const handleViewMore = () => {
-    router.push("/events");
-  };
 
   if (displayTypes.length < 1) {
     return;
@@ -87,7 +92,7 @@ export function EventDisplay({
             })}
             
             {/* Button to be replaced with John's button component */}
-            <Button variant="filled" size="md" bg={bg_color} w="30vw" radius="xl" onClick={handleViewMore}>{buttonText}</Button>
+            <Button variant="filled" size="md" bg={bg_color} w="30vw" radius="xl">{buttonText}</Button>
         </Stack>
     )
 }
