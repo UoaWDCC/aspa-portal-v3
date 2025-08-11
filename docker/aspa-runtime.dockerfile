@@ -19,6 +19,9 @@ RUN yarn install --immutable
 # Copy source files
 COPY . .
 
+# Generate payload types
+RUN yarn payload generate:types
+
 # Build application
 RUN yarn build
 
