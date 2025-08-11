@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin: 0;
+}
+
+.pagination-root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pagination-control{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: 0;
+}
+
+.pagination-control[data-active]{
+    font-weight: bolder;
+}
+
+.pagination-control:hover{
+    font-weight: bold;
+    background: 0;
+}
