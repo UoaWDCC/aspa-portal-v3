@@ -1,8 +1,8 @@
-import Pagination from "./Pagination";
-import { useState } from "react";
+import Pagination from './Pagination';
+import { useState } from 'react';
 
 export default {
-  title: "Shared/Pagination",
+  title: 'Shared/Pagination',
   component: Pagination,
 };
 
@@ -11,11 +11,11 @@ export const Default = () => {
 
   return (
     <Pagination
-    currentPage={page}
-    onPageChange={setPage}
-    pageSize={10}
-    collectionLength={21}
-    collectionName="Events"
+      currentPage={page}
+      onPageChange={setPage}
+      pageSize={10}
+      collectionLength={21}
+      collectionName="Events"
     />
-  )
+  );
 };
