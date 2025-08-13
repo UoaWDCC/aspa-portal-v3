@@ -19,6 +19,7 @@ export const Default: StoryObj<typeof PhotoRow> = {
   args: {
     photoListChunk: samplePhotos,
     onImageClick: () => {},
-    backgroundColor: "#1A1A1A",
+    backgroundColor: '#717882',
+    rowTopMargin: '1.5vw',
   },
 };

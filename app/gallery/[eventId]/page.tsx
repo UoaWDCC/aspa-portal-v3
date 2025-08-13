@@ -42,8 +42,10 @@ const placeholderEvents: Record<string, Event> = {
 
 export default function GalleryEventPage({
   params,
+  backgroundColor = "#1A1A1A",
 }: {
   params: { eventId: string };
+  backgroundColor?: string;
 }) {
   const { eventId } = params;
   const event = eventId ? placeholderEvents[eventId] : null;
@@ -96,12 +98,12 @@ export default function GalleryEventPage({
   const galleryPageProps: GalleryPageProps = {
     photoList: photoList,
     photosPerRow: photosPerRow,
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#717882",
     alternate: true,
   };
   
   return (
-    <Box style={{ backgroundColor: "#1A1A1A"}}>
+    <Box style={{ backgroundColor: backgroundColor}}>
       <EventTitle {...testTitleProps} />
       <GalleryPage {...galleryPageProps} />
     </Box>

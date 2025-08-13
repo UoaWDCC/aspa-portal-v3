@@ -15,7 +15,12 @@ export interface GalleryPageProps {
   alternate: boolean
 }
 
-const GalleryPage = ({ photoList , photosPerRow, backgroundColor, alternate }: GalleryPageProps) => {
+const GalleryPage = ({ 
+  photoList, 
+  photosPerRow, 
+  backgroundColor, 
+  alternate, 
+}: GalleryPageProps) => {
   const [lightboxOpen, setlightboxOpen] = useState(false)
   const [photoIndex, setPhotoIndex] = useState(0)
 
@@ -49,7 +54,7 @@ const GalleryPage = ({ photoList , photosPerRow, backgroundColor, alternate }: G
   return (
     <div>
       {photoListChunks.map((photoListChunk, rowIndex) => {
-        if (alternate && rowIndex % 2 !== 0) {
+        if (alternate && rowIndex % 2 === 0) {
           return (
             <PhotoRow
               key={rowIndex}
