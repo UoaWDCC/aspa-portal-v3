@@ -8,9 +8,16 @@ type Photo = {
   alt: string;
 };
 
-const GalleryPage = ({ photoList, photosPerRow }: { photoList: Photo[]; photosPerRow: number }) => {
-  const [lightboxOpen, setlightboxOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
+export interface GalleryPageProps {
+  photoList: Photo[],
+  photosPerRow: number,
+  backgroundColor: string,
+  alternate: boolean
+}
+
+const GalleryPage = ({ photoList , photosPerRow, backgroundColor, alternate }: GalleryPageProps) => {
+  const [lightboxOpen, setlightboxOpen] = useState(false)
+  const [photoIndex, setPhotoIndex] = useState(0)
 
   const openLightbox = (index: number) => {
     setPhotoIndex(index);
@@ -42,13 +49,22 @@ const GalleryPage = ({ photoList, photosPerRow }: { photoList: Photo[]; photosPe
   return (
     <div>
       {photoListChunks.map((photoListChunk, rowIndex) => {
-        const odd = rowIndex % 2 !== 0;
+        if (alternate && rowIndex % 2 !== 0) {
+          return (
+            <PhotoRow
+              key={rowIndex}
+              photoListChunk={photoListChunk}
+              onImageClick={openLightbox}
+              backgroundColor='transparent'
+            />
+          );
+        }
         return (
           <PhotoRow
             key={rowIndex}
             photoListChunk={photoListChunk}
             onImageClick={openLightbox}
-            style={odd}
+            backgroundColor={backgroundColor}
           />
         );
       })}

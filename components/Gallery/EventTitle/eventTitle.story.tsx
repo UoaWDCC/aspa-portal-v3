@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import EventTitle from './eventTitle';
+import EventTitle, { EventTitleProps } from '@/components/Gallery/EventTitle/eventTitle';
 
 const sampleEvent = {
   title: 'CASUAL NIGHT @ AKL CBD',
@@ -13,6 +13,20 @@ const sampleEvent = {
   ],
 };
 
+const testTitleProps: EventTitleProps = {
+  titleText: sampleEvent.title,
+  year: sampleEvent.year.toString(),
+  month: sampleEvent.month,
+  day: sampleEvent.day,
+  location: sampleEvent.location,
+  titleTextSize: '48.8px',
+  titleTextFont: '"Nova Square", sans-serif',
+  titleTextColor: '#717882',
+  titlePadding: '0 30px',
+  eventDetailsGap: '20px 50px',
+  eventDetailsPadding: '0 30px',
+  eventDetailsColor: '#EBEBEB',
+};
 const meta: Meta<typeof EventTitle> = {
   title: 'Gallery/EventTitle',
   component: EventTitle,
@@ -23,6 +37,9 @@ export default meta;
 
 export const Default: StoryObj<typeof EventTitle> = {
   args: {
-    event: sampleEvent,
+    ...testTitleProps,
+    month: 'sdfsfds',
+    padding: '234',
+    eventDetailsColor: '#E43543',
   },
 };

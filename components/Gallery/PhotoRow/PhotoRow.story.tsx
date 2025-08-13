@@ -18,7 +18,7 @@ export default meta;
 export const Default: StoryObj<typeof PhotoRow> = {
   args: {
     photoListChunk: samplePhotos,
-    style: true,
     onImageClick: () => {},
+    backgroundColor: "#1A1A1A",
   },
 };

@@ -1,6 +1,6 @@
-'use client';
-import EventTitle from '@/components/Gallery/EventTitle/eventTitle';
-import GalleryPage from '@/components/Gallery/GalleryPage/galleryPage';
+"use client"
+import EventTitle, { EventTitleProps } from '@/components/Gallery/EventTitle/eventTitle';
+import GalleryPage, {GalleryPageProps} from '@/components/Gallery/GalleryPage/galleryPage';
 import { Box } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 
@@ -40,13 +40,16 @@ const placeholderEvents: Record<string, Event> = {
   },
 };
 
-export default function GalleryEventPage({ params }: { params: Promise<{ eventId: string }> }) {
-  const { eventId } = React.use(params);
+export default function GalleryEventPage({
+  params,
+}: {
+  params: { eventId: string };
+}) {
+  const { eventId } = params;
   const event = eventId ? placeholderEvents[eventId] : null;
   if (!event) {
-    return;
+    return null;
   }
-  console.log('event', event.photos);
 
   const DEFAULT_PHOTOS = 7;
   const TABLET_PHOTOS = 5;
@@ -69,19 +72,38 @@ export default function GalleryEventPage({ params }: { params: Promise<{ eventId
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  console.log(currentPage * (photosPerRow * GALLERY_ROWS));
 
   const photoList = event.photos.slice(
     (currentPage - 1) * (photosPerRow * GALLERY_ROWS),
-    currentPage * (photosPerRow * GALLERY_ROWS)
+    currentPage * (photosPerRow * GALLERY_ROWS),
   );
 
+  const testTitleProps: EventTitleProps = {
+    titleText: event.title,
+    year: event.year.toString(),
+    month: event.month,
+    day: event.day,
+    location: event.location,
+    titleTextSize: "48.8px",
+    titleTextFont: '"Nova Square", sans-serif',
+    titleTextColor: "#717882",
+    titlePadding: "0 30px",
+    eventDetailsGap: "20px 50px",
+    eventDetailsPadding: "0 30px",
+    eventDetailsColor: "#EBEBEB",
+  }
+
+  const galleryPageProps: GalleryPageProps = {
+    photoList: photoList,
+    photosPerRow: photosPerRow,
+    backgroundColor: "#1A1A1A",
+    alternate: true,
+  };
+  
   return (
-    <Box style={{ backgroundColor: '#1A1A1A', padding: '90px 0 0 0' }}>
-      {' '}
-      {/* padding for navbar displacement*/}
-      <EventTitle event={event} />
-      <GalleryPage photoList={photoList} photosPerRow={photosPerRow} />
+    <Box style={{ backgroundColor: "#1A1A1A"}}>
+      <EventTitle {...testTitleProps} />
+      <GalleryPage {...galleryPageProps} />
     </Box>
   );
 }

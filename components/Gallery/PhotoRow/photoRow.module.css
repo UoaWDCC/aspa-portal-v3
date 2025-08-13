@@ -1,8 +1,6 @@
 .photoGrid {
   display: grid;
-  padding: 40px 5vw;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  margin-top: 1.7vw;
 }
 
 .photoCard {
