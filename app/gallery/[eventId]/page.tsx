@@ -1,6 +1,6 @@
-"use client"
+'use client';
 import EventTitle, { EventTitleProps } from '@/components/Gallery/EventTitle/eventTitle';
-import GalleryPage, {GalleryPageProps} from '@/components/Gallery/GalleryPage/galleryPage';
+import GalleryPage, { GalleryPageProps } from '@/components/Gallery/GalleryPage/galleryPage';
 import { Box } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 
@@ -42,7 +42,7 @@ const placeholderEvents: Record<string, Event> = {
 
 export default function GalleryEventPage({
   params,
-  backgroundColor = "#1A1A1A",
+  backgroundColor = '#1A1A1A',
 }: {
   params: { eventId: string };
   backgroundColor?: string;
@@ -77,7 +77,7 @@ export default function GalleryEventPage({
 
   const photoList = event.photos.slice(
     (currentPage - 1) * (photosPerRow * GALLERY_ROWS),
-    currentPage * (photosPerRow * GALLERY_ROWS),
+    currentPage * (photosPerRow * GALLERY_ROWS)
   );
 
   const testTitleProps: EventTitleProps = {
@@ -86,24 +86,24 @@ export default function GalleryEventPage({
     month: event.month,
     day: event.day,
     location: event.location,
-    titleTextSize: "48.8px",
+    titleTextSize: '48.8px',
     titleTextFont: '"Nova Square", sans-serif',
-    titleTextColor: "#717882",
-    titlePadding: "0 30px",
-    eventDetailsGap: "20px 50px",
-    eventDetailsPadding: "0 30px",
-    eventDetailsColor: "#EBEBEB",
-  }
+    titleTextColor: '#717882',
+    titlePadding: '0 30px',
+    eventDetailsGap: '20px 50px',
+    eventDetailsPadding: '0 30px',
+    eventDetailsColor: '#EBEBEB',
+  };
 
   const galleryPageProps: GalleryPageProps = {
     photoList: photoList,
     photosPerRow: photosPerRow,
-    backgroundColor: "#717882",
+    backgroundColor: '#717882',
     alternate: true,
   };
-  
+
   return (
-    <Box style={{ backgroundColor: backgroundColor}}>
+    <Box style={{ backgroundColor: backgroundColor }}>
       <EventTitle {...testTitleProps} />
       <GalleryPage {...galleryPageProps} />
     </Box>

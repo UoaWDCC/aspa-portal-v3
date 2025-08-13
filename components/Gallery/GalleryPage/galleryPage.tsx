@@ -9,20 +9,15 @@ type Photo = {
 };
 
 export interface GalleryPageProps {
-  photoList: Photo[],
-  photosPerRow: number,
-  backgroundColor: string,
-  alternate: boolean
+  photoList: Photo[];
+  photosPerRow: number;
+  backgroundColor: string;
+  alternate: boolean;
 }
 
-const GalleryPage = ({ 
-  photoList, 
-  photosPerRow, 
-  backgroundColor, 
-  alternate, 
-}: GalleryPageProps) => {
-  const [lightboxOpen, setlightboxOpen] = useState(false)
-  const [photoIndex, setPhotoIndex] = useState(0)
+const GalleryPage = ({ photoList, photosPerRow, backgroundColor, alternate }: GalleryPageProps) => {
+  const [lightboxOpen, setlightboxOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
 
   const openLightbox = (index: number) => {
     setPhotoIndex(index);
@@ -60,7 +55,7 @@ const GalleryPage = ({
               key={rowIndex}
               photoListChunk={photoListChunk}
               onImageClick={openLightbox}
-              backgroundColor='transparent'
+              backgroundColor="transparent"
             />
           );
         }

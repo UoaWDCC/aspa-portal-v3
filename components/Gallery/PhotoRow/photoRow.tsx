@@ -9,19 +9,19 @@ type Photo = {
 };
 
 export interface PhotoRowProps {
-  photoListChunk: Photo[],
-  onImageClick: (key: number) => void,
-  backgroundColor?: string,
-  rowTopMargin?: string,
-  rowPadding?: string,
+  photoListChunk: Photo[];
+  onImageClick: (key: number) => void;
+  backgroundColor?: string;
+  rowTopMargin?: string;
+  rowPadding?: string;
 }
 
-const PhotoRow = ({ 
-  photoListChunk, 
-  onImageClick, 
-  backgroundColor = "#1A1A1A", 
-  rowTopMargin = "1.7vw",
-  rowPadding = "40px 5vw",
+const PhotoRow = ({
+  photoListChunk,
+  onImageClick,
+  backgroundColor = '#1A1A1A',
+  rowTopMargin = '1.7vw',
+  rowPadding = '40px 5vw',
 }: PhotoRowProps) => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
@@ -33,9 +33,14 @@ const PhotoRow = ({
     backgroundColor: backgroundColor,
     padding: rowPadding,
   };
-  
+
   return (
-    <SimpleGrid data-testid="photoGrid" spacing="xs" className={styles.photoGrid} style={PhotoRowStyles}>
+    <SimpleGrid
+      data-testid="photoGrid"
+      spacing="xs"
+      className={styles.photoGrid}
+      style={PhotoRowStyles}
+    >
       {photoListChunk.map((photo) => {
         const isAdjacent =
           hoveredId !== null && (photo.id === hoveredId - 1 || photo.id === hoveredId + 1);
