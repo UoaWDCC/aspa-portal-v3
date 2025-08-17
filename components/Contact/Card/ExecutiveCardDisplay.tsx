@@ -1,7 +1,7 @@
-'use client';
-import { useState, KeyboardEvent } from 'react';
-import { Image, Text, Box } from '@mantine/core';
-import styles from './ExecutiveCardDisplay.module.css';
+"use client";
+import { useState, KeyboardEvent } from "react";
+import { Image, Text, Box } from "@mantine/core";
+import styles from "./ExecutiveCardDisplay.module.css";
 
 export interface Executive {
   name: string;
@@ -21,7 +21,7 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
   const handleFlip = () => setFlipped(!flipped);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === "Enter" || event.key === " ") {
       handleFlip();
     }
   };
@@ -34,9 +34,12 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
       role="button"
       tabIndex={0}
     >
-      <div className={`${styles.card} ${flipped ? styles.flipped : ''}`}>
+      <div className={`${styles.card} ${flipped ? styles.flipped : ""}`}>
         <div className={styles.cardFront}>
-          <Box p="md" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <Box
+            p="md"
+            style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+          >
             <Image
               src={executive.imageUrl}
               alt={executive.name}
@@ -59,10 +62,10 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
           <Box
             p="md"
             style={{
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <Text size="sm">{executive.backContent}</Text>

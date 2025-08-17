@@ -1,10 +1,10 @@
-import { CollectionConfig } from 'payload';
+import { CollectionConfig } from "payload";
 
 const Admins: CollectionConfig = {
-  slug: 'admins',
+  slug: "admins",
   auth: true,
   admin: {
-    useAsTitle: 'email',
+    useAsTitle: "email",
   },
   fields: [],
 };

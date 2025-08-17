@@ -1,36 +1,36 @@
-import { CollectionConfig } from 'payload';
+import { CollectionConfig } from "payload";
 
 const Events: CollectionConfig = {
-  slug: 'events',
+  slug: "events",
   admin: {
-    useAsTitle: 'name',
+    useAsTitle: "name",
   },
   fields: [
     {
-      name: 'name',
-      type: 'text',
+      name: "name",
+      type: "text",
       required: true,
     },
     {
-      name: 'description',
-      type: 'richText',
+      name: "description",
+      type: "richText",
     },
     {
-      name: 'date',
-      type: 'date',
+      name: "date",
+      type: "date",
       required: true,
     },
     {
-      name: 'location',
-      type: 'text',
+      name: "location",
+      type: "text",
     },
     {
-      name: 'primaryColor',
-      type: 'text',
+      name: "primaryColor",
+      type: "text",
     },
     {
-      name: 'secondaryColor',
-      type: 'text',
+      name: "secondaryColor",
+      type: "text",
     },
   ],
 };

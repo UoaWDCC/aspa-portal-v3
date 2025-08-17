@@ -21,6 +21,7 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
+    "@google/gemini-cli": "^0.1.21",
     "@mantine/carousel": "^8.0.1",
     "@mantine/core": "8.0.1",
     "@mantine/hooks": "8.0.1",

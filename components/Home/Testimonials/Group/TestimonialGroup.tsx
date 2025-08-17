@@ -1,6 +1,6 @@
-'use client';
-import { Container } from '@mantine/core';
-import { Testimonial, TestimonialCard } from '../Card/TestimonialCard';
+"use client";
+import { Container } from "@mantine/core";
+import { Testimonial, TestimonialCard } from "../Card/TestimonialCard";
 
 export interface TestimonialGroup {
   testimonials: Testimonial[];
@@ -15,16 +15,22 @@ export interface TestimonialGroup {
 
 export function TestimonialGroup({
   testimonials,
-  paddingTop = '',
-  paddingBottom = '',
-  paddingleft = '',
-  paddingRight = '',
-  paddingBetween = '',
+  paddingTop = "",
+  paddingBottom = "",
+  paddingleft = "",
+  paddingRight = "",
+  paddingBetween = "",
   delay = 1000,
-  color = '#d78840',
+  color = "#d78840",
 }: TestimonialGroup) {
   return (
-    <Container fluid pt={paddingTop} pb={paddingBottom} pl={paddingleft} pr={paddingRight}>
+    <Container
+      fluid
+      pt={paddingTop}
+      pb={paddingBottom}
+      pl={paddingleft}
+      pr={paddingRight}
+    >
       {testimonials.map((testimonial, index) => (
         <Container key={index} pb={paddingBetween}>
           <TestimonialCard

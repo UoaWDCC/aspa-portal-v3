@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { Grid, Container, Paper, Title } from '@mantine/core';
-import { ExecutiveCard, Executive } from '../Card/ExecutiveCardDisplay';
-import styles from './ExecutiveCollection.module.css';
+import { Grid, Container, Paper, Title } from "@mantine/core";
+import { ExecutiveCard, Executive } from "../Card/ExecutiveCardDisplay";
+import styles from "./ExecutiveCollection.module.css";
 
 export interface ExecutiveCollection {
   executives: Executive[];
   sectionTitle?: string;
-  gutter?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  gutter?: "xs" | "sm" | "md" | "lg" | "xl";
+  radius?: "xs" | "sm" | "md" | "lg" | "xl";
+  shadow?: "xs" | "sm" | "md" | "lg" | "xl";
   withBorder?: boolean;
   outerPaddingTop?: string;
   outerPaddingBottom?: string;
@@ -24,18 +24,18 @@ export interface ExecutiveCollection {
 export function ExecutiveCollection({
   executives,
   sectionTitle,
-  gutter = 'lg',
-  radius = 'xl',
-  shadow = 'sm',
+  gutter = "lg",
+  radius = "xl",
+  shadow = "sm",
   withBorder = true,
-  outerPaddingTop = '',
-  outerPaddingBottom = '',
-  outerPaddingLeft = '',
-  outerPaddingRight = '',
-  innerPaddingTop = '',
-  innerPaddingBottom = '',
-  innerPaddingLeft = '',
-  innerPaddingRight = '',
+  outerPaddingTop = "",
+  outerPaddingBottom = "",
+  outerPaddingLeft = "",
+  outerPaddingRight = "",
+  innerPaddingTop = "",
+  innerPaddingBottom = "",
+  innerPaddingLeft = "",
+  innerPaddingRight = "",
 }: ExecutiveCollection) {
   return (
     <Container
@@ -44,7 +44,12 @@ export function ExecutiveCollection({
       pl={outerPaddingLeft}
       pr={outerPaddingRight}
     >
-      <Paper shadow={shadow} radius={radius} withBorder={withBorder} className={styles.collection}>
+      <Paper
+        shadow={shadow}
+        radius={radius}
+        withBorder={withBorder}
+        className={styles.collection}
+      >
         <Container
           pt={innerPaddingTop}
           pb={innerPaddingBottom}

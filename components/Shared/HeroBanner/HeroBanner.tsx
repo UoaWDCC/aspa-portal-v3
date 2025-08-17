@@ -1,11 +1,11 @@
-import styles from './HeroBanner.module.css';
-import { Image, Box } from '@mantine/core';
-import { HeaderTitle, AnimatedTitleProps } from '../HeaderTitle/HeaderTitle';
+import styles from "./HeroBanner.module.css";
+import { Image, Box } from "@mantine/core";
+import { HeaderTitle, AnimatedTitleProps } from "../HeaderTitle/HeaderTitle";
 
 export interface HeroBannerProps {
   headerTitleProps: AnimatedTitleProps;
   backgroundUrl: string;
-  backgroundType?: 'image' | 'video';
+  backgroundType?: "image" | "video";
   mediaClassName?: string;
   // Mantine sizing props
   w?: string | number;
@@ -19,23 +19,31 @@ export interface HeroBannerProps {
 export function HeroBanner({
   headerTitleProps,
   backgroundUrl,
-  backgroundType = 'image',
+  backgroundType = "image",
   mediaClassName,
-  w = '100%',
-  h = '34vw',
+  w = "100%",
+  h = "34vw",
   maw,
   mah,
   miw,
   mih,
 }: HeroBannerProps) {
   return (
-    <Box className={styles.heroBannerContainer} w={w} h={h} maw={maw} mah={mah} miw={miw} mih={mih}>
+    <Box
+      className={styles.heroBannerContainer}
+      w={w}
+      h={h}
+      maw={maw}
+      mah={mah}
+      miw={miw}
+      mih={mih}
+    >
       <div className={styles.centeredTitle}>
         <HeaderTitle {...headerTitleProps} />
       </div>
-      {backgroundType === 'video' ? (
+      {backgroundType === "video" ? (
         <video
-          className={`${styles.backgroundMedia} ${mediaClassName || ''}`}
+          className={`${styles.backgroundMedia} ${mediaClassName || ""}`}
           src={backgroundUrl}
           autoPlay
           loop
@@ -46,7 +54,7 @@ export function HeroBanner({
         <Image
           src={backgroundUrl}
           alt={`${headerTitleProps.text} background`}
-          className={`${styles.backgroundMedia} ${mediaClassName || ''}`}
+          className={`${styles.backgroundMedia} ${mediaClassName || ""}`}
           w="100%"
           h="100%"
         />
