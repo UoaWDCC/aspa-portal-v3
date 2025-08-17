@@ -7,7 +7,6 @@ import styles from "./ExecutiveCollection.module.css";
 export interface ExecutiveCollection {
   executives: Executive[];
   sectionTitle?: string;
-  badgeColor?: string;
   gutter?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -25,7 +24,6 @@ export interface ExecutiveCollection {
 export function ExecutiveCollection({
   executives,
   sectionTitle,
-  badgeColor = "#d78840",
   gutter = "lg",
   radius = "xl",
   shadow = "sm",
@@ -64,7 +62,7 @@ export function ExecutiveCollection({
                 key={index}
                 span={{ base: 12, sm: 6 }} // 12 = full width, 6 = half width
               >
-                <ExecutiveCard executive={executive} badgeColor={badgeColor} />
+                <ExecutiveCard executive={executive} />
               </Grid.Col>
             ))}
           </Grid>

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 import { Image, Text, Box } from "@mantine/core";
 import styles from "./ExecutiveCardDisplay.module.css";
 
@@ -18,13 +18,26 @@ export interface ExecutiveCardProps {
 export function ExecutiveCard({ executive }: ExecutiveCardProps) {
   const [flipped, setFlipped] = useState(false);
 
+  const handleFlip = () => setFlipped(!flipped);
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      handleFlip();
+    }
+  };
+
   return (
-    <div className={styles.cardContainer} onClick={() => setFlipped(!flipped)}>
+    <div
+      className={styles.cardContainer}
+      onClick={handleFlip}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+    >
       <div className={`${styles.card} ${flipped ? styles.flipped : ""}`}>
         <div className={styles.cardFront}>
           <Box
             p="md"
-            radius="xl"
             style={{ display: "flex", alignItems: "center", gap: "1rem" }}
           >
             <Image
