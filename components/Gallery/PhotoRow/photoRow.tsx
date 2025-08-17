@@ -1,6 +1,6 @@
-import styles from './photoRow.module.css';
-import { Image, SimpleGrid } from '@mantine/core';
-import React, { useState } from 'react';
+import styles from "./photoRow.module.css";
+import { Image, SimpleGrid } from "@mantine/core";
+import React, { useState } from "react";
 
 type Photo = {
   id: number;
@@ -19,9 +19,9 @@ export interface PhotoRowProps {
 const PhotoRow = ({
   photoListChunk,
   onImageClick,
-  backgroundColor = '#1A1A1A',
-  rowTopMargin = '1.7vw',
-  rowPadding = '40px 5vw',
+  backgroundColor = "#1A1A1A",
+  rowTopMargin = "1.7vw",
+  rowPadding = "40px 5vw",
 }: PhotoRowProps) => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
@@ -43,7 +43,8 @@ const PhotoRow = ({
     >
       {photoListChunk.map((photo) => {
         const isAdjacent =
-          hoveredId !== null && (photo.id === hoveredId - 1 || photo.id === hoveredId + 1);
+          hoveredId !== null &&
+          (photo.id === hoveredId - 1 || photo.id === hoveredId + 1);
         const isHovered = hoveredId === photo.id;
         const leftSide = hoveredId !== null && photo.id < hoveredId;
         const rightSide = hoveredId !== null && photo.id > hoveredId;
@@ -59,7 +60,7 @@ const PhotoRow = ({
         } else if (rightSide) {
           classNames.push(styles.rightPhotos);
         }
-        const className = classNames.join(' ');
+        const className = classNames.join(" ");
 
         return (
           <Image

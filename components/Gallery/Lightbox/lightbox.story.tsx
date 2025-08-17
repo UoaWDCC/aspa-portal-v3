@@ -1,13 +1,13 @@
-import { Meta, StoryObj } from '@storybook/react';
-import Lightbox from './lightbox';
+import { Meta, StoryObj } from "@storybook/react";
+import Lightbox from "./lightbox";
 
 const samplePhotos = [
-  { id: 1, src: '/event_example.svg', alt: 'Photo 1' },
-  { id: 2, src: '/event_example.svg', alt: 'Photo 2' },
+  { id: 1, src: "/event_example.svg", alt: "Photo 1" },
+  { id: 2, src: "/event_example.svg", alt: "Photo 2" },
 ];
 
 const meta: Meta<typeof Lightbox> = {
-  title: 'Gallery/Lightbox',
+  title: "Gallery/Lightbox",
   component: Lightbox,
   argTypes: {},
 };

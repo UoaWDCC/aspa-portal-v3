@@ -1,10 +1,14 @@
-'use client';
-import EventTitle, { EventTitleProps } from '@/components/Gallery/EventTitle/eventTitle';
-import GalleryPage, { GalleryPageProps } from '@/components/Gallery/GalleryPage/galleryPage';
-import { Box } from '@mantine/core';
-import React, { useEffect, useState } from 'react';
+"use client";
+import EventTitle, {
+  EventTitleProps,
+} from "@/components/Gallery/EventTitle/eventTitle";
+import GalleryPage, {
+  GalleryPageProps,
+} from "@/components/Gallery/GalleryPage/galleryPage";
+import { Box } from "@mantine/core";
+import React, { useEffect, useState } from "react";
 
-import photos from './photos.json'; // Temp photo data
+import photos from "./photos.json"; // Temp photo data
 
 type Photo = {
   id: number;
@@ -23,26 +27,26 @@ type Event = {
 
 const placeholderEvents: Record<string, Event> = {
   event1: {
-    title: 'CASUAL NIGHT @ AKL CBD',
+    title: "CASUAL NIGHT @ AKL CBD",
     year: 2025,
-    month: 'October',
-    day: '1st',
-    location: 'Orange pool club (9 city road)',
+    month: "October",
+    day: "1st",
+    location: "Orange pool club (9 city road)",
     photos: photos,
   },
   event2: {
-    title: 'ASPA 2024',
+    title: "ASPA 2024",
     year: 2024,
-    month: 'November',
-    day: '15th',
-    location: 'ASPA Headquarters',
+    month: "November",
+    day: "15th",
+    location: "ASPA Headquarters",
     photos: photos,
   },
 };
 
 export default function GalleryEventPage({
   params,
-  backgroundColor = '#1A1A1A',
+  backgroundColor = "#1A1A1A",
 }: {
   params: { eventId: string };
   backgroundColor?: string;
@@ -71,13 +75,13 @@ export default function GalleryEventPage({
       }
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const photoList = event.photos.slice(
     (currentPage - 1) * (photosPerRow * GALLERY_ROWS),
-    currentPage * (photosPerRow * GALLERY_ROWS)
+    currentPage * (photosPerRow * GALLERY_ROWS),
   );
 
   const testTitleProps: EventTitleProps = {
@@ -86,19 +90,19 @@ export default function GalleryEventPage({
     month: event.month,
     day: event.day,
     location: event.location,
-    titleTextSize: '48.8px',
+    titleTextSize: "48.8px",
     titleTextFont: '"Nova Square", sans-serif',
-    titleTextColor: '#717882',
-    titlePadding: '0 30px',
-    eventDetailsGap: '20px 50px',
-    eventDetailsPadding: '0 30px',
-    eventDetailsColor: '#EBEBEB',
+    titleTextColor: "#717882",
+    titlePadding: "0 30px",
+    eventDetailsGap: "20px 50px",
+    eventDetailsPadding: "0 30px",
+    eventDetailsColor: "#EBEBEB",
   };
 
   const galleryPageProps: GalleryPageProps = {
     photoList: photoList,
     photosPerRow: photosPerRow,
-    backgroundColor: '#717882',
+    backgroundColor: "#717882",
     alternate: true,
   };
 

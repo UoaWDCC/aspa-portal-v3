@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import PhotoRow from '@/components/Gallery/PhotoRow/photoRow';
-import Lightbox from '@/components/Gallery/Lightbox/lightbox';
+import { useState } from "react";
+import PhotoRow from "@/components/Gallery/PhotoRow/photoRow";
+import Lightbox from "@/components/Gallery/Lightbox/lightbox";
 
 type Photo = {
   id: number;
@@ -15,7 +15,12 @@ export interface GalleryPageProps {
   alternate: boolean;
 }
 
-const GalleryPage = ({ photoList, photosPerRow, backgroundColor, alternate }: GalleryPageProps) => {
+const GalleryPage = ({
+  photoList,
+  photosPerRow,
+  backgroundColor,
+  alternate,
+}: GalleryPageProps) => {
   const [lightboxOpen, setlightboxOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 

@@ -27,6 +27,6 @@ export default meta;
 export const Default: StoryObj<typeof Footer> = {
   args: {
     socialMediaLinks,
-    footerBg: '',
+    footerBg: "",
   },
 };
