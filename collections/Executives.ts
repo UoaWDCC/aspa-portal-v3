@@ -35,9 +35,9 @@ const Executives: CollectionConfig = {
       },
     },
     {
-      name: "imageUrl",
+      name: "image",
       type: "upload",
-      relationTo: "media", // assumes you have a media collection
+      relationTo: "media",
       required: true,
       admin: {
         description: "Executive headshot or profile image",

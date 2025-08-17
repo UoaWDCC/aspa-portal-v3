@@ -34,7 +34,7 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
             style={{ display: "flex", alignItems: "center", gap: "1rem" }}
           >
             <Image
-              src={executive.imageUrl}
+              src={executive.image}
               alt={executive.name}
               width={120}
               height={120}
@@ -61,7 +61,11 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
               justifyContent: "center",
             }}
           >
-            <Text size="sm">{executive.backContent}</Text>
+            <Text size="sm">
+              {typeof executive.backContent === "string"
+                ? executive.backContent
+                : JSON.stringify(executive.backContent)}
+            </Text>
           </Box>
         </div>
       </div>

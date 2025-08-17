@@ -258,7 +258,7 @@ export interface Executive {
   /**
    * Executive headshot or profile image
    */
-  imageUrl: number | Media;
+  image: number | Media;
   /**
    * Content for the back side (detailed bio, achievements, etc.)
    */
@@ -470,7 +470,7 @@ export interface ExecutivesSelect<T extends boolean = true> {
   name?: T;
   title?: T;
   description?: T;
-  imageUrl?: T;
+  image?: T;
   backContent?: T;
   updatedAt?: T;
   createdAt?: T;
