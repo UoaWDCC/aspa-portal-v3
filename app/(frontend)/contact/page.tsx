@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Executive } from "@/components/Contact/Card/ExecutiveCardDisplay";
 import { ExecutiveCollection } from "@/components/Contact/Collection/ExecutiveCollection";
