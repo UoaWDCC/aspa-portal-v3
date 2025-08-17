@@ -1,11 +1,11 @@
 import styles from "./HeroBanner.module.css";
 import { Image, Box } from "@mantine/core";
+import { HeaderTitle, AnimatedTitleProps } from "../HeaderTitle/HeaderTitle";
 
 export interface HeroBannerProps {
-  title: string;
+  headerTitleProps: AnimatedTitleProps;
   backgroundUrl: string;
   backgroundType?: "image" | "video";
-  animated?: boolean;
   mediaClassName?: string;
   // Mantine sizing props
   w?: string | number;
@@ -17,7 +17,7 @@ export interface HeroBannerProps {
 }
 
 export function HeroBanner({
-  title,
+  headerTitleProps,
   backgroundUrl,
   backgroundType = "image",
   mediaClassName,
@@ -38,6 +38,9 @@ export function HeroBanner({
       miw={miw}
       mih={mih}
     >
+      <div className={styles.centeredTitle}>
+        <HeaderTitle {...headerTitleProps} />
+      </div>
       {backgroundType === "video" ? (
         <video
           className={`${styles.backgroundMedia} ${mediaClassName || ""}`}
@@ -50,7 +53,7 @@ export function HeroBanner({
       ) : (
         <Image
           src={backgroundUrl}
-          alt={`${title} background`}
+          alt={`${headerTitleProps.text} background`}
           className={`${styles.backgroundMedia} ${mediaClassName || ""}`}
           w="100%"
           h="100%"

@@ -40,28 +40,25 @@ export default meta;
 
 export const VideoBackground: StoryObj<typeof HeroBanner> = {
   args: {
-    title: "ASPA EVENTS",
+    headerTitleProps: { text: "ASPA EVENTS" },
     backgroundUrl: "/event_herobanner_example.mp4",
     backgroundType: "video",
-    animated: true,
   },
 };
 
 export const ImageBackground: StoryObj<typeof HeroBanner> = {
   args: {
-    title: "ASPA EVENTS",
+    headerTitleProps: { text: "ASPA EVENTS" },
     backgroundUrl: "/event_herobanner_example.png",
     backgroundType: "image",
-    animated: true,
   },
 };
 
 export const CustomSize: StoryObj<typeof HeroBanner> = {
   args: {
-    title: "ASPA EVENTS",
+    headerTitleProps: { text: "ASPA EVENTS" },
     backgroundUrl: "/event_herobanner_example.png",
     backgroundType: "image",
-    animated: true,
     w: "80vw",
     h: "50vh",
   },
@@ -69,10 +66,9 @@ export const CustomSize: StoryObj<typeof HeroBanner> = {
 
 export const WithConstraints: StoryObj<typeof HeroBanner> = {
   args: {
-    title: "ASPA EVENTS",
+    headerTitleProps: { text: "ASPA EVENTS" },
     backgroundUrl: "/event_herobanner_example.png",
     backgroundType: "image",
-    animated: true,
     w: "100%",
     h: "40vw",
     maw: 1200,
@@ -84,10 +80,9 @@ export const WithConstraints: StoryObj<typeof HeroBanner> = {
 
 export const FixedDimensions: StoryObj<typeof HeroBanner> = {
   args: {
-    title: "ASPA EVENTS",
+    headerTitleProps: { text: "ASPA EVENTS" },
     backgroundUrl: "/event_herobanner_example.png",
     backgroundType: "image",
-    animated: true,
     w: 800,
     h: 400,
   },
