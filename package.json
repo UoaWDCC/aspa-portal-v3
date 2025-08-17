@@ -19,7 +19,8 @@
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "payload:types": "payload generate:types"
+    "payload:types": "payload generate:types",
+    "prepare": "husky"
   },
   "dependencies": {
     "@google/gemini-cli": "^0.1.21",
@@ -61,6 +62,7 @@
     "eslint-config-mantine": "^4.0.3",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
+    "husky": "^9.1.7",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.5.3",

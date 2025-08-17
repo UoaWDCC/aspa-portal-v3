@@ -1,0 +1,7 @@
+# Husky pre-commit hook to update API documentation
+
+#!/bin/sh
+
+curl -o docs/api.json https://api.humanitix.com/v1/documentation/json
+yarn prettier docs/api.json --write
+git add docs/api.json
