@@ -2,14 +2,7 @@
 import { useState, KeyboardEvent } from "react";
 import { Image, Text, Box } from "@mantine/core";
 import styles from "./ExecutiveCardDisplay.module.css";
-
-export interface Executive {
-  name: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  backContent: string; // new field for back side content
-}
+import { Executive } from "@/payload-types";
 
 export interface ExecutiveCardProps {
   executive: Executive;

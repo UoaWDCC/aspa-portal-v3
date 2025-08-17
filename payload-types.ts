@@ -72,6 +72,8 @@ export interface Config {
     events: Event;
     users: User;
     media: Media;
+    executives: Executive;
+    games: Game;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -82,6 +84,8 @@ export interface Config {
     events: EventsSelect<false> | EventsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    executives: ExecutivesSelect<false> | ExecutivesSelect<true>;
+    games: GamesSelect<false> | GamesSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -235,6 +239,65 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives".
+ */
+export interface Executive {
+  id: number;
+  /**
+   * Full name of the executive
+   */
+  name: string;
+  /**
+   * Job title or position
+   */
+  title: string;
+  /**
+   * Brief description or bio
+   */
+  description: string;
+  /**
+   * Executive headshot or profile image
+   */
+  imageUrl: number | Media;
+  /**
+   * Content for the back side (detailed bio, achievements, etc.)
+   */
+  backContent: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "games".
+ */
+export interface Game {
+  id: number;
+  player1: number | User;
+  player2: number | User;
+  status?: ('pending' | 'accepted' | 'completed' | 'cancelled') | null;
+  winner?: (number | null) | User;
+  player1Confirmation?: ('pending' | 'player1' | 'player2') | null;
+  player2Confirmation?: ('pending' | 'player1' | 'player2') | null;
+  eloChange?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -255,6 +318,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'executives';
+        value: number | Executive;
+      } | null)
+    | ({
+        relationTo: 'games';
+        value: number | Game;
       } | null);
   globalSlug?: string | null;
   user:
@@ -390,6 +461,34 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives_select".
+ */
+export interface ExecutivesSelect<T extends boolean = true> {
+  name?: T;
+  title?: T;
+  description?: T;
+  imageUrl?: T;
+  backContent?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "games_select".
+ */
+export interface GamesSelect<T extends boolean = true> {
+  player1?: T;
+  player2?: T;
+  status?: T;
+  winner?: T;
+  player1Confirmation?: T;
+  player2Confirmation?: T;
+  eloChange?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
