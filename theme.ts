@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { createTheme } from "@mantine/core";
 import { Nova_Square, Josefin_Sans } from "next/font/google";
