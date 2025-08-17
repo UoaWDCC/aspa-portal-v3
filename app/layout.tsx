@@ -19,7 +19,6 @@ const links = [
   { name: "Events", href: "/events" },
   { name: "ASPA Team", href: "/contact" },
   { name: "Profile", href: "/profile" },
-  { name: "Sign Up", href: "/signup" },
 ];
 
 const socialMediaLinks = [
