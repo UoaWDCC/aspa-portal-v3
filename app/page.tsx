@@ -1,14 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import {
-  displayType,
-  EventDisplay,
-} from "@/components/Events/EventDisplay/EventDisplay";
 import { Banner, BannerProps } from "@/components/Home/Banner/Banner";
-import { PastEvent } from "@/components/Home/PastEvents/PastEvent";
 import { TestimonialGroup } from "@/components/Home/Testimonials/Group/TestimonialGroup";
 import { Testimonial } from "@/components/Home/Testimonials/Card/TestimonialCard";
-import { Event } from "@/models/Event";
+import { Event } from "@/payload-types";
 
 const ExampleBannerArguments: BannerProps = {
   title: "Welcome to Auckland Student Pool Association!",
@@ -18,7 +13,7 @@ const ExampleBannerArguments: BannerProps = {
   groupText: "dolor sit amet, consectetur",
 };
 
-const eventsList: Event[] = [
+const eventsList: Omit<Event, "id" | "updatedAt" | "createdAt">[] = [
   {
     name: "ASPA Hackathon @ GRID AKL",
     dateTime: "SAT & SUN 10:00-8:00pm",
@@ -28,6 +23,7 @@ const eventsList: Event[] = [
       "WDCC and SESA are so excited to announce our flagship hackathon for 2025. Join us for a two-day event where you alongside other students will work together to design and build unique applications - inspired by our surprise theme revealed on the day. Win from a prize pool of OVER $1.5k and grab some awesome sponsor merch along the way. Get mentored by experienced industry professionals - who will be on site ready to support your team!",
     imageUrl:
       "https://www.bartonmcgill.co.nz/wp-content/uploads/2023/12/51S4Ow-YSgL-_AC_SL1500_.jpg",
+    date: null,
   },
   {
     name: "CASUAL NIGHT @ AKL CBD",
@@ -37,6 +33,7 @@ const eventsList: Event[] = [
     description: "Join us for a casual night out at the Orange Pool Club!",
     imageUrl:
       "https://www.bartonmcgill.co.nz/wp-content/uploads/2023/12/51S4Ow-YSgL-_AC_SL1500_.jpg",
+    date: null,
   },
   {
     name: "KARAOKE NIGHT @ AKL CBD",
@@ -46,12 +43,12 @@ const eventsList: Event[] = [
     description: "Show off your singing skills at our Karaoke Night!",
     imageUrl:
       "https://gamesforfun.com/wp-content/uploads/2018/05/mini-ball-set-replacement-2-ball.jpg",
+    date: null,
   },
 ];
 
 export default function HomePage() {
   const [testimonials, setTestimonial] = useState<Testimonial[]>([]);
-  const [events, setEvents] = useState<PastEvent>({ events: [] });
 
   useEffect(() => {
     setTestimonial([
@@ -81,12 +78,6 @@ export default function HomePage() {
         paddingleft="8vw"
         paddingRight="8vw"
         paddingBottom="8vw"
-      />
-      <PastEvent
-        events={events.events}
-        paddingTop="8vw"
-        paddingleft="8vw"
-        paddingRight="8vw"
       />
       <TestimonialGroup
         testimonials={testimonials}

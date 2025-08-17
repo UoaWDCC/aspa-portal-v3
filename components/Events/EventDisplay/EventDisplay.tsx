@@ -8,7 +8,7 @@ import {
   EventCardTertiaryProps,
 } from "../EventCard/EventCardTertiary";
 import { Stack, Text, Button, rgba } from "@mantine/core";
-import { Event } from "@/models/Event";
+import { Event } from "@/payload-types";
 
 export type ChildEventDisplayProps =
   | EventCardMainProps

@@ -13,15 +13,26 @@ const Events: CollectionConfig = {
     },
     {
       name: "description",
-      type: "richText",
+      type: "textarea",
     },
     {
       name: "date",
       type: "date",
-      required: true,
+    },
+    {
+      name: "dateTime",
+      type: "text",
     },
     {
       name: "location",
+      type: "text",
+    },
+    {
+      name: "price",
+      type: "text",
+    },
+    {
+      name: "imageUrl",
       type: "text",
     },
     {

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Event } from "@/models/Event";
+import { Event } from "@/payload-types";
 import styles from "./SingleEventCard.module.css";
 
 // Default values for the card dimensions and background color
@@ -39,7 +39,7 @@ export function EventCard({
       <div className={styles.cardFlex}>
         <div className={styles.imageWrapper}>
           <Image
-            src={event.imageUrl}
+            src={event.imageUrl ?? "/default-event-image.jpg"}
             alt={event.name}
             width={400}
             height={300}

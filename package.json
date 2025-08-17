@@ -18,7 +18,8 @@
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "payload:types": "payload generate:types"
   },
   "dependencies": {
     "@google/gemini-cli": "^0.1.21",
