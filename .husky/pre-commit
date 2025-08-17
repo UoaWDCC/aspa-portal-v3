@@ -1,7 +1,11 @@
-# Husky pre-commit hook to update API documentation
+# Husky pre-commit hook to update API documentation and types
 
 #!/bin/sh
 
 curl -o docs/api.json https://api.humanitix.com/v1/documentation/json
 yarn prettier docs/api.json --write
 git add docs/api.json
+
+
+npx openapi-typescript ./docs/api.json -o ./app/lib/api/v1.d.ts
+git add ./app/lib/api/v1.d.ts
