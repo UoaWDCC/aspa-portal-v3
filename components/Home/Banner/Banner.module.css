@@ -1,78 +1,68 @@
-@keyframes hoverUpDown {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-5vw);
-    }
-  }
-  
-  .hoverUpDown {
-    animation: hoverUpDown 2s ease-in-out infinite;
-  }
+.hoverUpDown {
+  animation: hoverUpDown 2s ease-in-out infinite;
+}
 
+.title {
+  font-size: 6vw;
+  margin-bottom: 1.5vw;
+  font-weight: 700;
+  line-height: 1.1;
+  overflow: hidden;
+}
+
+.text {
+  font-size: 1.5vw;
+  margin-bottom: 15px;
+}
+
+.group {
+  color: #DD995B;
+  font-size: 1.5vw;
+}
+
+.button {
+  width: 15vw;
+  height: 4vw;
+  font-size: 1.5vw;
+  border-radius: 45px;
+  background-color: #DD995B;
+  font-weight: 600;
+  margin: 15px 0;
+  color: #FBF5F0;
+}
+
+.button:hover {
+  background-color: #87562A;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
   .title {
-    font-size: 6vw;
-    margin-bottom: 1.5vw;
-    font-weight: 700;
-    line-height: 1.1;
-    overflow: hidden;
+    font-size: 8vw;
   }
 
   .text {
-    font-size: 1.5vw;
-    margin-bottom: 15px;
-  }
-  
-  .group {
-    color: #DD995B;
-    font-size: 1.5vw;
-  }
-  
-  .button {
-    width: 15vw;
-    height: 4vw;
-    font-size: 1.5vw;
-    border-radius: 45px;
-    background-color: #DD995B;
-    font-weight: 600;
-    margin: 15px 0;
-    color: #FBF5F0;
-  }
-  
-  .button:hover {
-    background-color: #87562A;
-  }
-  
-  .imageContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
+    font-size: 3vw;
   }
 
-  @media (max-width: 768px) {
-    .title {
-      font-size: 8vw;
-    }
-  
-    .text {
-      font-size: 3vw;
-    }
-  
-    .group {
-      font-size: 3vw;
-    }
-  
-    .button {
-      width: 35vw;
-      height: 8vw;
-      font-size: 3vw;
-    }
-    
+  .group {
+    font-size: 3vw;
   }
+
+  .button {
+    width: 35vw;
+    height: 8vw;
+    font-size: 3vw;
+  }
+}

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+.h1 { font-size: 48.8px} /* var(--font-size-h1) */
+.h2 { font-size: 39.1px} /* var(--font-size-h2) */
+.h3 { font-size: 31.3px} /* var(--font-size-h3) */
+.h4 { font-size: 25px} /* var(--font-size-h4) */
+.h5 { font-size: 20px} /* var(--font-size-h5) */
+
+.button {
+  font-family: "Nova Square", sans-serif;
+  font-weight: 500; /* thin */
+  box-sizing: content-box;
+  text-transform: uppercase;
+  background: #717882; /* var(--aspa-grey) */
+  color: #EBEBEB; /* var(--aspa-white) */
+  padding: 0.4em 1.2em;
+  border-radius: 45px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.outlined {
+  outline: 3px solid #EBEBEB; /* var(--aspa-white) */
+}
+
+.button:hover {
+  background: #adb2b8; /* Light Grey */
+  transition: 
+    background 0.4s,
+    color 0.4s,
+    box-shadow 0.4s,
+    border 0.4s;
+}
+
+.button:active {
+  transition: none;
+  background: #414750; /* Dark Grey */
+}
