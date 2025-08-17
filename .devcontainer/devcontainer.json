@@ -1,8 +1,10 @@
 {
     "name": "ASPA Dev Container",
-    "build":{
-        "dockerfile": "../docker/aspa-devel.dockerfile"
-    },
+    "service": "workspace",
+    "dockerComposeFile": [
+      "../docker/docker-compose.devel.workspace.yml",
+      "../docker/docker-compose.devel.service.yml"
+    ],
     "customizations": {
       "vscode": {
         "extensions": [
@@ -15,7 +17,7 @@
         ],
         "settings": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "prettier.configPath": "${containerWorkspaceFolder}/frontend/.prettierrc",
+          "prettier.configPath": "${containerWorkspaceFolder}/.prettierrc",
           "editor.formatOnSave": true
         }
       }
