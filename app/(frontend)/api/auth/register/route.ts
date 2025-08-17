@@ -5,9 +5,44 @@ import { cookies } from "next/headers";
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password, firstname, lastname } = await request.json();
+    const { email, password, firstname, lastname, username } =
+      await request.json();
 
     const payload = await getPayloadHMR({ config: configPromise });
+
+    // Check if username already exists
+    const existingUserByUsername = await payload.find({
+      collection: "users",
+      where: {
+        username: {
+          equals: username,
+        },
+      },
+    });
+
+    if (existingUserByUsername.docs.length > 0) {
+      return NextResponse.json(
+        { message: "Username already exists" },
+        { status: 400 },
+      );
+    }
+
+    // Check if email already exists
+    const existingUserByEmail = await payload.find({
+      collection: "users",
+      where: {
+        email: {
+          equals: email,
+        },
+      },
+    });
+
+    if (existingUserByEmail.docs.length > 0) {
+      return NextResponse.json(
+        { message: "Email already exists" },
+        { status: 400 },
+      );
+    }
 
     // Create the user
     const user = await payload.create({
@@ -17,6 +52,7 @@ export async function POST(request: NextRequest) {
         password,
         firstname,
         lastname,
+        username,
       },
     });
 
@@ -51,12 +87,21 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Registration error:", error);
 
-    // Handle duplicate email error
-    if (error instanceof Error && error.message.includes("duplicate")) {
-      return NextResponse.json(
-        { message: "Email already exists" },
-        { status: 400 },
-      );
+    // Handle validation errors
+    if (error instanceof Error) {
+      if (error.message.includes("duplicate")) {
+        return NextResponse.json(
+          { message: "Email or username already exists" },
+          { status: 400 },
+        );
+      }
+
+      if (error.message.includes("validation")) {
+        return NextResponse.json(
+          { message: "Invalid input data" },
+          { status: 400 },
+        );
+      }
     }
 
     return NextResponse.json(

@@ -4,6 +4,8 @@ import configPromise from "@payload-config";
 import { User } from "@/payload-types";
 import { cookies } from "next/headers";
 import LogoutButton from "@/components/Auth/Logout/Button";
+import GameRequest from "@/components/Games/Request";
+import GamesList from "@/components/Games/List";
 
 export default async function ProfilePage() {
   const cookieStore = await cookies();
@@ -18,7 +20,6 @@ export default async function ProfilePage() {
   let user: User | null = null;
 
   try {
-    // Use the auth method with the token
     const authResult = await payload.auth({
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -37,7 +38,7 @@ export default async function ProfilePage() {
   }
 
   return (
-    <div style={{ maxWidth: "600px", margin: "100px auto", padding: "20px" }}>
+    <div style={{ maxWidth: "800px", margin: "100px auto", padding: "20px" }}>
       <div
         style={{
           display: "flex",
@@ -55,12 +56,18 @@ export default async function ProfilePage() {
           backgroundColor: "#f5f5f5",
           padding: "20px",
           borderRadius: "8px",
+          marginBottom: "30px",
         }}
       >
         <h2>Profile Information</h2>
         <p>
           <strong>Email:</strong> {user.email}
         </p>
+        {user.username && (
+          <p>
+            <strong>Username:</strong> {user.username}
+          </p>
+        )}
         {user.firstname && (
           <p>
             <strong>First Name:</strong> {user.firstname}
@@ -71,7 +78,13 @@ export default async function ProfilePage() {
             <strong>Last Name:</strong> {user.lastname}
           </p>
         )}
+        <p>
+          <strong>ELO Rating:</strong> {user.elo || 1200}
+        </p>
       </div>
+
+      <GameRequest />
+      <GamesList userId={user.id} />
     </div>
   );
 }
