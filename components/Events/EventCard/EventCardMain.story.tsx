@@ -1,16 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { EventCardMain } from "./EventCardMain";
+import { Event } from "@/models/Event";
 
-const exampleEvent = {
-  id: "1",
+const exampleEvent: Event = {
   name: "CASUAL NIGHT @ AKL CBD",
-  date: "TUES & THUR 6:30-8:00PM",
-  price: 6,
+  dateTime: "TUES & THUR 6:30-8:00PM",
+  price: "6",
   location: "Orange Pool Club [9 City Road]",
   description: "Join us for a casual night out at the Orange Pool Club!",
   imageUrl:
     "https://www.bartonmcgill.co.nz/wp-content/uploads/2023/12/51S4Ow-YSgL-_AC_SL1500_.jpg",
-  buttonText: "Sign Up Now",
 };
 
 const meta: Meta<typeof EventCardMain> = {
