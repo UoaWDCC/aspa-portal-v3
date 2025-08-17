@@ -1,14 +1,9 @@
 'use client';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { Card, Text, Title } from '@mantine/core';
 import styles from './EventCard.module.css';
 
-export interface Event {
-  name: string;
-  description: string;
-  imageUrl: string;
-}
+import { Event } from '@/models/Event';
 
 interface EventCardProps {
   event: Event;
@@ -17,7 +12,6 @@ interface EventCardProps {
   cardWithBorder?: boolean;
   cardPadding?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   cardMaxWidth?: string;
-  cardMaxHeight?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   cardTitleOrder?: 1 | 2 | 3 | 4 | 5 | 6;
   cardTitleMargin?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   cardDescriptionSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -30,13 +24,10 @@ export function EventCard({
   cardWithBorder = true,
   cardPadding = 'lg',
   cardMaxWidth = '100%',
-  cardMaxHeight = 'lg',
   cardTitleOrder = 2,
   cardTitleMargin = 'md',
   cardDescriptionSize = 'md',
 }: EventCardProps) {
-  const router = useRouter();
-
   return (
     <Card
       shadow={cardShadow}
