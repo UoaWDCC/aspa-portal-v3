@@ -1,11 +1,12 @@
 'use client';
+
 import { Grid, Container, Paper, Title } from '@mantine/core';
-import { ExecutiveCard, Executive } from '../Card/ExecutiveCard';
+import { ExecutiveCard, Executive } from '../Card/ExecutiveCardDisplay';
 import styles from './ExecutiveCollection.module.css';
 
 export interface ExecutiveCollection {
   executives: Executive[];
-  badgeColor?: string;
+  sectionTitle?: string;
   gutter?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -22,7 +23,7 @@ export interface ExecutiveCollection {
 
 export function ExecutiveCollection({
   executives,
-  badgeColor = '#d78840',
+  sectionTitle,
   gutter = 'lg',
   radius = 'xl',
   shadow = 'sm',
@@ -50,13 +51,18 @@ export function ExecutiveCollection({
           pl={innerPaddingLeft}
           pr={innerPaddingRight}
         >
-          <Title className={styles.title} pt="1vw" pb="2vw">
-            Meet The Team
-          </Title>
-          <Grid grow gutter={gutter}>
+          {sectionTitle && (
+            <Title order={2} ta="center" className={styles.sectionTitle}>
+              {sectionTitle}
+            </Title>
+          )}
+          <Grid gutter={gutter}>
             {executives.map((executive, index) => (
-              <Grid.Col span={{ base: 12, sm: 4 }}>
-                <ExecutiveCard executive={executive} badgeColor={badgeColor} key={index} />
+              <Grid.Col
+                key={index}
+                span={{ base: 12, sm: 6 }} // 12 = full width, 6 = half width
+              >
+                <ExecutiveCard executive={executive} />
               </Grid.Col>
             ))}
           </Grid>
