@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Grid, Container, Paper, Title } from "@mantine/core";
-import { ExecutiveCard, Executive } from "../Card/ExecutiveCardDisplay";
-import styles from "./ExecutiveCollection.module.css";
+import { Grid, Container, Paper, Title } from '@mantine/core';
+import { ExecutiveCard, Executive } from '../Card/ExecutiveCardDisplay';
+import styles from './ExecutiveCollection.module.css';
 
 export interface ExecutiveCollection {
   executives: Executive[];
@@ -24,9 +24,9 @@ export interface ExecutiveCollection {
 export function ExecutiveCollection({
   executives,
   sectionTitle,
-  gutter = "lg",
-  radius = "xl",
-  shadow = "sm",
+  gutter = 'lg',
+  radius = 'xl',
+  shadow = 'sm',
   withBorder = true,
   outerPaddingTop = '',
   outerPaddingBottom = '',
