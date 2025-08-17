@@ -192,6 +192,7 @@ export interface Event {
  */
 export interface User {
   id: number;
+  username: string;
   firstname?: string | null;
   lastname?: string | null;
   elo?: number | null;
@@ -351,6 +352,7 @@ export interface EventsSelect<T extends boolean = true> {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  username?: T;
   firstname?: T;
   lastname?: T;
   elo?: T;
