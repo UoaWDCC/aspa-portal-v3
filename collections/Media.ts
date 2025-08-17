@@ -1,12 +1,12 @@
-import { CollectionConfig } from 'payload';
+import { CollectionConfig } from "payload";
 
 const Media: CollectionConfig = {
-  slug: 'media',
+  slug: "media",
   upload: true,
   fields: [
     {
-      name: 'alt',
-      type: 'text',
+      name: "alt",
+      type: "text",
     },
   ],
 };

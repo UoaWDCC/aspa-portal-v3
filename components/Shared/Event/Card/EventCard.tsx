@@ -1,32 +1,32 @@
-'use client';
-import Image from 'next/image';
-import { Card, Text, Title } from '@mantine/core';
-import styles from './EventCard.module.css';
+"use client";
+import Image from "next/image";
+import { Card, Text, Title } from "@mantine/core";
+import styles from "./EventCard.module.css";
 
-import { Event } from '@/models/Event';
+import { Event } from "@/models/Event";
 
 interface EventCardProps {
   event: Event;
-  cardShadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  cardRadius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  cardShadow?: "xs" | "sm" | "md" | "lg" | "xl";
+  cardRadius?: "xs" | "sm" | "md" | "lg" | "xl";
   cardWithBorder?: boolean;
-  cardPadding?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  cardPadding?: "xs" | "sm" | "md" | "lg" | "xl";
   cardMaxWidth?: string;
   cardTitleOrder?: 1 | 2 | 3 | 4 | 5 | 6;
-  cardTitleMargin?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  cardDescriptionSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  cardTitleMargin?: "xs" | "sm" | "md" | "lg" | "xl";
+  cardDescriptionSize?: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
 export function EventCard({
   event,
-  cardShadow = 'sm',
-  cardRadius = 'xl',
+  cardShadow = "sm",
+  cardRadius = "xl",
   cardWithBorder = true,
-  cardPadding = 'lg',
-  cardMaxWidth = '100%',
+  cardPadding = "lg",
+  cardMaxWidth = "100%",
   cardTitleOrder = 2,
-  cardTitleMargin = 'md',
-  cardDescriptionSize = 'md',
+  cardTitleMargin = "md",
+  cardDescriptionSize = "md",
 }: EventCardProps) {
   return (
     <Card
@@ -34,7 +34,7 @@ export function EventCard({
       padding={cardPadding}
       radius={cardRadius}
       withBorder={cardWithBorder}
-      style={{ maxWidth: cardMaxWidth, height: '90%' }}
+      style={{ maxWidth: cardMaxWidth, height: "90%" }}
       className={styles.card}
     >
       <Card.Section>

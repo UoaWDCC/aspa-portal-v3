@@ -1,7 +1,10 @@
-import styles from './Button.module.css';
-import { Button as MantineButton, ButtonProps as MantineButtonProps } from '@mantine/core';
+import styles from "./Button.module.css";
+import {
+  Button as MantineButton,
+  ButtonProps as MantineButtonProps,
+} from "@mantine/core";
 
-type ButtonSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+type ButtonSize = "h1" | "h2" | "h3" | "h4" | "h5";
 
 interface ButtonProps extends MantineButtonProps {
   outlined?: boolean;
@@ -11,12 +14,12 @@ interface ButtonProps extends MantineButtonProps {
 
 export function Button({
   outlined = false,
-  variant = 'h4',
+  variant = "h4",
   children,
-  className = '',
+  className = "",
   ...props
 }: ButtonProps) {
-  const outlineClass = outlined ? styles.outlined : '';
+  const outlineClass = outlined ? styles.outlined : "";
   const sizeClass = styles[variant];
   return (
     <MantineButton

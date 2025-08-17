@@ -38,7 +38,7 @@ const eventsList = [
   },
 ];
 
-const props : EventCardProps[] = []
+const props: EventCardProps[] = [];
 
 describe("EventDisplay component", () => {
   it("renders eventDisplay, eventCardMain, and eventCardSecondary correctly", () => {
@@ -47,19 +47,21 @@ describe("EventDisplay component", () => {
         events={eventsList}
         displayTypes={[displayType.Main, displayType.Secondary]}
         props={props}
-      />
+      />,
     );
     expect(screen.getByText("Untitled")).toBeInTheDocument();
     eventsList.map((event, index) => {
       const img = screen.getByAltText(eventsList[index].name);
       expect(img).toBeInTheDocument();
-      expect(img).toHaveAttribute('src', eventsList[index].imageUrl);
+      expect(img).toHaveAttribute("src", eventsList[index].imageUrl);
 
       expect(screen.getByText(eventsList[index].name)).toBeInTheDocument();
       expect(screen.getByText(eventsList[index].date)).toBeInTheDocument();
-      expect(screen.getByText(`$${eventsList[index].price}`)).toBeInTheDocument();
+      expect(
+        screen.getByText(`$${eventsList[index].price}`),
+      ).toBeInTheDocument();
       expect(screen.getByText(eventsList[index].location)).toBeInTheDocument();
-    })
+    });
   });
 
   it("renders eventCardTertiary correctly", () => {
@@ -68,64 +70,67 @@ describe("EventDisplay component", () => {
         events={[eventsList[0], eventsList[1]]}
         displayTypes={[displayType.Tertiary]}
         props={props}
-      />
+      />,
     );
     expect(screen.getByText("Untitled")).toBeInTheDocument();
     [eventsList[0], eventsList[1]].map((event, index) => {
       const img = screen.getByAltText(eventsList[index].name);
       expect(img).toBeInTheDocument();
-      expect(img).toHaveAttribute('src', eventsList[index].imageUrl);
+      expect(img).toHaveAttribute("src", eventsList[index].imageUrl);
 
       expect(screen.getByText(eventsList[index].name)).toBeInTheDocument();
       expect(screen.getByText(eventsList[index].date)).toBeInTheDocument();
-      expect(screen.getByText(`$${eventsList[index].price}`)).toBeInTheDocument();
+      expect(
+        screen.getByText(`$${eventsList[index].price}`),
+      ).toBeInTheDocument();
       expect(screen.getByText(eventsList[index].location)).toBeInTheDocument();
-    })
+    });
   });
 
-  it('test for responsiveness', () => {
+  it("test for responsiveness", () => {
     const { rerender } = render(
       <EventDisplay
         events={eventsList}
         displayTypes={[displayType.Main, displayType.Secondary]}
         props={props}
-      />
+      />,
     );
 
     expect(screen.getByText("Untitled")).toBeInTheDocument();
 
     global.innerWidth = 375;
-    global.dispatchEvent(new Event('resize'));
+    global.dispatchEvent(new Event("resize"));
     rerender(
       <EventDisplay
         events={eventsList}
         displayTypes={[displayType.Main, displayType.Secondary]}
         props={props}
-      />
+      />,
     );
 
     expect(screen.getByText("Untitled")).toBeInTheDocument();
     eventsList.map((e, index) => {
       const img = screen.getByAltText(eventsList[index].name);
       expect(img).toBeInTheDocument();
-      expect(img).toHaveAttribute('src', eventsList[index].imageUrl);
+      expect(img).toHaveAttribute("src", eventsList[index].imageUrl);
 
       expect(screen.getByText(eventsList[index].name)).toBeInTheDocument();
       expect(screen.getByText(eventsList[index].date)).toBeInTheDocument();
-      expect(screen.getByText(`$${eventsList[index].price}`)).toBeInTheDocument();
+      expect(
+        screen.getByText(`$${eventsList[index].price}`),
+      ).toBeInTheDocument();
       expect(screen.getByText(eventsList[index].location)).toBeInTheDocument();
-    })
+    });
   });
 
-  it('should match snapshot', () => {
+  it("should match snapshot", () => {
     const { asFragment } = render(
       <EventDisplay
         events={eventsList}
         displayTypes={[displayType.Main, displayType.Secondary]}
         props={props}
-      />
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 });
-
