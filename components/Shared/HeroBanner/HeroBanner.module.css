@@ -1,0 +1,32 @@
+.heroBannerContainer {
+	position: relative;
+	overflow: hidden;
+}
+
+.imageContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.backgroundMedia {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.centeredTitle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 100%;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
