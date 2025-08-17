@@ -3,7 +3,7 @@ import { EventCardSecondary, EventCardSecondaryProps } from "../EventCard/EventC
 import { EventCardTertiary, EventCardTertiaryProps } from "../EventCard/EventCardTertiary";
 import { Stack, Text, Button, rgba } from "@mantine/core"
 
-export type EventCardProps = EventCardMainProps | EventCardSecondaryProps | EventCardTertiaryProps
+export type ChildEventDisplayProps = EventCardMainProps | EventCardSecondaryProps | EventCardTertiaryProps
 
 export interface Event {
     id: string;
@@ -16,10 +16,10 @@ export interface Event {
     buttonText: string; // Text to show in event card button
 }
 
-export interface EventDisplayProps {
+export interface ParentEventDisplayProps {
     events: Event[],
     displayTypes: displayType[],
-    props: EventCardProps[],
+    props: ChildEventDisplayProps[],
     title?: string,
     buttonText?: string,
     bg_color?: string, 
@@ -46,7 +46,7 @@ export function EventDisplay({
     title_fs="8vh",
     title_fw="bold",
     gap="lg",
-}: EventDisplayProps) {
+}: ParentEventDisplayProps) {
 
   if (displayTypes.length < 1) {
     return;
