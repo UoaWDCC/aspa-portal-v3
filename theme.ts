@@ -1,53 +1,90 @@
 'use client';
 
 import { createTheme } from '@mantine/core';
-import { Zilla_Slab } from 'next/font/google';
+import { Nova_Square, Josefin_Sans } from 'next/font/google';
 
-// Initialise the Zilla_Slab font
-const zillaSlab = Zilla_Slab({
-  weight: ['400', '700'],
+export const novaSquare = Nova_Square({
+  weight: '400',
   subsets: ['latin'],
+  variable: '--font-heading',
+});
+
+export const josefinSans = Josefin_Sans({
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+  variable: '--font-body',
 });
 
 export const theme = createTheme({
   colors: {
-    'aspa-orange': [
-      '#fff2e4',
-      '#fbe6d3',
-      '#f0ccaa',
-      '#e5af7e',
-      '#dc9758',
-      '#d78840',
-      '#d68032',
-      '#bd6d24',
-      '#a9611d',
-      '#945212',
+    'aspa-white': [
+      '#ebebeb',
+      '#f8f8ff',
+      '#dcdcdc',
+      '#f3f3f3',
+      '#e5e4e2',
+      '#e5e5e5',
+      '#d3d3d3',
+      '#f0ffff',
+      '#f1f1f1',
+      '#ececec',
     ],
-    'aspa-brown': [
-      '#faf5ef',
-      '#f0e8e0',
-      '#e2cdbb',
-      '#d5b192',
-      '#c9996f',
-      '#c38a59',
-      '#c1834d',
-      '#a96f3d',
-      '#986335',
-      '#845429',
+    'aspa-grey': [
+      '#717882',
+      '#708090',
+      '#778899',
+      '#91a3b0',
+      '#4c516d',
+      '#8c92ac',
+      '#6e7f80',
+      '#7c7f85',
+      '#636b79',
+      '#74828f',
     ],
-    'aspa-gray': [
-      '#f4f5f5',
-      '#e7e7e7',
-      '#cdcdcd',
-      '#b1b1b1',
-      '#999999',
-      '#8a8a8a',
-      '#838383',
-      '#707071',
-      '#636466',
-      '#52575b',
+    'aspa-black': [
+      '#1a1a1a',
+      '#343434',
+      '#353839',
+      '#264040',
+      '#1b1b1b',
+      '#211f1f',
+      '#1e1e1e',
+      '#2d2d2d',
+      '#2a3439',
+      '#2d383a',
     ],
   },
 
-  fontFamily: zillaSlab.style.fontFamily,
+  fontFamily: josefinSans.style.fontFamily,
+
+  headings: {
+    fontFamily: novaSquare.style.fontFamily,
+    sizes: {
+      h1: { fontSize: '48.8px' },
+      h2: { fontSize: '39.1px' },
+      h3: { fontSize: '31.3px' },
+      h4: { fontSize: '25px' },
+      h5: { fontSize: '20px' },
+    },
+  },
+
+  spacing: {
+    xs: '4px',
+    sm: '8px',
+    md: '12px',
+    lg: '16px',
+    xl: '24px',
+    '2xl': '32px',
+  },
+
+  other: {
+    containerMaxWidth: '1280px',
+  },
+
+  breakpoints: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+  },
 });
