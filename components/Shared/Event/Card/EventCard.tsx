@@ -4,11 +4,7 @@ import { useRouter } from 'next/navigation';
 import { Card, Text, Title } from '@mantine/core';
 import styles from './EventCard.module.css';
 
-export interface Event {
-  name: string;
-  description: string;
-  imageUrl: string;
-}
+import { Event } from '@/models/Event';
 
 interface EventCardProps {
   event: Event;

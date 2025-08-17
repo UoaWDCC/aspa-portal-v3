@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { Event } from "@/models/Event";
 import { EventCard } from "@/components/Shared/Event/Card/SingleEventCard";
 
 const sampleEvent: Event = {

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Event } from "./EventCard";
+import { Event } from '@/models/Event';
 import styles from "./SingleEventCard.module.css";
 
 // Default values for the card dimensions and background color
