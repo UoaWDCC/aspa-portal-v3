@@ -1,9 +1,9 @@
-'use client';
-import { Text, Button, Grid, Container } from '@mantine/core';
-import { Event } from '@/components/Shared/Event/Card/EventCard';
-import { EventCarousel } from '@/components/Shared/Event/Carousel/EventCarousel';
-import Link from 'next/link';
-import styles from './PastEvent.module.css';
+"use client";
+import { Text, Button, Grid, Container } from "@mantine/core";
+import { Event } from "@/components/Shared/Event/Card/EventCard";
+import { EventCarousel } from "@/components/Shared/Event/Carousel/EventCarousel";
+import Link from "next/link";
+import styles from "./PastEvent.module.css";
 
 export interface PastEvent {
   events: Event[];
@@ -15,13 +15,19 @@ export interface PastEvent {
 
 export function PastEvent(
   { events }: PastEvent,
-  paddingTop = '',
-  paddingBottom = '',
-  paddingleft = '',
-  paddingRight = ''
+  paddingTop = "",
+  paddingBottom = "",
+  paddingleft = "",
+  paddingRight = "",
 ) {
   return (
-    <Container fluid pt={paddingTop} pb={paddingBottom} pl={paddingleft} pr={paddingRight}>
+    <Container
+      fluid
+      pt={paddingTop}
+      pb={paddingBottom}
+      pl={paddingleft}
+      pr={paddingRight}
+    >
       <Grid gutter="xl">
         <Grid.Col span={12}>
           <div className={styles.centeredText}>

@@ -1,24 +1,24 @@
-import { CollectionConfig } from 'payload';
+import { CollectionConfig } from "payload";
 
 const Users: CollectionConfig = {
-  slug: 'users',
+  slug: "users",
   auth: true,
   admin: {
-    useAsTitle: 'email',
-    group: 'Customers',
+    useAsTitle: "email",
+    group: "Customers",
   },
   fields: [
     {
-      name: 'firstname',
-      type: 'text',
+      name: "firstname",
+      type: "text",
     },
     {
-      name: 'lastname',
-      type: 'text',
+      name: "lastname",
+      type: "text",
     },
     {
-      name: 'elo',
-      type: 'number',
+      name: "elo",
+      type: "number",
       defaultValue: 0,
     },
   ],
