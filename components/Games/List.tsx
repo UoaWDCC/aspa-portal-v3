@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 // components/Games/GamesList.tsx
 "use client";
 import { useState, useEffect } from "react";

@@ -43,10 +43,10 @@ export async function POST(request: NextRequest) {
 
     const opponent = opponents.docs[0];
 
-    if (opponent.id === authResult.user.id) {
+    if (!opponent || opponent.id === authResult.user.id) {
       return NextResponse.json(
-        { error: "Cannot challenge yourself" },
-        { status: 400 },
+        { error: !opponent ? "User not found" : "Cannot challenge yourself" },
+        { status: !opponent ? 404 : 400 },
       );
     }
 

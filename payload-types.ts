@@ -268,21 +268,7 @@ export interface Executive {
   /**
    * Content for the back side (detailed bio, achievements, etc.)
    */
-  backContent: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
+  backContent: string;
   updatedAt: string;
   createdAt: string;
 }
