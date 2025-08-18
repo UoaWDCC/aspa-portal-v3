@@ -4,8 +4,20 @@ const Events: CollectionConfig = {
   slug: "events",
   admin: {
     useAsTitle: "name",
+    components: {
+      beforeList: ["@/components/Payload/SyncEventsButton"],
+    },
   },
   fields: [
+    {
+      name: "id",
+      type: "text",
+      unique: true,
+      admin: {
+        readOnly: true,
+        hidden: true,
+      },
+    },
     {
       name: "name",
       type: "text",
@@ -14,10 +26,6 @@ const Events: CollectionConfig = {
     {
       name: "description",
       type: "textarea",
-    },
-    {
-      name: "date",
-      type: "date",
     },
     {
       name: "dateTime",
@@ -36,12 +44,12 @@ const Events: CollectionConfig = {
       type: "text",
     },
     {
-      name: "primaryColor",
-      type: "text",
-    },
-    {
-      name: "secondaryColor",
-      type: "text",
+      name: "lastSyncedAt",
+      type: "date",
+      admin: {
+        readOnly: true,
+        hidden: true,
+      },
     },
   ],
 };

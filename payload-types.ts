@@ -177,16 +177,14 @@ export interface Admin {
  * via the `definition` "events".
  */
 export interface Event {
-  id: number;
+  id: string;
   name: string;
   description?: string | null;
-  date?: string | null;
   dateTime?: string | null;
   location?: string | null;
   price?: string | null;
   imageUrl?: string | null;
-  primaryColor?: string | null;
-  secondaryColor?: string | null;
+  lastSyncedAt?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -309,7 +307,7 @@ export interface PayloadLockedDocument {
       } | null)
     | ({
         relationTo: 'events';
-        value: number | Event;
+        value: string | Event;
       } | null)
     | ({
         relationTo: 'users';
@@ -406,15 +404,14 @@ export interface AdminsSelect<T extends boolean = true> {
  * via the `definition` "events_select".
  */
 export interface EventsSelect<T extends boolean = true> {
+  id?: T;
   name?: T;
   description?: T;
-  date?: T;
   dateTime?: T;
   location?: T;
   price?: T;
   imageUrl?: T;
-  primaryColor?: T;
-  secondaryColor?: T;
+  lastSyncedAt?: T;
   updatedAt?: T;
   createdAt?: T;
 }
