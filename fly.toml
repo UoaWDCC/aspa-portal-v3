@@ -3,10 +3,22 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'aspa'
+app = 'aspa-portal-v3'
 primary_region = 'syd'
 
 [build]
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 3000
+  processes = ["app"]
+
+[[services.ports]]
+  handlers = ["http"]
+  internal_port = 3000
+  port = 80
+  force_https = true
+
 
 [http_service]
   internal_port = 3000

@@ -4,7 +4,7 @@ import { Event } from "@/payload-types";
 
 const eventsList: Event[] = [
   {
-    id: 0,
+    id: "0",
     updatedAt: "2024-06-01T00:00:00.000Z",
     createdAt: "2024-05-01T00:00:00.000Z",
     name: "CASUAL NIGHT @ AKL CBD",
@@ -14,10 +14,9 @@ const eventsList: Event[] = [
     description: "Join us for a casual night out at the Orange Pool Club!",
     imageUrl:
       "https://www.bartonmcgill.co.nz/wp-content/uploads/2023/12/51S4Ow-YSgL-_AC_SL1500_.jpg",
-    date: null,
   },
   {
-    id: 1,
+    id: "1",
     updatedAt: "2024-06-02T00:00:00.000Z",
     createdAt: "2024-05-02T00:00:00.000Z",
     name: "KARAOKE NIGHT @ AKL CBD",
@@ -27,7 +26,6 @@ const eventsList: Event[] = [
     description: "Show off your singing skills at our Karaoke Night!",
     imageUrl:
       "https://gamesforfun.com/wp-content/uploads/2018/05/mini-ball-set-replacement-2-ball.jpg",
-    date: null,
   },
 ];
 

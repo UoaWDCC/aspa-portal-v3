@@ -32,6 +32,10 @@ export function EventCardSecondary({
   const event1 = events[0];
   const event2 = events[1];
 
+  if (!event1 || !event2) {
+    return null;
+  }
+
   return (
     <Flex
       direction="row"

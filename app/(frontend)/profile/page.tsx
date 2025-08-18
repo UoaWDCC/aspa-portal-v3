@@ -84,7 +84,7 @@ export default async function ProfilePage() {
       </div>
 
       <GameRequest />
-      <GamesList userId={user.id} />
+      <GamesList userId={String(user.id)} />
     </div>
   );
 }

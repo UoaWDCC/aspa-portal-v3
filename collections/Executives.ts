@@ -65,7 +65,7 @@ const Executives: CollectionConfig = {
     },
     {
       name: "backContent",
-      type: "richText",
+      type: "text",
       required: true,
       admin: {
         description:

@@ -3,7 +3,7 @@ import { EventCardMain } from "./EventCardMain";
 import { Event } from "@/payload-types";
 
 const exampleEvent: Event = {
-  id: 0,
+  id: "0",
   updatedAt: "2024-06-01T00:00:00.000Z",
   createdAt: "2024-06-01T00:00:00.000Z",
   name: "CASUAL NIGHT @ AKL CBD",
@@ -13,7 +13,6 @@ const exampleEvent: Event = {
   description: "Join us for a casual night out at the Orange Pool Club!",
   imageUrl:
     "https://www.bartonmcgill.co.nz/wp-content/uploads/2023/12/51S4Ow-YSgL-_AC_SL1500_.jpg",
-  date: null,
 };
 
 const meta: Meta<typeof EventCardMain> = {

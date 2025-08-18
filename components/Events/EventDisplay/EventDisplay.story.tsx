@@ -6,7 +6,7 @@ import { Event } from "@/payload-types";
 
 const eventsList: Event[] = [
   {
-    id: 0,
+    id: "0",
     updatedAt: "2024-06-01T00:00:00.000Z",
     createdAt: "2024-05-01T00:00:00.000Z",
     name: "ASPA Hackathon @ GRID AKL",
@@ -17,10 +17,9 @@ const eventsList: Event[] = [
       "WDCC and SESA are so excited to announce our flagship hackathon for 2025. Join us for a two-day event where you alongside other students will work together to design and build unique applications - inspired by our surprise theme revealed on the day. Win from a prize pool of OVER $1.5k and grab some awesome sponsor merch along the way. Get mentored by experienced industry professionals - who will be on site ready to support your team!",
     imageUrl:
       "https://www.bartonmcgill.co.nz/wp-content/uploads/2023/12/51S4Ow-YSgL-_AC_SL1500_.jpg",
-    date: null,
   },
   {
-    id: 1,
+    id: "1",
     updatedAt: "2024-06-02T00:00:00.000Z",
     createdAt: "2024-05-02T00:00:00.000Z",
     name: "CASUAL NIGHT @ AKL CBD",
@@ -30,10 +29,9 @@ const eventsList: Event[] = [
     description: "Join us for a casual night out at the Orange Pool Club!",
     imageUrl:
       "https://www.bartonmcgill.co.nz/wp-content/uploads/2023/12/51S4Ow-YSgL-_AC_SL1500_.jpg",
-    date: null,
   },
   {
-    id: 2,
+    id: "2",
     updatedAt: "2024-06-03T00:00:00.000Z",
     createdAt: "2024-05-03T00:00:00.000Z",
     name: "KARAOKE NIGHT @ AKL CBD",
@@ -43,7 +41,6 @@ const eventsList: Event[] = [
     description: "Show off your singing skills at our Karaoke Night!",
     imageUrl:
       "https://gamesforfun.com/wp-content/uploads/2018/05/mini-ball-set-replacement-2-ball.jpg",
-    date: null,
   },
 ];
 
