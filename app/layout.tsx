@@ -5,6 +5,7 @@ import "@mantine/carousel/styles.css";
 
 import React from "react";
 import {
+  AppShell,
   ColorSchemeScript,
   MantineProvider,
   mantineHtmlProps,
@@ -18,7 +19,7 @@ const links = [
   { name: "Home", href: "/" },
   { name: "Events", href: "/events" },
   { name: "ASPA Team", href: "/contact" },
-  { name: "Profile", href: "/contact" },
+  { name: "Profile", href: "/profile" },
 ];
 
 const socialMediaLinks = [
@@ -63,7 +64,9 @@ export default function RootLayout({ children }: { children: any }) {
         <MantineProvider theme={theme}>
           <NavBar links={links} />
 
-          {children}
+          <AppShell>
+            <AppShell.Main>{children}</AppShell.Main>
+          </AppShell>
 
           <Footer socialMediaLinks={socialMediaLinks} />
         </MantineProvider>

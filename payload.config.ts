@@ -10,13 +10,15 @@ import Events from "./collections/Events";
 import Users from "./collections/Users";
 import Media from "./collections/Media";
 import Styles from "./collections/Styles";
+import Executives from "./collections/Executives";
+import Games from "./collections/Games";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
   editor: lexicalEditor(),
-  collections: [Admins, Events, Users, Media],
+  collections: [Admins, Events, Users, Media, Executives, Games],
   globals: [Styles],
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
