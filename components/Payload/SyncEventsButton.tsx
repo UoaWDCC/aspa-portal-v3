@@ -21,7 +21,7 @@ const SyncEventsButton = () => {
     setError("");
 
     try {
-      const response = await fetch("/api/sync-events", {
+      const response = await fetch("/api/humanitix/sync", {
         method: "POST",
         credentials: "include",
       });

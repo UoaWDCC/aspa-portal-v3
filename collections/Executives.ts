@@ -3,19 +3,40 @@ import { CollectionConfig } from "payload";
 const Executives: CollectionConfig = {
   slug: "executives",
   admin: {
-    useAsTitle: "name",
-    defaultColumns: ["name", "title", "updatedAt"],
+    useAsTitle: "firstName",
+    defaultColumns: ["firstName", "title", "updatedAt"],
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: "name",
+      name: "firstName",
       type: "text",
       required: true,
       admin: {
-        description: "Full name of the executive",
+        description: "First name of the executive",
+      },
+    },
+    {
+      name: "lastName",
+      type: "text",
+      required: true,
+      admin: {
+        description: "Last name of the executive",
+      },
+    },
+    {
+      name: "type",
+      type: "select",
+      options: [
+        { label: "Main", value: "main" },
+        { label: "Marketing", value: "marketing" },
+        { label: "Events", value: "events" },
+      ],
+      required: true,
+      admin: {
+        description: "Type of executive (Main, Marketing, Events)",
       },
     },
     {
@@ -36,8 +57,7 @@ const Executives: CollectionConfig = {
     },
     {
       name: "image",
-      type: "upload",
-      relationTo: "media",
+      type: "text",
       required: true,
       admin: {
         description: "Executive headshot or profile image",

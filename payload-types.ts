@@ -242,9 +242,17 @@ export interface Media {
 export interface Executive {
   id: number;
   /**
-   * Full name of the executive
+   * First name of the executive
    */
-  name: string;
+  firstName: string;
+  /**
+   * Last name of the executive
+   */
+  lastName: string;
+  /**
+   * Type of executive (Main, Marketing, Events)
+   */
+  type: 'main' | 'marketing' | 'events';
   /**
    * Job title or position
    */
@@ -256,7 +264,7 @@ export interface Executive {
   /**
    * Executive headshot or profile image
    */
-  image: number | Media;
+  image: string;
   /**
    * Content for the back side (detailed bio, achievements, etc.)
    */
@@ -464,7 +472,9 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "executives_select".
  */
 export interface ExecutivesSelect<T extends boolean = true> {
-  name?: T;
+  firstName?: T;
+  lastName?: T;
+  type?: T;
   title?: T;
   description?: T;
   image?: T;

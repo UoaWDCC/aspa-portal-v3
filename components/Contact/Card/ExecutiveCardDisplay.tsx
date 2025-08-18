@@ -35,14 +35,14 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
           >
             <Image
               src={executive.image}
-              alt={executive.name}
+              alt={`${executive.firstName} ${executive.lastName}`}
               width={120}
               height={120}
               radius="md"
             />
             <Box>
               <Text fw={700} size="lg">
-                {executive.name}
+                {`${executive.firstName} ${executive.lastName}`}
               </Text>
               <Text className={styles.positionText} size="sm" mb={4}>
                 {executive.title}
