@@ -145,5 +145,6 @@ export function NavBar({ links }: NavBarProps) {
         ))}
       </AppShell.Navbar>
     </AppShell>
+    
   );
 }
