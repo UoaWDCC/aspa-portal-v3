@@ -10,6 +10,7 @@ export const MAX_HEIGHT_VW = ROW_HEIGHT_VW * VISIBLE_ROWS;
 
 export const LIGHT_ROW_COLOR = "#7a7f87";
 export const DARK_ROW_COLOR = "#111111";
+
 // highlighting specific user's row
 export const HIGHLIGHT_COLOR = "#DD995B";
 
@@ -28,7 +29,8 @@ interface LeaderboardEntry {
 
 interface LeaderboardListDisplayProps {
   leaderboard: LeaderboardEntry[];
-  currentUserRank?: number; // new prop for highlighting & sticky
+  // prop for highlighting & user sticky row
+  currentUserRank?: number; 
 }
 
 export const LeaderboardListDisplay: React.FC<LeaderboardListDisplayProps> = ({
