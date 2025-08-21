@@ -15,9 +15,7 @@ const mockLeaderboard = [
 
 describe("LeaderboardListDisplay", () => {
   it("renders all leaderboard entries", () => {
-    render(
-      <LeaderboardListDisplay leaderboard={mockLeaderboard} />
-    );
+    render(<LeaderboardListDisplay leaderboard={mockLeaderboard} />);
 
     mockLeaderboard.forEach((entry) => {
       expect(screen.getByText(entry.name)).toBeInTheDocument();
@@ -30,7 +28,7 @@ describe("LeaderboardListDisplay", () => {
       <LeaderboardListDisplay
         leaderboard={mockLeaderboard}
         currentUserRank={7}
-      />
+      />,
     );
 
     // Sticky row should contain current user info
@@ -50,7 +48,7 @@ describe("LeaderboardListDisplay", () => {
       <LeaderboardListDisplay
         leaderboard={mockLeaderboard}
         currentUserRank={7}
-      />
+      />,
     );
 
     const stickyRowEl = container.querySelector(`.${"stickyRow"}`);
@@ -62,7 +60,7 @@ describe("LeaderboardListDisplay", () => {
 
   it("should allow scrolling when more than 5 entries", () => {
     const { container } = render(
-      <LeaderboardListDisplay leaderboard={mockLeaderboard} />
+      <LeaderboardListDisplay leaderboard={mockLeaderboard} />,
     );
 
     const scrollArea = container.querySelector(`.${"scrollArea"}`);

@@ -30,7 +30,7 @@ interface LeaderboardEntry {
 interface LeaderboardListDisplayProps {
   leaderboard: LeaderboardEntry[];
   // prop for highlighting & user sticky row
-  currentUserRank?: number; 
+  currentUserRank?: number;
 }
 
 export const LeaderboardListDisplay: React.FC<LeaderboardListDisplayProps> = ({
@@ -38,7 +38,7 @@ export const LeaderboardListDisplay: React.FC<LeaderboardListDisplayProps> = ({
   currentUserRank,
 }) => {
   const currentUserEntry = leaderboard.find(
-    (entry) => entry.rank === currentUserRank
+    (entry) => entry.rank === currentUserRank,
   );
 
   return (
@@ -82,7 +82,10 @@ export const LeaderboardListDisplay: React.FC<LeaderboardListDisplayProps> = ({
               padding: `${PADDING_Y_VW}vw ${PADDING_X_VW}vw`,
             }}
           >
-            <div className={styles.rank} style={{ width: `${RANK_WIDTH_VW}vw` }}>
+            <div
+              className={styles.rank}
+              style={{ width: `${RANK_WIDTH_VW}vw` }}
+            >
               {entry.rank}.
             </div>
             <div className={styles.name}>{entry.name}</div>
