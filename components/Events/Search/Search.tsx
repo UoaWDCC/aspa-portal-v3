@@ -1,5 +1,6 @@
 import React from "react";
-import { TextInput, Text, Title, Group, Select } from "@mantine/core";
+import { MantineProvider } from "@mantine/core";
+import { TextInput, Text, Group, Select, Button } from "@mantine/core";
 import styles from "./Search.module.css";
 import { Event } from "@/payload-types";
 
@@ -51,86 +52,116 @@ export const Search: React.FC<SearchProps> = ({
   };
 
   return (
-    <div className={styles.search}>
-      <Group className={styles.searchGroup}>
-        <Title order={4}>Search Event</Title>
-        <TextInput
-          className={styles.searchBar}
-          value={filter ?? ""}
-          onChange={(e) => setFilter(e.currentTarget.value)}
-          styles={{
-            input: {
-              borderRadius: "0px",
-              border: "1px solid #ccc",
-            },
-          }}
-        />
-      </Group>
+    <MantineProvider>
+      <div className={styles.search}>
+        <Group className={styles.searchGroup}>
+          <Text size="xl" fw={700}>
+            Search Event
+          </Text>
+          <Group className={styles.searchBarGroup}>
+            <TextInput
+              className={styles.searchBar}
+              value={filter ?? ""}
+              onChange={(e) => setFilter(e.currentTarget.value)}
+              styles={{
+                input: {
+                  borderRadius: "0px",
+                  border: "1px solid #ccc",
+                },
+              }}
+            />
+            <Button
+              variant="outline"
+              onClick={() => {
+                if (setYear) {
+                  setYear("Any");
+                }
+                if (setMonth) {
+                  setMonth("Any");
+                }
+                if (setLocation) {
+                  setLocation("Any");
+                }
+              }}
+              styles={{
+                root: {
+                  height: "37px",
+                  borderRadius: "0px",
+                  border: "1px solid #ccc",
+                  color: "#000",
+                },
+              }}
+            >
+              Clear Filters
+            </Button>
+          </Group>
+        </Group>
 
-      <Group className={styles.dropdownGroup}>
-        <Group>
-          <Text>Year</Text>
-          <Select
-            data={yearOptions}
-            value={year}
-            onChange={setYear ? (v) => setYear(v ?? "") : () => {}}
-            styles={{
-              input: {
-                backgroundColor: dropdownColor,
-                borderRadius: "0px",
-                width: "100%",
-                maxWidth: "400px",
-              },
-            }}
-          />
+        <Group className={styles.dropdownGroup}>
+          <Group className={styles.dropdownItem}>
+            <Text fw={700}>Year</Text>
+            <Select
+              data={yearOptions}
+              value={year}
+              onChange={setYear ? (v) => setYear(v ?? "") : () => {}}
+              styles={{
+                input: {
+                  backgroundColor: dropdownColor,
+                  borderRadius: "0px",
+                  width: "100%",
+                  maxWidth: "400px",
+                },
+              }}
+            />
+          </Group>
+          <Group className={styles.dropdownItem}>
+            <Text fw={700}>Month</Text>
+            <Select
+              data={[
+                "Any",
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+              ]}
+              value={month}
+              onChange={setMonth ? (v) => setMonth(v ?? "") : () => {}}
+              styles={{
+                input: {
+                  backgroundColor: dropdownColor,
+                  borderRadius: "0px",
+                  width: "100%",
+                  maxWidth: "400px",
+                },
+              }}
+            />
+          </Group>
+          <Group className={styles.dropdownItem}>
+            <Text fw={700}>Location</Text>
+            <Select
+              data={locationOptions}
+              value={location}
+              onChange={setLocation ? (v) => setLocation(v ?? "") : () => {}}
+              styles={{
+                input: {
+                  backgroundColor: dropdownColor,
+                  borderRadius: "0px",
+                  width: "100%",
+                  maxWidth: "400px",
+                },
+              }}
+            />
+          </Group>
         </Group>
-        <Group>
-          <Text>Month</Text>
-          <Select
-            data={[
-              "Any",
-              "January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July",
-              "August",
-              "September",
-              "October",
-              "November",
-              "December",
-            ]}
-            value={month}
-            onChange={setMonth ? (v) => setMonth(v ?? "") : () => {}}
-            styles={{
-              input: {
-                backgroundColor: dropdownColor,
-                borderRadius: "0px",
-                width: "100%",
-                maxWidth: "400px",
-              },
-            }}
-          />
-        </Group>
-        <Group>
-          <Text>Location</Text>
-          <Select
-            data={locationOptions}
-            value={location}
-            onChange={setLocation ? (v) => setLocation(v ?? "") : () => {}}
-            styles={{
-              input: {
-                backgroundColor: dropdownColor,
-                borderRadius: "0px",
-                width: "100%",
-                maxWidth: "400px",
-              },
-            }}
-          />
-        </Group>
-      </Group>
-    </div>
+      </div>
+    </MantineProvider>
   );
 };

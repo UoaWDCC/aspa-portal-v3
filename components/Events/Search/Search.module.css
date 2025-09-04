@@ -3,7 +3,16 @@
   margin: 2vw 0;
 }
 .searchGroup {
+  display: flex;
+  flex-direction: row;
   padding: 0.5vw 0;
+}
+
+.searchBarGroup {
+  display: flex;
+  flex: 1;
+  gap: 1vw;
+  width: 100%;
 }
 
 .searchBar {
@@ -11,13 +20,20 @@
 }
 
 .dropdownGroup {
+  display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 
-@media (max-width: 368px) {
+@media (max-width: 900px) {
   .searchGroup {
     flex-direction: column;
-    justify-content: left;
+    padding-bottom: 3vw;
+  }
+  .dropdownGroup {
+    flex-direction: column;
+  }
+  .dropdownItem {
+    width: 100%;
+    justify-content: space-between;
   }
 }

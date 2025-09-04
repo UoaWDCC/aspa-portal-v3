@@ -3,6 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Search } from "./Search";
 import { Event } from "@/payload-types";
 import { EventCard } from "@/components/Shared/Event/Card/SingleEventCard";
+import { MantineProvider } from "@mantine/core";
 
 const meta: Meta<typeof Search> = {
   title: "Events/Search",
@@ -71,30 +72,32 @@ export const Default: Story = {
     const filtered = filterEvents(mockEvents);
 
     return (
-      <div style={{ width: "100vw", padding: "2rem", background: "#f8f8f8" }}>
-        <Search
-          filter={filter}
-          setFilter={setFilter}
-          year={year}
-          setYear={setYear}
-          month={month}
-          setMonth={setMonth}
-          location={location}
-          setLocation={setLocation}
-        />
-        <div style={{ marginTop: "2rem" }}>
-          <h3>Filtered Events</h3>
-          {filtered.length === 0 ? (
-            <div>No events found.</div>
-          ) : (
-            <ul>
-              {filtered.map((event) => (
-                <EventCard key={event.id} event={event} />
-              ))}
-            </ul>
-          )}
+      <MantineProvider>
+        <div style={{ width: "100vw", padding: "2rem", background: "#f8f8f8" }}>
+          <Search
+            filter={filter}
+            setFilter={setFilter}
+            year={year}
+            setYear={setYear}
+            month={month}
+            setMonth={setMonth}
+            location={location}
+            setLocation={setLocation}
+          />
+          <div style={{ marginTop: "2rem" }}>
+            <h3>Filtered Events</h3>
+            {filtered.length === 0 ? (
+              <div>No events found.</div>
+            ) : (
+              <ul>
+                {filtered.map((event) => (
+                  <EventCard key={event.id} event={event} />
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
-      </div>
+      </MantineProvider>
     );
   },
 };
