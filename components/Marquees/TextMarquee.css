@@ -1,0 +1,45 @@
+/* Wrapper */
+.text-marquee-wrapper {
+  width: 100%;
+  z-index: 20;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Marquee inner items */
+.text-marquee-item {
+  margin: 0.25rem 0;          
+  padding: 0.75rem 0.75rem;   
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Typography for text */
+.text-marquee-heading {
+  font-size: 1.125rem; 
+  font-weight: 600;
+}
+
+
+/* Backgrounds */
+.bg-primary {
+  background-color: #2563eb; 
+}
+.bg-secondary {
+  background-color: #f3f4f6; 
+}
+
+.bg-dark {
+  background-color: #111827; 
+}
+
+/* Text colors */
+.text-white {
+  color: #ffffff;
+}
+.text-black {
+  color: #000000;
+}
+.text-muted {
+  color: #6b7280; 
+}
