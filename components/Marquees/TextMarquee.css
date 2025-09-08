@@ -26,15 +26,22 @@
   font-weight: 600;
 }
 
-/* Keyframes for scrolling */
+/* Keyframes for scrolling left → right */
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-50%); /* move half since we’ll duplicate text */
+    transform: translateX(0%);
   }
 }
+
+.text-marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
 
 /* Example reusable constants */
 .bg-primary {
