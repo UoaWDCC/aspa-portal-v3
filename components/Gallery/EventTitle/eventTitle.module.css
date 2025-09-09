@@ -1,0 +1,14 @@
+.eventTitle {
+  text-align: center;
+}
+
+.eventDetailsRow {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .eventTitle {
+    margin: 50px 0;
+  }
+}
