@@ -8,13 +8,17 @@ import { MantineProvider } from "@mantine/core";
 const meta: Meta<typeof Search> = {
   title: "Events/Search",
   component: Search,
+  argTypes: {
+    dropdownColor: { control: "color" },
+    textColor: { control: "color" },
+  },
 };
 export default meta;
 
 type Story = StoryObj<typeof Search>;
 
 export const Default: Story = {
-  render: () => {
+  render: (args) => {
     const [filter, setFilter] = useState("");
     const [year, setYear] = useState("Any");
     const [month, setMonth] = useState("Any");
@@ -75,6 +79,7 @@ export const Default: Story = {
       <MantineProvider>
         <div style={{ width: "100vw", padding: "2rem", background: "#f8f8f8" }}>
           <Search
+            {...args}
             filter={filter}
             setFilter={setFilter}
             year={year}
@@ -99,5 +104,11 @@ export const Default: Story = {
         </div>
       </MantineProvider>
     );
+  },
+  args: {
+    yearOptions: ["Any", "2021", "2022", "2023", "2024"],
+    locationOptions: ["Any", "Orange Pool Club", "University of Auckland"],
+    dropdownColor: "#717882",
+    textColor: "#000000",
   },
 };

@@ -1,6 +1,13 @@
 import React from "react";
-import { MantineProvider } from "@mantine/core";
-import { TextInput, Text, Group, Select, Button } from "@mantine/core";
+import {
+  MantineProvider,
+  TextInput,
+  Text,
+  Group,
+  Select,
+  Button,
+  Stack,
+} from "@mantine/core";
 import styles from "./Search.module.css";
 import { Event } from "@/payload-types";
 
@@ -16,6 +23,7 @@ interface SearchProps {
   yearOptions?: string[];
   locationOptions?: string[];
   dropdownColor?: string;
+  textColor?: string;
 }
 
 export const Search: React.FC<SearchProps> = ({
@@ -30,8 +38,9 @@ export const Search: React.FC<SearchProps> = ({
   yearOptions = ["Any", "2021", "2022", "2023", "2024"],
   locationOptions = ["Any", "Orange Pool Club"],
   dropdownColor = "#717882",
+  textColor = "#000000",
 }) => {
-  //filtering logic
+  //filtering logic, move to parent component
   const filterEvents = (events: Event[]) => {
     return events.filter((event) => {
       const eventMonth =
@@ -53,7 +62,7 @@ export const Search: React.FC<SearchProps> = ({
 
   return (
     <MantineProvider>
-      <div className={styles.search}>
+      <Stack className={styles.search} style={{ color: textColor }}>
         <Group className={styles.searchGroup}>
           <Text size="xl" fw={700}>
             Search Event
@@ -161,7 +170,7 @@ export const Search: React.FC<SearchProps> = ({
             />
           </Group>
         </Group>
-      </div>
+      </Stack>
     </MantineProvider>
   );
 };
