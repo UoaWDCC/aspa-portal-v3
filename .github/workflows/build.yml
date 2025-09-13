@@ -49,12 +49,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Log branch and tag
+      - name: Determine repository name
+        id: repo_name
         run: |
-          echo "Branch: ${{ env.BRANCH_NAME }}"
-          echo "Tag: ${{ needs.versioning.outputs.tag }}"
+          REPO_NAME=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
 
-      - name: Build Docker image (dry run)
+      - name: Build Docker image
         run: |
-          echo "Simulating Docker build..."
-          echo "docker build -t test-image:${{ needs.versioning.outputs.tag }} ."
+          docker build -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }} \
+                       -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:latest \
+                       -f docker/aspa-runtime.dockerfile .
