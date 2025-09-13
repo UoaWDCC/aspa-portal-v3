@@ -1,13 +1,16 @@
 name: Tag, Build, and Push Docker Image for Main Branch
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
+    branches:
+      - bugfix/optimize-ci-pipeline
+  # pull_request:
+  #   types:
+  #     - closed
 
 jobs:
   versioning:
-    if: contains(github.base_ref, 'main') && github.event.action == 'closed' && github.event.pull_request.merged == true
+    # if: contains(github.base_ref, 'main') && github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     outputs:
           tag: ${{ steps.versioning.outputs.tag }}
