@@ -20,7 +20,7 @@ export default function HomePage() {
       {
         quote:
           "ASPA has been a fantastic way to meet new people and improve my pool skills. The events are always well-organized and a lot of fun!",
-        author: "John Doe, Club Member",
+        author: "John Does, Club Member",
       },
       {
         quote:
