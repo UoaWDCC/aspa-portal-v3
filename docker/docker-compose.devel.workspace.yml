@@ -5,6 +5,7 @@ services:
       dockerfile: ./aspa-devel.dockerfile
     volumes:
       - ../:/repo
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
     working_dir: /repo
     command: sleep infinity
     environment:

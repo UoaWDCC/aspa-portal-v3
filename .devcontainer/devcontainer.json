@@ -1,43 +1,48 @@
 {
-    "name": "ASPA Dev Container",
-    "service": "workspace",
-    "dockerComposeFile": [
-      "../docker/docker-compose.devel.workspace.yml",
-      "../docker/docker-compose.devel.service.yml"
-    ],
-    "features": {
-      "ghcr.io/devcontainers/features/desktop-lite:1": {}
+  "name": "ASPA Dev Container",
+  "service": "workspace",
+  "dockerComposeFile": [
+    "../docker/docker-compose.devel.workspace.yml",
+    "../docker/docker-compose.devel.service.yml"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [10000, 6080, 5901],
+  "portsAttributes": {
+    "10000": {
+      "label": "desktop"
     },
-    "forwardPorts": [6080, 5901],
-    "portsAttributes": {
-      "6080": {
-        "label": "desktop"
+    "6080": {
+      "label": "VNC Web"
+    },
+    "5901": {
+      "label": "VNC"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "GitHub.copilot",
+        "esbenp.prettier-vscode",
+        "github.vscode-github-actions"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "prettier.configPath": "${containerWorkspaceFolder}/.prettierrc",
+        "editor.formatOnSave": true
       }
-    },
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "ms-azuretools.vscode-docker",
-          "dbaeumer.vscode-eslint",
-          "GitHub.copilot",
-          "esbenp.prettier-vscode",
-          "github.vscode-github-actions"
-          
-        ],
-        "settings": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "prettier.configPath": "${containerWorkspaceFolder}/.prettierrc",
-          "editor.formatOnSave": true
-        }
-      }
-    },
-    "workspaceMount": "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached",
-    "workspaceFolder": "/repo",
-    "shutdownAction": "stopContainer",
-    "remoteUser": "root",
-    "mounts": [
-    ],
-    "runArgs": [
-    ],
-    "postCreateCommand": "bash ./scripts/bash/post-dev-container-create.sh"
+    }
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/repo,type=bind,consistency=cached",
+  "workspaceFolder": "/repo",
+  "shutdownAction": "stopContainer",
+  "remoteUser": "root",
+  "mounts": [],
+  "runArgs": ["--privileged"],
+  "postCreateCommand": "apt-get update && apt-get install -y libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb && bash ./scripts/bash/post-dev-container-create.sh",
+  "overrideCommand": false
+  // Ensure Docker Compose is used, x11-bridge port is forwarded, and settings are clear for Cypress GUI usage
 }

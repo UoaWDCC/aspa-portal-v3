@@ -33,6 +33,7 @@
     "@payloadcms/richtext-lexical": "^3.49.1",
     "@remixicon/react": "^4.6.0",
     "@tabler/icons-react": "^3.31.0",
+    "cypress": "^15.3.0",
     "embla-carousel-react": "^8.6.0",
     "graphql": "^16.11.0",
     "next": "15.2.3",
