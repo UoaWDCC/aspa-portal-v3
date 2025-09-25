@@ -1,0 +1,64 @@
+/* Wrapper */
+.text-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 20;
+  white-space: nowrap;
+}
+
+/* Inner scrolling track */
+.text-marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+/* Items */
+.text-marquee-item {
+  margin: 0.25rem 0;          /* ~my-1 */
+  padding: 0.75rem 0.75rem;   /* ~px-3 py-3 */
+  display: inline-block;
+}
+
+.text-marquee-heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* Keyframes for scrolling left → right */
+@keyframes marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.text-marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+
+/* Example reusable constants */
+.bg-primary {
+  background-color: #1A1A1A;
+}
+.bg-secondary {
+  background-color: #f3f4f6;
+}
+.bg-dark {
+  background-color: #111827;
+}
+.text-white {
+  color: #fff;
+}
+.text-black {
+  color: #000;
+}
+.text-muted {
+  color: #6b7280;
+}
