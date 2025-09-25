@@ -1,6 +1,6 @@
 .title {
   font-size: 6vw;
-  /* margin-bottom: 20vw; */
+  color: white;
   font-weight: 700;
   line-height: 1.1;
   overflow: hidden;
@@ -14,17 +14,18 @@
   text-wrap: nowrap;
   filter: blur(3px);
   margin-top: 2vw;
+  color: white;
 }
 
 .subtitle {
   font-size: 3vw;
   z-index: 3;
-  /* margin-bottom: 15px; */
+  color: white;
 }
 
 .text {
-  font-size: 1.5vw;
-  /* margin-bottom: 15px; */
+  font-size: 1vw;
+  color: white;
 }
 
 .scrollerWrapper {
