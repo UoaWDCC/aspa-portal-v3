@@ -16,7 +16,7 @@ export interface BannerProps {
 }
 
 export function InfiniteScrollASPA() {
-  const text1 = "ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ";
+  const text = "ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ";
 
   return (
     <div className={styles.scrollerWrapper}>
@@ -30,8 +30,8 @@ export function InfiniteScrollASPA() {
           ease: "linear",
         }}
       >
-        <Title className={styles.movingAspa}>{text1}</Title>
-        <Title className={styles.movingAspa} style={{ marginLeft: '-5%'}}>{text1}</Title>
+        <Title className={styles.movingAspa}>{text}</Title>
+        <Title className={styles.movingAspa} style={{ marginLeft: '-5%'}}>{text}</Title>
       </motion.div>
     </div>
   );
