@@ -1,28 +1,51 @@
 "use client";
-import { Container, Grid, Title, Text, Button, Group } from "@mantine/core";
+import { Container, Title, Text, Stack, Box } from "@mantine/core";
 import Image from "next/image";
+import { motion } from "motion/react";
 import styles from "./Banner.module.css";
 
 export interface BannerProps {
   title: string;
+  subtitle: string;
   description: string;
-  buttonText: string;
-  groupText: string;
   paddingTop?: string;
   paddingBottom?: string;
   paddingleft?: string;
   paddingRight?: string;
+  imageHeight?: string;
+}
+
+export function InfiniteScrollASPA() {
+  const text1 = "ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ";
+
+  return (
+    <div className={styles.scrollerWrapper}>
+      <motion.div
+        className={styles.scroller}
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 20,
+          ease: "linear",
+        }}
+      >
+        <Title className={styles.movingAspa}>{text1}</Title>
+        <Title className={styles.movingAspa} style={{ marginLeft: '-5%'}}>{text1}</Title>
+      </motion.div>
+    </div>
+  );
 }
 
 export function Banner({
   title,
+  subtitle,
   description,
-  buttonText,
-  groupText,
   paddingTop = "",
   paddingBottom = "",
   paddingleft = "",
   paddingRight = "",
+  imageHeight = "25vw",
 }: BannerProps) {
   return (
     <Container
@@ -32,16 +55,21 @@ export function Banner({
       pl={paddingleft}
       pr={paddingRight}
     >
-      <Grid gutter="xl">
-        <Grid.Col span={{ base: 12, sm: 6 }}>
-          <Title className={styles.title}>{title}</Title>
-          <Text className={styles.text}>{description}</Text>
-          <Group align="center">
-            <Button className={styles.button}>{buttonText}</Button>
-            <Text className={styles.group}>{groupText}</Text>
-          </Group>
-        </Grid.Col>
-      </Grid>
+      <Stack align="center" gap="sm" justify="center">
+        <Box className={styles.imageContainer} style={{ height: imageHeight }}>
+          <Image
+            alt="ASPA_2025_Logo_Transparent"
+            src="/ASPA_2025_Logo_Transparent.svg"
+            width={500}
+            height={500}
+            className={styles.image}
+          />
+        </Box>
+        <Title className={styles.title}>{title}</Title>
+        <InfiniteScrollASPA />
+        <Text className={styles.subtitle}>{subtitle}</Text>
+        <Text className={styles.text}>{description}</Text>
+      </Stack>
     </Container>
   );
 }
