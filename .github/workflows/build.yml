@@ -35,7 +35,7 @@ jobs:
             MINOR=$((MINOR + 1))
             PATCH=0
           elif [[ "$BRANCH_NAME" == *bugfix* ]]; then
-            PATCH=$((PATCH + 1))
+            PATCH=$((PATCH + 2))
           else
             echo "Error: Unsupported branch name '$BRANCH_NAME'. Expected to contain 'feature' or 'bugfix', current name: '$BRANCH_NAME'."
             exit 1
