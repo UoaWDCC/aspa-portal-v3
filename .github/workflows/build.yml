@@ -1,12 +1,9 @@
 name: Tag, Build, and Push Docker Image for Main Branch
 
 on:
-  workflow_dispatch:
-    inputs:
-      test_mode:
-        description: "Run in test mode (skip pushing tags/images)"
-        required: false
-        default: "true"
+  push:
+    branches:
+      - '**'
 
 jobs:
   versioning:
