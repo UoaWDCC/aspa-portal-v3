@@ -1,24 +1,27 @@
 name: Tag, Build, and Push Docker Image for Main Branch
 
 on:
-  push:
-    branches:
-      - '**'  # run on any branch
+  pull_request:
+    types:
+      - closed
 
 jobs:
   versioning:
+    if: contains(github.base_ref, 'main') && github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     outputs:
-      tag: ${{ steps.versioning.outputs.tag }}
+          tag: ${{ steps.versioning.outputs.tag }}
     steps:
+      # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Determine branch name
+      # Determine the latest merged branch
+      - name: Get Merged Branch
+        id: latest_merged_branch
         run: |
-          BRANCH_NAME=${GITHUB_REF#refs/heads/}
-          echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
-
+          MERGED_BRANCH=${{ github.head_ref }}
+          echo "MERGED_BRANCH=${MERGED_BRANCH}" >> $GITHUB_ENV
+      # Determine the version based on the latest tag and branch name
       - name: Determing Version
         id: versioning
         run: |
@@ -26,7 +29,7 @@ jobs:
           LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1) 2>/dev/null || echo "0.0.0")
           IFS='.' read -r MAJOR MINOR PATCH <<< "$LATEST_TAG"
 
-          BRANCH_NAME=${{ env.BRANCH_NAME }}
+          BRANCH_NAME=$(echo "${{ env.MERGED_BRANCH }}")
 
           if [[ "$BRANCH_NAME" == *feature* ]]; then
             MINOR=$((MINOR + 1))
@@ -34,29 +37,58 @@ jobs:
           elif [[ "$BRANCH_NAME" == *bugfix* ]]; then
             PATCH=$((PATCH + 1))
           else
-            echo "Branch name does not match feature/bugfix. Using patch increment."
-            PATCH=$((PATCH + 1))
+            echo "Error: Unsupported branch name '$BRANCH_NAME'. Expected to contain 'feature' or 'bugfix', current name: '$BRANCH_NAME'."
+            exit 1
           fi
 
           NEW_TAG="$MAJOR.$MINOR.$PATCH"
-          echo "tag=${NEW_TAG}" >> $GITHUB_OUTPUT
-          echo "Computed tag: $NEW_TAG"
 
+          echo "tag=${NEW_TAG}" >> $GITHUB_OUTPUT
   build:
     needs: versioning
     runs-on: ubuntu-latest
+
     steps:
+      # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Set up Docker
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      # Determine repository name
       - name: Determine repository name
         id: repo_name
         run: |
           REPO_NAME=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
           echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
 
+      # Create a new Git tag
+      - name: Create Git tag
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git tag -a "${{ needs.versioning.outputs.tag }}" -m "Release version ${{ needs.versioning.outputs.tag }}"
+          git push origin "${{ needs.versioning.outputs.tag }}"
+
+      # Build Docker image
       - name: Build Docker image
         run: |
           docker build -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }} \
                        -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:latest \
                        -f docker/aspa-runtime.dockerfile .
+    
+
+      # Log in to GitHub Container Registry
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      # Push Docker image
+      - name: Push Docker image
+        run: |
+          docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }}
+          docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:latest
