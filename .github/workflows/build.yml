@@ -1,9 +1,9 @@
 name: Tag, Build, and Push Docker Image for Main Branch
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
+    branches:
+      - '**'
 
 jobs:
   versioning:
@@ -88,7 +88,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       # Push Docker image
-      - name: Push Docker image
-        run: |
-          docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }}
-          docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:latest
+      # - name: Push Docker image
+      #   run: |
+      #     docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:${{ needs.versioning.outputs.tag }}
+      #     docker push ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:latest
