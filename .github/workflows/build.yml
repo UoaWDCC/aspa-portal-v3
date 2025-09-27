@@ -72,6 +72,16 @@ jobs:
       #     git push origin "${{ needs.versioning.outputs.tag }}"
 
       # Build Docker image
+
+      - name: Cache Yarn dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/yarn
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
       - name: Build Docker image
         run: |
           docker build -t ghcr.io/${{ env.REPO_NAME }}/aspa-runtime:latest \
