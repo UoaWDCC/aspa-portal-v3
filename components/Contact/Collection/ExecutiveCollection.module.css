@@ -1,35 +1,36 @@
 .collection {
   background-color: #000000; /* black */
-  color: black; /* optional: text white for contrast */
+  color: black;
   border-color: #000000;
 }
 
-
-@media (min-width: 768px) {
-    .title {
-        font-size: 8vw;
-    }
-}
-
-@media (min-width: 1024px) {
-    .title {
-        font-size: 4vw;
-    }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-  justify-content: center;
-}
-
+/* Section Title */
 .sectionTitle {
   margin-bottom: 0.5vw;
   margin-top: 0.5vw;
   background-color: black;
   color: white;
+  font-size: 4vw; /* default */
+  text-align: center;
 }
 
+/* Responsive title scaling */
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: 3vw;
+  }
+}
 
+@media (min-width: 1024px) {
+  .sectionTitle {
+    font-size: 2vw;
+  }
+}
 
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr)); 
+  gap: 2vw; 
+  justify-content: center;
+}

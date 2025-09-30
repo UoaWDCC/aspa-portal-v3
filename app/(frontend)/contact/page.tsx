@@ -15,7 +15,7 @@ async function getAllExecutives(): Promise<{
     collection: "executives",
     where: {
       type: {
-        in: ["main", "marketing", "events"],
+        in: ["main", "marketing", "events"], //advisors, events, coaches
       },
     },
     sort: "lastName",

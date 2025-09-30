@@ -1,79 +1,78 @@
 "use client";
 
-import { Grid, Container, Paper, Title } from "@mantine/core";
-import { ExecutiveCard } from "../Card/ExecutiveCardDisplay";
-import styles from "./ExecutiveCollection.module.css";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { Executive } from "@/payload-types";
+import styles from "./ExecutiveCollection.module.css";
 
 export interface ExecutiveCollection {
   executives: Executive[];
   sectionTitle?: string;
-  gutter?: "xs" | "sm" | "md" | "lg" | "xl";
-  radius?: "xs" | "sm" | "md" | "lg" | "xl";
-  shadow?: "xs" | "sm" | "md" | "lg" | "xl";
-  withBorder?: boolean;
-  outerPaddingTop?: string;
-  outerPaddingBottom?: string;
-  outerPaddingLeft?: string;
-  outerPaddingRight?: string;
-  innerPaddingTop?: string;
-  innerPaddingBottom?: string;
-  innerPaddingLeft?: string;
-  innerPaddingRight?: string;
 }
 
 export function ExecutiveCollection({
   executives,
   sectionTitle,
-  gutter = "lg",
-  radius = "xl",
-  shadow = "sm",
-  withBorder = true,
-  outerPaddingTop = "",
-  outerPaddingBottom = "",
-  outerPaddingLeft = "",
-  outerPaddingRight = "",
-  innerPaddingTop = "",
-  innerPaddingBottom = "",
-  innerPaddingLeft = "",
-  innerPaddingRight = "",
 }: ExecutiveCollection) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollSmoother);
+
+    if (wrapperRef.current && contentRef.current) {
+      const skewSetter = gsap.quickTo("img", "skewY");
+      const clamp = gsap.utils.clamp(-20, 20);
+
+      ScrollSmoother.create({
+        wrapper: wrapperRef.current,
+        content: contentRef.current,
+        smooth: 2,
+        speed: 3,
+        effects: true,
+        onUpdate: (self) => skewSetter(clamp(self.getVelocity() / -50)),
+        onStop: () => skewSetter(0),
+      });
+    }
+  }, []);
+
   return (
-    <Container
-      pt={outerPaddingTop}
-      pb={outerPaddingBottom}
-      pl={outerPaddingLeft}
-      pr={outerPaddingRight}
-    >
-      <Paper
-        shadow={shadow}
-        radius={radius}
-        withBorder={withBorder}
-        className={styles.collection}
-      >
-        <Container
-          pt={innerPaddingTop}
-          pb={innerPaddingBottom}
-          pl={innerPaddingLeft}
-          pr={innerPaddingRight}
-        >
-          {sectionTitle && (
-            <Title order={2} ta="center" className={styles.sectionTitle}>
-              {sectionTitle}
-            </Title>
-          )}
-          <Grid gutter={gutter}>
+    <>
+      {/* Titles */}
+      {sectionTitle && (
+        <>
+          <h1 className={styles.text}>{sectionTitle}</h1>
+          <h1
+            aria-hidden="true"
+            className={`${styles.text} ${styles.outlineText}`}
+          >
+            {sectionTitle}
+          </h1>
+          <h1
+            aria-hidden="true"
+            className={`${styles.text} ${styles.filterText}`}
+          >
+            {sectionTitle}
+          </h1>
+        </>
+      )}
+
+      {/* Wrapper + Content */}
+      <div id="wrapper" ref={wrapperRef}>
+        <section id="content" ref={contentRef}>
+          <section className={styles.images}>
             {executives.map((executive, index) => (
-              <Grid.Col
+              <img
                 key={index}
-                span={{ base: 12, sm: 6 }} // 12 = full width, 6 = half width
-              >
-                <ExecutiveCard executive={executive} />
-              </Grid.Col>
+                data-speed={(0.8 + index * 0.1).toFixed(1)} // vary speeds slightly
+                src={executive?.image?.url || "/placeholder.jpg"}
+                alt={executive?.name || "Executive"}
+              />
             ))}
-          </Grid>
-        </Container>
-      </Paper>
-    </Container>
+          </section>
+        </section>
+      </div>
+    </>
   );
 }
