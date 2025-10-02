@@ -3,6 +3,7 @@ import { getPayload } from "payload";
 import config from "@payload-config";
 import { Executive } from "@/payload-types";
 import { ExecutiveCollection } from "@/components/Contact/Collection/ExecutiveCollection";
+import { InquiryForm } from "@/components/Contact/InquiryForm/InquiryForm";
 
 async function getAllExecutives(): Promise<{
   main: Executive[];
@@ -61,6 +62,7 @@ export default async function ExecutivesPage() {
       {eventsExecs.length > 0 && (
         <ExecutiveCollection executives={eventsExecs} sectionTitle="Events" />
       )}
+      <InquiryForm />
     </div>
   );
 }

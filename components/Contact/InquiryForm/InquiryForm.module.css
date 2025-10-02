@@ -1,17 +1,42 @@
 .title {
-    font-size: 10vw;
-    text-align: center;
-    text-decoration: underline;
+  padding-top: 3vh;
+  font-size: 2vw;
+  color: white;
+}
+
+.formContainer {
+  position: relative;
+  width: 100%;
+  height: 64vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.nameInput {
+  color: white;
+  width: 100%;
+  padding-top: 1vh;
+}
+
+.input {
+  color: white;
+  width: 100%;
+  padding-top: 2vh;
+}
+
+.buttonContainer {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
 }
 
 @media (min-width: 768px) {
-    .title {
-        font-size: 8vw;
-    }
+  .title {
+    font-size: 2vw;
+  }
 }
 
 @media (min-width: 1024px) {
-    .title {
-        font-size: 4vw;
-    }
+  .title {
+    font-size: 2vw;
+  }
 }

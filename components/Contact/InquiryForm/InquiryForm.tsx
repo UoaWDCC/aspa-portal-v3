@@ -3,11 +3,13 @@ import {
   TextInput,
   Textarea,
   Fieldset,
-  Container,
   Paper,
-  Title,
+  Text,
+  Center,
+  Flex,
 } from "@mantine/core";
 import styles from "./InquiryForm.module.css";
+import { Button } from "@/components/Shared/Button/Button";
 
 export interface InquiryForm {
   paddingTop?: string;
@@ -23,21 +25,56 @@ export function InquiryForm({
   paddingRight = "",
 }: InquiryForm) {
   return (
-    <Container>
-      <Title className={styles.title}>Contact Us</Title>
-      <Paper
-        pt={paddingTop}
-        pb={paddingBottom}
-        pl={paddingLeft}
-        pr={paddingRight}
-      >
-        <Fieldset legend="Personal Information">
-          <TextInput label="First Name" placeholder="" required />
-          <TextInput label="Last Name" placeholder="" required />
-          <TextInput label="Email" placeholder="" required />
-        </Fieldset>
-        <Textarea label="Message" placeholder="" required />
-      </Paper>
-    </Container>
+    <Paper
+      pt={paddingTop}
+      pb={paddingBottom}
+      pl={paddingLeft}
+      pr={paddingRight}
+      bg="#91a3b0"
+      className={styles.formContainer}
+    >
+      <Fieldset variant="unstyled">
+        <Center>
+          <Text className={styles.title}>Inquiry Form</Text>
+        </Center>
+        <Flex justify="space-between" gap="xl">
+          <TextInput
+            label="First Name:"
+            placeholder=""
+            required
+            className={styles.nameInput}
+            radius="xs"
+            size="md"
+          />
+          <TextInput
+            label="Last Name:"
+            placeholder=""
+            required
+            className={styles.nameInput}
+            radius="xs"
+            size="md"
+          />
+        </Flex>
+        <TextInput
+          label="Email:"
+          placeholder=""
+          required
+          className={styles.input}
+          radius="xs"
+          size="md"
+        />
+      </Fieldset>
+      <Textarea
+        label="What would you like to tell us?"
+        placeholder=""
+        required
+        className={styles.input}
+        radius="xs"
+        size="md"
+      />
+      <Center className={styles.buttonContainer}>
+        <Button outlined>SUBMIT</Button>
+      </Center>
+    </Paper>
   );
 }
