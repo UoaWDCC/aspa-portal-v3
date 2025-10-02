@@ -57,17 +57,14 @@
     font-size: 8vw;
   }
 
+  .subtitle {
+    font-size: 3vw;
+    z-index: 3;
+    color: white;
+  }
+
   .text {
-    font-size: 3vw;
-  }
-
-  .group {
-    font-size: 3vw;
-  }
-
-  .button {
-    width: 35vw;
-    height: 8vw;
-    font-size: 3vw;
+    font-size: 2vw;
+    text-align: center
   }
 }

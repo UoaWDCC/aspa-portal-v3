@@ -31,6 +31,7 @@ export function InquiryForm({
       pl={paddingLeft}
       pr={paddingRight}
       bg="#91a3b0"
+      radius="xs"
       className={styles.formContainer}
     >
       <Fieldset variant="unstyled">
@@ -53,6 +54,7 @@ export function InquiryForm({
             className={styles.nameInput}
             radius="xs"
             size="md"
+            color="white"
           />
         </Flex>
         <TextInput
