@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { Banner, BannerProps } from "@/components/Home/Banner/Banner";
 //import { TestimonialGroup } from "@/components/Home/Testimonials/Group/TestimonialGroup";
 import { Testimonial } from "@/components/Home/Testimonials/Card/TestimonialCard";
-import TextMarquee from "@/components/Marquees/TextMarquee"; 
+import TextMarquee from "@/components/Marquees/TextMarquee";
 import "@/components/Marquees/TextMarquee.css";
-
 
 const ExampleBannerArguments: BannerProps = {
   title: "Welcome to Auckland Student Pool Association!",

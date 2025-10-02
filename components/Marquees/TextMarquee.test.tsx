@@ -9,7 +9,7 @@ describe("TextMarquee", () => {
         bgColor="bg-dark"
         textBg="bg-primary"
         textColor="text-white"
-      />
+      />,
     );
     expect(screen.getAllByText("Hello ASPA!").length).toBeGreaterThan(0);
   });
@@ -21,7 +21,7 @@ describe("TextMarquee", () => {
         bgColor="bg-secondary"
         textBg="bg-dark"
         textColor="text-white"
-      />
+      />,
     );
     // We repeated it 20 times in the component
     const items = screen.getAllByText("Scrolling Text");
@@ -35,7 +35,7 @@ describe("TextMarquee", () => {
         bgColor="bg-primary"
         textBg="bg-secondary"
         textColor="text-black"
-      />
+      />,
     );
 
     const item = screen.getAllByText("Styled Text")[0].parentElement;
@@ -51,7 +51,7 @@ describe("TextMarquee", () => {
         textBg="bg-secondary"
         textColor="text-white"
         wrapperClassName="custom-wrapper"
-      />
+      />,
     );
 
     const wrapper = screen.getByText("Wrapped").closest("div")?.parentElement;

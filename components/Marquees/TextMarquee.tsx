@@ -3,8 +3,8 @@ import "./TextMarquee.css";
 
 interface TextMarqueeProps {
   text: string;
-  bgColor: string;    // e.g. "bg-primary"
-  textBg: string;     // e.g. "bg-secondary"
+  bgColor: string; // e.g. "bg-primary"
+  textBg: string; // e.g. "bg-secondary"
   textColor?: string; // e.g. "text-white"
   wrapperClassName?: string;
 }

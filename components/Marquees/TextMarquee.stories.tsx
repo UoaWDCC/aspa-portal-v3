@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import TextMarquee from "./TextMarquee"; 
-import "./TextMarquee.css"; 
+import TextMarquee from "./TextMarquee";
+import "./TextMarquee.css";
 
 const meta: Meta<typeof TextMarquee> = {
   title: "Components/TextMarquee",
