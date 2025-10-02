@@ -7,6 +7,7 @@ import GalleryPage, {
 } from "@/components/Gallery/GalleryPage/galleryPage";
 import { Box } from "@mantine/core";
 import React, { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 
 import photos from "./photos.json"; // Temp photo data
 
@@ -44,15 +45,11 @@ const placeholderEvents: Record<string, Event> = {
   },
 };
 
-export default function GalleryEventPage({
-  params,
-  backgroundColor = "#1A1A1A",
-}: {
-  params: { eventId: string };
-  backgroundColor?: string;
-}) {
-  const { eventId } = params;
+export default function GalleryEventPage() {
+  const params = useParams();
+  const eventId = params.eventId as string;
   const event = eventId ? placeholderEvents[eventId] : null;
+
   if (!event) {
     return null;
   }
@@ -81,7 +78,7 @@ export default function GalleryEventPage({
 
   const photoList = event.photos.slice(
     (currentPage - 1) * (photosPerRow * GALLERY_ROWS),
-    currentPage * (photosPerRow * GALLERY_ROWS),
+    currentPage * (photosPerRow * GALLERY_ROWS)
   );
 
   const testTitleProps: EventTitleProps = {
@@ -107,7 +104,7 @@ export default function GalleryEventPage({
   };
 
   return (
-    <Box style={{ backgroundColor: backgroundColor }}>
+    <Box style={{ backgroundColor: "#1A1A1A" }}>
       <EventTitle {...testTitleProps} />
       <GalleryPage {...galleryPageProps} />
     </Box>
