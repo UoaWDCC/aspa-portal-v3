@@ -78,7 +78,7 @@ export default function GalleryEventPage() {
 
   const photoList = event.photos.slice(
     (currentPage - 1) * (photosPerRow * GALLERY_ROWS),
-    currentPage * (photosPerRow * GALLERY_ROWS)
+    currentPage * (photosPerRow * GALLERY_ROWS),
   );
 
   const testTitleProps: EventTitleProps = {
