@@ -1,6 +1,6 @@
 import { Flex, Image, Text, rgba, Button } from "@mantine/core";
 import Link from "next/link";
-import { Event } from "@/models/Event";
+import { Event } from "@/payload-types";
 
 export interface EventCardMainProps {
   event: Event;

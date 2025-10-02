@@ -24,6 +24,9 @@ export const Default: StoryObj<typeof EventCard> = {
       dateTime: "Tuesday & Thursday, 6:30 - 8:00 PM",
       price: "$10",
       location: "Engineering building, Room 101",
+      id: "0",
+      updatedAt: "",
+      createdAt: "",
     },
   },
 };

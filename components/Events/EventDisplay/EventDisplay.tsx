@@ -8,7 +8,7 @@ import {
   EventCardTertiaryProps,
 } from "../EventCard/EventCardTertiary";
 import { Stack, Text, Button, rgba } from "@mantine/core";
-import { Event } from "@/models/Event";
+import { Event } from "@/payload-types";
 
 export type ChildEventDisplayProps =
   | EventCardMainProps
@@ -67,11 +67,17 @@ export function EventDisplay({
             const mainEvent = events[eventIdx];
             const mainProps = props[eventIdx] as EventCardMainProps;
             eventIdx += 1;
+            if (!mainEvent) {
+              return null;
+            }
             return <EventCardMain {...mainProps} event={mainEvent} />;
           }
 
           case displayType.Secondary: {
-            const secondaryEvents = [events[eventIdx], events[eventIdx + 1]];
+            const secondaryEvents = [
+              events[eventIdx],
+              events[eventIdx + 1],
+            ].filter((e): e is Event => e !== undefined);
             const secondaryProps = props[eventIdx] as EventCardSecondaryProps;
             eventIdx += 2;
             return (
@@ -83,7 +89,10 @@ export function EventDisplay({
           }
 
           case displayType.Tertiary: {
-            const tertiaryEvents = [events[eventIdx], events[eventIdx + 1]];
+            const tertiaryEvents = [
+              events[eventIdx],
+              events[eventIdx + 1],
+            ].filter((e): e is Event => e !== undefined);
             const tertiaryProps = props[eventIdx] as EventCardTertiaryProps;
             eventIdx += 2;
             return (

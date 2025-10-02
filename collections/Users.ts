@@ -9,6 +9,13 @@ const Users: CollectionConfig = {
   },
   fields: [
     {
+      name: "username",
+      type: "text",
+      required: true,
+      unique: true,
+      index: true,
+    },
+    {
       name: "firstname",
       type: "text",
     },
@@ -19,7 +26,7 @@ const Users: CollectionConfig = {
     {
       name: "elo",
       type: "number",
-      defaultValue: 0,
+      defaultValue: 1200, // Standard starting ELO
     },
   ],
 };

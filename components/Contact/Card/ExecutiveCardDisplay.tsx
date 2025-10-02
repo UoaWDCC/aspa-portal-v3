@@ -2,14 +2,7 @@
 import { useState, KeyboardEvent } from "react";
 import { Image, Text, Box } from "@mantine/core";
 import styles from "./ExecutiveCardDisplay.module.css";
-
-export interface Executive {
-  name: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  backContent: string; // new field for back side content
-}
+import { Executive } from "@/payload-types";
 
 export interface ExecutiveCardProps {
   executive: Executive;
@@ -41,15 +34,15 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
             style={{ display: "flex", alignItems: "center", gap: "1rem" }}
           >
             <Image
-              src={executive.imageUrl}
-              alt={executive.name}
+              src={executive.image}
+              alt={`${executive.firstName} ${executive.lastName}`}
               width={120}
               height={120}
               radius="md"
             />
             <Box>
               <Text fw={700} size="lg">
-                {executive.name}
+                {`${executive.firstName} ${executive.lastName}`}
               </Text>
               <Text className={styles.positionText} size="sm" mb={4}>
                 {executive.title}
@@ -68,7 +61,11 @@ export function ExecutiveCard({ executive }: ExecutiveCardProps) {
               justifyContent: "center",
             }}
           >
-            <Text size="sm">{executive.backContent}</Text>
+            <Text size="sm">
+              {typeof executive.backContent === "string"
+                ? executive.backContent
+                : JSON.stringify(executive.backContent)}
+            </Text>
           </Box>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Flex, Image, Text, rgba, Button, Group, Stack } from "@mantine/core";
-import { Event } from "@/models/Event";
+import { Event } from "@/payload-types";
 import Link from "next/link";
 
 export interface EventCardTertiaryProps {
@@ -33,6 +33,10 @@ export function EventCardTertiary({
   // Need website font as well
   const event1 = events[0];
   const event2 = events[1];
+
+  if (!event1 || !event2) {
+    return null;
+  }
 
   return (
     <Flex

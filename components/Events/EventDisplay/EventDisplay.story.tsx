@@ -2,10 +2,13 @@ import { Meta, StoryObj } from "@storybook/react";
 import { EventDisplay, displayType } from "./EventDisplay";
 import type { EventCardMainProps } from "../EventCard/EventCardMain";
 import type { EventCardSecondaryProps } from "../EventCard/EventCardSecondary";
-import { Event } from "@/models/Event";
+import { Event } from "@/payload-types";
 
 const eventsList: Event[] = [
   {
+    id: "0",
+    updatedAt: "2024-06-01T00:00:00.000Z",
+    createdAt: "2024-05-01T00:00:00.000Z",
     name: "ASPA Hackathon @ GRID AKL",
     dateTime: "SAT & SUN 10:00-8:00pm",
     price: "10",
@@ -16,6 +19,9 @@ const eventsList: Event[] = [
       "https://www.bartonmcgill.co.nz/wp-content/uploads/2023/12/51S4Ow-YSgL-_AC_SL1500_.jpg",
   },
   {
+    id: "1",
+    updatedAt: "2024-06-02T00:00:00.000Z",
+    createdAt: "2024-05-02T00:00:00.000Z",
     name: "CASUAL NIGHT @ AKL CBD",
     dateTime: "TUES & THUR 6:30-8:00PM",
     price: "6",
@@ -25,6 +31,9 @@ const eventsList: Event[] = [
       "https://www.bartonmcgill.co.nz/wp-content/uploads/2023/12/51S4Ow-YSgL-_AC_SL1500_.jpg",
   },
   {
+    id: "2",
+    updatedAt: "2024-06-03T00:00:00.000Z",
+    createdAt: "2024-05-03T00:00:00.000Z",
     name: "KARAOKE NIGHT @ AKL CBD",
     dateTime: "FRI 8:00-11:00PM",
     price: "10",

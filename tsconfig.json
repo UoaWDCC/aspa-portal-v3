@@ -7,6 +7,7 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -17,7 +18,7 @@
     "incremental": true,
     "paths": {
       "@/*": ["./*"],
-      "@payload-config": ["./payload.config.ts"],
+      "@payload-config": ["./payload.config.ts"]
     },
     "plugins": [{ "name": "next" }]
   },

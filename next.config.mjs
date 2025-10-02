@@ -1,5 +1,5 @@
-import bundleAnalyzer from '@next/bundle-analyzer';
-import { withPayload } from '@payloadcms/next/withPayload'
+import bundleAnalyzer from "@next/bundle-analyzer";
+import { withPayload } from "@payloadcms/next/withPayload";
 
 /**  
 const withBundleAnalyzer = bundleAnalyzer({
@@ -13,8 +13,17 @@ export default withPayload({
     ignoreDuringBuilds: true,
   },
   experimental: {
-    optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
+    optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
     reactCompiler: false,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.filestackcontent.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 });
-

@@ -6,7 +6,7 @@ FROM ${BASE_REGISTRY}/${BASE_IMAGE} AS base
 USER root
 
 # Install git, bash, and corepack
-RUN apk add --no-cache git bash postgresql-client && \
+RUN apk add --no-cache git bash postgresql-client curl openssh-client && \
 	corepack enable && \
 	corepack prepare yarn@stable --activate
 

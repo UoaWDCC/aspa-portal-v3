@@ -5,4 +5,4 @@ PATH_TO_BASE=$(realpath "$(dirname "${BASH_SOURCE[0]}")/../../")
 git config --global --add safe.directory $PATH_TO_BASE
 
 # install all the dependencies
-cd $PATH_TO_BASE && yes | yarn install
+cd $PATH_TO_BASE && yes | yarn install && yarn prepare

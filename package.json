@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
-    "start": "next start",
+    "start": "next start -H 0.0.0.0 -p 3000",
     "typecheck": "tsc --noEmit",
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "next lint",
@@ -18,7 +18,9 @@
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "payload:types": "payload generate:types",
+    "prepare": "husky"
   },
   "dependencies": {
     "@google/gemini-cli": "^0.1.21",
@@ -34,14 +36,17 @@
     "embla-carousel-react": "^8.6.0",
     "graphql": "^16.11.0",
     "next": "15.2.3",
+    "openapi-fetch": "^0.14.0",
     "payload": "^3.49.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-fast-marquee": "^1.6.5",
     "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@eslint/js": "^9.23.0",
+    "@flydotio/dockerfile": "^0.7.10",
     "@ianvs/prettier-plugin-sort-imports": "^4.5.1",
     "@storybook/addon-essentials": "^8.6.8",
     "@storybook/addon-interactions": "^8.6.8",
@@ -60,8 +65,10 @@
     "eslint-config-mantine": "^4.0.3",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
+    "husky": "^9.1.7",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^29.7.0",
+    "openapi-typescript": "^7.9.1",
     "postcss": "^8.5.3",
     "postcss-preset-mantine": "1.17.0",
     "postcss-simple-vars": "^7.0.1",

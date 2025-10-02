@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ExecutiveCollection } from "./ExecutiveCollection";
+import { Executive } from "@/payload-types";
 
 const meta: Meta<typeof ExecutiveCollection> = {
   title: "Contact/Collection",
@@ -11,46 +12,19 @@ const meta: Meta<typeof ExecutiveCollection> = {
 
 export default meta;
 
-const executives = [
+const executives: Executive[] = [
   {
-    name: "Lorem ipsum",
+    id: 1,
+    firstName: "John",
+    lastName: "Doe",
+    type: "main",
     title: "Lorem ipsum",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    imageUrl: "https://via.placeholder.com/120",
+    image: "https://via.placeholder.com/120",
     backContent: "This is the back of the card.",
-  },
-  {
-    name: "Lorem ipsum",
-    title: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    imageUrl: "https://via.placeholder.com/120",
-    backContent: "This is the back of the card.",
-  },
-  {
-    name: "Lorem ipsum",
-    title: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    imageUrl: "https://via.placeholder.com/120",
-    backContent: "This is the back of the card.",
-  },
-  {
-    name: "Lorem ipsum",
-    title: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    imageUrl: "https://via.placeholder.com/120",
-    backContent: "This is the back of the card.",
-  },
-  {
-    name: "Lorem ipsum",
-    title: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eia pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    imageUrl: "https://via.placeholder.com/120",
-    backContent: "This is the back of the card.",
+    updatedAt: new Date().toISOString(),
+    createdAt: new Date().toISOString(),
   },
 ];
 

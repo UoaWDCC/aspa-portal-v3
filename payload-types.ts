@@ -72,6 +72,8 @@ export interface Config {
     events: Event;
     users: User;
     media: Media;
+    executives: Executive;
+    games: Game;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
     "payload-migrations": PayloadMigration;
@@ -82,6 +84,8 @@ export interface Config {
     events: EventsSelect<false> | EventsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    executives: ExecutivesSelect<false> | ExecutivesSelect<true>;
+    games: GamesSelect<false> | GamesSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
       | PayloadLockedDocumentsSelect<true>;
@@ -165,6 +169,13 @@ export interface Admin {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
   password?: string | null;
 }
 /**
@@ -172,27 +183,14 @@ export interface Admin {
  * via the `definition` "events".
  */
 export interface Event {
-  id: number;
+  id: string;
   name: string;
-  description?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ("ltr" | "rtl") | null;
-      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  date: string;
+  description?: string | null;
+  dateTime?: string | null;
   location?: string | null;
-  primaryColor?: string | null;
-  secondaryColor?: string | null;
+  price?: string | null;
+  imageUrl?: string | null;
+  lastSyncedAt?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -202,6 +200,7 @@ export interface Event {
  */
 export interface User {
   id: number;
+  username: string;
   firstname?: string | null;
   lastname?: string | null;
   elo?: number | null;
@@ -214,6 +213,13 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
   password?: string | null;
 }
 /**
@@ -237,6 +243,59 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives".
+ */
+export interface Executive {
+  id: number;
+  /**
+   * First name of the executive
+   */
+  firstName: string;
+  /**
+   * Last name of the executive
+   */
+  lastName: string;
+  /**
+   * Type of executive (Main, Marketing, Events)
+   */
+  type: "main" | "marketing" | "events";
+  /**
+   * Job title or position
+   */
+  title: string;
+  /**
+   * Brief description or bio
+   */
+  description: string;
+  /**
+   * Executive headshot or profile image
+   */
+  image: string;
+  /**
+   * Content for the back side (detailed bio, achievements, etc.)
+   */
+  backContent: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "games".
+ */
+export interface Game {
+  id: number;
+  player1: number | User;
+  player2: number | User;
+  status?: ("pending" | "accepted" | "completed" | "cancelled") | null;
+  winner?: (number | null) | User;
+  player1Confirmation?: ("pending" | "player1" | "player2") | null;
+  player2Confirmation?: ("pending" | "player1" | "player2") | null;
+  eloChange?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -248,7 +307,7 @@ export interface PayloadLockedDocument {
       } | null)
     | ({
         relationTo: "events";
-        value: number | Event;
+        value: string | Event;
       } | null)
     | ({
         relationTo: "users";
@@ -257,6 +316,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: "media";
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: "executives";
+        value: number | Executive;
+      } | null)
+    | ({
+        relationTo: "games";
+        value: number | Game;
       } | null);
   globalSlug?: string | null;
   user:
@@ -324,18 +391,27 @@ export interface AdminsSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "events_select".
  */
 export interface EventsSelect<T extends boolean = true> {
+  id?: T;
   name?: T;
   description?: T;
-  date?: T;
+  dateTime?: T;
   location?: T;
-  primaryColor?: T;
-  secondaryColor?: T;
+  price?: T;
+  imageUrl?: T;
+  lastSyncedAt?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -344,6 +420,7 @@ export interface EventsSelect<T extends boolean = true> {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  username?: T;
   firstname?: T;
   lastname?: T;
   elo?: T;
@@ -356,6 +433,13 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -374,6 +458,36 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives_select".
+ */
+export interface ExecutivesSelect<T extends boolean = true> {
+  firstName?: T;
+  lastName?: T;
+  type?: T;
+  title?: T;
+  description?: T;
+  image?: T;
+  backContent?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "games_select".
+ */
+export interface GamesSelect<T extends boolean = true> {
+  player1?: T;
+  player2?: T;
+  status?: T;
+  winner?: T;
+  player1Confirmation?: T;
+  player2Confirmation?: T;
+  eloChange?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

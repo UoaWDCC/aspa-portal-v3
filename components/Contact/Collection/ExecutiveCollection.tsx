@@ -1,8 +1,9 @@
 "use client";
 
 import { Grid, Container, Paper, Title } from "@mantine/core";
-import { ExecutiveCard, Executive } from "../Card/ExecutiveCardDisplay";
+import { ExecutiveCard } from "../Card/ExecutiveCardDisplay";
 import styles from "./ExecutiveCollection.module.css";
+import { Executive } from "@/payload-types";
 
 export interface ExecutiveCollection {
   executives: Executive[];
