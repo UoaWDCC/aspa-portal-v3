@@ -1,5 +1,5 @@
 // app/executives/page.tsx
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 import { getPayload } from "payload";
 import config from "@payload-config";
 import { Executive } from "@/payload-types";
