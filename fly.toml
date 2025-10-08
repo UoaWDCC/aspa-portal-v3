@@ -5,6 +5,7 @@
 
 app = 'aspa-portal-v3'
 primary_region = 'syd'
+swap_size_mb = 512
 
 [build]
 
@@ -29,6 +30,6 @@ primary_region = 'syd'
   processes = ['app']
 
 [[vm]]
-  memory = '1gb'
+  memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1

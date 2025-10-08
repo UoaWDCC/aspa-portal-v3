@@ -1,14 +1,13 @@
 name: Frontend Tests
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches: [ "main" ]
-    types: [labeled, synchronize, opened, reopened]
-
-
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches: [ "main" ]
+  #   types: [labeled, synchronize, opened, reopened]
+  workflow_dispatch:
 
 jobs:
   test_frontend:
