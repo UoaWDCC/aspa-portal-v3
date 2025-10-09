@@ -62,7 +62,7 @@ export default function ProfileInfoCard(user: User) {
             </span>
           </Text>
         )}
-        <Flex justify="space-around" w="100%" pt="5vh">
+        <Flex justify="space-around" w="100%" pt="5vh" gap="2vw">
           <Button className={styles.button}>Edit Profile</Button>
           <Button className={styles.button}>Logout</Button>
         </Flex>
