@@ -9,6 +9,6 @@ module.exports = defineConfig({
     baseUrl:
       "https://congenial-carnival-g4x44jx69jgqfppxg-3000.app.github.dev/", // change to your forwarded port
     specPattern: "cypress/e2e/**/*.cy.{js,ts}",
-    supportFile: false,
+    supportFile: "cypress/support/e2e.js",
   },
 });
