@@ -203,10 +203,14 @@ export interface User {
   username: string;
   firstname?: string | null;
   lastname?: string | null;
+  skillLevel?: string | null; 
   elo?: number | null;
   updatedAt: string;
   createdAt: string;
   email: string;
+  contactNum: string | null;
+  university: string | null;
+  upi: string | null;
   resetPasswordToken?: string | null;
   resetPasswordExpiration?: string | null;
   salt?: string | null;

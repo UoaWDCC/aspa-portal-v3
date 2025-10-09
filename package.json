@@ -35,6 +35,7 @@
     "@tabler/icons-react": "^3.31.0",
     "embla-carousel-react": "^8.6.0",
     "graphql": "^16.11.0",
+    "motion": "^12.23.21",
     "next": "15.2.3",
     "openapi-fetch": "^0.14.0",
     "payload": "^3.49.1",

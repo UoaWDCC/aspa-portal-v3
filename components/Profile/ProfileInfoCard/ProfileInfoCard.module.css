@@ -1,0 +1,57 @@
+.flex {
+  justify-content: space-between;
+  padding: 0 3vw;
+}
+
+.title {
+  font-size: 6vh;
+  padding-bottom: 5vh;
+}
+
+.span {
+  font-size: 2vh;
+  margin-left: 1vw;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.text {
+  font-size: 4vh;
+  width: 40vw;
+}
+
+.skill {
+  padding: 0 3vw;
+  padding-top: 12px;
+  font-size: 4vh;
+}
+
+.button {
+  width: 40vw;
+  height: 4vh;
+  font-size: 3vh;
+}
+
+@media (max-width: 750px) {
+  .title {
+    font-size: 4vh;
+    padding-bottom: 3vh;
+  }
+
+  .text {
+    font-size: 4vw;
+    width: 25vw;
+  }
+
+  .button {
+    width: 30vw;
+    height: 4vh;
+    font-size: 2vh;
+  }
+
+  .skill {
+    padding: 0 3vw;
+    padding-top: 12px;
+    font-size: 3vh;
+  }
+}
