@@ -5,18 +5,6 @@
     "../docker/docker-compose.devel.workspace.yml",
     "../docker/docker-compose.devel.service.yml"
   ],
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-  },
-  "forwardPorts": [6080, 5901],
-  "portsAttributes": {
-    "6080": {
-      "label": "VNC Web"
-    },
-    "5901": {
-      "label": "VNC"
-    }
-  },
   "customizations": {
     "vscode": {
       "extensions": [
