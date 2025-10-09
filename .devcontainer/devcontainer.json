@@ -8,11 +8,8 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "forwardPorts": [10000, 6080, 5901],
+  "forwardPorts": [6080, 5901],
   "portsAttributes": {
-    "10000": {
-      "label": "desktop"
-    },
     "6080": {
       "label": "VNC Web"
     },
@@ -42,7 +39,5 @@
   "remoteUser": "root",
   "mounts": [],
   "runArgs": ["--privileged"],
-  "postCreateCommand": "apt-get update && apt-get install -y libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb && bash ./scripts/bash/post-dev-container-create.sh",
   "overrideCommand": false
-  // Ensure Docker Compose is used, x11-bridge port is forwarded, and settings are clear for Cypress GUI usage
 }
