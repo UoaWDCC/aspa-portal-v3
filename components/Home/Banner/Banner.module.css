@@ -4,6 +4,7 @@
   font-weight: 700;
   line-height: 1.1;
   overflow: hidden;
+  text-align: center;
 }
 
 .movingAspa {
@@ -30,13 +31,14 @@
 
 .scrollerWrapper {
   overflow: hidden;
-  width: 100%;
+  width: 99vw;
   white-space: nowrap;
 }
 
 .scroller {
   display: inline-block;
   white-space: nowrap;
+  width: 200%;
 }
 
 .imageContainer {
@@ -65,6 +67,6 @@
 
   .text {
     font-size: 2vw;
-    text-align: center
+    text-align: center;
   }
 }

@@ -16,7 +16,8 @@ export interface BannerProps {
 }
 
 export function InfiniteScrollASPA() {
-  const text = "ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA";
+  const text =
+    "ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA ASPA";
 
   return (
     <div className={styles.scrollerWrapper}>
