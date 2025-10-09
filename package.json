@@ -23,7 +23,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@google/gemini-cli": "^0.1.21",
+    "@google/gemini-cli": "^0.7.0",
     "@mantine/carousel": "^8.0.1",
     "@mantine/core": "8.0.1",
     "@mantine/hooks": "8.0.1",
@@ -41,6 +41,7 @@
     "payload": "^3.49.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-fast-marquee": "^1.6.5",
     "sharp": "^0.34.3"
   },
   "devDependencies": {

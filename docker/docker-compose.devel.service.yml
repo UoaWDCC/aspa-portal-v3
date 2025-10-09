@@ -24,19 +24,6 @@ services:
     networks:
       - aspa-network
 
-  x11-bridge:
-    image: jare/x11-bridge
-    volumes:
-      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
-    ports:
-      - "10000:10000"
-    restart: always
-    environment:
-      MODE: tcp
-      XPRA_HTML: "yes"
-      DISPLAY: :14
-      XPRA_PASSWORD: MUST_BE_SOMETHING
-
 networks:
   aspa-network:
     driver: bridge
