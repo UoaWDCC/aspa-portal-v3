@@ -13,53 +13,53 @@
  * via the `definition` "supportedTimezones".
  */
 export type SupportedTimezones =
-  | 'Pacific/Midway'
-  | 'Pacific/Niue'
-  | 'Pacific/Honolulu'
-  | 'Pacific/Rarotonga'
-  | 'America/Anchorage'
-  | 'Pacific/Gambier'
-  | 'America/Los_Angeles'
-  | 'America/Tijuana'
-  | 'America/Denver'
-  | 'America/Phoenix'
-  | 'America/Chicago'
-  | 'America/Guatemala'
-  | 'America/New_York'
-  | 'America/Bogota'
-  | 'America/Caracas'
-  | 'America/Santiago'
-  | 'America/Buenos_Aires'
-  | 'America/Sao_Paulo'
-  | 'Atlantic/South_Georgia'
-  | 'Atlantic/Azores'
-  | 'Atlantic/Cape_Verde'
-  | 'Europe/London'
-  | 'Europe/Berlin'
-  | 'Africa/Lagos'
-  | 'Europe/Athens'
-  | 'Africa/Cairo'
-  | 'Europe/Moscow'
-  | 'Asia/Riyadh'
-  | 'Asia/Dubai'
-  | 'Asia/Baku'
-  | 'Asia/Karachi'
-  | 'Asia/Tashkent'
-  | 'Asia/Calcutta'
-  | 'Asia/Dhaka'
-  | 'Asia/Almaty'
-  | 'Asia/Jakarta'
-  | 'Asia/Bangkok'
-  | 'Asia/Shanghai'
-  | 'Asia/Singapore'
-  | 'Asia/Tokyo'
-  | 'Asia/Seoul'
-  | 'Australia/Brisbane'
-  | 'Australia/Sydney'
-  | 'Pacific/Guam'
-  | 'Pacific/Noumea'
-  | 'Pacific/Auckland'
-  | 'Pacific/Fiji';
+  | "Pacific/Midway"
+  | "Pacific/Niue"
+  | "Pacific/Honolulu"
+  | "Pacific/Rarotonga"
+  | "America/Anchorage"
+  | "Pacific/Gambier"
+  | "America/Los_Angeles"
+  | "America/Tijuana"
+  | "America/Denver"
+  | "America/Phoenix"
+  | "America/Chicago"
+  | "America/Guatemala"
+  | "America/New_York"
+  | "America/Bogota"
+  | "America/Caracas"
+  | "America/Santiago"
+  | "America/Buenos_Aires"
+  | "America/Sao_Paulo"
+  | "Atlantic/South_Georgia"
+  | "Atlantic/Azores"
+  | "Atlantic/Cape_Verde"
+  | "Europe/London"
+  | "Europe/Berlin"
+  | "Africa/Lagos"
+  | "Europe/Athens"
+  | "Africa/Cairo"
+  | "Europe/Moscow"
+  | "Asia/Riyadh"
+  | "Asia/Dubai"
+  | "Asia/Baku"
+  | "Asia/Karachi"
+  | "Asia/Tashkent"
+  | "Asia/Calcutta"
+  | "Asia/Dhaka"
+  | "Asia/Almaty"
+  | "Asia/Jakarta"
+  | "Asia/Bangkok"
+  | "Asia/Shanghai"
+  | "Asia/Singapore"
+  | "Asia/Tokyo"
+  | "Asia/Seoul"
+  | "Australia/Brisbane"
+  | "Australia/Sydney"
+  | "Pacific/Guam"
+  | "Pacific/Noumea"
+  | "Pacific/Auckland"
+  | "Pacific/Fiji";
 
 export interface Config {
   auth: {
@@ -74,9 +74,9 @@ export interface Config {
     media: Media;
     executives: Executive;
     games: Game;
-    'payload-locked-documents': PayloadLockedDocument;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
+    "payload-locked-documents": PayloadLockedDocument;
+    "payload-preferences": PayloadPreference;
+    "payload-migrations": PayloadMigration;
   };
   collectionsJoins: {};
   collectionsSelect: {
@@ -86,9 +86,15 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     executives: ExecutivesSelect<false> | ExecutivesSelect<true>;
     games: GamesSelect<false> | GamesSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
+    "payload-locked-documents":
+      | PayloadLockedDocumentsSelect<false>
+      | PayloadLockedDocumentsSelect<true>;
+    "payload-preferences":
+      | PayloadPreferencesSelect<false>
+      | PayloadPreferencesSelect<true>;
+    "payload-migrations":
+      | PayloadMigrationsSelect<false>
+      | PayloadMigrationsSelect<true>;
   };
   db: {
     defaultIDType: number;
@@ -102,10 +108,10 @@ export interface Config {
   locale: null;
   user:
     | (Admin & {
-        collection: 'admins';
+        collection: "admins";
       })
     | (User & {
-        collection: 'users';
+        collection: "users";
       });
   jobs: {
     tasks: unknown;
@@ -197,6 +203,10 @@ export interface User {
   username: string;
   firstname?: string | null;
   lastname?: string | null;
+  skillLevel?: string | null;
+  contactNum?: string | null;
+  university?: string | null;
+  upi?: string | null;
   elo?: number | null;
   updatedAt: string;
   createdAt: string;
@@ -252,7 +262,7 @@ export interface Executive {
   /**
    * Type of executive (Main, Marketing, Events)
    */
-  type: 'main' | 'marketing' | 'events';
+  type: "main" | "marketing" | "events";
   /**
    * Job title or position
    */
@@ -280,10 +290,10 @@ export interface Game {
   id: number;
   player1: number | User;
   player2: number | User;
-  status?: ('pending' | 'accepted' | 'completed' | 'cancelled') | null;
+  status?: ("pending" | "accepted" | "completed" | "cancelled") | null;
   winner?: (number | null) | User;
-  player1Confirmation?: ('pending' | 'player1' | 'player2') | null;
-  player2Confirmation?: ('pending' | 'player1' | 'player2') | null;
+  player1Confirmation?: ("pending" | "player1" | "player2") | null;
+  player2Confirmation?: ("pending" | "player1" | "player2") | null;
   eloChange?: number | null;
   updatedAt: string;
   createdAt: string;
@@ -296,37 +306,37 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: 'admins';
+        relationTo: "admins";
         value: number | Admin;
       } | null)
     | ({
-        relationTo: 'events';
+        relationTo: "events";
         value: string | Event;
       } | null)
     | ({
-        relationTo: 'users';
+        relationTo: "users";
         value: number | User;
       } | null)
     | ({
-        relationTo: 'media';
+        relationTo: "media";
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'executives';
+        relationTo: "executives";
         value: number | Executive;
       } | null)
     | ({
-        relationTo: 'games';
+        relationTo: "games";
         value: number | Game;
       } | null);
   globalSlug?: string | null;
   user:
     | {
-        relationTo: 'admins';
+        relationTo: "admins";
         value: number | Admin;
       }
     | {
-        relationTo: 'users';
+        relationTo: "users";
         value: number | User;
       };
   updatedAt: string;
@@ -340,11 +350,11 @@ export interface PayloadPreference {
   id: number;
   user:
     | {
-        relationTo: 'admins';
+        relationTo: "admins";
         value: number | Admin;
       }
     | {
-        relationTo: 'users';
+        relationTo: "users";
         value: number | User;
       };
   key?: string | null;
@@ -417,6 +427,10 @@ export interface UsersSelect<T extends boolean = true> {
   username?: T;
   firstname?: T;
   lastname?: T;
+  skillLevel?: T;
+  contactNum?: T;
+  university?: T;
+  upi?: T;
   elo?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -549,7 +563,6 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-
-declare module 'payload' {
+declare module "payload" {
   export interface GeneratedTypes extends Config {}
 }

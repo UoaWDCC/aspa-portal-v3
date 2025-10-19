@@ -7,8 +7,7 @@ const meta: Meta<typeof Banner> = {
   argTypes: {
     title: { control: "text" },
     description: { control: "text" },
-    buttonText: { control: "text" },
-    groupText: { control: "text" },
+    subtitle: { control: "text" },
   },
 };
 
@@ -19,7 +18,6 @@ export const Default: StoryObj<typeof Banner> = {
     title: "Welcome to Auckland Student Pool Association!",
     description:
       "Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur",
-    buttonText: "Current Events",
-    groupText: "dolor sit amet, consectetur",
+    subtitle: "Student Pool Association",
   },
 };

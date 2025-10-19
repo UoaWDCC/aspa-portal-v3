@@ -1,6 +1,8 @@
 "use client";
 
-import EventTitle, { EventTitleProps } from "@/components/Gallery/EventTitle/eventTitle";
+import EventTitle, {
+  EventTitleProps,
+} from "@/components/Gallery/EventTitle/eventTitle";
 import GalleryRow from "@/components/Gallery/GalleryPage/galleryRow";
 import { Box } from "@mantine/core";
 import React, { JSX, useEffect, useState } from "react";
@@ -42,7 +44,9 @@ export default function GalleryEventPage(): JSX.Element {
   const event = placeholderEvents[eventId];
 
   if (!event) {
-    return <div style={{ color: "white", padding: "2rem" }}>Event not found</div>;
+    return (
+      <div style={{ color: "white", padding: "2rem" }}>Event not found</div>
+    );
   }
 
   // --- Responsive photo count per row ---
@@ -114,7 +118,9 @@ export default function GalleryEventPage(): JSX.Element {
         />
       ))}
 
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}>
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}
+      >
         <button
           type="button"
           onClick={(): void => window.history.back()}

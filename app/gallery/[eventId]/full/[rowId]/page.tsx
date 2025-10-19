@@ -21,7 +21,10 @@ export default function FullRowPage(): JSX.Element {
   const photosPerRow = 7;
   const startIndex = Number(rowId) * photosPerRow;
 
-  const rowPhotos: Photo[] = photos.slice(startIndex, startIndex + photosPerRow);
+  const rowPhotos: Photo[] = photos.slice(
+    startIndex,
+    startIndex + photosPerRow,
+  );
 
   return (
     <Box className={styles.fullRowContainer}>

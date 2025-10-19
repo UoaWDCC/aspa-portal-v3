@@ -7,11 +7,10 @@ import TextMarquee from "@/components/Marquees/TextMarquee";
 import "@/components/Marquees/TextMarquee.css";
 
 const ExampleBannerArguments: BannerProps = {
-  title: "Welcome to Auckland Student Pool Association!",
+  title: "WELCOME TO",
+  subtitle: "Auckland Student Pool Association",
   description:
-    "Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, Leque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur",
-  buttonText: "Current Events",
-  groupText: "dolor sit amet, consectetur",
+    "Register to become a member and receive a 10% discount at Orange Club for your own sessions",
 };
 
 export default function HomePage() {
@@ -41,7 +40,7 @@ export default function HomePage() {
     <>
       <Banner
         {...ExampleBannerArguments}
-        paddingTop="12vw"
+        paddingTop="8vw"
         paddingleft="8vw"
         paddingRight="8vw"
         paddingBottom="8vw"
