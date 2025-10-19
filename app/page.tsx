@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Banner, BannerProps } from "@/components/Home/Banner/Banner";
 //import { TestimonialGroup } from "@/components/Home/Testimonials/Group/TestimonialGroup";
 import { Testimonial } from "@/components/Home/Testimonials/Card/TestimonialCard";
+import TextMarquee from "@/components/Marquees/TextMarquee";
+import "@/components/Marquees/TextMarquee.css";
 
 const ExampleBannerArguments: BannerProps = {
   title: "WELCOME TO",
@@ -42,6 +44,12 @@ export default function HomePage() {
         paddingleft="8vw"
         paddingRight="8vw"
         paddingBottom="8vw"
+      />
+      <TextMarquee
+        text="UPCOMING EVENTS"
+        bgColor="bg-dark"
+        textBg="bg-primary"
+        textColor="text-white"
       />
       {/* <TestimonialGroup
         testimonials={testimonials}
