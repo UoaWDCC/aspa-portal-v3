@@ -203,7 +203,7 @@ export interface User {
   username: string;
   firstname?: string | null;
   lastname?: string | null;
-  skillLevel?: string | null; 
+  skillLevel?: string | null;
   elo?: number | null;
   updatedAt: string;
   createdAt: string;

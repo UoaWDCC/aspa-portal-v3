@@ -8,7 +8,7 @@ import "@/components/Marquees/TextMarquee.css";
 
 const ExampleBannerArguments: BannerProps = {
   title: "WELCOME TO",
-  subtitle: 'Auckland Student Pool Association',
+  subtitle: "Auckland Student Pool Association",
   description:
     "Register to become a member and receive a 10% discount at Orange Club for your own sessions",
 };
