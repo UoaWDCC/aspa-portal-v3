@@ -53,6 +53,11 @@ export async function POST(request: NextRequest) {
         firstname,
         lastname,
         username,
+        // These fields are present in the generated payload types as nullable strings
+        // and must be included when creating a user to satisfy TypeScript types.
+        contactNum: null,
+        university: null,
+        upi: null,
       },
     });
 
