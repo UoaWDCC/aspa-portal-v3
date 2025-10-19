@@ -1,5 +1,5 @@
-import { Pagination as PaginationControls, Container } from '@mantine/core';
-import styles from './Pagination.module.css';
+import { Pagination as PaginationControls, Container } from "@mantine/core";
+import styles from "./Pagination.module.css";
 
 type PaginationProps = {
   currentPage: number;
@@ -19,7 +19,8 @@ export default function Pagination({
   const totalPages = Math.max(1, Math.ceil(collectionLength / pageSize));
   const currentPageValue = Math.max(Math.min(currentPage, totalPages), 1); // Ensure valid page number
 
-  const startIndex = collectionLength === 0 ? 0 : (currentPage - 1) * pageSize + 1;
+  const startIndex =
+    collectionLength === 0 ? 0 : (currentPage - 1) * pageSize + 1;
   const endIndex = Math.min(currentPage * pageSize, collectionLength);
 
   return (
@@ -34,8 +35,8 @@ export default function Pagination({
         radius="xl"
         size="md"
         classNames={{
-          root: styles['pagination-root'],
-          control: styles['pagination-control'],
+          root: styles["pagination-root"],
+          control: styles["pagination-control"],
         }}
       >
         <PaginationControls.Items />
