@@ -1,5 +1,5 @@
-import { AppShell, UnstyledButton } from '@mantine/core';
-import Image from 'next/image';
+import { AppShell, UnstyledButton } from "@mantine/core";
+import Image from "next/image";
 import {
   RiFacebookFill as FacebookFillIcon,
   RiTwitterXFill as TwitterXFillIcon,
@@ -7,8 +7,8 @@ import {
   RiLinkedinFill as LinkedinFillIcon,
   RiYoutubeFill as YoutubeFillIcon,
   RiDiscordFill as DiscordFillIcon,
-} from '@remixicon/react';
-import styles from './Footer.module.css';
+} from "@remixicon/react";
+import styles from "./Footer.module.css";
 
 interface SocialMediaLink {
   name: string;
@@ -34,12 +34,15 @@ const iconMap = {
 
 export function Footer({
   socialMediaLinks,
-  footerBg = '#717882',
+  footerBg = "#717882",
   iconSize = 24, // Standard accessible size
 }: FooterProps) {
   return (
     <AppShell>
-      <AppShell.Footer className={styles.footer} style={{ backgroundColor: footerBg }}>
+      <AppShell.Footer
+        className={styles.footer}
+        style={{ backgroundColor: footerBg }}
+      >
         <div className={styles.footerRow}>
           <div className={styles.logoContainer}>
             <Image
@@ -65,7 +68,7 @@ export function Footer({
               return (
                 <UnstyledButton
                   key={index}
-                  onClick={() => window.open(link.href, '_blank')}
+                  onClick={() => window.open(link.href, "_blank")}
                   rel="noopener noreferrer"
                   aria-label={`Visit our ${link.name} page`}
                   title={`Visit our ${link.name} page`}

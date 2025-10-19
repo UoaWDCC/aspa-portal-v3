@@ -72,6 +72,17 @@ jobs:
           git tag -a "${{ needs.versioning.outputs.tag }}" -m "Release version ${{ needs.versioning.outputs.tag }}"
           git push origin "${{ needs.versioning.outputs.tag }}"
 
+      # Cache Yarn dependencies
+      - name: Cache Yarn dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/yarn
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       # Build Docker image
       - name: Build Docker image
         run: |

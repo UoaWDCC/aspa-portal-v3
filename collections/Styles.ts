@@ -1,25 +1,25 @@
-import { GlobalConfig } from 'payload';
+import { GlobalConfig } from "payload";
 
 const Styles: GlobalConfig = {
-  slug: 'styles',
+  slug: "styles",
   fields: [
     {
-      name: 'siteName',
-      type: 'text',
+      name: "siteName",
+      type: "text",
       required: true,
     },
     {
-      name: 'logo',
-      type: 'upload',
-      relationTo: 'media',
+      name: "logo",
+      type: "upload",
+      relationTo: "media",
     },
     {
-      name: 'primaryColor',
-      type: 'text',
+      name: "primaryColor",
+      type: "text",
     },
     {
-      name: 'secondaryColor',
-      type: 'text',
+      name: "secondaryColor",
+      type: "text",
     },
   ],
 };

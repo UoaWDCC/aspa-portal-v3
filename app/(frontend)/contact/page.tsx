@@ -1,15 +1,67 @@
-'use client';
+// app/executives/page.tsx
+export const dynamic = "force-dynamic";
+import { getPayload } from "payload";
+import config from "@payload-config";
+import { Executive } from "@/payload-types";
+import { ExecutiveCollection } from "@/components/Contact/Collection/ExecutiveCollection";
 
-import { Executive } from '@/components/Contact/Card/ExecutiveCard';
-import { ExecutiveCollection } from '@/components/Contact/Collection/ExecutiveCollection';
-import { useEffect, useState } from 'react';
+async function getAllExecutives(): Promise<{
+  main: Executive[];
+  marketing: Executive[];
+  events: Executive[];
+}> {
+  const payload = await getPayload({ config });
 
-export default function ContactPage() {
-  const [executives, setExecutives] = useState<Executive[]>([]);
+  const result = await payload.find({
+    collection: "executives",
+    where: {
+      type: {
+        in: ["main", "marketing", "events"],
+      },
+    },
+    sort: "lastName",
+    limit: 100,
+  });
+
+  const executives = result.docs;
+
+  return {
+    main: executives.filter((exec) => exec.type === "main"),
+    marketing: executives.filter((exec) => exec.type === "marketing"),
+    events: executives.filter((exec) => exec.type === "events"),
+  };
+}
+
+export default async function ExecutivesPage() {
+  const {
+    main: mainExecs,
+    marketing: marketingExecs,
+    events: eventsExecs,
+  } = await getAllExecutives();
+
   return (
-    //moves the body down from under the header, should probably fix this in layout
-    <div style={{ paddingTop: '180px', paddingBottom: '30px' }}>
-      <ExecutiveCollection executives={executives}></ExecutiveCollection>
+    <div
+      style={{
+        paddingTop: "180px",
+        backgroundColor: "#000000ff",
+        paddingBottom: "30px",
+      }}
+    >
+      {mainExecs.length > 0 && (
+        <ExecutiveCollection
+          executives={mainExecs}
+          sectionTitle="Meet The Team"
+        />
+      )}
+      {marketingExecs.length > 0 && (
+        <ExecutiveCollection
+          executives={marketingExecs}
+          sectionTitle="Marketing"
+        />
+      )}
+      {eventsExecs.length > 0 && (
+        <ExecutiveCollection executives={eventsExecs} sectionTitle="Events" />
+      )}
     </div>
   );
 }

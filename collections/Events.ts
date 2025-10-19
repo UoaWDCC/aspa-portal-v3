@@ -1,36 +1,55 @@
-import { CollectionConfig } from 'payload';
+import { CollectionConfig } from "payload";
 
 const Events: CollectionConfig = {
-  slug: 'events',
+  slug: "events",
   admin: {
-    useAsTitle: 'name',
+    useAsTitle: "name",
+    components: {
+      beforeList: ["@/components/Payload/SyncEventsButton"],
+    },
   },
   fields: [
     {
-      name: 'name',
-      type: 'text',
+      name: "id",
+      type: "text",
+      unique: true,
+      admin: {
+        readOnly: true,
+        hidden: true,
+      },
+    },
+    {
+      name: "name",
+      type: "text",
       required: true,
     },
     {
-      name: 'description',
-      type: 'richText',
+      name: "description",
+      type: "textarea",
     },
     {
-      name: 'date',
-      type: 'date',
-      required: true,
+      name: "dateTime",
+      type: "text",
     },
     {
-      name: 'location',
-      type: 'text',
+      name: "location",
+      type: "text",
     },
     {
-      name: 'primaryColor',
-      type: 'text',
+      name: "price",
+      type: "text",
     },
     {
-      name: 'secondaryColor',
-      type: 'text',
+      name: "imageUrl",
+      type: "text",
+    },
+    {
+      name: "lastSyncedAt",
+      type: "date",
+      admin: {
+        readOnly: true,
+        hidden: true,
+      },
     },
   ],
 };

@@ -1,25 +1,32 @@
-import { CollectionConfig } from 'payload';
+import { CollectionConfig } from "payload";
 
 const Users: CollectionConfig = {
-  slug: 'users',
+  slug: "users",
   auth: true,
   admin: {
-    useAsTitle: 'email',
-    group: 'Customers',
+    useAsTitle: "email",
+    group: "Customers",
   },
   fields: [
     {
-      name: 'firstname',
-      type: 'text',
+      name: "username",
+      type: "text",
+      required: true,
+      unique: true,
+      index: true,
     },
     {
-      name: 'lastname',
-      type: 'text',
+      name: "firstname",
+      type: "text",
     },
     {
-      name: 'elo',
-      type: 'number',
-      defaultValue: 0,
+      name: "lastname",
+      type: "text",
+    },
+    {
+      name: "elo",
+      type: "number",
+      defaultValue: 1200, // Standard starting ELO
     },
   ],
 };

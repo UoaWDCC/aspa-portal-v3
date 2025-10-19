@@ -1,14 +1,16 @@
-'use client';
-import { Grid, Container, Paper, Title } from '@mantine/core';
-import { ExecutiveCard, Executive } from '../Card/ExecutiveCard';
-import styles from './ExecutiveCollection.module.css';
+"use client";
+
+import { Grid, Container, Paper, Title } from "@mantine/core";
+import { ExecutiveCard } from "../Card/ExecutiveCardDisplay";
+import styles from "./ExecutiveCollection.module.css";
+import { Executive } from "@/payload-types";
 
 export interface ExecutiveCollection {
   executives: Executive[];
-  badgeColor?: string;
-  gutter?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  sectionTitle?: string;
+  gutter?: "xs" | "sm" | "md" | "lg" | "xl";
+  radius?: "xs" | "sm" | "md" | "lg" | "xl";
+  shadow?: "xs" | "sm" | "md" | "lg" | "xl";
   withBorder?: boolean;
   outerPaddingTop?: string;
   outerPaddingBottom?: string;
@@ -22,19 +24,19 @@ export interface ExecutiveCollection {
 
 export function ExecutiveCollection({
   executives,
-  badgeColor = '#d78840',
-  gutter = 'lg',
-  radius = 'xl',
-  shadow = 'sm',
+  sectionTitle,
+  gutter = "lg",
+  radius = "xl",
+  shadow = "sm",
   withBorder = true,
-  outerPaddingTop = '',
-  outerPaddingBottom = '',
-  outerPaddingLeft = '',
-  outerPaddingRight = '',
-  innerPaddingTop = '',
-  innerPaddingBottom = '',
-  innerPaddingLeft = '',
-  innerPaddingRight = '',
+  outerPaddingTop = "",
+  outerPaddingBottom = "",
+  outerPaddingLeft = "",
+  outerPaddingRight = "",
+  innerPaddingTop = "",
+  innerPaddingBottom = "",
+  innerPaddingLeft = "",
+  innerPaddingRight = "",
 }: ExecutiveCollection) {
   return (
     <Container
@@ -43,20 +45,30 @@ export function ExecutiveCollection({
       pl={outerPaddingLeft}
       pr={outerPaddingRight}
     >
-      <Paper shadow={shadow} radius={radius} withBorder={withBorder} className={styles.collection}>
+      <Paper
+        shadow={shadow}
+        radius={radius}
+        withBorder={withBorder}
+        className={styles.collection}
+      >
         <Container
           pt={innerPaddingTop}
           pb={innerPaddingBottom}
           pl={innerPaddingLeft}
           pr={innerPaddingRight}
         >
-          <Title className={styles.title} pt="1vw" pb="2vw">
-            Meet The Team
-          </Title>
-          <Grid grow gutter={gutter}>
+          {sectionTitle && (
+            <Title order={2} ta="center" className={styles.sectionTitle}>
+              {sectionTitle}
+            </Title>
+          )}
+          <Grid gutter={gutter}>
             {executives.map((executive, index) => (
-              <Grid.Col span={{ base: 12, sm: 4 }}>
-                <ExecutiveCard executive={executive} badgeColor={badgeColor} key={index} />
+              <Grid.Col
+                key={index}
+                span={{ base: 12, sm: 6 }} // 12 = full width, 6 = half width
+              >
+                <ExecutiveCard executive={executive} />
               </Grid.Col>
             ))}
           </Grid>
