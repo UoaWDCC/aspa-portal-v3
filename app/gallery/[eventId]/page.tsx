@@ -1,22 +1,13 @@
 "use client";
-import EventTitle, {
-  EventTitleProps,
-} from "@/components/Gallery/EventTitle/eventTitle";
-import GalleryPage, {
-  GalleryPageProps,
-} from "@/components/Gallery/GalleryPage/galleryPage";
+
+import EventTitle, { EventTitleProps } from "@/components/Gallery/EventTitle/eventTitle";
+import GalleryRow from "@/components/Gallery/GalleryPage/galleryRow";
 import { Box } from "@mantine/core";
-import React, { useEffect, useState } from "react";
+import React, { JSX, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import photos from "./photos.json";
 
-import photos from "./photos.json"; // Temp photo data
-
-type Photo = {
-  id: number;
-  src: string;
-  alt: string;
-};
-
+type Photo = { id: number; src: string; alt: string };
 type Event = {
   title: string;
   year: number;
@@ -32,8 +23,8 @@ const placeholderEvents: Record<string, Event> = {
     year: 2025,
     month: "October",
     day: "1st",
-    location: "Orange pool club (9 city road)",
-    photos: photos,
+    location: "Orange Pool Club (9 City Road)",
+    photos,
   },
   event2: {
     title: "ASPA 2024",
@@ -41,28 +32,29 @@ const placeholderEvents: Record<string, Event> = {
     month: "November",
     day: "15th",
     location: "ASPA Headquarters",
-    photos: photos,
+    photos,
   },
 };
 
-export default function GalleryEventPage() {
+export default function GalleryEventPage(): JSX.Element {
   const params = useParams();
   const eventId = params.eventId as string;
-  const event = eventId ? placeholderEvents[eventId] : null;
+  const event = placeholderEvents[eventId];
 
   if (!event) {
-    return null;
+    return <div style={{ color: "white", padding: "2rem" }}>Event not found</div>;
   }
 
+  // --- Responsive photo count per row ---
   const DEFAULT_PHOTOS = 7;
   const TABLET_PHOTOS = 5;
   const MOBILE_PHOTOS = 2;
-  const GALLERY_ROWS = 5;
-  const [photosPerRow, setPhotosPerRow] = useState(DEFAULT_PHOTOS);
-  const [currentPage, setCurrentPage] = useState(1);
+  const TOTAL_ROWS = 5;
+
+  const [photosPerRow, setPhotosPerRow] = useState<number>(DEFAULT_PHOTOS);
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = (): void => {
       if (window.innerWidth <= 600) {
         setPhotosPerRow(MOBILE_PHOTOS);
       } else if (window.innerWidth <= 900) {
@@ -71,17 +63,24 @@ export default function GalleryEventPage() {
         setPhotosPerRow(DEFAULT_PHOTOS);
       }
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return (): void => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const photoList = event.photos.slice(
-    (currentPage - 1) * (photosPerRow * GALLERY_ROWS),
-    currentPage * (photosPerRow * GALLERY_ROWS),
-  );
+  // --- Build rows ---
+  const paddedPhotos: Photo[] = [...event.photos];
+  while (paddedPhotos.length < photosPerRow * TOTAL_ROWS) {
+    paddedPhotos.push(...event.photos);
+  }
 
-  const testTitleProps: EventTitleProps = {
+  const photoRows: Photo[][] = [];
+  for (let i = 0; i < paddedPhotos.length; i += photosPerRow) {
+    photoRows.push(paddedPhotos.slice(i, i + photosPerRow));
+  }
+
+  const titleProps: EventTitleProps = {
     titleText: event.title,
     year: event.year.toString(),
     month: event.month,
@@ -96,17 +95,42 @@ export default function GalleryEventPage() {
     eventDetailsColor: "#EBEBEB",
   };
 
-  const galleryPageProps: GalleryPageProps = {
-    photoList: photoList,
-    photosPerRow: photosPerRow,
-    backgroundColor: "#717882",
-    alternate: true,
-  };
-
   return (
-    <Box style={{ backgroundColor: "#1A1A1A" }}>
-      <EventTitle {...testTitleProps} />
-      <GalleryPage {...galleryPageProps} />
+    <Box style={{ backgroundColor: "#1A1A1A", paddingBottom: "50px" }}>
+      <EventTitle {...titleProps} />
+
+      {photoRows.slice(0, TOTAL_ROWS).map((row, index) => (
+        <GalleryRow
+          key={index}
+          rowIndex={index} // pass row index for “View All”
+          event={{
+            name: `${event.title} - Row ${index + 1}`,
+            date: `${event.day} ${event.month}`,
+            year: event.year.toString(),
+            location: event.location,
+            images: row.map((p) => p.src),
+            eventId,
+          }}
+        />
+      ))}
+
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}>
+        <button
+          type="button"
+          onClick={(): void => window.history.back()}
+          style={{
+            border: "1px solid #EBEBEB",
+            background: "transparent",
+            borderRadius: "25px",
+            color: "#EBEBEB",
+            padding: "10px 25px",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+        >
+          Back to Gallery
+        </button>
+      </div>
     </Box>
   );
 }

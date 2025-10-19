@@ -1,0 +1,120 @@
+.galleryRow {
+  margin-bottom: 60px;
+  padding: 20px 0;
+  color: #EBEBEB;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  margin-bottom: 15px;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eventTitle {
+  font-size: 1.5rem;
+  font-family: "Nova Square", sans-serif;
+  color: #EBEBEB;
+  margin: 0;
+}
+
+.eventMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.9rem;
+  color: #717882;
+}
+
+.carouselContainer {
+  position: relative;
+  overflow: hidden;
+  padding: 0 50px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.imageWrapper {
+  min-width: 250px;
+  margin-right: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: #717882; 
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.carouselButton:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+.viewAllContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.viewAllButton {
+  background: transparent;
+  border: 1px solid #717882; 
+  color: #717882; 
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.viewAllButton:hover {
+  background: #717882; 
+  color: #1a1a1a; 
+}
