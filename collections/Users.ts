@@ -24,6 +24,26 @@ const Users: CollectionConfig = {
       type: "text",
     },
     {
+      name: "skillLevel",
+      type: "text",
+      required: false,
+    },
+    {
+      name: "contactNum",
+      type: "text",
+      required: false,
+    },
+    {
+      name: "university",
+      type: "text",
+      required: false,
+    },
+    {
+      name: "upi",
+      type: "text",
+      required: false,
+    },
+    {
       name: "elo",
       type: "number",
       defaultValue: 1200, // Standard starting ELO
