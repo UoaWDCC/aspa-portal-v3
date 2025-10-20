@@ -63,7 +63,9 @@ export default async function ExecutivesPage() {
       {eventsExecs.length > 0 && (
         <ExecutiveCollection executives={eventsExecs} sectionTitle="Events" />
       )}
-      <InquiryForm />
+      <div style={{ marginTop: "60px" }}>
+        <InquiryForm />
+      </div>
     </div>
   );
 }

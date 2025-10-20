@@ -3,7 +3,7 @@ import { EventsSection } from "@/components/Events/EventsSection";
 import TextMarquee from "@/components/Marquees/TextMarquee";
 import "@/components/Marquees/TextMarquee.css";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 const ExampleBannerArguments: BannerProps = {
   title: "WELCOME TO",
@@ -28,7 +28,9 @@ export default function HomePage() {
         textBg="bg-primary"
         textColor="text-white"
       />
-      <EventsSection />
+      <div style={{ marginTop: "20px", marginBottom: "40px" }}>
+        <EventsSection />
+      </div>
     </>
   );
 }
