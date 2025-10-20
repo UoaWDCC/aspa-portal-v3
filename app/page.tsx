@@ -3,6 +3,8 @@ import { EventsSection } from "@/components/Events/EventsSection";
 import TextMarquee from "@/components/Marquees/TextMarquee";
 import "@/components/Marquees/TextMarquee.css";
 
+export const dynamic = 'force-dynamic';
+
 const ExampleBannerArguments: BannerProps = {
   title: "WELCOME TO",
   subtitle: "Auckland Student Pool Association",

@@ -22,6 +22,10 @@ COPY . .
 # Generate payload types
 RUN yarn payload generate:types
 
+# Set PAYLOAD_SECRET build argument
+ARG PAYLOAD_SECRET
+ENV PAYLOAD_SECRET=${PAYLOAD_SECRET}
+
 # Build application
 RUN yarn build
 
@@ -43,6 +47,9 @@ COPY --from=builder /app/.yarn ./.yarn
 COPY --from=builder /app/yarn.lock ./yarn.lock
 COPY --from=builder /app/.yarnrc.yml ./.yarnrc.yml
 COPY --from=builder /app/next.config.mjs ./next.config.mjs
+
+# Set PAYLOAD_SECRET environment variable for runtime
+ENV PAYLOAD_SECRET=${PAYLOAD_SECRET}
 
 # Install production dependencies only
 RUN yarn workspaces focus --production
