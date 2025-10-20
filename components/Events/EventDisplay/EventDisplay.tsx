@@ -61,7 +61,7 @@ export function EventDisplay({
         {title}
       </Text>
 
-      {displayTypes.map((type: displayType) => {
+      {displayTypes.map((type: displayType, i) => {
         switch (type) {
           case displayType.Main: {
             const mainEvent = events[eventIdx];
@@ -70,7 +70,7 @@ export function EventDisplay({
             if (!mainEvent) {
               return null;
             }
-            return <EventCardMain {...mainProps} event={mainEvent} />;
+            return <EventCardMain key={i} {...mainProps} event={mainEvent} />;
           }
 
           case displayType.Secondary: {
@@ -82,6 +82,7 @@ export function EventDisplay({
             eventIdx += 2;
             return (
               <EventCardSecondary
+                key={i}
                 {...secondaryProps}
                 events={secondaryEvents}
               />
@@ -96,7 +97,7 @@ export function EventDisplay({
             const tertiaryProps = props[eventIdx] as EventCardTertiaryProps;
             eventIdx += 2;
             return (
-              <EventCardTertiary {...tertiaryProps} events={tertiaryEvents} />
+              <EventCardTertiary key={i} {...tertiaryProps} events={tertiaryEvents} />
             );
           }
 

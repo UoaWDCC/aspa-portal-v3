@@ -2569,9 +2569,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google/gemini-cli-core@npm:0.7.0":
-  version: 0.7.0
-  resolution: "@google/gemini-cli-core@npm:0.7.0"
+"@google/gemini-cli-core@npm:0.9.0":
+  version: 0.9.0
+  resolution: "@google/gemini-cli-core@npm:0.9.0"
   dependencies:
     "@google-cloud/logging": "npm:^11.2.1"
     "@google-cloud/opentelemetry-cloud-monitoring-exporter": "npm:^0.21.0"
@@ -2638,23 +2638,25 @@ __metadata:
       optional: true
     node-pty:
       optional: true
-  checksum: 10c0/d7c36b9ea00b2c93ddf4b0242fa58c9bdd7c40dc448cb29482f80563dd215d6d634e6a8036b0bead025aac5128c7221023b03fb84ae03e1e99b53466349fec16
+  checksum: 10c0/7559fbc9cef26a2cb910820f6a6ba0aebc39d0d9594f2adf8267fbcf7a54fb15f63c6b35ed3f5bbd36f96ac2a8e500ddd09cc3e3964d139e61b1386d4a6d2e22
   languageName: node
   linkType: hard
 
-"@google/gemini-cli@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@google/gemini-cli@npm:0.7.0"
+"@google/gemini-cli@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@google/gemini-cli@npm:0.9.0"
   dependencies:
-    "@google/gemini-cli-core": "npm:0.7.0"
+    "@google/gemini-cli-core": "npm:0.9.0"
     "@google/genai": "npm:1.16.0"
     "@iarna/toml": "npm:^2.2.5"
     "@modelcontextprotocol/sdk": "npm:^1.15.1"
     "@types/update-notifier": "npm:^6.0.8"
+    ansi-regex: "npm:^6.2.2"
     command-exists: "npm:^1.2.9"
     comment-json: "npm:^4.2.5"
     diff: "npm:^7.0.0"
     dotenv: "npm:^17.1.0"
+    extract-zip: "npm:^2.0.1"
     fzf: "npm:^0.5.2"
     glob: "npm:^10.4.5"
     highlight.js: "npm:^11.11.1"
@@ -2662,6 +2664,7 @@ __metadata:
     ink-gradient: "npm:^3.0.0"
     ink-spinner: "npm:^5.0.0"
     lowlight: "npm:^3.3.0"
+    mnemonist: "npm:^0.40.3"
     open: "npm:^10.1.2"
     react: "npm:^19.1.0"
     read-package-up: "npm:^11.0.0"
@@ -2670,6 +2673,7 @@ __metadata:
     string-width: "npm:^7.1.0"
     strip-ansi: "npm:^7.1.0"
     strip-json-comments: "npm:^3.1.1"
+    tar: "npm:^7.5.1"
     undici: "npm:^7.10.0"
     update-notifier: "npm:^7.3.1"
     wrap-ansi: "npm:9.0.2"
@@ -2677,7 +2681,7 @@ __metadata:
     zod: "npm:^3.23.8"
   bin:
     gemini: dist/index.js
-  checksum: 10c0/f6326ce02366b7f7c1b66d0a0671cf2c7b9a7297566b91e16d89514a47a47d377693c726054ce52256761e95ed524635a86f0a5a86940ceff3d6d5bbea579bbd
+  checksum: 10c0/c51df826a7ff3c6bc781344561e612e48f3bddc55bb50ffc1943876748e19ceaa8c51f0186891cbe68b586d4f81858d8d245fbcf9487f047399f4316ae2711dd
   languageName: node
   linkType: hard
 
@@ -7212,6 +7216,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ansi-regex@npm:^6.2.2":
+  version: 6.2.2
+  resolution: "ansi-regex@npm:6.2.2"
+  checksum: 10c0/05d4acb1d2f59ab2cf4b794339c7b168890d44dda4bf0ce01152a8da0213aca207802f930442ce8cd22d7a92f44907664aac6508904e75e038fa944d2601b30f
+  languageName: node
+  linkType: hard
+
 "ansi-styles@npm:^4.0.0, ansi-styles@npm:^4.1.0":
   version: 4.3.0
   resolution: "ansi-styles@npm:4.3.0"
@@ -7408,7 +7419,7 @@ __metadata:
     "@babel/core": "npm:^7.26.10"
     "@eslint/js": "npm:^9.23.0"
     "@flydotio/dockerfile": "npm:^0.7.10"
-    "@google/gemini-cli": "npm:^0.7.0"
+    "@google/gemini-cli": "npm:^0.9.0"
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.5.1"
     "@mantine/carousel": "npm:^8.0.1"
     "@mantine/core": "npm:8.0.1"
@@ -14825,6 +14836,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minizlib@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "minizlib@npm:3.1.0"
+  dependencies:
+    minipass: "npm:^7.1.2"
+  checksum: 10c0/5aad75ab0090b8266069c9aabe582c021ae53eb33c6c691054a13a45db3b4f91a7fb1bd79151e6b4e9e9a86727b522527c0a06ec7d45206b745d54cd3097bcec
+  languageName: node
+  linkType: hard
+
 "mkdirp@npm:^3.0.1":
   version: 3.0.1
   resolution: "mkdirp@npm:3.0.1"
@@ -18887,6 +18907,19 @@ __metadata:
     mkdirp: "npm:^3.0.1"
     yallist: "npm:^5.0.0"
   checksum: 10c0/d4679609bb2a9b48eeaf84632b6d844128d2412b95b6de07d53d8ee8baf4ca0857c9331dfa510390a0727b550fd543d4d1a10995ad86cdf078423fbb8d99831d
+  languageName: node
+  linkType: hard
+
+"tar@npm:^7.5.1":
+  version: 7.5.1
+  resolution: "tar@npm:7.5.1"
+  dependencies:
+    "@isaacs/fs-minipass": "npm:^4.0.0"
+    chownr: "npm:^3.0.0"
+    minipass: "npm:^7.1.2"
+    minizlib: "npm:^3.1.0"
+    yallist: "npm:^5.0.0"
+  checksum: 10c0/0dad0596a61586180981133b20c32cfd93c5863c5b7140d646714e6ea8ec84583b879e5dc3928a4d683be6e6109ad7ea3de1cf71986d5194f81b3a016c8858c9
   languageName: node
   linkType: hard
 
