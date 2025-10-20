@@ -54,7 +54,11 @@ export function EventCard({
             <button
               type="button"
               className={styles.signUpButton}
-              onClick={() => window.open(event.url, "_blank")}
+              onClick={() => {
+                if (event.url) {
+                  window.open(event.url, "_blank");
+                }
+              }}
             >
               SIGN UP
             </button>
