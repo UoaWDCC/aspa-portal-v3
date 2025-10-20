@@ -10,6 +10,7 @@ import {
   MantineProvider,
   mantineHtmlProps,
 } from "@mantine/core";
+import { usePathname } from "next/navigation";
 import { theme } from "../theme";
 
 import { NavBar } from "@/components/NavBar/NavBar";
@@ -38,6 +39,12 @@ const socialMediaLinks = [
 ];
 
 export default function RootLayout({ children }: { children: any }) {
+  const pathname = usePathname();
+
+  if (pathname.startsWith("/admin")) {
+    return <>{children}</>;
+  }
+
   return (
     <html lang="en" {...mantineHtmlProps}>
       <head>

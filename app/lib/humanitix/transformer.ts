@@ -12,6 +12,7 @@ export interface TransformedEvent {
   price: string;
   imageUrl: string;
   lastSyncedAt: string;
+  url: string;
 }
 
 export function transformEvent(event: HumanitixEvent): TransformedEvent {
@@ -24,6 +25,7 @@ export function transformEvent(event: HumanitixEvent): TransformedEvent {
     price: formatPrice(event.pricing, event.currency),
     imageUrl: getImageUrl(event),
     lastSyncedAt: new Date().toISOString(),
+    url: event.url || "",
   };
 }
 

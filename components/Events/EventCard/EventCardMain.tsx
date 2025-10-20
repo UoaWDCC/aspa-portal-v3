@@ -48,7 +48,7 @@ export function EventCardMain({
         }}
       >
         <Image
-          src={event.imageUrl}
+          src={event.imageUrl || null}
           fit="fill"
           mah={max_height}
           w="auto"
@@ -89,7 +89,11 @@ export function EventCardMain({
               {event.dateTime}
             </Text>
             <Text fz={info_fs} fw={info_fw}>
-              ${event.price}
+              {event.price === "0"
+                ? "Free"
+                : event.price
+                ? `$${event.price}`
+                : "Free"}
             </Text>
             <Text fz={info_fs} fw={info_fw}>
               {event.location}
@@ -104,7 +108,7 @@ export function EventCardMain({
             lineClamp={4}
             fw={desc_fw}
           >
-            {event.description}
+            {event.description?.replace(/<[^>]*>/g, "")}
           </Text>
 
           {/* Button to be replaced with John's button component */}
