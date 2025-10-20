@@ -79,7 +79,11 @@ export function EventCardTertiary({
               {event1.dateTime}
             </Text>
             <Text fz={info_fs} fw={info_fw}>
-              ${event1.price}
+              {event1.price === "0"
+                ? "Free"
+                : event1.price
+                ? `$${event1.price}`
+                : "Free"}
             </Text>
             <Text fz={info_fs} fw={info_fw}>
               {event1.location}
@@ -131,7 +135,11 @@ export function EventCardTertiary({
               {event2.dateTime}
             </Text>
             <Text fz={info_fs} fw={info_fw}>
-              ${event2.price}
+              {event2.price === "0"
+                ? "Free"
+                : event2.price
+                ? `$${event2.price}`
+                : "Free"}
             </Text>
             <Text fz={info_fs} fw={info_fw}>
               {event2.location}

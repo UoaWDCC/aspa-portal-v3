@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { Event } from "@/payload-types";
 import styles from "./SingleEventCard.module.css";
 
@@ -23,8 +22,6 @@ export function EventCard({
   height = DEFAULT_HEIGHT,
   backgroundColor = DEFAULT_BACKGROUND_COLOR,
 }: EventCardProps) {
-  const router = useRouter();
-
   return (
     <div
       className={styles.card}
@@ -39,7 +36,7 @@ export function EventCard({
       <div className={styles.cardFlex}>
         <div className={styles.imageWrapper}>
           <Image
-            src={event.imageUrl ?? "/default-event-image.jpg"}
+            src={event.imageUrl || "/default-event-image.jpg"}
             alt={event.name}
             width={400}
             height={300}
@@ -53,13 +50,15 @@ export function EventCard({
           <p>Entry Price: {event.price}</p>
           <p>Location: {event.location}</p>
 
-          <button
-            type="button"
-            className={styles.signUpButton}
-            onClick={() => router.push("/signup")}
-          >
-            SIGN UP
-          </button>
+          {event.url && (
+            <button
+              type="button"
+              className={styles.signUpButton}
+              onClick={() => window.open(event.url, "_blank")}
+            >
+              SIGN UP
+            </button>
+          )}
         </div>
       </div>
 

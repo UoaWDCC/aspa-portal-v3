@@ -184,6 +184,7 @@ export interface Event {
   location?: string | null;
   price?: string | null;
   imageUrl?: string | null;
+  url?: string | null;
   lastSyncedAt?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -409,6 +410,7 @@ export interface EventsSelect<T extends boolean = true> {
   location?: T;
   price?: T;
   imageUrl?: T;
+  url?: T;
   lastSyncedAt?: T;
   updatedAt?: T;
   createdAt?: T;

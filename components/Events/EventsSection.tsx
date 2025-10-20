@@ -24,7 +24,7 @@ export async function EventsSection() {
       events={result.docs}
       title="Upcoming Events"
       buttonText="View All Events"
-      displayTypes={[displayType.Secondary]}
+      displayTypes={[displayType.Main]}
       props={[
         {
           bg_color: "rgba(113, 120, 130, 1)",

@@ -44,6 +44,10 @@ const Events: CollectionConfig = {
       type: "text",
     },
     {
+      name: "url",
+      type: "text",
+    },
+    {
       name: "lastSyncedAt",
       type: "date",
       admin: {
