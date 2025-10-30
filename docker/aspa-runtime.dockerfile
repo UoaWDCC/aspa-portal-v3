@@ -47,6 +47,11 @@ COPY --from=builder /app/.yarn ./.yarn
 COPY --from=builder /app/yarn.lock ./yarn.lock
 COPY --from=builder /app/.yarnrc.yml ./.yarnrc.yml
 COPY --from=builder /app/next.config.mjs ./next.config.mjs
+# Copy the startup script
+COPY --from=builder /app/start.sh ./start.sh
+RUN chmod +x ./start.sh
+
+
 
 # Set PAYLOAD_SECRET environment variable for runtime
 ENV PAYLOAD_SECRET=${PAYLOAD_SECRET}
@@ -65,4 +70,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=90s --retries=3 \
 #CMD ["sleep", "infinity"] # USED FOR DEBUGGING
 
 # Start the app
-CMD ["yarn", "start"]
+# CMD ["yarn", "start"]
+
+# Use the startup script
+CMD ["./start.sh"]
