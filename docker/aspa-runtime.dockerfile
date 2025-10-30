@@ -39,25 +39,9 @@ RUN apk add --no-cache curl && \
     corepack enable && \
     corepack prepare yarn@stable --activate
 
-# Copy only necessary files from builder stage
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/.yarn ./.yarn
-COPY --from=builder /app/yarn.lock ./yarn.lock
-COPY --from=builder /app/.yarnrc.yml ./.yarnrc.yml
-COPY --from=builder /app/next.config.mjs ./next.config.mjs
-# Copy the startup script
-COPY --from=builder /app/start.sh ./start.sh
+# Just copy the built files from the builder stage
+COPY --from=builder /app /app
 RUN chmod +x ./start.sh
-
-
-
-# Set PAYLOAD_SECRET environment variable for runtime
-ENV PAYLOAD_SECRET=${PAYLOAD_SECRET}
-
-# Install production dependencies only
-RUN yarn workspaces focus --production
 
 # Listen to port 3000
 EXPOSE 3000
