@@ -10,6 +10,10 @@ RUN apk add --no-cache git bash postgresql-client curl openssh-client && \
 	corepack enable && \
 	corepack prepare yarn@stable --activate
 
+# Install flyctl
+RUN curl -L https://fly.io/install.sh | sh && \
+	ln -s /root/.fly/bin/fly /usr/local/bin/fly
+
 # Enable terminal for VSCode
 ENV SHELL=/bin/bash
 

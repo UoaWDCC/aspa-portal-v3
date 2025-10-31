@@ -27,7 +27,7 @@ RUN apt-get update -qq && \
 
 # Install node modules
 COPY .yarnrc.yml package.json yarn.lock ./
-RUN yarn install --immutable
+RUN yarn install --immutable --production=false
 
 # Copy application code
 COPY . .
@@ -36,7 +36,7 @@ COPY . .
 RUN npx next build --experimental-build-mode compile
 
 # Remove development dependencies
-RUN yarn install
+RUN yarn install --production=true
 
 
 # Final stage for app image
